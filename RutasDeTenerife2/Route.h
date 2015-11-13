@@ -28,7 +28,7 @@
 @property BOOL isActive;
 
 //-(void)setMarker: (GMSMarker *)marker;
--(void)serMarker: (MKPointAnnotation *) marker;
+-(void)setMarker: (MKPointAnnotation *) marker;
 -(NSString *)getName;
 -(NSString *)getXmlRoute;
 -(double)getDist;

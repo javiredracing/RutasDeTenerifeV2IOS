@@ -63,7 +63,7 @@
             marker2.coordinate = position2;
             marker2.title = [NSString stringWithFormat:@"%d",identifier];
             marker2.subtitle = [NSString stringWithFormat:@"%d",approved];
-            //[route setMarker:marker2]
+            [route setMarker:marker2];
             [self.mapView addAnnotation:marker2];
         }
         [self.routes addObject:route];

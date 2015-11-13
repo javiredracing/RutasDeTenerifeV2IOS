@@ -35,7 +35,7 @@
 /*-(void)setMarker:(GMSMarker *)marker{
  
 }*/
--(void)serMarker: (MKPointAnnotation *) marker{
+-(void)setMarker: (MKPointAnnotation *) marker{
     [markerList addObject:marker];
 }
 
