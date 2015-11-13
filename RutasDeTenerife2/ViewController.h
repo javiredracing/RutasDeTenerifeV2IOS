@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import "Database.h"
+#import "Route.h"
+#import "CustomKMLParser.h"
 
-@interface ViewController : UIViewController
+#define METERS_PER_MILE 1609.344
 
+@interface ViewController : UIViewController <MKMapViewDelegate>
+- (IBAction)deselect:(id)sender;
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property Database *db;
+@property NSMutableArray *routes;
+@property (nonatomic, strong) CustomKMLParser *kmlParser;
 
 @end
 
