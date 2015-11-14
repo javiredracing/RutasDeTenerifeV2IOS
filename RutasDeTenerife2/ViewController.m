@@ -18,12 +18,20 @@
 @implementation ViewController
 
 MKPolyline *polyLine;
+UIImage *imageRed;
+UIImage *imageYellow;
+UIImage *imageGreen;
+UIImage *imageBrown;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     self.mapView.delegate = self;
     self.db = [[Database alloc]init];
+    imageBrown = [UIImage imageNamed:@"marker_sign_16_normal"];
+    imageYellow = [UIImage imageNamed:@"marker_sign_16_yellow"];
+    imageGreen = [UIImage imageNamed:@"marker_sign_16_green"];
+    imageRed = [UIImage imageNamed:@"marker_sign_16_red"];
     [self loadRoutes];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -110,7 +118,7 @@ MKPolyline *polyLine;
     
     MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc]initWithOverlay:overlay];
     renderer.strokeColor = [UIColor colorWithRed:204/255. green:45/255. blue:70/255. alpha:1.0];
-    renderer.lineWidth = 5;
+    renderer.lineWidth = 3;
     
     return renderer;
 }
@@ -141,6 +149,7 @@ MKPolyline *polyLine;
     NSString *title = [[view annotation] title];
     int identifier = [title intValue];
     Route *route = [self findRouteById:identifier];
+    [self.mapView removeOverlays:self.mapView.overlays];
     NSLog([NSString stringWithFormat:@"Close %@ ",route.getName]);
 }
 
@@ -149,19 +158,19 @@ MKPolyline *polyLine;
     UIImage *icon = nil;
     switch (approved) {
         case 0:
-            icon = [UIImage imageNamed:@"marker_sign_16_normal"];
+            icon = imageBrown;
             break;
         case 1:
-            icon = [UIImage imageNamed:@"marker_sign_16_green"];
+            icon = imageGreen;
             break;
         case 2:
-            icon = [UIImage imageNamed:@"marker_sign_16_yellow"];
+            icon = imageYellow;
             break;
         case 3:
-            icon = [UIImage imageNamed:@"marker_sign_16_red"];
+            icon = imageRed;
             break;
         default:
-            icon = [UIImage imageNamed:@"marker_sign_16_normal"];
+            icon = imageBrown;
             break;
     }
     return icon;
@@ -196,9 +205,6 @@ MKPolyline *polyLine;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             //code to be executed on the main thread when background task is finished
-           // GMSMutablePath *points = [GMSMutablePath path];
-            //polyLine = [MKPolyline polylineWithCoordinates:coordinates count:[coordinates count]];
-
             NSUInteger size = [coordinates count];
             CLLocationCoordinate2D stepCoordinates[size];
             
