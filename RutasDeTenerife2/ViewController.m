@@ -17,11 +17,13 @@
 
 @implementation ViewController
 
+MKPolyline *polyLine;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     self.mapView.delegate = self;
-    self.db = [[Database alloc ]init];
+    self.db = [[Database alloc]init];
     [self loadRoutes];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -104,6 +106,15 @@
     return nil;
 }
 
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    
+    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc]initWithOverlay:overlay];
+    renderer.strokeColor = [UIColor colorWithRed:204/255. green:45/255. blue:70/255. alpha:1.0];
+    renderer.lineWidth = 5;
+    
+    return renderer;
+}
+
 -(Route *)findRouteById:(NSUInteger)identifier{
     Route *r = nil;
     NSUInteger size = [self.routes count];
@@ -121,6 +132,8 @@
     NSString *title = [[view annotation] title];
     int identifier = [title intValue];
     Route *route = [self findRouteById:identifier];
+    CLLocationCoordinate2D pos = [[view annotation]coordinate];
+    [self clickAction:route :pos];
     NSLog([NSString stringWithFormat:@"TAP: %@",route.getName]);
 }
 
@@ -165,5 +178,38 @@
         [self.mapView deselectAnnotation:annotation animated:NO];
     }
 
+}
+-(void)clickAction: (Route *)myroute: (CLLocationCoordinate2D)pos{
+    //TODO camera move to pos
+    NSString *kmlName = [myroute getXmlRoute];
+    kmlName =[kmlName substringToIndex:[kmlName length] - 4];
+    NSLog(kmlName);
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:kmlName ofType:@"kml"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        //code to be executed in the background
+        self.kmlParser = [[CustomKMLParser alloc] initWithURL:url];
+        [self.kmlParser parseKML];
+        NSMutableArray *coordinates = self.kmlParser.path;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //code to be executed on the main thread when background task is finished
+           // GMSMutablePath *points = [GMSMutablePath path];
+            //polyLine = [MKPolyline polylineWithCoordinates:coordinates count:[coordinates count]];
+
+            NSUInteger size = [coordinates count];
+            CLLocationCoordinate2D stepCoordinates[size];
+            
+            for (NSUInteger i = 0; i < size; i++){
+                NSValue *value = [coordinates objectAtIndex:i];
+                CLLocationCoordinate2D c = [value MKCoordinateValue];
+                stepCoordinates[i] = c;
+            }
+            polyLine = [MKPolyline polylineWithCoordinates:stepCoordinates count:size];
+            [self.mapView addOverlay:polyLine];
+            });
+        });
 }
 @end
