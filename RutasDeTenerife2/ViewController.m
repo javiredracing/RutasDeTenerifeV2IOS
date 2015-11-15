@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 
-
 @interface ViewController ()
 
 
@@ -44,7 +43,7 @@ UIImage *imageBrown;
 -(void)loadRoutes{
     self.routes = [[NSMutableArray alloc]init];
     FMResultSet * results = [self.db getInfoMap];
-  
+    NSMutableArray *annotations = [[NSMutableArray alloc]init];
     while ([results next]) {
         NSString *nombre = [results stringForColumnIndex:0];
         double inicLat = [results doubleForColumnIndex:1];
@@ -66,7 +65,8 @@ UIImage *imageBrown;
         marker.title = [NSString stringWithFormat:@"%d",identifier];
         marker.subtitle = [NSString stringWithFormat:@"%d",approved];
         [route setMarker:marker];
-        [self.mapView addAnnotation:marker];
+        //[self.mapView addAnnotation:marker];
+        [annotations addObject: marker];
         if ((finLat != 0) && (finLong != 0)){
             CLLocationCoordinate2D position2 = CLLocationCoordinate2DMake(finLat, finLong);
             MKPointAnnotation *marker2 = [[MKPointAnnotation alloc] init];
@@ -74,9 +74,14 @@ UIImage *imageBrown;
             marker2.title = [NSString stringWithFormat:@"%d",identifier];
             marker2.subtitle = [NSString stringWithFormat:@"%d",approved];
             [route setMarker:marker2];
-            [self.mapView addAnnotation:marker2];
+            //[self.mapView addAnnotation:marker2];
+            [annotations addObject:marker2];
         }
         [self.routes addObject:route];
+        self.clusteringManager = [[FBClusteringManager alloc] initWithAnnotations:annotations];
+        self.clusteringManager.delegate = self;
+        [self mapView:self.mapView regionDidChangeAnimated:NO];
+        //TODO center camera over tenerife
     }
     [results close];
 }
@@ -85,19 +90,46 @@ UIImage *imageBrown;
     [self.mapView setCenterCoordinate:userLocation.coordinate animated:YES];
 }
 
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    [[NSOperationQueue new] addOperationWithBlock:^{
+        double scale = self.mapView.bounds.size.width / self.mapView.visibleMapRect.size.width;
+        NSArray *annotations = [self.clusteringManager clusteredAnnotationsWithinMapRect:mapView.visibleMapRect withZoomScale:scale];
+        //NSLog([NSString stringWithFormat:@"scale %f", scale]);
+    
+        [self.clusteringManager displayAnnotations:annotations onMapView:mapView];
+    }];
+}
+
 -(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     if ([annotation isKindOfClass:[MKUserLocation class]]){
         return nil;
     }
+    MKAnnotationView *pinView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+    
+    if ([annotation isKindOfClass:[FBAnnotationCluster class]]){
+                if (!pinView) {
+                    FBAnnotationCluster *cluster = (FBAnnotationCluster *)annotation;
+            cluster.title = [NSString stringWithFormat:@"%lu", (unsigned long)cluster.annotations.count];
+            pinView = [[MKAnnotationView alloc] initWithAnnotation:cluster reuseIdentifier:@"CustomPinAnnotationView"];
+            pinView.image = [UIImage imageNamed:@"sol_icon"];
+            pinView.canShowCallout = NO;
+
+        }else{
+            pinView.annotation = annotation;
+            pinView.image = [UIImage imageNamed:@"sol_icon"];
+            NSInteger i = 1;
+            pinView.tag = i;
+        }
+        return pinView;
+    }else
+    
     if ([annotation isKindOfClass:[MKPointAnnotation class]]){
-        MKAnnotationView *pinView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        
         NSString *subtitle = [annotation subtitle];
         int type = [subtitle intValue];
         if (!pinView) {
             // If an existing pin view was not available, create one.
-
-            //NSNumber *number = [NSNumber numberWithLongLong: subtitle.longLongValue];
-            //NSUInteger approved = number.unsignedIntegerValue;
             
             pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
             //pinView.animatesDrop = YES;
@@ -105,9 +137,12 @@ UIImage *imageBrown;
             pinView.centerOffset = CGPointMake(0, -pinView.image.size.height / 2);
             //pinView.calloutOffset = CGPointMake(0, 32);
             pinView.image = [self setIcon:type];
+            
         } else {
             pinView.annotation = annotation;
             pinView.image = [self setIcon:type];
+            NSInteger i = 0;
+            pinView.tag = i;
         }
         return pinView;
     }
@@ -136,21 +171,36 @@ UIImage *imageBrown;
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
     //MKAnnotation *annotation = [view annotation];
-    
-    NSString *title = [[view annotation] title];
-    int identifier = [title intValue];
-    Route *route = [self findRouteById:identifier];
     CLLocationCoordinate2D pos = [[view annotation]coordinate];
-    [self clickAction:route :pos];
-    NSLog([NSString stringWithFormat:@"TAP: %@",route.getName]);
+    if (view.tag == 1) {
+        NSLog(@"Hola");
+        [self zoomInGesture:pos];
+            //[self.mapView setCenterCoordinate:pos animated:YES];
+    }else{
+        NSString *title = [[view annotation] title];
+        int identifier = [title intValue];
+        Route *route = [self findRouteById:identifier];
+        //CLLocationCoordinate2D pos = [[view annotation]coordinate];
+        [self clickAction:route :pos];
+        NSLog([NSString stringWithFormat:@"TAP: %@",route.getName]);
+    }
 }
 
 -(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view{
-    NSString *title = [[view annotation] title];
-    int identifier = [title intValue];
-    Route *route = [self findRouteById:identifier];
-    [self.mapView removeOverlays:self.mapView.overlays];
-    NSLog([NSString stringWithFormat:@"Close %@ ",route.getName]);
+    if (view.tag == 0){
+        NSString *title = [[view annotation] title];
+        int identifier = [title intValue];
+        Route *route = [self findRouteById:identifier];
+        [self.mapView removeOverlays:self.mapView.overlays];
+        NSLog([NSString stringWithFormat:@"Close %@ ",route.getName]);
+    }else
+    NSLog([NSString stringWithFormat:@"Deselect %ld",(long)view.tag]);
+}
+#pragma mark - FBClusterManager delegate - optional
+
+- (CGFloat)cellSizeFactorForCoordinator:(FBClusteringManager *)coordinator
+{
+    return 0.6;
 }
 
 -(UIImage *)setIcon: (int)approved{
@@ -217,5 +267,14 @@ UIImage *imageBrown;
             [self.mapView addOverlay:polyLine];
             });
         });
+}
+- (void)zoomInGesture: (CLLocationCoordinate2D)pos {
+    MKCoordinateRegion region;// = self.mapView.region;
+    region.center = pos;
+    MKCoordinateSpan span = self.mapView.region.span;
+    span.latitudeDelta *= 0.5;
+    span.longitudeDelta *= 0.5;
+    region.span = span;
+    [self.mapView setRegion:region animated:YES];
 }
 @end

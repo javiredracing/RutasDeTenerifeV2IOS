@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5955C8F81BF7BD15003843B2 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 5955C8EE1BF7BD15003843B2 /* .gitkeep */; };
+		5955C8F91BF7BD15003843B2 /* FBAnnotationCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F01BF7BD15003843B2 /* FBAnnotationCluster.m */; };
+		5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F31BF7BD15003843B2 /* FBClusteringManager.m */; };
+		5955C8FB1BF7BD15003843B2 /* FBQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F51BF7BD15003843B2 /* FBQuadTree.m */; };
+		5955C8FC1BF7BD15003843B2 /* FBQuadTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F71BF7BD15003843B2 /* FBQuadTreeNode.m */; };
 		9D741E7C1BF4F2D5008AB780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E7B1BF4F2D5008AB780 /* main.m */; };
 		9D741E7F1BF4F2D5008AB780 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E7E1BF4F2D5008AB780 /* AppDelegate.m */; };
 		9D741E821BF4F2D5008AB780 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E811BF4F2D5008AB780 /* ViewController.m */; };
@@ -346,6 +351,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5955C8EE1BF7BD15003843B2 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		5955C8EF1BF7BD15003843B2 /* FBAnnotationCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAnnotationCluster.h; sourceTree = "<group>"; };
+		5955C8F01BF7BD15003843B2 /* FBAnnotationCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAnnotationCluster.m; sourceTree = "<group>"; };
+		5955C8F11BF7BD15003843B2 /* FBAnnotationClustering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAnnotationClustering.h; sourceTree = "<group>"; };
+		5955C8F21BF7BD15003843B2 /* FBClusteringManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBClusteringManager.h; sourceTree = "<group>"; };
+		5955C8F31BF7BD15003843B2 /* FBClusteringManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBClusteringManager.m; sourceTree = "<group>"; };
+		5955C8F41BF7BD15003843B2 /* FBQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBQuadTree.h; sourceTree = "<group>"; };
+		5955C8F51BF7BD15003843B2 /* FBQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBQuadTree.m; sourceTree = "<group>"; };
+		5955C8F61BF7BD15003843B2 /* FBQuadTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBQuadTreeNode.h; sourceTree = "<group>"; };
+		5955C8F71BF7BD15003843B2 /* FBQuadTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBQuadTreeNode.m; sourceTree = "<group>"; };
 		9D741E771BF4F2D5008AB780 /* RutasDeTenerife2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RutasDeTenerife2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D741E7B1BF4F2D5008AB780 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D741E7D1BF4F2D5008AB780 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -714,6 +729,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5955C8ED1BF7BD15003843B2 /* FBAnnotationClustering */ = {
+			isa = PBXGroup;
+			children = (
+				5955C8EE1BF7BD15003843B2 /* .gitkeep */,
+				5955C8EF1BF7BD15003843B2 /* FBAnnotationCluster.h */,
+				5955C8F01BF7BD15003843B2 /* FBAnnotationCluster.m */,
+				5955C8F11BF7BD15003843B2 /* FBAnnotationClustering.h */,
+				5955C8F21BF7BD15003843B2 /* FBClusteringManager.h */,
+				5955C8F31BF7BD15003843B2 /* FBClusteringManager.m */,
+				5955C8F41BF7BD15003843B2 /* FBQuadTree.h */,
+				5955C8F51BF7BD15003843B2 /* FBQuadTree.m */,
+				5955C8F61BF7BD15003843B2 /* FBQuadTreeNode.h */,
+				5955C8F71BF7BD15003843B2 /* FBQuadTreeNode.m */,
+			);
+			path = FBAnnotationClustering;
+			sourceTree = "<group>";
+		};
 		9D741E6E1BF4F2D5008AB780 = {
 			isa = PBXGroup;
 			children = (
@@ -742,6 +774,7 @@
 		9D741E791BF4F2D5008AB780 /* RutasDeTenerife2 */ = {
 			isa = PBXGroup;
 			children = (
+				5955C8ED1BF7BD15003843B2 /* FBAnnotationClustering */,
 				9D7AD6021BF5FA4900E87809 /* assets */,
 				9D7AD5211BF5FA3600E87809 /* CustomKMLParser.h */,
 				9D7AD5221BF5FA3600E87809 /* CustomKMLParser.m */,
@@ -1396,6 +1429,7 @@
 				9D7AD74E1BF5FA4A00E87809 /* PR-TF 86.3.kml in Resources */,
 				9D7AD7281BF5FA4A00E87809 /* PR-TF 53.1.kml in Resources */,
 				9D7AD7871BF5FA4A00E87809 /* tenerife-barranco-de-ruiz.gpx in Resources */,
+				5955C8F81BF7BD15003843B2 /* .gitkeep in Resources */,
 				9D7AD6FF1BF5FA4A00E87809 /* parque-nacional-del-teide-volcan-de-fasnia-.gpx in Resources */,
 				9D7AD5EC1BF5FA3700E87809 /* senalizacion.jpeg in Resources */,
 				9D7AD7131BF5FA4A00E87809 /* PR-TF 43.1.gpx in Resources */,
@@ -1549,8 +1583,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D7AD5971BF5FA3700E87809 /* CustomKMLParser.m in Sources */,
+				5955C8F91BF7BD15003843B2 /* FBAnnotationCluster.m in Sources */,
+				5955C8FB1BF7BD15003843B2 /* FBQuadTree.m in Sources */,
 				9D7AD5981BF5FA3700E87809 /* Database.m in Sources */,
+				5955C8FC1BF7BD15003843B2 /* FBQuadTreeNode.m in Sources */,
 				9D741E821BF4F2D5008AB780 /* ViewController.m in Sources */,
+				5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */,
 				9D7AD5FC1BF5FA3700E87809 /* FMDatabase.m in Sources */,
 				9D7AD6011BF5FA3700E87809 /* Route.m in Sources */,
 				9D7AD6001BF5FA3700E87809 /* FMResultSet.m in Sources */,
