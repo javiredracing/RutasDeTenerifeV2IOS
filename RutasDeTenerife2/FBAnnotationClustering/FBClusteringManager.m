@@ -144,11 +144,11 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
             }];
             
             NSInteger count = [annotations count];
-            if (count == 1) {
+            if (count <= 2) {
                 [clusteredAnnotations addObjectsFromArray:annotations];
             }
             
-            if (count > 1) {
+            if (count > 2) {
                 CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(totalLatitude/count, totalLongitude/count);
                 FBAnnotationCluster *cluster = [[FBAnnotationCluster alloc] init];
                 cluster.coordinate = coordinate;

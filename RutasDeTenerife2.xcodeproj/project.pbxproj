@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5955C8F81BF7BD15003843B2 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 5955C8EE1BF7BD15003843B2 /* .gitkeep */; };
 		5955C8F91BF7BD15003843B2 /* FBAnnotationCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F01BF7BD15003843B2 /* FBAnnotationCluster.m */; };
 		5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F31BF7BD15003843B2 /* FBClusteringManager.m */; };
 		5955C8FB1BF7BD15003843B2 /* FBQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F51BF7BD15003843B2 /* FBQuadTree.m */; };
@@ -331,6 +330,7 @@
 		9D7AD7921BF600F500E87809 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD7911BF600F500E87809 /* libsqlite3.tbd */; };
 		9D7AD7941BF6119500E87809 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD7931BF6119500E87809 /* CoreGraphics.framework */; };
 		9D7AD7961BF6119E00E87809 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD7951BF6119E00E87809 /* UIKit.framework */; };
+		9D96DB881BF9E0C8008FEA35 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D96DB871BF9E0C8008FEA35 /* CoreText.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -351,7 +351,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5955C8EE1BF7BD15003843B2 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		5955C8EF1BF7BD15003843B2 /* FBAnnotationCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAnnotationCluster.h; sourceTree = "<group>"; };
 		5955C8F01BF7BD15003843B2 /* FBAnnotationCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAnnotationCluster.m; sourceTree = "<group>"; };
 		5955C8F11BF7BD15003843B2 /* FBAnnotationClustering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAnnotationClustering.h; sourceTree = "<group>"; };
@@ -697,6 +696,7 @@
 		9D7AD7911BF600F500E87809 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9D7AD7931BF6119500E87809 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9D7AD7951BF6119E00E87809 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9D96DB871BF9E0C8008FEA35 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -704,6 +704,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D96DB881BF9E0C8008FEA35 /* CoreText.framework in Frameworks */,
 				9D7AD7961BF6119E00E87809 /* UIKit.framework in Frameworks */,
 				9D7AD7941BF6119500E87809 /* CoreGraphics.framework in Frameworks */,
 				9D7AD7921BF600F500E87809 /* libsqlite3.tbd in Frameworks */,
@@ -732,7 +733,6 @@
 		5955C8ED1BF7BD15003843B2 /* FBAnnotationClustering */ = {
 			isa = PBXGroup;
 			children = (
-				5955C8EE1BF7BD15003843B2 /* .gitkeep */,
 				5955C8EF1BF7BD15003843B2 /* FBAnnotationCluster.h */,
 				5955C8F01BF7BD15003843B2 /* FBAnnotationCluster.m */,
 				5955C8F11BF7BD15003843B2 /* FBAnnotationClustering.h */,
@@ -749,6 +749,7 @@
 		9D741E6E1BF4F2D5008AB780 = {
 			isa = PBXGroup;
 			children = (
+				9D96DB871BF9E0C8008FEA35 /* CoreText.framework */,
 				9D7AD7951BF6119E00E87809 /* UIKit.framework */,
 				9D7AD7931BF6119500E87809 /* CoreGraphics.framework */,
 				9D7AD7911BF600F500E87809 /* libsqlite3.tbd */,
@@ -1429,7 +1430,6 @@
 				9D7AD74E1BF5FA4A00E87809 /* PR-TF 86.3.kml in Resources */,
 				9D7AD7281BF5FA4A00E87809 /* PR-TF 53.1.kml in Resources */,
 				9D7AD7871BF5FA4A00E87809 /* tenerife-barranco-de-ruiz.gpx in Resources */,
-				5955C8F81BF7BD15003843B2 /* .gitkeep in Resources */,
 				9D7AD6FF1BF5FA4A00E87809 /* parque-nacional-del-teide-volcan-de-fasnia-.gpx in Resources */,
 				9D7AD5EC1BF5FA3700E87809 /* senalizacion.jpeg in Resources */,
 				9D7AD7131BF5FA4A00E87809 /* PR-TF 43.1.gpx in Resources */,

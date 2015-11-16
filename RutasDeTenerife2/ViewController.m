@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CoreText/CoreText.h"
 
 
 @interface ViewController ()
@@ -21,18 +22,61 @@ UIImage *imageRed;
 UIImage *imageYellow;
 UIImage *imageGreen;
 UIImage *imageBrown;
+Route *lastRouteShowed;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
+    //[self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
+    self.locationManager = [[CLLocationManager alloc]init];
+    
+    self.locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.delegate = self;
+    
     self.mapView.delegate = self;
     self.db = [[Database alloc]init];
     imageBrown = [UIImage imageNamed:@"marker_sign_16_normal"];
     imageYellow = [UIImage imageNamed:@"marker_sign_16_yellow"];
     imageGreen = [UIImage imageNamed:@"marker_sign_16_green"];
     imageRed = [UIImage imageNamed:@"marker_sign_16_red"];
+    [self gotoLocation];
     [self loadRoutes];
+    
+    //TODO Get user location
+    //http://ashishkakkad.com/2014/12/ios-8-map-kit-obj-c-get-users-location/
     // Do any additional setup after loading the view, typically from a nib.
+
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    if (self.locationManager != nil){
+    #ifdef __IPHONE_8_0
+        if(IS_OS_8_OR_LATER) {
+            // Use one or the other, not both. Depending on what you put in info.plist
+            [self.locationManager requestWhenInUseAuthorization];
+            //[self.locationManager requestAlwaysAuthorization];
+        }
+    #endif
+        NSLog(@"start updating");
+         [self.locationManager startUpdatingLocation];
+        
+        if ([CLLocationManager headingAvailable]) {
+            NSLog(@"Heading available");
+            self.locationManager.headingFilter = 5;
+            [self.locationManager startUpdatingHeading];
+        }
+    }
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    if (self.locationManager)
+    {
+       // self.mapView.showsUserLocation = NO;
+        [self.locationManager stopUpdatingLocation];
+    }
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +101,7 @@ UIImage *imageBrown;
         int identifier = [results intForColumnIndex:9];
         int approved = [results intForColumnIndex:10];
         int region = [results intForColumnIndex:11];
-        //(int)_id :(NSString *) name1 :(NSString*)_xml :(float)_dist :(int) _difficulty : (float)_durac :(int)_approved :(int)reg;
+      
         Route *route = [[Route alloc]init:identifier :nombre :xml :dist :dific :durac :approved :region];
         CLLocationCoordinate2D position = CLLocationCoordinate2DMake(inicLat, inicLong);
         MKPointAnnotation *marker = [[MKPointAnnotation alloc]init];
@@ -78,24 +122,30 @@ UIImage *imageBrown;
             [annotations addObject:marker2];
         }
         [self.routes addObject:route];
+     
         self.clusteringManager = [[FBClusteringManager alloc] initWithAnnotations:annotations];
         self.clusteringManager.delegate = self;
-        [self mapView:self.mapView regionDidChangeAnimated:NO];
+        //[self mapView:self.mapView regionDidChangeAnimated:NO];
+        
         //TODO center camera over tenerife
     }
     [results close];
 }
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-    [self.mapView setCenterCoordinate:userLocation.coordinate animated:YES];
+    //[self.mapView setCenterCoordinate:userLocation.coordinate animated:YES];
+    //NSLog([NSString stringWithFormat:@"%f", userLocation.heading]);
+    //userLocation.heading
+    //CLHeading *heading = userLocation.heading;
+    //heading.magneticHeading
 }
+
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
     [[NSOperationQueue new] addOperationWithBlock:^{
         double scale = self.mapView.bounds.size.width / self.mapView.visibleMapRect.size.width;
         NSArray *annotations = [self.clusteringManager clusteredAnnotationsWithinMapRect:mapView.visibleMapRect withZoomScale:scale];
-        //NSLog([NSString stringWithFormat:@"scale %f", scale]);
     
         [self.clusteringManager displayAnnotations:annotations onMapView:mapView];
     }];
@@ -108,16 +158,17 @@ UIImage *imageBrown;
     MKAnnotationView *pinView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
     
     if ([annotation isKindOfClass:[FBAnnotationCluster class]]){
-                if (!pinView) {
-                    FBAnnotationCluster *cluster = (FBAnnotationCluster *)annotation;
+         FBAnnotationCluster *cluster = (FBAnnotationCluster *)annotation;
+        if (!pinView) {
             cluster.title = [NSString stringWithFormat:@"%lu", (unsigned long)cluster.annotations.count];
             pinView = [[MKAnnotationView alloc] initWithAnnotation:cluster reuseIdentifier:@"CustomPinAnnotationView"];
-            pinView.image = [UIImage imageNamed:@"sol_icon"];
+            pinView.image = [self generateClusterIconWithCount:cluster.annotations.count];
             pinView.canShowCallout = NO;
-
+            NSInteger i = 1;
+            pinView.tag = i;
         }else{
             pinView.annotation = annotation;
-            pinView.image = [UIImage imageNamed:@"sol_icon"];
+            pinView.image = [self generateClusterIconWithCount:cluster.annotations.count];
             NSInteger i = 1;
             pinView.tag = i;
         }
@@ -132,11 +183,11 @@ UIImage *imageBrown;
             // If an existing pin view was not available, create one.
             
             pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
-            //pinView.animatesDrop = YES;
             pinView.canShowCallout = NO;
             pinView.centerOffset = CGPointMake(0, -pinView.image.size.height / 2);
-            //pinView.calloutOffset = CGPointMake(0, 32);
             pinView.image = [self setIcon:type];
+            NSInteger i = 0;
+            pinView.tag = i;
             
         } else {
             pinView.annotation = annotation;
@@ -149,6 +200,8 @@ UIImage *imageBrown;
     return nil;
 }
 
+
+//Draw line with gradient https://github.com/wdanxna/GradientPolyline
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
     
     MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc]initWithOverlay:overlay];
@@ -170,10 +223,12 @@ UIImage *imageBrown;
 }
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
+    
+    [mapView deselectAnnotation:view.annotation animated:YES];
     //MKAnnotation *annotation = [view annotation];
     CLLocationCoordinate2D pos = [[view annotation]coordinate];
     if (view.tag == 1) {
-        NSLog(@"Hola");
+        //NSLog(@"Hola");
         [self zoomInGesture:pos];
             //[self.mapView setCenterCoordinate:pos animated:YES];
     }else{
@@ -187,20 +242,21 @@ UIImage *imageBrown;
 }
 
 -(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view{
-    if (view.tag == 0){
+    /*if (view.tag == 0){
         NSString *title = [[view annotation] title];
         int identifier = [title intValue];
         Route *route = [self findRouteById:identifier];
         [self.mapView removeOverlays:self.mapView.overlays];
         NSLog([NSString stringWithFormat:@"Close %@ ",route.getName]);
     }else
-    NSLog([NSString stringWithFormat:@"Deselect %ld",(long)view.tag]);
+    NSLog([NSString stringWithFormat:@"Deselect %ld",(long)view.tag]);*/
 }
+
 #pragma mark - FBClusterManager delegate - optional
 
 - (CGFloat)cellSizeFactorForCoordinator:(FBClusteringManager *)coordinator
 {
-    return 0.6;
+    return 1;
 }
 
 -(UIImage *)setIcon: (int)approved{
@@ -231,42 +287,60 @@ UIImage *imageBrown;
    }
 
 /**Force didDeselectAnnotationView*/
--(void)closePath{
+/*-(void)closePath{
     NSArray *selectedAnnotations = self.mapView.selectedAnnotations;
     for(id annotation in selectedAnnotations) {
         [self.mapView deselectAnnotation:annotation animated:NO];
     }
+}*/
 
-}
 -(void)clickAction: (Route *)myroute: (CLLocationCoordinate2D)pos{
-    //TODO camera move to pos
-    NSString *kmlName = [myroute getXmlRoute];
-    kmlName =[kmlName substringToIndex:[kmlName length] - 4];
-    NSLog(kmlName);
+ 
+    if (lastRouteShowed != nil){
+        if ([lastRouteShowed getId] == [myroute getId]){
+            lastRouteShowed = nil;
+        }
+    }
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:kmlName ofType:@"kml"];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
-        //code to be executed in the background
-        self.kmlParser = [[CustomKMLParser alloc] initWithURL:url];
-        [self.kmlParser parseKML];
-        NSMutableArray *coordinates = self.kmlParser.path;
+    myroute.isActive = !myroute.isActive;
+    if (lastRouteShowed != nil) {
+        lastRouteShowed.isActive = NO;
+    }
+    lastRouteShowed = myroute;
+    //if (polyLine != nil){
+        [self.mapView removeOverlays:self.mapView.overlays];
+    //}
+
+    if (myroute.isActive){
+        NSString *kmlName = [myroute getXmlRoute];
+        kmlName =[kmlName substringToIndex:[kmlName length] - 4];
+        NSLog(kmlName);
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            //code to be executed on the main thread when background task is finished
-            NSUInteger size = [coordinates count];
-            CLLocationCoordinate2D stepCoordinates[size];
+        NSString *path = [[NSBundle mainBundle] pathForResource:kmlName ofType:@"kml"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        dispatch_async(queue, ^{
+            //code to be executed in the background
+            self.kmlParser = [[CustomKMLParser alloc] initWithURL:url];
+            [self.kmlParser parseKML];
+            NSMutableArray *coordinates = self.kmlParser.path;
             
-            for (NSUInteger i = 0; i < size; i++){
-                NSValue *value = [coordinates objectAtIndex:i];
-                CLLocationCoordinate2D c = [value MKCoordinateValue];
-                stepCoordinates[i] = c;
-            }
-            polyLine = [MKPolyline polylineWithCoordinates:stepCoordinates count:size];
-            [self.mapView addOverlay:polyLine];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //code to be executed on the main thread when background task is finished
+                NSUInteger size = [coordinates count];
+                CLLocationCoordinate2D stepCoordinates[size];
+                
+                for (NSUInteger i = 0; i < size; i++){
+                    NSValue *value = [coordinates objectAtIndex:i];
+                    CLLocationCoordinate2D c = [value MKCoordinateValue];
+                    stepCoordinates[i] = c;
+                }
+                polyLine = [MKPolyline polylineWithCoordinates:stepCoordinates count:size];
+                [self.mapView addOverlay:polyLine];
+                });
             });
-        });
+        [self moveTo:pos];  //Center pos
+    }
 }
 - (void)zoomInGesture: (CLLocationCoordinate2D)pos {
     MKCoordinateRegion region;// = self.mapView.region;
@@ -277,4 +351,95 @@ UIImage *imageBrown;
     region.span = span;
     [self.mapView setRegion:region animated:YES];
 }
+
+- (void)moveTo: (CLLocationCoordinate2D)pos {
+    MKCoordinateRegion region;// = self.mapView.region;
+    region.center = pos;
+    region.span = self.mapView.region.span;
+    [self.mapView setRegion:region animated:YES];
+}
+
+- (UIImage*)generateClusterIconWithCount:(NSUInteger)count {
+    
+    int diameter = 30;
+    float inset = 2;
+    
+    CGRect rect = CGRectMake(0, 0, diameter, diameter);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    
+    // set stroking color and draw circle
+    [[UIColor colorWithRed:1 green:1 blue:1 alpha:0.8] setStroke];
+    
+    if (count > 100) [[UIColor orangeColor] setFill];
+    else if (count > 10) [[UIColor yellowColor] setFill];
+    else [[UIColor colorWithRed:0.0/255.0 green:100.0/255.0 blue:255.0/255.0 alpha:1] setFill];
+    
+    CGContextSetLineWidth(ctx, inset);
+    
+    // make circle rect 5 px from border
+    CGRect circleRect = CGRectMake(0, 0, diameter, diameter);
+    circleRect = CGRectInset(circleRect, inset, inset);
+    
+    // draw circle
+    CGContextFillEllipseInRect(ctx, circleRect);
+    CGContextStrokeEllipseInRect(ctx, circleRect);
+    
+    CTFontRef myFont = CTFontCreateWithName( (CFStringRef)@"Helvetica-Bold", 12.0f, NULL);
+    
+    UIColor *fontColor;
+    if ((count < 100) && count > 10) fontColor = [UIColor blackColor];
+    else fontColor = [UIColor whiteColor];
+    
+    NSDictionary *attributesDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    (__bridge id)myFont, (id)kCTFontAttributeName,
+                                    fontColor, (id)kCTForegroundColorAttributeName, nil];
+    
+    // create a naked string
+    NSString *string = [[NSString alloc] initWithFormat:@"%lu", (unsigned long)count];
+    
+    NSAttributedString *stringToDraw = [[NSAttributedString alloc] initWithString:string
+                                                                       attributes:attributesDict];
+    
+    // flip the coordinate system
+    CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
+    CGContextTranslateCTM(ctx, 0, diameter);
+    CGContextScaleCTM(ctx, 1.0, -1.0);
+    
+    CTFramesetterRef frameSetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)(stringToDraw));
+    CGSize suggestedSize = CTFramesetterSuggestFrameSizeWithConstraints(
+                                                                        frameSetter, /* Framesetter */
+                                                                        CFRangeMake(0, stringToDraw.length), /* String range (entire string) */
+                                                                        NULL, /* Frame attributes */
+                                                                        CGSizeMake(diameter, diameter), /* Constraints (CGFLOAT_MAX indicates unconstrained) */
+                                                                        NULL /* Gives the range of string that fits into the constraints, doesn't matter in your situation */
+                                                                        );
+    CFRelease(frameSetter);
+    
+    //Get the position on the y axis
+    float midHeight = diameter;
+    midHeight -= suggestedSize.height;
+    
+    float midWidth = diameter / 2;
+    midWidth -= suggestedSize.width / 2;
+    
+    CTLineRef line = CTLineCreateWithAttributedString(
+                                                      (__bridge CFAttributedStringRef)stringToDraw);
+    CGContextSetTextPosition(ctx, midWidth, 12);
+    CTLineDraw(line, ctx);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+- (void)gotoLocation{
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(28.25600562, -16.52069092);
+    MKCoordinateSpan span = MKCoordinateSpanMake(1.3, 1.3);
+    MKCoordinateRegion regionToDisplay = MKCoordinateRegionMake(center, span);
+    [self.mapView setRegion:regionToDisplay];
+}
+
 @end

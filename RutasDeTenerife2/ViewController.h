@@ -14,8 +14,10 @@
 #import "FBAnnotationClustering/FBAnnotationClustering.h"
 
 #define METERS_PER_MILE 1609.344
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
-@interface ViewController : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate>
+
+@interface ViewController : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate, CLLocationManagerDelegate>
 - (IBAction)deselect:(id)sender;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -23,6 +25,7 @@
 @property NSMutableArray *routes;
 @property (nonatomic, strong) CustomKMLParser *kmlParser;
 @property (nonatomic, strong) FBClusteringManager *clusteringManager;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
