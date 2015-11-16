@@ -29,6 +29,7 @@ Route *lastRouteShowed;
     [super viewDidLoad];
     //[self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     self.locationManager = [[CLLocationManager alloc]init];
+    self.mapView.showsUserLocation = YES;
     
     self.locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
