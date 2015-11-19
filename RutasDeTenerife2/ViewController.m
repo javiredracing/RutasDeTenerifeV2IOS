@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CoreText/CoreText.h"
+#import "PathCellTableViewCell.h"
 
 
 @interface ViewController ()
@@ -130,8 +131,6 @@ Route *lastRouteShowed;
         self.clusteringManager = [[FBClusteringManager alloc] initWithAnnotations:annotations];
         self.clusteringManager.delegate = self;
         //[self mapView:self.mapView regionDidChangeAnimated:NO];
-        
-        //TODO center camera over tenerife
     }
     [results close];
 }
@@ -284,6 +283,26 @@ Route *lastRouteShowed;
             break;
     }
     return icon;
+}
+
+-(UIImage *)setDifficultIcon: (int)difficult{
+
+    UIImage *image = nil;
+    switch (difficult) {
+        case 1:
+            image = [UIImage imageNamed:@"nivel_facil"];
+            break;
+        case 2:
+            image = [UIImage imageNamed:@"nivel_intermedio"];
+            break;
+        case 3:
+            image = [UIImage imageNamed:@"nivel_dificil"];
+            break;
+        default:
+            image = [UIImage imageNamed:@"nivel_intermedio"];
+            break;
+    }
+    return image;
 }
 
 - (IBAction)deselect:(id)sender {
@@ -464,19 +483,36 @@ Route *lastRouteShowed;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MenuCell"];
+    PathCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
+    if (!cell){
+        [self.pathList registerNib:[UINib nibWithNibName:@"PathCell" bundle:nil] forCellReuseIdentifier:@"myCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
+    }
+       return cell;
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(PathCellTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     Route *myRoute = [self.routes objectAtIndex:indexPath.row];
-    cell.textLabel.text = [myRoute getName];
-    cell.detailTextLabel.text = [myRoute getXmlRoute];
+    cell.title.text = [myRoute getName];
+    cell.distanceLabel.text = [NSString stringWithFormat:@"(%.1f km)",[myRoute getDist]];
+    //NSUInteger dificult =
+    cell.dificultImage.image = [self setDifficultIcon: [myRoute getDifficulty]];
     NSUInteger i = [myRoute getId];
     cell.tag = i;
-    return cell;
+}
+
+/*- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100.0f;
+}*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 102.0;
 }
 
 #pragma mark - UITableView Delegate -
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+    PathCellTableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     NSUInteger identifier = cell.tag;
     Route *r = [self findRouteById:identifier];
     CLLocationCoordinate2D pos = [r getFirstPoint];
