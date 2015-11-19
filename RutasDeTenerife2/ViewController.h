@@ -17,7 +17,10 @@
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
 
-@interface ViewController : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate, CLLocationManagerDelegate>
+@interface ViewController : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
+- (IBAction)toggleList:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITableView *pathList;
 - (IBAction)deselect:(id)sender;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;

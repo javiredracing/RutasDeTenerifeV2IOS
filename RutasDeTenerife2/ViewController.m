@@ -24,7 +24,6 @@ UIImage *imageGreen;
 UIImage *imageBrown;
 Route *lastRouteShowed;
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     //[self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
@@ -44,6 +43,10 @@ Route *lastRouteShowed;
     [self gotoLocation];
     [self loadRoutes];
     
+    //Gestures to sidepanel
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(toggleList:)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.pathList addGestureRecognizer:swipeRight];
     //TODO Get user location
     //http://ashishkakkad.com/2014/12/ios-8-map-kit-obj-c-get-users-location/
     // Do any additional setup after loading the view, typically from a nib.
@@ -356,8 +359,21 @@ Route *lastRouteShowed;
 - (void)moveTo: (CLLocationCoordinate2D)pos {
     MKCoordinateRegion region;// = self.mapView.region;
     region.center = pos;
-    region.span = self.mapView.region.span;
+    if (self.mapView.region.span.latitudeDelta > 0.5) {
+        region.span.latitudeDelta = 0.5;
+        region.span.longitudeDelta = 0.5;
+    }else
+        region.span = self.mapView.region.span;
+    
     [self.mapView setRegion:region animated:YES];
+}
+
+
+- (void)gotoLocation{
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(28.25600562, -16.52069092);
+    MKCoordinateSpan span = MKCoordinateSpanMake(1.3, 1.3);
+    MKCoordinateRegion regionToDisplay = MKCoordinateRegionMake(center, span);
+    [self.mapView setRegion:regionToDisplay];
 }
 
 - (UIImage*)generateClusterIconWithCount:(NSUInteger)count {
@@ -436,11 +452,81 @@ Route *lastRouteShowed;
     return image;
 }
 
-- (void)gotoLocation{
-    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(28.25600562, -16.52069092);
-    MKCoordinateSpan span = MKCoordinateSpanMake(1.3, 1.3);
-    MKCoordinateRegion regionToDisplay = MKCoordinateRegionMake(center, span);
-    [self.mapView setRegion:regionToDisplay];
+
+/************** TableView *****************/
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    //NSLog([NSString stringWithFormat:@"numbers of row %lu", (unsigned long)self.routes.count]);
+    return [self.routes count];
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MenuCell"];
+    Route *myRoute = [self.routes objectAtIndex:indexPath.row];
+    cell.textLabel.text = [myRoute getName];
+    cell.detailTextLabel.text = [myRoute getXmlRoute];
+    NSUInteger i = [myRoute getId];
+    cell.tag = i;
+    return cell;
+}
+
+#pragma mark - UITableView Delegate -
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSUInteger identifier = cell.tag;
+    Route *r = [self findRouteById:identifier];
+    CLLocationCoordinate2D pos = [r getFirstPoint];
+    [self clickAction:r :pos ];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - animations -
+
+-(void)showRightList{
+    //NSLog(@"ShowList");
+    [UIView animateWithDuration:0.25 animations:^{
+        CGRect originalFrame = [self currentScreenBoundsDependOnOrientation];
+        [self.pathList setFrame:CGRectMake(originalFrame.size.width - 254, originalFrame.origin.y, 254, originalFrame.size.height)];
+    }];
+}
+
+-(void)hideRightList{
+    //NSLog(@"HideList");
+    [UIView animateWithDuration:0.25 animations:^{
+         CGRect originalFrame = [self currentScreenBoundsDependOnOrientation];
+         [self.pathList setFrame:CGRectMake(originalFrame.size.width, originalFrame.origin.y, 0, originalFrame.size.height)];
+    }];
+}
+
+-(CGRect)currentScreenBoundsDependOnOrientation
+{
+    
+    CGRect screenBounds = [UIScreen mainScreen].bounds ;
+    if(IS_OS_8_OR_LATER){
+        return screenBounds ;
+    }
+    CGFloat width = CGRectGetWidth(screenBounds)  ;
+    CGFloat height = CGRectGetHeight(screenBounds) ;
+    UIInterfaceOrientation interfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
+    
+    if(UIInterfaceOrientationIsPortrait(interfaceOrientation)){
+        screenBounds.size = CGSizeMake(width, height);
+    }else if(UIInterfaceOrientationIsLandscape(interfaceOrientation)){
+        screenBounds.size = CGSizeMake(height, width);
+    }
+    return screenBounds ;
+}
+
+- (IBAction)toggleList:(id)sender {
+    CGRect rect = self.pathList.frame;
+    if (rect.size.width == 254){
+        [self hideRightList];
+    }else{
+        [self showRightList];
+    }
+}
 @end

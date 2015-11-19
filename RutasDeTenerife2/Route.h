@@ -35,7 +35,7 @@
 -(double)getDurac;
 -(int)getDifficulty;
 -(int)getId;
-//-(CLLocationCoordinate2D)getFirstPoint;
+-(CLLocationCoordinate2D)getFirstPoint;
 -(void)setMarkersVisibility: (BOOL)visibility;
 -(void)setWeatherJson:(NSString *)json;
 -(NSString *)getWeatherJson;
