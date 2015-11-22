@@ -24,6 +24,7 @@ UIImage *imageYellow;
 UIImage *imageGreen;
 UIImage *imageBrown;
 Route *lastRouteShowed;
+BOOL isHidden;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,11 +52,21 @@ Route *lastRouteShowed;
     //TODO Get user location
     //http://ashishkakkad.com/2014/12/ios-8-map-kit-obj-c-get-users-location/
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //Hide panel
+    CGRect originalFrame = [self currentScreenBoundsDependOnOrientation];
+    //[self.pathList setBounds:CGRectMake(originalFrame.size.width, originalFrame.origin.y, 0, originalFrame.size.height)];
+    //[self.pathList setFrame:CGRectMake(originalFrame.size.width, originalFrame.origin.y, 0, originalFrame.size.height)];
+    CGRect rect = self.pathList.bounds;
+   // NSLog([NSString stringWithFormat:@"initial rect %@", NSStringFromCGRect(rect)]);
+    isHidden = YES;
+
 
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
+    CGRect rect = self.pathList.frame;
+    NSLog([NSString stringWithFormat:@"initial rect %@", NSStringFromCGRect(rect)]);
     if (self.locationManager != nil){
     #ifdef __IPHONE_8_0
         if(IS_OS_8_OR_LATER) {
@@ -475,11 +486,19 @@ Route *lastRouteShowed;
 /************** TableView *****************/
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //NSLog([NSString stringWithFormat:@"numbers of row %lu", (unsigned long)self.routes.count]);
-    return [self.routes count];
+    NSInteger count = 0;
+    NSUInteger tam = [self.routes count];
+    for (NSUInteger i = 0; i < tam; i++) {
+        Route *route = [self.routes objectAtIndex:i];
+        if ([route getRegion] == section) {
+            count++;
+        }
+    }
+    return count;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 6;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -492,15 +511,57 @@ Route *lastRouteShowed;
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(PathCellTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    Route *myRoute = [self.routes objectAtIndex:indexPath.row];
-    cell.title.text = [myRoute getName];
-    cell.distanceLabel.text = [NSString stringWithFormat:@"(%.1f km)",[myRoute getDist]];
-    //NSUInteger dificult =
-    cell.dificultImage.image = [self setDifficultIcon: [myRoute getDifficulty]];
-    NSUInteger i = [myRoute getId];
-    cell.tag = i;
+
+    NSUInteger counter = 0;
+    Route *myRoute = nil;
+    NSUInteger size = [self.routes count];
+    for (NSUInteger i = 0; i < size; i++) {
+         myRoute = [self.routes objectAtIndex:i];
+        if ([myRoute getRegion] == indexPath.section){
+            if (counter == indexPath.row) {
+                break;
+            }else
+                counter++;
+        }
+    }
+
+    if (myRoute != nil) {
+        cell.title.text = [myRoute getName];
+        cell.distanceLabel.text = [NSString stringWithFormat:@"(%.1f km)",[myRoute getDist]];
+        //NSUInteger dificult =
+        cell.dificultImage.image = [self setDifficultIcon: [myRoute getDifficulty]];
+        NSUInteger i = [myRoute getId];
+        cell.tag = i;
+    }
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    NSString *regionName;
+    switch (section){
+        case 0:
+            regionName = @"P. R. Anaga";
+            break;
+        case 1:
+            regionName = @"Zona Norte";
+            break;
+        case 2:
+            regionName = @"P. R. Teno";
+            break;
+        case 3:
+            regionName = @"Zona Sur";
+            break;
+        case 4:
+            regionName = @"P. N. Teide";
+            break;
+        case 5:
+            regionName = @"GR-131";
+            break;
+        default:
+            regionName= @"no region";
+    }
+    return regionName;
+}
 /*- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100.0f;
 }*/
@@ -520,21 +581,40 @@ Route *lastRouteShowed;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    NSLog(searchText);
+}
 #pragma mark - animations -
 
 -(void)showRightList{
     //NSLog(@"ShowList");
     [UIView animateWithDuration:0.25 animations:^{
-        CGRect originalFrame = [self currentScreenBoundsDependOnOrientation];
-        [self.pathList setFrame:CGRectMake(originalFrame.size.width - 254, originalFrame.origin.y, 254, originalFrame.size.height)];
+        //CGRect originalFrame = [self currentScreenBoundsDependOnOrientation];
+       
+        CGRect newframe =CGRectMake(self.pathList.frame.origin.x - 254, self.pathList.frame.origin.y, 254, self.pathList.frame.size.height);
+        NSLog([NSString stringWithFormat:@"newframe show: %@", NSStringFromCGRect(newframe)]);
+        // CGRect pos = self.pathList.frame;
+       // CGRect newframe = CGRectMake(pos.size.width -254, 0, 254, pos.size.height);
+        //[self.pathList.bou]
+        //self.pathList.frame = newframe;
+        [self.pathList setFrame:newframe];
+         //NSLog(@"original frame: %@,  listframe: %@", NSStringFromCGRect(originalFrame), NSStringFromCGRect(self.pathList.frame));
+        isHidden = NO;
     }];
 }
 
 -(void)hideRightList{
     //NSLog(@"HideList");
     [UIView animateWithDuration:0.25 animations:^{
-         CGRect originalFrame = [self currentScreenBoundsDependOnOrientation];
-         [self.pathList setFrame:CGRectMake(originalFrame.size.width, originalFrame.origin.y, 0, originalFrame.size.height)];
+       //  CGRect originalFrame = [self currentScreenBoundsDependOnOrientation];
+        CGRect newframe = CGRectMake(self.pathList.frame.origin.x + 254, self.pathList.frame.origin.y, 0, self.pathList.frame.size.height);
+        CGRect pos = self.pathList.frame;
+        //CGRect newframe = CGRectMake(pos.size.width, 0, 0, pos.size.height);
+                NSLog([NSString stringWithFormat:@"newframe hide: %@", NSStringFromCGRect(newframe)]);
+        //self.pathList.frame = newframe;
+        [self.pathList setFrame:newframe];
+                // NSLog(@"original frame: %@,  listframe: %@", NSStringFromCGRect(originalFrame), NSStringFromCGRect(self.pathList.frame));
+        isHidden = YES;
     }];
 }
 
@@ -543,6 +623,8 @@ Route *lastRouteShowed;
     
     CGRect screenBounds = [UIScreen mainScreen].bounds ;
     if(IS_OS_8_OR_LATER){
+    
+        NSLog([NSString stringWithFormat:@"Size screen %@", NSStringFromCGRect(screenBounds)]);
         return screenBounds ;
     }
     CGFloat width = CGRectGetWidth(screenBounds)  ;
@@ -559,7 +641,9 @@ Route *lastRouteShowed;
 
 - (IBAction)toggleList:(id)sender {
     CGRect rect = self.pathList.frame;
-    if (rect.size.width == 254){
+           NSLog([NSString stringWithFormat:@"togle initial rect %@", NSStringFromCGRect(rect)]);
+    //if (rect.size.width == 254){
+    if (!isHidden){
         [self hideRightList];
     }else{
         [self showRightList];
