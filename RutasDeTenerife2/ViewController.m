@@ -588,10 +588,15 @@ BOOL isHidden;
 
 -(void)showRightList{
     //NSLog(@"ShowList");
-    [UIView animateWithDuration:0.25 animations:^{
+    
+    /*[self.pathList layoutIfNeeded];
+    [self.pathList setNeedsUpdateConstraints];
+    [self.pathList updateConstraintsIfNeeded];*/
+    CGRect newframe =CGRectMake(self.pathList.frame.origin.x - 253, self.pathList.frame.origin.y, 254, self.pathList.frame.size.height);
+    [UIView animateWithDuration:0.25 delay:0.0 options:0   animations:^{
         //CGRect originalFrame = [self currentScreenBoundsDependOnOrientation];
        
-        CGRect newframe =CGRectMake(self.pathList.frame.origin.x - 254, self.pathList.frame.origin.y, 254, self.pathList.frame.size.height);
+        
         NSLog([NSString stringWithFormat:@"newframe show: %@", NSStringFromCGRect(newframe)]);
         // CGRect pos = self.pathList.frame;
        // CGRect newframe = CGRectMake(pos.size.width -254, 0, 254, pos.size.height);
@@ -599,21 +604,32 @@ BOOL isHidden;
         //self.pathList.frame = newframe;
         [self.pathList setFrame:newframe];
          //NSLog(@"original frame: %@,  listframe: %@", NSStringFromCGRect(originalFrame), NSStringFromCGRect(self.pathList.frame));
+        //[self.pathList layoutIfNeeded];
+    }completion:^(BOOL finished) {
         isHidden = NO;
-    }];
+    }
+     
+     ];
 }
 
 -(void)hideRightList{
     //NSLog(@"HideList");
+    /*[self.pathList layoutIfNeeded];
+    [self.pathList setNeedsUpdateConstraints];
+    [self.pathList updateConstraintsIfNeeded];*/
+            CGRect newframe = CGRectMake(self.pathList.frame.origin.x + 254, self.pathList.frame.origin.y, 0, self.pathList.frame.size.height);
     [UIView animateWithDuration:0.25 animations:^{
        //  CGRect originalFrame = [self currentScreenBoundsDependOnOrientation];
-        CGRect newframe = CGRectMake(self.pathList.frame.origin.x + 254, self.pathList.frame.origin.y, 0, self.pathList.frame.size.height);
-        CGRect pos = self.pathList.frame;
+
+        //CGRect pos = self.pathList.frame;
         //CGRect newframe = CGRectMake(pos.size.width, 0, 0, pos.size.height);
-                NSLog([NSString stringWithFormat:@"newframe hide: %@", NSStringFromCGRect(newframe)]);
+        NSLog([NSString stringWithFormat:@"newframe hide: %@", NSStringFromCGRect(newframe)]);
         //self.pathList.frame = newframe;
         [self.pathList setFrame:newframe];
                 // NSLog(@"original frame: %@,  listframe: %@", NSStringFromCGRect(originalFrame), NSStringFromCGRect(self.pathList.frame));
+        //[self.pathList layoutIfNeeded];
+        
+    } completion:^(BOOL finished) {
         isHidden = YES;
     }];
 }
