@@ -18,6 +18,7 @@
 
 
 @interface ViewController : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *panelWidth;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 - (IBAction)toggleList:(id)sender;
 

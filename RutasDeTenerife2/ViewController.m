@@ -25,6 +25,7 @@ UIImage *imageGreen;
 UIImage *imageBrown;
 Route *lastRouteShowed;
 BOOL isHidden;
+CGRect panelRect;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,19 +55,11 @@ BOOL isHidden;
     // Do any additional setup after loading the view, typically from a nib.
     
     //Hide panel
-    CGRect originalFrame = [self currentScreenBoundsDependOnOrientation];
-    //[self.pathList setBounds:CGRectMake(originalFrame.size.width, originalFrame.origin.y, 0, originalFrame.size.height)];
-    //[self.pathList setFrame:CGRectMake(originalFrame.size.width, originalFrame.origin.y, 0, originalFrame.size.height)];
-    CGRect rect = self.pathList.bounds;
-   // NSLog([NSString stringWithFormat:@"initial rect %@", NSStringFromCGRect(rect)]);
-    isHidden = YES;
-
-
+    self.panelWidth.constant = 0;
 }
 -(void)viewDidAppear:(BOOL)animated{
+    
     [super viewDidAppear:animated];
-    CGRect rect = self.pathList.frame;
-    NSLog([NSString stringWithFormat:@"initial rect %@", NSStringFromCGRect(rect)]);
     if (self.locationManager != nil){
     #ifdef __IPHONE_8_0
         if(IS_OS_8_OR_LATER) {
@@ -587,54 +580,20 @@ BOOL isHidden;
 #pragma mark - animations -
 
 -(void)showRightList{
-    //NSLog(@"ShowList");
-    
-    /*[self.pathList layoutIfNeeded];
-    [self.pathList setNeedsUpdateConstraints];
-    [self.pathList updateConstraintsIfNeeded];*/
-    CGRect newframe =CGRectMake(self.pathList.frame.origin.x - 253, self.pathList.frame.origin.y, 254, self.pathList.frame.size.height);
-    [UIView animateWithDuration:0.25 delay:0.0 options:0   animations:^{
-        //CGRect originalFrame = [self currentScreenBoundsDependOnOrientation];
-       
-        
-        NSLog([NSString stringWithFormat:@"newframe show: %@", NSStringFromCGRect(newframe)]);
-        // CGRect pos = self.pathList.frame;
-       // CGRect newframe = CGRectMake(pos.size.width -254, 0, 254, pos.size.height);
-        //[self.pathList.bou]
-        //self.pathList.frame = newframe;
-        [self.pathList setFrame:newframe];
-         //NSLog(@"original frame: %@,  listframe: %@", NSStringFromCGRect(originalFrame), NSStringFromCGRect(self.pathList.frame));
-        //[self.pathList layoutIfNeeded];
-    }completion:^(BOOL finished) {
-        isHidden = NO;
-    }
-     
-     ];
-}
-
--(void)hideRightList{
-    //NSLog(@"HideList");
-    /*[self.pathList layoutIfNeeded];
-    [self.pathList setNeedsUpdateConstraints];
-    [self.pathList updateConstraintsIfNeeded];*/
-            CGRect newframe = CGRectMake(self.pathList.frame.origin.x + 254, self.pathList.frame.origin.y, 0, self.pathList.frame.size.height);
+    self.panelWidth.constant = 254;
     [UIView animateWithDuration:0.25 animations:^{
-       //  CGRect originalFrame = [self currentScreenBoundsDependOnOrientation];
-
-        //CGRect pos = self.pathList.frame;
-        //CGRect newframe = CGRectMake(pos.size.width, 0, 0, pos.size.height);
-        NSLog([NSString stringWithFormat:@"newframe hide: %@", NSStringFromCGRect(newframe)]);
-        //self.pathList.frame = newframe;
-        [self.pathList setFrame:newframe];
-                // NSLog(@"original frame: %@,  listframe: %@", NSStringFromCGRect(originalFrame), NSStringFromCGRect(self.pathList.frame));
-        //[self.pathList layoutIfNeeded];
-        
-    } completion:^(BOOL finished) {
-        isHidden = YES;
+        [self.pathList layoutIfNeeded];
     }];
 }
 
--(CGRect)currentScreenBoundsDependOnOrientation
+-(void)hideRightList{
+    self.panelWidth.constant = 0;
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.pathList layoutIfNeeded];
+    }];
+}
+
+/*-(CGRect)currentScreenBoundsDependOnOrientation
 {
     
     CGRect screenBounds = [UIScreen mainScreen].bounds ;
@@ -653,13 +612,10 @@ BOOL isHidden;
         screenBounds.size = CGSizeMake(height, width);
     }
     return screenBounds ;
-}
+}*/
 
 - (IBAction)toggleList:(id)sender {
-    CGRect rect = self.pathList.frame;
-           NSLog([NSString stringWithFormat:@"togle initial rect %@", NSStringFromCGRect(rect)]);
-    //if (rect.size.width == 254){
-    if (!isHidden){
+    if (self.panelWidth.constant == 254){
         [self hideRightList];
     }else{
         [self showRightList];
