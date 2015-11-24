@@ -27,6 +27,8 @@ Route *lastRouteShowed;
 BOOL isHidden;
 CGRect panelRect;
 
+NSMutableArray *filteredData;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //[self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
@@ -95,6 +97,7 @@ CGRect panelRect;
 
 -(void)loadRoutes{
     self.routes = [[NSMutableArray alloc]init];
+    filteredData = [[NSMutableArray alloc]init];
     FMResultSet * results = [self.db getInfoMap];
     NSMutableArray *annotations = [[NSMutableArray alloc]init];
     while ([results next]) {
@@ -131,7 +134,8 @@ CGRect panelRect;
             [annotations addObject:marker2];
         }
         [self.routes addObject:route];
-     
+        [filteredData addObject:route]; //Filtered data
+        
         self.clusteringManager = [[FBClusteringManager alloc] initWithAnnotations:annotations];
         self.clusteringManager.delegate = self;
         //[self mapView:self.mapView regionDidChangeAnimated:NO];
@@ -480,9 +484,9 @@ CGRect panelRect;
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //NSLog([NSString stringWithFormat:@"numbers of row %lu", (unsigned long)self.routes.count]);
     NSInteger count = 0;
-    NSUInteger tam = [self.routes count];
+    NSUInteger tam = [filteredData count];
     for (NSUInteger i = 0; i < tam; i++) {
-        Route *route = [self.routes objectAtIndex:i];
+        Route *route = [filteredData objectAtIndex:i];
         if ([route getRegion] == section) {
             count++;
         }
@@ -507,9 +511,9 @@ CGRect panelRect;
 
     NSUInteger counter = 0;
     Route *myRoute = nil;
-    NSUInteger size = [self.routes count];
+    NSUInteger size = [filteredData count];
     for (NSUInteger i = 0; i < size; i++) {
-         myRoute = [self.routes objectAtIndex:i];
+         myRoute = [filteredData objectAtIndex:i];
         if ([myRoute getRegion] == indexPath.section){
             if (counter == indexPath.row) {
                 break;
@@ -555,6 +559,7 @@ CGRect panelRect;
     }
     return regionName;
 }
+
 /*- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100.0f;
 }*/
@@ -575,7 +580,32 @@ CGRect panelRect;
 }
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-    NSLog(searchText);
+
+    //NSLog(searchText);
+    if([searchText isEqualToString:@""] || searchText==nil) {
+        filteredData = [[NSMutableArray alloc]initWithArray:self.routes];
+        [self.searchBar resignFirstResponder];
+    }else{
+        filteredData = [[NSMutableArray alloc] init];
+        for (Route *route in self.routes) {
+            NSRange nameRange = [[route getName]rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if (nameRange.location != NSNotFound) {
+                [filteredData addObject:route];
+            }
+        }
+    }
+    [self.pathList reloadData];
+}
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    //NSLog(@"cancel button");
+    [self.searchBar resignFirstResponder];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.searchBar resignFirstResponder];
+}
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    [self.searchBar resignFirstResponder];
 }
 #pragma mark - animations -
 
@@ -593,6 +623,13 @@ CGRect panelRect;
     }];
 }
 
+
+/*-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    NSLog(@"Scrolling");
+    CGRect rect = self.searchBar.frame;
+    rect.origin.y = MIN(0, scrollView.contentOffset.y);
+    self.searchBar.frame = rect;
+}*/
 /*-(CGRect)currentScreenBoundsDependOnOrientation
 {
     
