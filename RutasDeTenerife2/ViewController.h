@@ -11,6 +11,7 @@
 #import "Database.h"
 #import "Route.h"
 #import "CustomKMLParser.h"
+#import "QuickInfoView.h"
 #import "FBAnnotationClustering/FBAnnotationClustering.h"
 
 #define METERS_PER_MILE 1609.344
@@ -18,6 +19,8 @@
 
 
 @interface ViewController : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+
+@property (weak, nonatomic) IBOutlet QuickInfoView *quickInfoView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *panelWidth;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;

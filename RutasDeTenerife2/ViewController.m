@@ -58,10 +58,13 @@ NSMutableArray *filteredData;
     
     //Hide panel
     self.panelWidth.constant = 0;
-}
--(void)viewDidAppear:(BOOL)animated{
     
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+
     [super viewDidAppear:animated];
+    [self.quickInfoView sizeToFit];
     if (self.locationManager != nil){
     #ifdef __IPHONE_8_0
         if(IS_OS_8_OR_LATER) {

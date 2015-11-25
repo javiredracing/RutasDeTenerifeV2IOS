@@ -21,6 +21,8 @@
 		9D741EA01BF4F2D5008AB780 /* RutasDeTenerife2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E9F1BF4F2D5008AB780 /* RutasDeTenerife2UITests.m */; };
 		9D74B0541BFDF0FB00A06E93 /* PathCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D74B0531BFDF0FB00A06E93 /* PathCell.xib */; };
 		9D74B0571BFDFB4300A06E93 /* PathCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D74B0561BFDFB4300A06E93 /* PathCellTableViewCell.m */; };
+		9D77D3DD1C05BCD600821854 /* QuickInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D77D3DC1C05BCD600821854 /* QuickInfo.xib */; };
+		9D77D3E01C05D20F00821854 /* QuickInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D77D3DF1C05D20F00821854 /* QuickInfoView.m */; };
 		9D7AD51E1BF5DC0000E87809 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD51D1BF5DC0000E87809 /* MapKit.framework */; };
 		9D7AD5201BF5EAE600E87809 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD51F1BF5EAE600E87809 /* CoreLocation.framework */; };
 		9D7AD5971BF5FA3700E87809 /* CustomKMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7AD5221BF5FA3600E87809 /* CustomKMLParser.m */; };
@@ -381,6 +383,9 @@
 		9D74B0531BFDF0FB00A06E93 /* PathCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PathCell.xib; sourceTree = "<group>"; };
 		9D74B0551BFDFB4300A06E93 /* PathCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathCellTableViewCell.h; sourceTree = "<group>"; };
 		9D74B0561BFDFB4300A06E93 /* PathCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathCellTableViewCell.m; sourceTree = "<group>"; };
+		9D77D3DC1C05BCD600821854 /* QuickInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuickInfo.xib; sourceTree = "<group>"; };
+		9D77D3DE1C05D20F00821854 /* QuickInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickInfoView.h; sourceTree = "<group>"; };
+		9D77D3DF1C05D20F00821854 /* QuickInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickInfoView.m; sourceTree = "<group>"; };
 		9D7AD51D1BF5DC0000E87809 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9D7AD51F1BF5EAE600E87809 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9D7AD5211BF5FA3600E87809 /* CustomKMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomKMLParser.h; sourceTree = "<group>"; };
@@ -802,6 +807,9 @@
 				9D74B0531BFDF0FB00A06E93 /* PathCell.xib */,
 				9D74B0551BFDFB4300A06E93 /* PathCellTableViewCell.h */,
 				9D74B0561BFDFB4300A06E93 /* PathCellTableViewCell.m */,
+				9D77D3DC1C05BCD600821854 /* QuickInfo.xib */,
+				9D77D3DE1C05D20F00821854 /* QuickInfoView.h */,
+				9D77D3DF1C05D20F00821854 /* QuickInfoView.m */,
 			);
 			path = RutasDeTenerife2;
 			sourceTree = "<group>";
@@ -1323,6 +1331,7 @@
 				9D7AD5BF1BF5FA3700E87809 /* i338.png in Resources */,
 				9D7AD7541BF5FA4A00E87809 /* pr-tf-12.kml in Resources */,
 				9D7AD78C1BF5FA4A00E87809 /* Tenerife.MalpaisGuimar.kml in Resources */,
+				9D77D3DD1C05BCD600821854 /* QuickInfo.xib in Resources */,
 				9D7AD78A1BF5FA4A00E87809 /* tenerife-pico-viejo-sendero-no9.kml in Resources */,
 				9D7AD7041BF5FA4A00E87809 /* PR-TF 10.1.kml in Resources */,
 				9D7AD5B11BF5FA3700E87809 /* i284.png in Resources */,
@@ -1597,6 +1606,7 @@
 				5955C8FB1BF7BD15003843B2 /* FBQuadTree.m in Sources */,
 				9D7AD5981BF5FA3700E87809 /* Database.m in Sources */,
 				5955C8FC1BF7BD15003843B2 /* FBQuadTreeNode.m in Sources */,
+				9D77D3E01C05D20F00821854 /* QuickInfoView.m in Sources */,
 				9D741E821BF4F2D5008AB780 /* ViewController.m in Sources */,
 				5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */,
 				9D7AD5FC1BF5FA3700E87809 /* FMDatabase.m in Sources */,

@@ -61,17 +61,25 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Guk-b0-KYN"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4c-D9-90A" customClass="QuickInfoView">
+                                <rect key="frame" x="236" y="20" width="129" height="63"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="g4c-D9-90A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="236" id="2jg-sc-5pg"/>
                             <constraint firstItem="VC4-fD-Qoo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4ZD-f1-iUi"/>
+                            <constraint firstItem="g4c-D9-90A" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6wW-eq-3UY"/>
                             <constraint firstItem="WcF-f3-Mr9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="AxK-eU-RWG"/>
                             <constraint firstItem="4e2-8E-6TT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GcL-jX-v7h"/>
                             <constraint firstItem="VC4-fD-Qoo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IKd-Fq-JaV"/>
                             <constraint firstAttribute="trailing" secondItem="VC4-fD-Qoo" secondAttribute="trailing" id="LZD-hS-w69"/>
                             <constraint firstItem="fS7-wl-xBF" firstAttribute="baseline" secondItem="4e2-8E-6TT" secondAttribute="baseline" id="PDb-vR-nOx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="g4c-D9-90A" secondAttribute="bottom" constant="517" id="Wc8-tF-9mc"/>
                             <constraint firstItem="VC4-fD-Qoo" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="cHk-lR-ND9"/>
+                            <constraint firstItem="g4c-D9-90A" firstAttribute="centerX" secondItem="VC4-fD-Qoo" secondAttribute="centerX" id="drg-2j-5gd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WcF-f3-Mr9" secondAttribute="bottom" id="hyO-2g-SGa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WcF-f3-Mr9" secondAttribute="trailing" constant="-20" id="lA2-pv-sDF"/>
                             <constraint firstItem="fS7-wl-xBF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="wpa-d2-BX7"/>
@@ -82,6 +90,7 @@
                         <outlet property="mapView" destination="VC4-fD-Qoo" id="mEl-Hi-pmO"/>
                         <outlet property="panelWidth" destination="72P-Nn-Bpd" id="xVC-cx-uJe"/>
                         <outlet property="pathList" destination="WcF-f3-Mr9" id="9tl-OG-JjN"/>
+                        <outlet property="quickInfoView" destination="g4c-D9-90A" id="yWM-qE-UoI"/>
                         <outlet property="searchBar" destination="ynh-H8-e0t" id="91e-HF-4se"/>
                     </connections>
                 </viewController>
