@@ -18,7 +18,7 @@
 }
 */
 
-/*-(id)initWithCoder:(NSCoder *)aDecoder{
+-(id)initWithCoder:(NSCoder *)aDecoder{
 
     if ((self = [super initWithCoder:aDecoder])){
         UIView *v = [[[NSBundle mainBundle] loadNibNamed:@"QuickInfo"
@@ -28,9 +28,9 @@
         [self addSubview:v];
     }
     return self;
-}*/
+}
 
--(id)awakeAfterUsingCoder:(NSCoder *)aDecoder{
+/*-(id)awakeAfterUsingCoder:(NSCoder *)aDecoder{
     
     // without this check you'll end up with a recursive loop - we need to know that we were loaded from our view xib vs the storyboard.
     // set the view tag in the MyView xib to be -999 and anything else in the storyboard.
@@ -50,11 +50,29 @@
     [v sizeToFit];
 
     // copy any other attribtues you want to set in the storyboard
+   NSMutableArray *constraints = [NSMutableArray array];
+    for(NSLayoutConstraint *constraint in self.constraints) {
+        id firstItem = constraint.firstItem;
+        id secondItem = constraint.secondItem;
+        if(firstItem == self) firstItem = self;
+        if(secondItem == self) secondItem = self;
+        [constraints addObject:[NSLayoutConstraint constraintWithItem:firstItem
+                                                            attribute:constraint.firstAttribute
+                                                            relatedBy:constraint.relation
+                                                               toItem:secondItem
+                                                            attribute:constraint.secondAttribute
+                                                           multiplier:constraint.multiplier
+                                                             constant:constraint.constant]];
+    }
+    for(UIView *subview in self.subviews) {
+        [self addSubview:subview];
+    }
+    [self addConstraints:constraints];
     
     // possibly copy any child constraints for width/height
     
     return v;
-}
+}*/
 
 /*-(id)initWithFrame:(CGRect)aRect
 {
