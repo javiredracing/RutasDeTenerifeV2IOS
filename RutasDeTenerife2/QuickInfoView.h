@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface QuickInfoView : UIView
+
+@property (weak, nonatomic) IBOutlet UIImageView *dificult;
+@property (weak, nonatomic) IBOutlet UILabel *distance;
+@property (weak, nonatomic) IBOutlet UIImageView *iconType;
+@property (weak, nonatomic) IBOutlet UILabel *title;
 @property (strong, nonatomic) IBOutlet UIView *infoView;
+
+-(void)changeContent: (NSString *)newTitle :(float )newDistance :(int) newDifficult : (int)newIconType;
 
 @end

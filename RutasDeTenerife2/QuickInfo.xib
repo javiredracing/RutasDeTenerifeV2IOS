@@ -7,7 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuickInfoView">
             <connections>
+                <outlet property="dificult" destination="21A-Mw-1Ir" id="x3j-y1-wp6"/>
+                <outlet property="distance" destination="DUk-5X-aDX" id="YLR-vC-49q"/>
+                <outlet property="iconType" destination="vaz-jj-ulc" id="GbQ-aV-emj"/>
                 <outlet property="infoView" destination="iN0-l3-epB" id="Scu-Tr-swy"/>
+                <outlet property="title" destination="C5W-bR-4ZP" id="ay1-EL-3Hp"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

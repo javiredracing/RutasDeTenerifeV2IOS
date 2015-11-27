@@ -24,7 +24,6 @@ UIImage *imageYellow;
 UIImage *imageGreen;
 UIImage *imageBrown;
 Route *lastRouteShowed;
-BOOL isHidden;
 CGRect panelRect;
 
 NSMutableArray *filteredData;
@@ -52,13 +51,19 @@ NSMutableArray *filteredData;
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(toggleList:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.pathList addGestureRecognizer:swipeRight];
+    //Tap over quickInfo View
+    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handleQuickInfoTap:)];
+    [self.quickInfoView addGestureRecognizer:singleFingerTap];
+    
     //TODO Get user location
     //http://ashishkakkad.com/2014/12/ios-8-map-kit-obj-c-get-users-location/
     // Do any additional setup after loading the view, typically from a nib.
     
-    //Hide panel
+    //Hide views
     self.panelWidth.constant = 0;
-    
+    self.quickInfoView.alpha = 0.0;
+    [self hideQuickInfo];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -373,7 +378,10 @@ NSMutableArray *filteredData;
                 [self.mapView addOverlay:polyLine];
                 });
             });
+        [self showQuickInfo:myroute];
         [self moveTo:pos];  //Center pos
+    }else{
+        [self hideQuickInfo];
     }
 }
 - (void)zoomInGesture: (CLLocationCoordinate2D)pos {
@@ -654,11 +662,35 @@ NSMutableArray *filteredData;
     return screenBounds ;
 }*/
 
+-(void)showQuickInfo: (Route *)myroute{
+        [self.quickInfoView changeContent:[myroute getName] :[myroute getDist] :[myroute getDifficulty] :[myroute approved]];
+    if (self.quickInfoView.hidden == YES){
+        self.quickInfoView.hidden= NO;
+        [UIView animateWithDuration:0.5 animations:^{
+            self.quickInfoView.alpha = 1.0;
+        }];
+    }
+    
+}
+-(void)hideQuickInfo{
+    if (self.quickInfoView.hidden == NO){
+        [UIView animateWithDuration:0.5 animations:^{
+            self.quickInfoView.alpha = 0.0;
+        }completion:^(BOOL finished) {
+            self.quickInfoView.hidden= YES;
+        }];
+    }
+}
+
 - (IBAction)toggleList:(id)sender {
     if (self.panelWidth.constant == 254){
         [self hideRightList];
     }else{
         [self showRightList];
     }
+}
+
+- (void)handleQuickInfoTap:(UITapGestureRecognizer *)recognizer {
+    NSLog(@"HOLA!");
 }
 @end

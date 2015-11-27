@@ -17,7 +17,7 @@
     // Drawing code
 }
 */
-
+//http://stackoverflow.com/questions/30335089/create-a-uiview-xib-and-reuse-in-storyboard
 -(id)initWithCoder:(NSCoder *)aDecoder{
 
     if ((self = [super initWithCoder:aDecoder])){
@@ -31,7 +31,7 @@
         // 1. load the interface
         [[NSBundle mainBundle] loadNibNamed:@"QuickInfo" owner:self options:nil];
         // 2. add as subview
-        [self.infoView sizeToFit];
+        //[self.infoView sizeToFit];
         [self addSubview:self.infoView];
         // 3. allow for autolayout
         [self.infoView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -103,5 +103,56 @@
     
     return self;
 }
+
+-(void)changeContent:(NSString *)newTitle :(float)newDistance :(int)newDifficult :(int)newIconType{
+    self.title.text = newTitle;
+    self.distance.text = [NSString stringWithFormat:@"%.1f Km", newDistance];
+    self.iconType.image = [self setTypeIcon:newIconType];
+    self.dificult.image = [self setDifficultIcon:newDifficult];
+}
+
+-(UIImage *)setTypeIcon :(int) approved{
+    UIImage *icon = nil;
+    switch (approved) {
+        case 0:
+            icon = [UIImage imageNamed:@"marker_sign_24_normal"];
+            break;
+        case 1:
+            icon = [UIImage imageNamed:@"marker_sign_24_green"];
+            break;
+        case 2:
+            icon = [UIImage imageNamed:@"marker_sign_24_yellow"];
+            break;
+        case 3:
+            icon = [UIImage imageNamed:@"marker_sign_24_red"];
+            break;
+        default:
+            icon = [UIImage imageNamed:@"marker_sign_24_normal"];
+            break;
+    }
+    return icon;
+}
+
+
+-(UIImage *)setDifficultIcon: (int)difficult{
+    
+    UIImage *image = nil;
+    switch (difficult) {
+        case 1:
+            image = [UIImage imageNamed:@"nivel_facil"];
+            break;
+        case 2:
+            image = [UIImage imageNamed:@"nivel_intermedio"];
+            break;
+        case 3:
+            image = [UIImage imageNamed:@"nivel_dificil"];
+            break;
+        default:
+            image = [UIImage imageNamed:@"nivel_intermedio"];
+            break;
+    }
+    return image;
+}
+
 
 @end
