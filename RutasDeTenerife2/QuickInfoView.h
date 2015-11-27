@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface QuickInfoView : UIView
+@property (strong, nonatomic) IBOutlet UIView *infoView;
 
 @end

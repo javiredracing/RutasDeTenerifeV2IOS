@@ -64,7 +64,7 @@ NSMutableArray *filteredData;
 -(void)viewDidAppear:(BOOL)animated{
 
     [super viewDidAppear:animated];
-    [self.quickInfoView sizeToFit];
+    //[self.quickInfoView sizeToFit];
     if (self.locationManager != nil){
     #ifdef __IPHONE_8_0
         if(IS_OS_8_OR_LATER) {

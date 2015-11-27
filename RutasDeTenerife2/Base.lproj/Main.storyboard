@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -38,14 +38,21 @@
                                     <action selector="deselect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9PA-fr-liK"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4c-D9-90A" customClass="QuickInfoView">
-                                <rect key="frame" x="235" y="20" width="129" height="63"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4c-D9-90A" customClass="QuickInfoView">
+                                <rect key="frame" x="235" y="15" width="129" height="63"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="RqB-rL-09R"/>
                                     <constraint firstAttribute="width" priority="250" constant="129" id="edt-Ns-9WE"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" red="0.88498568123888244" green="1" blue="0.55594655469227194" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WcF-f3-Mr9">
                                 <rect key="frame" x="360" y="0.0" width="240" height="600"/>
@@ -82,6 +89,7 @@
                             <constraint firstAttribute="trailing" secondItem="VC4-fD-Qoo" secondAttribute="trailing" id="LZD-hS-w69"/>
                             <constraint firstItem="g4c-D9-90A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MT6-GV-PDT"/>
                             <constraint firstItem="fS7-wl-xBF" firstAttribute="baseline" secondItem="4e2-8E-6TT" secondAttribute="baseline" id="PDb-vR-nOx"/>
+                            <constraint firstItem="g4c-D9-90A" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="15" id="bG9-UN-ffc"/>
                             <constraint firstItem="VC4-fD-Qoo" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="cHk-lR-ND9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WcF-f3-Mr9" secondAttribute="bottom" id="hyO-2g-SGa"/>
                             <constraint firstItem="g4c-D9-90A" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jvL-t6-dOe"/>
@@ -89,6 +97,11 @@
                             <constraint firstItem="fS7-wl-xBF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="wpa-d2-BX7"/>
                             <constraint firstItem="4e2-8E-6TT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="yEp-cC-Rz4"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="jvL-t6-dOe"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="VC4-fD-Qoo" id="mEl-Hi-pmO"/>
