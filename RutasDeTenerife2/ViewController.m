@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "CoreText/CoreText.h"
 #import "PathCellTableViewCell.h"
+#import "MenuCell.h"
 
 
 @interface ViewController ()
@@ -48,9 +49,15 @@ NSMutableArray *filteredData;
     [self loadRoutes];
     
     //Gestures to sidepanel
-    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(toggleList:)];
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(deselect:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.pathList addGestureRecognizer:swipeRight];
+    
+    
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(toggleList:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.menuList addGestureRecognizer:swipeLeft];
+    
     //Tap over quickInfo View
     UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(handleQuickInfoTap:)];
@@ -62,6 +69,7 @@ NSMutableArray *filteredData;
     
     //Hide views
     self.panelWidth.constant = 0;
+    self.menuWidth.constant = 0;
     self.quickInfoView.alpha = 0.0;
     [self hideQuickInfo];
 }
@@ -321,9 +329,7 @@ NSMutableArray *filteredData;
     return image;
 }
 
-- (IBAction)deselect:(id)sender {
-    
-   }
+
 
 /**Force didDeselectAnnotationView*/
 /*-(void)closePath{
@@ -495,78 +501,107 @@ NSMutableArray *filteredData;
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //NSLog([NSString stringWithFormat:@"numbers of row %lu", (unsigned long)self.routes.count]);
     NSInteger count = 0;
-    NSUInteger tam = [filteredData count];
-    for (NSUInteger i = 0; i < tam; i++) {
-        Route *route = [filteredData objectAtIndex:i];
-        if ([route getRegion] == section) {
-            count++;
+    if (tableView.tag == 1){
+        NSUInteger tam = [filteredData count];
+        for (NSUInteger i = 0; i < tam; i++) {
+            Route *route = [filteredData objectAtIndex:i];
+            if ([route getRegion] == section) {
+                count++;
+            }
         }
+    }else{
+        count = 7;
     }
     return count;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 6;
+    NSInteger count = 1;
+    if (tableView.tag == 1)
+        count = 6;
+    return count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    PathCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
-    if (!cell){
-        [self.pathList registerNib:[UINib nibWithNibName:@"PathCell" bundle:nil] forCellReuseIdentifier:@"myCell"];
-        cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
+    if (tableView.tag == 0) {
+        MenuCell *cell = (MenuCell *)[tableView dequeueReusableCellWithIdentifier:@"menuCell"];
+        if (!cell){
+            /*[self.menuList registerNib:[UINib nibWithNibName:@"MenuCell" bundle:nil] forCellReuseIdentifier:@"menuCell"];
+            cell = [tableView dequeueReusableCellWithIdentifier:@"menuCell"];
+            return cell;*/
+            NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"MenuCell" owner:self options:nil];
+            cell = [nibArray objectAtIndex:0];
+        }
+        return cell;
+    }else{
+        PathCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
+        if (!cell){
+            [self.pathList registerNib:[UINib nibWithNibName:@"PathCell" bundle:nil] forCellReuseIdentifier:@"myCell"];
+            cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
+        }
+        return cell;
     }
-       return cell;
+    return nil;
 }
 
--(void)tableView:(UITableView *)tableView willDisplayCell:(PathCellTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    NSUInteger counter = 0;
-    Route *myRoute = nil;
-    NSUInteger size = [filteredData count];
-    for (NSUInteger i = 0; i < size; i++) {
-         myRoute = [filteredData objectAtIndex:i];
-        if ([myRoute getRegion] == indexPath.section){
-            if (counter == indexPath.row) {
-                break;
-            }else
-                counter++;
+    if (tableView.tag == 0) {
+        MenuCell *newCell = (MenuCell *)cell;
+        
+        [self fillMenuCell:newCell :indexPath.row];
+    }else{
+        NSUInteger counter = 0;
+        Route *myRoute = nil;
+        NSUInteger size = [filteredData count];
+        for (NSUInteger i = 0; i < size; i++) {
+             myRoute = [filteredData objectAtIndex:i];
+            if ([myRoute getRegion] == indexPath.section){
+                if (counter == indexPath.row) {
+                    break;
+                }else
+                    counter++;
+            }
         }
-    }
 
-    if (myRoute != nil) {
-        cell.title.text = [myRoute getName];
-        cell.distanceLabel.text = [NSString stringWithFormat:@"(%.1f km)",[myRoute getDist]];
-        //NSUInteger dificult =
-        cell.dificultImage.image = [self setDifficultIcon: [myRoute getDifficulty]];
-        NSUInteger i = [myRoute getId];
-        cell.tag = i;
+        if (myRoute != nil) {
+            PathCellTableViewCell *newCell = (PathCellTableViewCell *)cell;
+            newCell.title.text = [myRoute getName];
+            newCell.distanceLabel.text = [NSString stringWithFormat:@"(%.1f km)",[myRoute getDist]];
+            //NSUInteger dificult =
+            newCell.dificultImage.image = [self setDifficultIcon: [myRoute getDifficulty]];
+            NSUInteger i = [myRoute getId];
+            cell.tag = i;
+        }
     }
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    
-    NSString *regionName;
-    switch (section){
-        case 0:
-            regionName = @"P. R. Anaga";
-            break;
-        case 1:
-            regionName = @"Zona Norte";
-            break;
-        case 2:
-            regionName = @"P. R. Teno";
-            break;
-        case 3:
-            regionName = @"Zona Sur";
-            break;
-        case 4:
-            regionName = @"P. N. Teide";
-            break;
-        case 5:
-            regionName = @"GR-131";
-            break;
-        default:
-            regionName= @"no region";
+
+    NSString *regionName = nil;
+    if (tableView.tag == 1){
+        switch (section){
+            case 0:
+                regionName = @"P. R. Anaga";
+                break;
+            case 1:
+                regionName = @"Zona Norte";
+                break;
+            case 2:
+                regionName = @"P. R. Teno";
+                break;
+            case 3:
+                regionName = @"Zona Sur";
+                break;
+            case 4:
+                regionName = @"P. N. Teide";
+                break;
+            case 5:
+                regionName = @"GR-131";
+                break;
+            default:
+                regionName= @"no region";
+        }
     }
     return regionName;
 }
@@ -576,17 +611,25 @@ NSMutableArray *filteredData;
 }*/
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 102.0;
+    CGFloat height = 94.0f;
+    if (tableView.tag == 1) {
+        height = 102.0f;
+    }
+    return height;
 }
 
 #pragma mark - UITableView Delegate -
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    PathCellTableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
-    NSUInteger identifier = cell.tag;
-    Route *r = [self findRouteById:identifier];
-    CLLocationCoordinate2D pos = [r getFirstPoint];
-    [self clickAction:r :pos ];
+    if (tableView.tag == 1){
+        PathCellTableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+        NSUInteger identifier = cell.tag;
+        Route *r = [self findRouteById:identifier];
+        CLLocationCoordinate2D pos = [r getFirstPoint];
+        [self clickAction:r :pos ];
+    }else{
+        [self actionMenu:indexPath.row];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -633,7 +676,19 @@ NSMutableArray *filteredData;
         [self.pathList layoutIfNeeded];
     }];
 }
+-(void)showLeftMenu{
+    self.menuWidth.constant = 74;
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.pathList layoutIfNeeded];
+    }];
+}
 
+-(void)hideLeftMenu{
+    self.menuWidth.constant = 0;
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.pathList layoutIfNeeded];
+    }];
+}
 
 /*-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     NSLog(@"Scrolling");
@@ -683,6 +738,13 @@ NSMutableArray *filteredData;
 }
 
 - (IBAction)toggleList:(id)sender {
+    if (self.menuWidth.constant == 74){
+        [self hideLeftMenu];
+    }else{
+        [self showLeftMenu];
+    }
+}
+- (IBAction)deselect:(id)sender {
     if (self.panelWidth.constant == 254){
         [self hideRightList];
     }else{
@@ -693,4 +755,105 @@ NSMutableArray *filteredData;
 - (void)handleQuickInfoTap:(UITapGestureRecognizer *)recognizer {
     NSLog(@"HOLA!");
 }
+
+-(void)fillMenuCell :(MenuCell *)cell :(NSInteger)index{
+    switch (index) {
+        case 0:
+            cell.icon.image = [UIImage imageNamed:@"close"];
+            cell.iconTitle.text = @"Close";
+            break;
+        case 1:
+            cell.icon.image = [UIImage imageNamed:@"icon_my_pos64"];
+            cell.iconTitle.text = @"My pos";
+            break;
+        case 2:
+            cell.icon.image = [UIImage imageNamed:@"map64"];
+            cell.iconTitle.text = @"Map";
+            break;
+        case 3:
+            cell.icon.image = [UIImage imageNamed:@"simple_filter_64"];
+            cell.iconTitle.text = @"Filter";
+            break;
+        case 4:
+            cell.icon.image = [UIImage imageNamed:@"info64"];
+            cell.iconTitle.text = @"Info";
+            break;
+        case 5:
+            cell.icon.image = [UIImage imageNamed:@"custom_share_64"];
+            cell.iconTitle.text = @"Share";
+            break;
+        case 6:
+            cell.icon.image = [UIImage imageNamed:@"unlock"];
+            cell.iconTitle.text = @"Premium";
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)actionMenu:(NSInteger)index{
+
+    switch (index) {
+        case 0: //Close
+            [self toggleList:nil];
+            break;
+        case 1: //My pos
+            if (self.locationManager.location != nil){
+                CLLocationCoordinate2D loc = [self.locationManager.location coordinate];
+                [self moveTo:loc];
+            }else
+                NSLog(@"Location no available");
+            break;
+        case 2: //Change map type
+            if ([self.mapView mapType] == MKMapTypeSatellite) {
+                  [self.mapView setMapType: MKMapTypeHybrid];
+            } else {
+                if ([self.mapView mapType] == MKMapTypeHybrid) {
+                    [self.mapView setMapType: MKMapTypeStandard];
+                } else {
+                    [self.mapView setMapType: MKMapTypeSatellite];
+                }
+            }
+            break;
+        case 3: //Filter
+            
+            break;
+        case 4: //Info
+            
+            break;
+        case 5: //share
+            [self shareAction];
+            break;
+        case 6: //premium
+            
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)shareAction{
+    UIImage *shareImage = [UIImage imageNamed:@"logo"];
+    NSURL *shareUrl = [NSURL URLWithString:@"http://proyectoislarenovable.iter.es/el-juego/"];
+    NSArray *activityItems = [NSArray arrayWithObjects:@"Rutas de Tenerife", shareImage, shareUrl, nil];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    activityViewController.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeSaveToCameraRoll, UIActivityTypePostToVimeo, UIActivityTypePostToFlickr, /*UIActivityTypeAssignToContact, */UIActivityTypeAddToReadingList];
+    //-- define the activity view completion handler
+    //activityViewController.completionHandler = ^(NSString *activityType, BOOL completed){
+   /* activityViewController.completionWithItemsHandler = ^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //UIAlertViewQuick(@"Activity Status", activityType, @"OK");
+            NSLog(@"send");
+        });
+        if (completed){
+            NSLog(@"The Activity: %@ was completed", activityType);
+        }else{
+            NSLog(@"The Activity: %@ was NOT completed", activityType);
+        }
+      };*/
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
 @end

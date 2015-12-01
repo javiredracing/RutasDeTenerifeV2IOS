@@ -11,6 +11,8 @@
 		5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F31BF7BD15003843B2 /* FBClusteringManager.m */; };
 		5955C8FB1BF7BD15003843B2 /* FBQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F51BF7BD15003843B2 /* FBQuadTree.m */; };
 		5955C8FC1BF7BD15003843B2 /* FBQuadTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F71BF7BD15003843B2 /* FBQuadTreeNode.m */; };
+		9D6A565B1C0D9CB8009FDC7E /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6A565A1C0D9CB8009FDC7E /* MenuCell.xib */; };
+		9D6A565E1C0D9F1D009FDC7E /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6A565D1C0D9F1D009FDC7E /* MenuCell.m */; };
 		9D741E7C1BF4F2D5008AB780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E7B1BF4F2D5008AB780 /* main.m */; };
 		9D741E7F1BF4F2D5008AB780 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E7E1BF4F2D5008AB780 /* AppDelegate.m */; };
 		9D741E821BF4F2D5008AB780 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E811BF4F2D5008AB780 /* ViewController.m */; };
@@ -364,6 +366,9 @@
 		5955C8F51BF7BD15003843B2 /* FBQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBQuadTree.m; sourceTree = "<group>"; };
 		5955C8F61BF7BD15003843B2 /* FBQuadTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBQuadTreeNode.h; sourceTree = "<group>"; };
 		5955C8F71BF7BD15003843B2 /* FBQuadTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBQuadTreeNode.m; sourceTree = "<group>"; };
+		9D6A565A1C0D9CB8009FDC7E /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		9D6A565C1C0D9F1D009FDC7E /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		9D6A565D1C0D9F1D009FDC7E /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
 		9D741E771BF4F2D5008AB780 /* RutasDeTenerife2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RutasDeTenerife2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D741E7B1BF4F2D5008AB780 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D741E7D1BF4F2D5008AB780 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -810,6 +815,9 @@
 				9D77D3DC1C05BCD600821854 /* QuickInfo.xib */,
 				9D77D3DE1C05D20F00821854 /* QuickInfoView.h */,
 				9D77D3DF1C05D20F00821854 /* QuickInfoView.m */,
+				9D6A565A1C0D9CB8009FDC7E /* MenuCell.xib */,
+				9D6A565C1C0D9F1D009FDC7E /* MenuCell.h */,
+				9D6A565D1C0D9F1D009FDC7E /* MenuCell.m */,
 			);
 			path = RutasDeTenerife2;
 			sourceTree = "<group>";
@@ -1275,6 +1283,7 @@
 			files = (
 				9D7AD5E41BF5FA3700E87809 /* nivel_dificil.png in Resources */,
 				9D7AD78E1BF5FA4A00E87809 /* tfpr25.kml in Resources */,
+				9D6A565B1C0D9CB8009FDC7E /* MenuCell.xib in Resources */,
 				9D7AD7591BF5FA4A00E87809 /* pr-tf-3.gpx in Resources */,
 				9D7AD77F1BF5FA4A00E87809 /* sl-tf-60.gpx in Resources */,
 				9D7AD6CD1BF5FA4A00E87809 /* 03-roques-garcia.kml in Resources */,
@@ -1614,6 +1623,7 @@
 				9D7AD6001BF5FA3700E87809 /* FMResultSet.m in Sources */,
 				9D741E7F1BF4F2D5008AB780 /* AppDelegate.m in Sources */,
 				9D7AD5FE1BF5FA3700E87809 /* FMDatabasePool.m in Sources */,
+				9D6A565E1C0D9F1D009FDC7E /* MenuCell.m in Sources */,
 				9D7AD5FD1BF5FA3700E87809 /* FMDatabaseAdditions.m in Sources */,
 				9D741E7C1BF4F2D5008AB780 /* main.m in Sources */,
 				9D7AD5FF1BF5FA3700E87809 /* FMDatabaseQueue.m in Sources */,
