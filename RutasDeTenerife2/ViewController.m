@@ -10,7 +10,7 @@
 #import "CoreText/CoreText.h"
 #import "PathCellTableViewCell.h"
 #import "MenuCell.h"
-
+#import "ExtendedInfoViewController.h"
 
 @interface ViewController ()
 
@@ -725,8 +725,8 @@ NSMutableArray *filteredData;
             self.quickInfoView.alpha = 1.0;
         }];
     }
-    
 }
+
 -(void)hideQuickInfo{
     if (self.quickInfoView.hidden == NO){
         [UIView animateWithDuration:0.5 animations:^{
@@ -754,6 +754,10 @@ NSMutableArray *filteredData;
 
 - (void)handleQuickInfoTap:(UITapGestureRecognizer *)recognizer {
     NSLog(@"HOLA!");
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ExtendedInfoViewController *extendedInfoVC =[storyboard instantiateViewControllerWithIdentifier:@"ExtendedInfo"];
+    extendedInfoVC.route = lastRouteShowed;
+    [self presentViewController:extendedInfoVC animated:YES completion:nil];
 }
 
 -(void)fillMenuCell :(MenuCell *)cell :(NSInteger)index{

@@ -336,6 +336,8 @@
 		9D7AD7921BF600F500E87809 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD7911BF600F500E87809 /* libsqlite3.tbd */; };
 		9D7AD7941BF6119500E87809 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD7931BF6119500E87809 /* CoreGraphics.framework */; };
 		9D7AD7961BF6119E00E87809 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD7951BF6119E00E87809 /* UIKit.framework */; };
+		9D82A30B1C0F181400F8DDFE /* ExtendedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82A30A1C0F181400F8DDFE /* ExtendedInfoViewController.m */; };
+		9D82A30E1C0F2DB100F8DDFE /* RoundRectPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */; };
 		9D96DB881BF9E0C8008FEA35 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D96DB871BF9E0C8008FEA35 /* CoreText.framework */; };
 /* End PBXBuildFile section */
 
@@ -711,6 +713,10 @@
 		9D7AD7911BF600F500E87809 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9D7AD7931BF6119500E87809 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9D7AD7951BF6119E00E87809 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9D82A3091C0F181400F8DDFE /* ExtendedInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedInfoViewController.h; sourceTree = "<group>"; };
+		9D82A30A1C0F181400F8DDFE /* ExtendedInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedInfoViewController.m; sourceTree = "<group>"; };
+		9D82A30C1C0F2DB100F8DDFE /* RoundRectPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundRectPresentationController.h; sourceTree = "<group>"; };
+		9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundRectPresentationController.m; sourceTree = "<group>"; };
 		9D96DB871BF9E0C8008FEA35 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -818,6 +824,10 @@
 				9D6A565A1C0D9CB8009FDC7E /* MenuCell.xib */,
 				9D6A565C1C0D9F1D009FDC7E /* MenuCell.h */,
 				9D6A565D1C0D9F1D009FDC7E /* MenuCell.m */,
+				9D82A3091C0F181400F8DDFE /* ExtendedInfoViewController.h */,
+				9D82A30A1C0F181400F8DDFE /* ExtendedInfoViewController.m */,
+				9D82A30C1C0F2DB100F8DDFE /* RoundRectPresentationController.h */,
+				9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */,
 			);
 			path = RutasDeTenerife2;
 			sourceTree = "<group>";
@@ -1619,10 +1629,12 @@
 				9D741E821BF4F2D5008AB780 /* ViewController.m in Sources */,
 				5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */,
 				9D7AD5FC1BF5FA3700E87809 /* FMDatabase.m in Sources */,
+				9D82A30E1C0F2DB100F8DDFE /* RoundRectPresentationController.m in Sources */,
 				9D7AD6011BF5FA3700E87809 /* Route.m in Sources */,
 				9D7AD6001BF5FA3700E87809 /* FMResultSet.m in Sources */,
 				9D741E7F1BF4F2D5008AB780 /* AppDelegate.m in Sources */,
 				9D7AD5FE1BF5FA3700E87809 /* FMDatabasePool.m in Sources */,
+				9D82A30B1C0F181400F8DDFE /* ExtendedInfoViewController.m in Sources */,
 				9D6A565E1C0D9F1D009FDC7E /* MenuCell.m in Sources */,
 				9D7AD5FD1BF5FA3700E87809 /* FMDatabaseAdditions.m in Sources */,
 				9D741E7C1BF4F2D5008AB780 /* main.m in Sources */,
