@@ -71,6 +71,11 @@ NSMutableArray *filteredData;
     self.panelWidth.constant = 0;
     self.menuWidth.constant = 0;
     self.quickInfoView.alpha = 0.0;
+    /*self.quickInfoView.layer.shadowColor = [[UIColor blackColor]CGColor];
+    self.quickInfoView.layer.shadowOffset = CGSizeMake(0, 10);
+    self.quickInfoView.layer.shadowRadius = 10;
+    self.quickInfoView.layer.shadowOpacity = 0.5;*/
+    self.quickInfoView.layer.borderColor = [UIColor redColor].CGColor;
     [self hideQuickInfo];
 }
 
