@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -134,7 +135,7 @@
                         <viewControllerLayoutGuide type="top" id="7qs-m5-nkb"/>
                         <viewControllerLayoutGuide type="bottom" id="175-Cf-v59"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nvE-pM-gWc">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="nvE-pM-gWc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -148,19 +149,24 @@
                                     <action selector="closeBt:" destination="Pz6-LV-gq4" eventType="touchUpInside" id="iL2-hp-ELE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb4-7e-IGc">
-                                <rect key="frame" x="279" y="241" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb4-7e-IGc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
+                                <color key="backgroundColor" red="1" green="0.98058520260000004" blue="0.33119641820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Jb4-7e-IGc" secondAttribute="height" multiplier="600:77" id="sqP-oa-KEe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.46636345140000002" green="1" blue="0.98125269790000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Jb4-7e-IGc" firstAttribute="centerX" secondItem="cVf-lO-Xm1" secondAttribute="centerX" id="1Pw-kk-WI7"/>
+                            <constraint firstItem="Jb4-7e-IGc" firstAttribute="top" secondItem="nvE-pM-gWc" secondAttribute="topMargin" id="0J5-XB-JjG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jb4-7e-IGc" secondAttribute="trailing" constant="-20" id="Map-bv-ooj"/>
                             <constraint firstItem="cVf-lO-Xm1" firstAttribute="centerX" secondItem="nvE-pM-gWc" secondAttribute="centerX" id="RFl-1K-Ae6"/>
                             <constraint firstItem="cVf-lO-Xm1" firstAttribute="centerY" secondItem="nvE-pM-gWc" secondAttribute="centerY" id="SM3-qm-193"/>
-                            <constraint firstItem="cVf-lO-Xm1" firstAttribute="top" secondItem="Jb4-7e-IGc" secondAttribute="bottom" constant="23" id="THm-Ju-3I2"/>
+                            <constraint firstItem="Jb4-7e-IGc" firstAttribute="leading" secondItem="nvE-pM-gWc" secondAttribute="leadingMargin" constant="-20" id="Yqw-E0-Ido"/>
                         </constraints>
                     </view>
                     <connections>
@@ -169,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aB-Eg-nu5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="438"/>
+            <point key="canvasLocation" x="950" y="538"/>
         </scene>
     </scenes>
 </document>

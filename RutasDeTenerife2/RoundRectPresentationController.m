@@ -62,8 +62,15 @@
 
 -(CGRect)frameOfPresentedViewInContainerView{
     CGFloat size = 280;
+    CGFloat heightSize = 440;
+     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPhone) {
+         size = 380;
+         heightSize = 540;
+     }
     CGRect frame = CGRectMake((self.containerView.frame.size.width - size)/2,
-     (self.containerView.frame.size.height - size) / 2, size, size);
+     (self.containerView.frame.size.height - heightSize) / 2, size, heightSize);
+    NSLog(NSStringFromCGRect(frame));
+
     return frame;
 }
 
