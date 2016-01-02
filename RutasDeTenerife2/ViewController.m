@@ -758,7 +758,7 @@ NSMutableArray *filteredData;
 }
 
 - (void)handleQuickInfoTap:(UITapGestureRecognizer *)recognizer {
-    NSLog(@"HOLA!");
+    //NSLog(@"HOLA!");
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ExtendedInfoViewController *extendedInfoVC =[storyboard instantiateViewControllerWithIdentifier:@"ExtendedInfo"];
     extendedInfoVC.route = lastRouteShowed;

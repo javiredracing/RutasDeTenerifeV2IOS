@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -135,7 +136,7 @@
                         <viewControllerLayoutGuide type="top" id="7qs-m5-nkb"/>
                         <viewControllerLayoutGuide type="bottom" id="175-Cf-v59"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nvE-pM-gWc">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="nvE-pM-gWc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -173,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aB-Eg-nu5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="438"/>
+            <point key="canvasLocation" x="950" y="538"/>
         </scene>
     </scenes>
 </document>
