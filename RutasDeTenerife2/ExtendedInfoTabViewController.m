@@ -1,21 +1,21 @@
 //
-//  ExtendedInfoViewController.m
+//  ExtendedInfoTabViewController.m
 //  RutasDeTenerife2
 //
-//  Created by javi on 2/12/15.
-//  Copyright © 2015 JAVI. All rights reserved.
+//  Created by Javi on 3/1/16.
+//  Copyright © 2016 JAVI. All rights reserved.
 //
 
-#import "ExtendedInfoViewController.h"
-//#import "RoundRectPresentationController.h"
+#import "ExtendedInfoTabViewController.h"
+#import "RoundRectPresentationController.h"
 
-@interface ExtendedInfoViewController ()/*<UIViewControllerTransitioningDelegate>*/
+@interface ExtendedInfoTabViewController ()<UIViewControllerTransitioningDelegate>
 
 @end
-//https://github.com/bricklife/PresentationControllerSample
-@implementation ExtendedInfoViewController
 
-/*-(instancetype) initWithCoder:(NSCoder *)aDecoder{
+@implementation ExtendedInfoTabViewController
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if (self) {
         if ([self respondsToSelector:@selector(setTransitioningDelegate:)]){
@@ -24,12 +24,11 @@
         }
     }
     return self;
-}*/
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.info.text = [self.route getName];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,13 +46,10 @@
 }
 */
 
-- (IBAction)closeBt:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+#pragma mark - UIViewControllerTransitioningDelegate
+-(UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source{
+    
+    return [[RoundRectPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
 }
 
-/*#pragma mark - UIViewControllerTransitioningDelegate
--(UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source{
-
-    return [[RoundRectPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
-}*/
 @end

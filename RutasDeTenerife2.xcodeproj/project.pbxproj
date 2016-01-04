@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5953540A1C39E32100B83FD2 /* ExtendedInfoTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 595354091C39E32100B83FD2 /* ExtendedInfoTabViewController.m */; };
 		5955C8F91BF7BD15003843B2 /* FBAnnotationCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F01BF7BD15003843B2 /* FBAnnotationCluster.m */; };
 		5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F31BF7BD15003843B2 /* FBClusteringManager.m */; };
 		5955C8FB1BF7BD15003843B2 /* FBQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F51BF7BD15003843B2 /* FBQuadTree.m */; };
@@ -359,6 +360,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		595354081C39E32100B83FD2 /* ExtendedInfoTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedInfoTabViewController.h; sourceTree = "<group>"; };
+		595354091C39E32100B83FD2 /* ExtendedInfoTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedInfoTabViewController.m; sourceTree = "<group>"; };
 		5955C8EF1BF7BD15003843B2 /* FBAnnotationCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAnnotationCluster.h; sourceTree = "<group>"; };
 		5955C8F01BF7BD15003843B2 /* FBAnnotationCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAnnotationCluster.m; sourceTree = "<group>"; };
 		5955C8F11BF7BD15003843B2 /* FBAnnotationClustering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAnnotationClustering.h; sourceTree = "<group>"; };
@@ -828,6 +831,8 @@
 				9D82A30A1C0F181400F8DDFE /* ExtendedInfoViewController.m */,
 				9D82A30C1C0F2DB100F8DDFE /* RoundRectPresentationController.h */,
 				9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */,
+				595354081C39E32100B83FD2 /* ExtendedInfoTabViewController.h */,
+				595354091C39E32100B83FD2 /* ExtendedInfoTabViewController.m */,
 			);
 			path = RutasDeTenerife2;
 			sourceTree = "<group>";
@@ -1639,6 +1644,7 @@
 				9D7AD5FD1BF5FA3700E87809 /* FMDatabaseAdditions.m in Sources */,
 				9D741E7C1BF4F2D5008AB780 /* main.m in Sources */,
 				9D7AD5FF1BF5FA3700E87809 /* FMDatabaseQueue.m in Sources */,
+				5953540A1C39E32100B83FD2 /* ExtendedInfoTabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
