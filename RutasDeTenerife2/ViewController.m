@@ -11,7 +11,7 @@
 #import "PathCellTableViewCell.h"
 #import "MenuCell.h"
 //#import "ExtendedInfoViewController.h"
-#import "ExtendedInfoTabViewController.h"
+#import "ExtInfoNavViewController.h"
 
 @interface ViewController ()
 
@@ -761,7 +761,7 @@ NSMutableArray *filteredData;
 - (void)handleQuickInfoTap:(UITapGestureRecognizer *)recognizer {
     //NSLog(@"HOLA!");
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ExtendedInfoTabViewController *extendedInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"ExtendedInfoTab"];
+    ExtInfoNavViewController *extendedInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"ExtendedInfoNav"];
     //ExtendedInfoViewController *extendedInfoVC =[storyboard instantiateViewControllerWithIdentifier:@"ExtendedInfo"];
     extendedInfoVC.route = lastRouteShowed;
     [self presentViewController:extendedInfoVC animated:YES completion:nil];

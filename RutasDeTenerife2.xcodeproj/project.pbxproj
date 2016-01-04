@@ -12,6 +12,7 @@
 		5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F31BF7BD15003843B2 /* FBClusteringManager.m */; };
 		5955C8FB1BF7BD15003843B2 /* FBQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F51BF7BD15003843B2 /* FBQuadTree.m */; };
 		5955C8FC1BF7BD15003843B2 /* FBQuadTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F71BF7BD15003843B2 /* FBQuadTreeNode.m */; };
+		9D01091C1C3AA37200D2E389 /* ExtInfoNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D01091B1C3AA37200D2E389 /* ExtInfoNavViewController.m */; };
 		9D6A565B1C0D9CB8009FDC7E /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6A565A1C0D9CB8009FDC7E /* MenuCell.xib */; };
 		9D6A565E1C0D9F1D009FDC7E /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6A565D1C0D9F1D009FDC7E /* MenuCell.m */; };
 		9D741E7C1BF4F2D5008AB780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E7B1BF4F2D5008AB780 /* main.m */; };
@@ -371,6 +372,8 @@
 		5955C8F51BF7BD15003843B2 /* FBQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBQuadTree.m; sourceTree = "<group>"; };
 		5955C8F61BF7BD15003843B2 /* FBQuadTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBQuadTreeNode.h; sourceTree = "<group>"; };
 		5955C8F71BF7BD15003843B2 /* FBQuadTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBQuadTreeNode.m; sourceTree = "<group>"; };
+		9D01091A1C3AA37200D2E389 /* ExtInfoNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtInfoNavViewController.h; sourceTree = "<group>"; };
+		9D01091B1C3AA37200D2E389 /* ExtInfoNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtInfoNavViewController.m; sourceTree = "<group>"; };
 		9D6A565A1C0D9CB8009FDC7E /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		9D6A565C1C0D9F1D009FDC7E /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
 		9D6A565D1C0D9F1D009FDC7E /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
@@ -833,6 +836,8 @@
 				9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */,
 				595354081C39E32100B83FD2 /* ExtendedInfoTabViewController.h */,
 				595354091C39E32100B83FD2 /* ExtendedInfoTabViewController.m */,
+				9D01091A1C3AA37200D2E389 /* ExtInfoNavViewController.h */,
+				9D01091B1C3AA37200D2E389 /* ExtInfoNavViewController.m */,
 			);
 			path = RutasDeTenerife2;
 			sourceTree = "<group>";
@@ -1628,6 +1633,7 @@
 				5955C8F91BF7BD15003843B2 /* FBAnnotationCluster.m in Sources */,
 				9D74B0571BFDFB4300A06E93 /* PathCellTableViewCell.m in Sources */,
 				5955C8FB1BF7BD15003843B2 /* FBQuadTree.m in Sources */,
+				9D01091C1C3AA37200D2E389 /* ExtInfoNavViewController.m in Sources */,
 				9D7AD5981BF5FA3700E87809 /* Database.m in Sources */,
 				5955C8FC1BF7BD15003843B2 /* FBQuadTreeNode.m in Sources */,
 				9D77D3E01C05D20F00821854 /* QuickInfoView.m in Sources */,
