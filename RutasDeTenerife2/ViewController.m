@@ -763,7 +763,7 @@ NSMutableArray *filteredData;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ExtendedInfoTabViewController *extendedInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"ExtendedInfoTab"];
     //ExtendedInfoViewController *extendedInfoVC =[storyboard instantiateViewControllerWithIdentifier:@"ExtendedInfo"];
-    //extendedInfoVC.route = lastRouteShowed;
+    extendedInfoVC.route = lastRouteShowed;
     [self presentViewController:extendedInfoVC animated:YES completion:nil];
 }
 

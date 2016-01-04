@@ -10,4 +10,6 @@
 
 @interface ExtendedInfoTabViewController : UITabBarController
 
+@property Route *route;
+
 @end
