@@ -7,28 +7,24 @@
 //
 
 #import "ExtendedInfoTabViewController.h"
-#import "RoundRectPresentationController.h"
+#import "ExtendedInfoViewController.h"
 
-@interface ExtendedInfoTabViewController ()<UIViewControllerTransitioningDelegate>
+@interface ExtendedInfoTabViewController ()
 
 @end
 
 @implementation ExtendedInfoTabViewController
 
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        if ([self respondsToSelector:@selector(setTransitioningDelegate:)]){
-            self.modalPresentationStyle = UIModalPresentationCustom;
-            self.transitioningDelegate = self;
-        }
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //NSLog(@"TABController loaded");
+    NSArray *viewControllers = [self viewControllers];
+    ExtendedInfoViewController *descriptionController = (ExtendedInfoViewController *)[viewControllers firstObject];
+    descriptionController.route = self.route;
+    NSLog([NSString stringWithFormat:@"TABControllers count: %lu", (unsigned long)[viewControllers count]]);
+   // NSLog([NSString stringWithFormat:@"Name tab %@",[self.route getName] ]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,10 +42,8 @@
 }
 */
 
-#pragma mark - UIViewControllerTransitioningDelegate
--(UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source{
-    
-    return [[RoundRectPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
-}
 
+- (IBAction)closeInfo:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

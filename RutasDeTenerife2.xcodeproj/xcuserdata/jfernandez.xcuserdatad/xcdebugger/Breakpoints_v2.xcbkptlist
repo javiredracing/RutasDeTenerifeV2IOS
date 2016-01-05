@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RutasDeTenerife2/ViewController.m"
-            timestampString = "471878811.621224"
+            timestampString = "473689756.142256"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "811"
-            endingLineNumber = "811"
+            startingLineNumber = "814"
+            endingLineNumber = "814"
             landmarkName = "-actionMenu:"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RutasDeTenerife2/ViewController.m"
-            timestampString = "471878811.621224"
+            timestampString = "473689756.142256"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "807"
-            endingLineNumber = "807"
+            startingLineNumber = "810"
+            endingLineNumber = "810"
             landmarkName = "-actionMenu:"
             landmarkType = "5">
          </BreakpointContent>

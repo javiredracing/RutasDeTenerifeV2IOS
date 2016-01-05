@@ -27,6 +27,7 @@
 		9D74B0571BFDFB4300A06E93 /* PathCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D74B0561BFDFB4300A06E93 /* PathCellTableViewCell.m */; };
 		9D77D3DD1C05BCD600821854 /* QuickInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D77D3DC1C05BCD600821854 /* QuickInfo.xib */; };
 		9D77D3E01C05D20F00821854 /* QuickInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D77D3DF1C05D20F00821854 /* QuickInfoView.m */; };
+		9D79F78C1C3C113A005C8FBF /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F78B1C3C113A005C8FBF /* WeatherViewController.m */; };
 		9D7AD51E1BF5DC0000E87809 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD51D1BF5DC0000E87809 /* MapKit.framework */; };
 		9D7AD5201BF5EAE600E87809 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD51F1BF5EAE600E87809 /* CoreLocation.framework */; };
 		9D7AD5971BF5FA3700E87809 /* CustomKMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7AD5221BF5FA3600E87809 /* CustomKMLParser.m */; };
@@ -399,6 +400,8 @@
 		9D77D3DC1C05BCD600821854 /* QuickInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuickInfo.xib; sourceTree = "<group>"; };
 		9D77D3DE1C05D20F00821854 /* QuickInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickInfoView.h; sourceTree = "<group>"; };
 		9D77D3DF1C05D20F00821854 /* QuickInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickInfoView.m; sourceTree = "<group>"; };
+		9D79F78A1C3C113A005C8FBF /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		9D79F78B1C3C113A005C8FBF /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 		9D7AD51D1BF5DC0000E87809 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9D7AD51F1BF5EAE600E87809 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9D7AD5211BF5FA3600E87809 /* CustomKMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomKMLParser.h; sourceTree = "<group>"; };
@@ -830,14 +833,7 @@
 				9D6A565A1C0D9CB8009FDC7E /* MenuCell.xib */,
 				9D6A565C1C0D9F1D009FDC7E /* MenuCell.h */,
 				9D6A565D1C0D9F1D009FDC7E /* MenuCell.m */,
-				9D82A3091C0F181400F8DDFE /* ExtendedInfoViewController.h */,
-				9D82A30A1C0F181400F8DDFE /* ExtendedInfoViewController.m */,
-				9D82A30C1C0F2DB100F8DDFE /* RoundRectPresentationController.h */,
-				9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */,
-				595354081C39E32100B83FD2 /* ExtendedInfoTabViewController.h */,
-				595354091C39E32100B83FD2 /* ExtendedInfoTabViewController.m */,
-				9D01091A1C3AA37200D2E389 /* ExtInfoNavViewController.h */,
-				9D01091B1C3AA37200D2E389 /* ExtInfoNavViewController.m */,
+				9D79F7891C3C0349005C8FBF /* ExtendedInfo */,
 			);
 			path = RutasDeTenerife2;
 			sourceTree = "<group>";
@@ -866,6 +862,23 @@
 				9D741EA11BF4F2D5008AB780 /* Info.plist */,
 			);
 			path = RutasDeTenerife2UITests;
+			sourceTree = "<group>";
+		};
+		9D79F7891C3C0349005C8FBF /* ExtendedInfo */ = {
+			isa = PBXGroup;
+			children = (
+				9D82A3091C0F181400F8DDFE /* ExtendedInfoViewController.h */,
+				9D82A30A1C0F181400F8DDFE /* ExtendedInfoViewController.m */,
+				9D82A30C1C0F2DB100F8DDFE /* RoundRectPresentationController.h */,
+				9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */,
+				595354081C39E32100B83FD2 /* ExtendedInfoTabViewController.h */,
+				595354091C39E32100B83FD2 /* ExtendedInfoTabViewController.m */,
+				9D01091A1C3AA37200D2E389 /* ExtInfoNavViewController.h */,
+				9D01091B1C3AA37200D2E389 /* ExtInfoNavViewController.m */,
+				9D79F78A1C3C113A005C8FBF /* WeatherViewController.h */,
+				9D79F78B1C3C113A005C8FBF /* WeatherViewController.m */,
+			);
+			name = ExtendedInfo;
 			sourceTree = "<group>";
 		};
 		9D7AD5251BF5FA3600E87809 /* drawable */ = {
@@ -1639,6 +1652,7 @@
 				9D77D3E01C05D20F00821854 /* QuickInfoView.m in Sources */,
 				9D741E821BF4F2D5008AB780 /* ViewController.m in Sources */,
 				5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */,
+				9D79F78C1C3C113A005C8FBF /* WeatherViewController.m in Sources */,
 				9D7AD5FC1BF5FA3700E87809 /* FMDatabase.m in Sources */,
 				9D82A30E1C0F2DB100F8DDFE /* RoundRectPresentationController.m in Sources */,
 				9D7AD6011BF5FA3700E87809 /* Route.m in Sources */,

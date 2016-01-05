@@ -8,9 +8,10 @@
 
 #import "ExtInfoNavViewController.h"
 #import "RoundRectPresentationController.h"
+#import "ExtendedInfoTabViewController.h"
 
 
-#define FONT_SIZE_DEFAULT  25
+//#define FONT_SIZE_DEFAULT  25
 
 @interface ExtInfoNavViewController ()<UIViewControllerTransitioningDelegate>
 @end
@@ -31,16 +32,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIImage *faceImage = [UIImage imageNamed:@"close.png"];
-    UIButton *face = [UIButton buttonWithType:UIButtonTypeCustom];
-    face.bounds = CGRectMake( 10, 0, faceImage.size.width, faceImage.size.height );
-    [face addTarget:self action:@selector(handleBack:) forControlEvents:UIControlEventTouchUpInside];
-    [face setImage:faceImage forState:UIControlStateNormal];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:face];
-    self.navigationItem.leftBarButtonItem = backButton;
-    [self.navigationItem setHidesBackButton:YES animated:YES];
-    [self.navigationItem setLeftBarButtonItem:nil animated:NO];
-    [self.navigationItem setBackBarButtonItem:nil];
     // Create a custom `titleLabel`.
     /*UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320-10, 44)];
     titleLabel.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
@@ -58,7 +49,12 @@
     //self.navigationItem.titleView = label;
     [label setText:self.route.getName];
     self.navigationBar.topItem.titleView = label;
-    
+    NSLog(@"NavController loaded");
+    NSArray *viewControllers = [self viewControllers];
+    ExtendedInfoTabViewController *tabViewController = (ExtendedInfoTabViewController *)[viewControllers firstObject];
+    tabViewController.altitude = self.altitude;
+    tabViewController.route = self.route;
+    NSLog([NSString stringWithFormat:@"%lu", (unsigned long)[viewControllers count]]);
     // Do any additional setup after loading the view.
 }
 
@@ -73,15 +69,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    NSLog(@"NavViewController segue");
 }
-*/
+
 
 #pragma mark - UIViewControllerTransitioningDelegate
 -(UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source{

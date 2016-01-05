@@ -10,6 +10,8 @@
 #import "Route.h"
 
 @interface ExtInfoNavViewController : UINavigationController
+
 @property Route *route;
+@property NSMutableArray *altitude;
 
 @end

@@ -10,7 +10,9 @@
 #import "Route.h"
 
 @interface ExtendedInfoTabViewController : UITabBarController
+- (IBAction)closeInfo:(UIBarButtonItem *)sender;
 
 @property Route *route;
+@property NSMutableArray *altitude;
 
 @end

@@ -119,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="443" y="288"/>
         </scene>
-        <!--Item-->
+        <!--Description-->
         <scene sceneID="GMX-dy-WDm">
             <objects>
                 <viewController storyboardIdentifier="ExtendedInfo" id="Pz6-LV-gq4" customClass="ExtendedInfoViewController" sceneMemberID="viewController">
@@ -144,19 +144,19 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suv-Y4-KYb">
                                 <rect key="frame" x="279" y="200" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiV-ON-Y4j">
                                 <rect key="frame" x="0.0" y="233" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rF5-3I-PXg">
                                 <rect key="frame" x="279" y="458" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb4-7e-IGc">
@@ -181,8 +181,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item" id="TCL-Gl-nRY"/>
-                    <navigationItem key="navigationItem" id="tZJ-D1-vDz"/>
+                    <tabBarItem key="tabBarItem" title="Description" image="plus16.png" id="TCL-Gl-nRY"/>
                     <connections>
                         <outlet property="info" destination="Jb4-7e-IGc" id="bPi-5F-6xI"/>
                     </connections>
@@ -194,16 +193,17 @@
         <!--Weather-->
         <scene sceneID="etG-wy-s2S">
             <objects>
-                <viewController id="9sU-yi-An2" sceneMemberID="viewController">
+                <viewController id="9sU-yi-An2" customClass="WeatherViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ujs-SO-a8r"/>
                         <viewControllerLayoutGuide type="bottom" id="MSP-9X-KOi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OQP-x5-UjS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.39510761030000002" blue="0.81600041130000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Weather" image="wind.png" id="Ftd-wb-0nu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojT-MC-hks" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -219,10 +219,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Jcd-JM-kFq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jfv-6k-Lz0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.96454016789999997" blue="0.051228342869999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Altitud" image="close.png" id="0Gt-pJ-vje"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZyK-Ff-VL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,10 +242,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="9Fj-rt-n3v">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
                         <segue destination="m2e-Ul-Fo4" kind="relationship" relationship="rootViewController" id="efC-Ie-S1b"/>
                     </connections>
@@ -253,12 +250,19 @@
             </objects>
             <point key="canvasLocation" x="1133" y="278"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Extended Info Tab View Controller-->
         <scene sceneID="XFF-pI-Z2Y">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="m2e-Ul-Fo4" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="m2e-Ul-Fo4" customClass="ExtendedInfoTabViewController" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Oe1-a0-Emz"/>
+                    <navigationItem key="navigationItem" id="Oe1-a0-Emz">
+                        <barButtonItem key="leftBarButtonItem" image="plus16.png" id="rot-SP-Ayk">
+                            <connections>
+                                <action selector="closeInfo:" destination="m2e-Ul-Fo4" id="XO7-95-0G9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="PDg-Bs-a0O">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

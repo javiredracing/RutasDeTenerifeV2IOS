@@ -764,6 +764,9 @@ NSMutableArray *filteredData;
     ExtInfoNavViewController *extendedInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"ExtendedInfoNav"];
     //ExtendedInfoViewController *extendedInfoVC =[storyboard instantiateViewControllerWithIdentifier:@"ExtendedInfo"];
     extendedInfoVC.route = lastRouteShowed;
+    if (self.kmlParser != NULL)
+        extendedInfoVC.altitude = self.kmlParser.altitude;
+    
     [self presentViewController:extendedInfoVC animated:YES completion:nil];
 }
 
