@@ -12,7 +12,7 @@
 @interface ExtendedInfoViewController ()/*<UIViewControllerTransitioningDelegate>*/
 
 @end
-//https://github.com/bricklife/PresentationControllerSample
+
 @implementation ExtendedInfoViewController
 
 /*-(instancetype) initWithCoder:(NSCoder *)aDecoder{
