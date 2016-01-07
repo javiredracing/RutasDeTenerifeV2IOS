@@ -25,7 +25,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker_sign_24_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="vaz-jj-ulc">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="marker_sign_24_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="vaz-jj-ulc">
                     <rect key="frame" x="83" y="37" width="24" height="24"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Palique largoooo daspoapod addaspodasdas dadas" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="C5W-bR-4ZP">

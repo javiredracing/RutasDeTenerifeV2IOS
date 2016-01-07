@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface FieldView : UIView
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
+@property (weak, nonatomic) IBOutlet UILabel *content;
+@property (weak, nonatomic) IBOutlet UILabel *title;
 
 @end
