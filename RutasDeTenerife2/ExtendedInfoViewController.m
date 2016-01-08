@@ -29,9 +29,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.info.text = [self.route getName];
-    [self.distance updateFields:@"Distance" :[NSString stringWithFormat:@"%f",[self.route getDist]] :nil];
+    UIImage *image = [UIImage imageNamed:@"distance32"];
     
+    [self.distance updateFields:@"Distance" :[NSString stringWithFormat:@"%.02f",[self.route getDist]] :image];
+    [self.difficult updateFields:@"Difficult" :[NSString stringWithFormat:@"%d",[self.route getDifficulty]] :[UIImage imageNamed:@"nivel_facil"]];
+    [self.time updateFields:@"Duración" :[NSString stringWithFormat:@"%.02f",[self.route getDurac]] :[UIImage imageNamed:@"timer"]];
+    [self.approved updateFields:@"Homologado" :@"Si" :[UIImage imageNamed:@"marker_sign_24"]];
+    self.btHowToGet.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.btHowToGet.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+    self.btHowToGet.layer.shadowOpacity = 0.8;
+    self.btHowToGet.layer.shadowRadius = 0.0;
+    
+    self.btDownload.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.btDownload.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+    self.btDownload.layer.shadowOpacity = 0.8;
+    self.btDownload.layer.shadowRadius = 0.0;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -11,10 +11,16 @@
 #import "FieldView.h"
 
 @interface ExtendedInfoViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *btDownload;
+@property (weak, nonatomic) IBOutlet UIButton *btHowToGet;
 
+
+@property (weak, nonatomic) IBOutlet FieldView *approved;
+@property (weak, nonatomic) IBOutlet FieldView *time;
+
+@property (weak, nonatomic) IBOutlet FieldView *difficult;
 @property (weak, nonatomic) IBOutlet FieldView *distance;
 @property Route *route;
-@property (weak, nonatomic) IBOutlet UILabel *info;
 - (IBAction)howToGet:(UIButton *)sender;
 - (IBAction)downloadTrack:(UIButton *)sender;
 

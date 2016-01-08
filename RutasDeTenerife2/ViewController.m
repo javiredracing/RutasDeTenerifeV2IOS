@@ -77,6 +77,10 @@ NSMutableArray *filteredData;
     self.quickInfoView.layer.shadowRadius = 10;
     self.quickInfoView.layer.shadowOpacity = 0.5;*/
     self.quickInfoView.layer.borderColor = [UIColor redColor].CGColor;
+    self.quickInfoView.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.quickInfoView.layer.shadowOffset = CGSizeMake(12.0, 12.0);
+    self.quickInfoView.layer.shadowOpacity = 0.8;
+    self.quickInfoView.layer.shadowRadius = 0.0;
     [self hideQuickInfo];
 }
 

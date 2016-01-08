@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -19,17 +19,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ma-4X-P0c">
-                    <rect key="frame" x="60" y="0.0" width="100" height="80"/>
+                    <rect key="frame" x="38" y="0.0" width="122" height="80"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd3-bi-7kf">
-                            <rect key="frame" x="0.0" y="40" width="100" height="40"/>
-                            <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8p-MD-0ur">
+                            <rect key="frame" x="0.0" y="0.0" width="122" height="40"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8p-MD-0ur">
-                            <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd3-bi-7kf">
+                            <rect key="frame" x="0.0" y="40" width="122" height="40"/>
+                            <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -50,10 +50,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jH0-rN-oUN">
-                    <rect key="frame" x="0.0" y="0.0" width="60" height="80"/>
+                    <rect key="frame" x="0.0" y="0.0" width="38" height="80"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close2.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Jo-hp-Rdn">
-                            <rect key="frame" x="14" y="24" width="32" height="32"/>
+                            <rect key="frame" x="3" y="24" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="OZ5-FM-Hff"/>
                                 <constraint firstAttribute="width" constant="32" id="sCh-l7-RM9"/>
@@ -75,7 +75,7 @@
                 <constraint firstItem="7Ma-4X-P0c" firstAttribute="leading" secondItem="jH0-rN-oUN" secondAttribute="trailing" id="JEf-bw-p58"/>
                 <constraint firstAttribute="bottom" secondItem="jH0-rN-oUN" secondAttribute="bottom" id="TwB-xN-9lz"/>
                 <constraint firstAttribute="trailing" secondItem="7Ma-4X-P0c" secondAttribute="trailing" id="Ut5-Ue-DYi"/>
-                <constraint firstItem="7Ma-4X-P0c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="gAt-M6-hY2"/>
+                <constraint firstItem="7Ma-4X-P0c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="38" id="gAt-M6-hY2"/>
                 <constraint firstAttribute="bottom" secondItem="7Ma-4X-P0c" secondAttribute="bottom" id="kES-uw-gvq"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
