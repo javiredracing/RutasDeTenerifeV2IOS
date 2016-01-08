@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -38,6 +38,9 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4c-D9-90A" customClass="QuickInfoView">
                                 <rect key="frame" x="235" y="15" width="129" height="63"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="RqB-rL-09R"/>
                                     <constraint firstAttribute="width" priority="250" constant="129" id="edt-Ns-9WE"/>
@@ -131,20 +134,14 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiV-ON-Y4j">
-                                <rect key="frame" x="0.0" y="233" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb4-7e-IGc">
                                 <rect key="frame" x="279" y="8" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BXj-I1-n0N">
-                                <rect key="frame" x="20" y="443" width="267" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BXj-I1-n0N">
+                                <rect key="frame" x="20" y="441" width="267" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="3" minY="9" maxX="3" maxY="9"/>
                                 <state key="normal" title="Como llegar" image="plus16.png">
@@ -154,6 +151,9 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="howToGet:" destination="Pz6-LV-gq4" eventType="touchUpInside" id="GtV-fa-Usp"/>
+                                </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62H-67-5j8">
                                 <rect key="frame" x="295" y="453" width="10" height="34"/>
@@ -163,8 +163,8 @@
                                     <constraint firstAttribute="height" constant="34" id="Neq-lh-pQc"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RLX-ZY-boE">
-                                <rect key="frame" x="313" y="443" width="267" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RLX-ZY-boE">
+                                <rect key="frame" x="313" y="439" width="267" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="3" minY="9" maxX="3" maxY="9"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
@@ -176,16 +176,27 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="downloadTrack:" destination="Pz6-LV-gq4" eventType="touchUpInside" id="ufa-4J-yv8"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qn7-rw-3BV" customClass="FieldView">
+                                <rect key="frame" x="220" y="37" width="160" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="KR6-Ix-INC"/>
+                                    <constraint firstAttribute="height" constant="80" id="wwf-3X-ezL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.46636345140000002" green="1" blue="0.98125269790000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="175-Cf-v59" firstAttribute="top" secondItem="RLX-ZY-boE" secondAttribute="bottom" constant="8" id="0aj-cO-FF0"/>
-                            <constraint firstItem="TiV-ON-Y4j" firstAttribute="centerY" secondItem="nvE-pM-gWc" secondAttribute="centerY" id="A8l-gD-imM"/>
+                            <constraint firstItem="Qn7-rw-3BV" firstAttribute="top" secondItem="7qs-m5-nkb" secondAttribute="bottom" constant="37" id="9Ta-xj-JHK"/>
                             <constraint firstItem="175-Cf-v59" firstAttribute="top" secondItem="62H-67-5j8" secondAttribute="bottom" id="E1j-VF-wto"/>
                             <constraint firstItem="BXj-I1-n0N" firstAttribute="leading" secondItem="nvE-pM-gWc" secondAttribute="leadingMargin" id="ORB-o2-cun"/>
                             <constraint firstItem="62H-67-5j8" firstAttribute="leading" secondItem="BXj-I1-n0N" secondAttribute="trailing" constant="8" id="dPV-Ks-vuX"/>
-                            <constraint firstItem="TiV-ON-Y4j" firstAttribute="leading" secondItem="nvE-pM-gWc" secondAttribute="leadingMargin" constant="-20" id="iiJ-TU-5mu"/>
+                            <constraint firstItem="Qn7-rw-3BV" firstAttribute="centerX" secondItem="nvE-pM-gWc" secondAttribute="centerX" id="kda-UG-D8q"/>
                             <constraint firstItem="RLX-ZY-boE" firstAttribute="trailing" secondItem="nvE-pM-gWc" secondAttribute="trailingMargin" id="p8Z-Fl-4Eg"/>
                             <constraint firstItem="RLX-ZY-boE" firstAttribute="leading" secondItem="62H-67-5j8" secondAttribute="trailing" constant="8" id="xix-tG-bRO"/>
                             <constraint firstItem="175-Cf-v59" firstAttribute="top" secondItem="BXj-I1-n0N" secondAttribute="bottom" constant="6" id="xpO-Od-iBr"/>
@@ -196,6 +207,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Description" image="plus16.png" id="TCL-Gl-nRY"/>
                     <connections>
+                        <outlet property="distance" destination="Qn7-rw-3BV" id="23P-ph-rGA"/>
                         <outlet property="info" destination="Jb4-7e-IGc" id="bPi-5F-6xI"/>
                     </connections>
                 </viewController>

@@ -30,6 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.info.text = [self.route getName];
+    [self.distance updateFields:@"Distance" :[NSString stringWithFormat:@"%f",[self.route getDist]] :nil];
     
 }
 
@@ -58,4 +59,8 @@
 
     return [[RoundRectPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
 }*/
+- (IBAction)howToGet:(UIButton *)sender {
+}
+- (IBAction)downloadTrack:(UIButton *)sender {
+}
 @end

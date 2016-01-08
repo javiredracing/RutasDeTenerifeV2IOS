@@ -8,11 +8,15 @@
 
 //#import "ViewController.h"
 #import "Route.h"
+#import "FieldView.h"
 
 @interface ExtendedInfoViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *info;
-- (IBAction)closeBt:(id)sender;
 
+@property (weak, nonatomic) IBOutlet FieldView *distance;
 @property Route *route;
+@property (weak, nonatomic) IBOutlet UILabel *info;
+- (IBAction)howToGet:(UIButton *)sender;
+- (IBAction)downloadTrack:(UIButton *)sender;
+
 
 @end

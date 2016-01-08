@@ -29,18 +29,25 @@
          */
         
         // 1. load the interface
-        [[NSBundle mainBundle] loadNibNamed:@"FieldView" owner:self options:nil];
+        [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil];
+       // [[NSBundle mainBundle] loadNibNamed:@"FieldView" owner:self options:nil];
         // 2. add as subview
         //[self.infoView sizeToFit];
-        [self addSubview:self.infoView];
+        [self addSubview:self.mainView];
         // 3. allow for autolayout
-        [self.infoView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.mainView setTranslatesAutoresizingMaskIntoConstraints:NO];
         // 4. add constraints to span entire view
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:@{@"view":self.infoView}]];
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:@{@"view":self.infoView}]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:@{@"view":self.mainView}]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:@{@"view":self.mainView}]];
         
     }
     return self;
+}
+
+-(void)updateFields:(NSString *)title :(NSString *)content :(UIImage *)icon{
+    self.title.text = title;
+    self.content.text = content;
+    self.image.image = icon;
 }
 
 @end
