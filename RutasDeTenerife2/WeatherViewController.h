@@ -6,8 +6,15 @@
 //  Copyright © 2016 JAVI. All rights reserved.
 //
 
-#import "ViewController.h"
+//#import "ViewController.h"
+#import "Route.h"
 
-@interface WeatherViewController : ViewController
+@interface WeatherViewController : UIViewController<NSURLConnectionDataDelegate>
+{
+    NSMutableData *_responseData;
+    
+}
+
+@property Route *route;
 
 @end

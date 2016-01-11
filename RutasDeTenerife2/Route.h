@@ -19,7 +19,7 @@
     int difficulty;
     int identifier;
     double durac;
-    NSString *weatherJson;
+    NSMutableData *weatherJson;
     NSTimeInterval timeStamp;
     int region;
     int approved;
@@ -37,8 +37,8 @@
 -(int)getId;
 -(CLLocationCoordinate2D)getFirstPoint;
 -(void)setMarkersVisibility: (BOOL)visibility;
--(void)setWeatherJson:(NSString *)json;
--(NSString *)getWeatherJson;
+-(void)setWeatherJson:(NSMutableData *)json;
+-(NSMutableData *)getWeatherJson;
 -(void)clearWeather;
 -(int)getRegion;
 -(int)approved;

@@ -8,6 +8,8 @@
 
 #import "ExtendedInfoTabViewController.h"
 #import "ExtendedInfoViewController.h"
+#import "WeatherViewController.h"
+#import "AltitudeViewController.h"
 
 @interface ExtendedInfoTabViewController ()
 
@@ -23,6 +25,12 @@
     NSArray *viewControllers = [self viewControllers];
     ExtendedInfoViewController *descriptionController = (ExtendedInfoViewController *)[viewControllers firstObject];
     descriptionController.route = self.route;
+    
+    AltitudeViewController *altitudeVievController = (AltitudeViewController *)[viewControllers objectAtIndex:1];
+    altitudeVievController.altitude = self.altitude;
+    
+    WeatherViewController *weatherViewController = (WeatherViewController *)[viewControllers objectAtIndex:2];
+    weatherViewController.route = self.route;
     NSLog([NSString stringWithFormat:@"TABControllers count: %lu", (unsigned long)[viewControllers count]]);
    // NSLog([NSString stringWithFormat:@"Name tab %@",[self.route getName] ]);
 }
