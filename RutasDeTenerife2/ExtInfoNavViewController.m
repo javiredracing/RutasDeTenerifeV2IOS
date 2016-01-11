@@ -54,6 +54,7 @@
     ExtendedInfoTabViewController *tabViewController = (ExtendedInfoTabViewController *)[viewControllers firstObject];
     tabViewController.altitude = self.altitude;
     tabViewController.route = self.route;
+    tabViewController.db = self.db;
     //NSLog([NSString stringWithFormat:@"%lu", (unsigned long)[viewControllers count]]);
     // Do any additional setup after loading the view.
 }

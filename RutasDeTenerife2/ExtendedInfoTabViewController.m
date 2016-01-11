@@ -25,6 +25,7 @@
     NSArray *viewControllers = [self viewControllers];
     ExtendedInfoViewController *descriptionController = (ExtendedInfoViewController *)[viewControllers firstObject];
     descriptionController.route = self.route;
+    descriptionController.db = self.db;
     
     AltitudeViewController *altitudeVievController = (AltitudeViewController *)[viewControllers objectAtIndex:1];
     altitudeVievController.altitude = self.altitude;

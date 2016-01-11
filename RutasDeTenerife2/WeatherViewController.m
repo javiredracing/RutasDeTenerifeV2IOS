@@ -63,13 +63,13 @@
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection{
-    
-    [self parseJSONData:_responseData];
-    [self.route setWeatherJson:_responseData];
+    if (_responseData != nil) {
+        [self parseJSONData:_responseData];
+        [self.route setWeatherJson:_responseData];
     }
-
+}
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-
+    NSLog(@"Fail connection");
 }
 /*
 #pragma mark - Navigation

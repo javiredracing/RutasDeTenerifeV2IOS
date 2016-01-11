@@ -44,6 +44,8 @@
     self.btDownload.layer.shadowOffset = CGSizeMake(2.0, 2.0);
     self.btDownload.layer.shadowOpacity = 0.8;
     self.btDownload.layer.shadowRadius = 0.0;
+    NSString *desc = [self.db getDescriptionById:[self.route getId] :@"es" ];
+    [self.tvDecription setText:desc];
 }
 
 - (void)didReceiveMemoryWarning {

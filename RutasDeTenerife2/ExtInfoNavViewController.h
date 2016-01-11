@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Route.h"
+#import "Database.h"
 
 @interface ExtInfoNavViewController : UINavigationController
 
 @property Route *route;
 @property NSMutableArray *altitude;
+@property Database *db;
 
 @end

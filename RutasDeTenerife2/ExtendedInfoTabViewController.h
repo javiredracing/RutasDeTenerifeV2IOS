@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Route.h"
+#import "Database.h"
 
 @interface ExtendedInfoTabViewController : UITabBarController
 - (IBAction)closeInfo:(UIBarButtonItem *)sender;
 
 @property Route *route;
 @property NSMutableArray *altitude;
+@property Database *db;
 
 @end

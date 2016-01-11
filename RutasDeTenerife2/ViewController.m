@@ -770,7 +770,7 @@ NSMutableArray *filteredData;
     extendedInfoVC.route = lastRouteShowed;
     if (self.kmlParser != NULL)
         extendedInfoVC.altitude = self.kmlParser.altitude;
-    
+    extendedInfoVC.db = self.db;
     [self presentViewController:extendedInfoVC animated:YES completion:nil];
 }
 

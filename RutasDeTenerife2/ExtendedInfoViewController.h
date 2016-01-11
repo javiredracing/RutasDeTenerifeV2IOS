@@ -9,6 +9,7 @@
 //#import "ViewController.h"
 #import "Route.h"
 #import "FieldView.h"
+#import "Database.h"
 
 @interface ExtendedInfoViewController : UIViewController
 
@@ -20,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet FieldView *difficult;
 @property (weak, nonatomic) IBOutlet FieldView *distance;
 @property Route *route;
+@property Database *db;
+
 - (IBAction)howToGet:(UIButton *)sender;
 - (IBAction)downloadTrack:(UIButton *)sender;
 
