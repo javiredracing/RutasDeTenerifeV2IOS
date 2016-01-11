@@ -51,7 +51,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+-(void) viewDidLayoutSubviews{
+    //textview scroll start on top
+    [self.tvDecription setContentOffset:CGPointZero animated:NO];
+}
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -61,16 +64,6 @@
 
 }*/
 
-
-- (IBAction)closeBt:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-/*#pragma mark - UIViewControllerTransitioningDelegate
--(UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source{
-
-    return [[RoundRectPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
-}*/
 - (IBAction)howToGet:(UIButton *)sender {
 }
 - (IBAction)downloadTrack:(UIButton *)sender {

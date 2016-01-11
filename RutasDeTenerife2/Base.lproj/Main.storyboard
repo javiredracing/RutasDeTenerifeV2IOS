@@ -226,7 +226,7 @@
                                     <constraint firstAttribute="height" constant="27" id="ajg-yp-Qaa"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATm-lS-kmC">
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATm-lS-kmC">
                                 <rect key="frame" x="20" y="136" width="560" height="297"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -280,6 +280,7 @@
                         <outlet property="difficult" destination="DVS-Oj-l6k" id="DaI-lc-Hpd"/>
                         <outlet property="distance" destination="Qn7-rw-3BV" id="23P-ph-rGA"/>
                         <outlet property="time" destination="tMf-vh-X6r" id="g1d-71-O70"/>
+                        <outlet property="tvDecription" destination="ATm-lS-kmC" id="cAc-TV-035"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aB-Eg-nu5" userLabel="First Responder" sceneMemberID="firstResponder"/>
