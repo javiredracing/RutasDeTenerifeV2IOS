@@ -343,6 +343,7 @@
 		9D7AD7961BF6119E00E87809 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD7951BF6119E00E87809 /* UIKit.framework */; };
 		9D82A30B1C0F181400F8DDFE /* ExtendedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82A30A1C0F181400F8DDFE /* ExtendedInfoViewController.m */; };
 		9D82A30E1C0F2DB100F8DDFE /* RoundRectPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */; };
+		9D85D3CC1C4409BF00CD2535 /* AltitudeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D85D3CB1C4409BF00CD2535 /* AltitudeViewController.m */; };
 		9D96DB881BF9E0C8008FEA35 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D96DB871BF9E0C8008FEA35 /* CoreText.framework */; };
 /* End PBXBuildFile section */
 
@@ -731,6 +732,8 @@
 		9D82A30A1C0F181400F8DDFE /* ExtendedInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedInfoViewController.m; sourceTree = "<group>"; };
 		9D82A30C1C0F2DB100F8DDFE /* RoundRectPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundRectPresentationController.h; sourceTree = "<group>"; };
 		9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundRectPresentationController.m; sourceTree = "<group>"; };
+		9D85D3CA1C4409BF00CD2535 /* AltitudeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AltitudeViewController.h; sourceTree = "<group>"; };
+		9D85D3CB1C4409BF00CD2535 /* AltitudeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AltitudeViewController.m; sourceTree = "<group>"; };
 		9D96DB871BF9E0C8008FEA35 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -893,6 +896,8 @@
 				9D01091B1C3AA37200D2E389 /* ExtInfoNavViewController.m */,
 				9D79F78A1C3C113A005C8FBF /* WeatherViewController.h */,
 				9D79F78B1C3C113A005C8FBF /* WeatherViewController.m */,
+				9D85D3CA1C4409BF00CD2535 /* AltitudeViewController.h */,
+				9D85D3CB1C4409BF00CD2535 /* AltitudeViewController.m */,
 			);
 			name = ExtendedInfo;
 			sourceTree = "<group>";
@@ -1667,6 +1672,7 @@
 				9D79CF631C3E809F00A4AD8A /* FieldView.m in Sources */,
 				9D7AD5981BF5FA3700E87809 /* Database.m in Sources */,
 				5955C8FC1BF7BD15003843B2 /* FBQuadTreeNode.m in Sources */,
+				9D85D3CC1C4409BF00CD2535 /* AltitudeViewController.m in Sources */,
 				9D77D3E01C05D20F00821854 /* QuickInfoView.m in Sources */,
 				9D741E821BF4F2D5008AB780 /* ViewController.m in Sources */,
 				5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */,

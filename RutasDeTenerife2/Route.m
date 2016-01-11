@@ -80,12 +80,12 @@
     }*/
 }
 
--(void)setWeatherJson:(NSString *)json{
+-(void)setWeatherJson:(NSMutableData *)json{
     weatherJson = json;
     timeStamp =[[NSDate date] timeIntervalSince1970];
 }
 
--(NSString *)getWeatherJson{
+-(NSMutableData *)getWeatherJson{
     NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
     if (weatherJson != nil){
         if (now - timeStamp <= 3600)
