@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -298,7 +298,30 @@
                     <view key="view" contentMode="scaleToFill" id="OQP-x5-UjS">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VNE-uj-Wuv">
+                                <rect key="frame" x="28" y="0.0" width="544" height="441"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.46636345140000002" green="1" blue="0.98125269790000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9sU-yi-An2" id="HUF-9I-elL"/>
+                                    <outlet property="delegate" destination="9sU-yi-An2" id="aPP-jg-EVH"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSD-3h-lbD">
+                                <rect key="frame" x="277" y="449" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.39510761030000002" blue="0.81600041130000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="VNE-uj-Wuv" secondAttribute="trailing" constant="8" id="Cal-e2-itK"/>
+                            <constraint firstItem="MSP-9X-KOi" firstAttribute="top" secondItem="kSD-3h-lbD" secondAttribute="bottom" constant="8" id="Ixm-li-C6f"/>
+                            <constraint firstItem="VNE-uj-Wuv" firstAttribute="leading" secondItem="OQP-x5-UjS" secondAttribute="leadingMargin" constant="8" id="l08-la-E6h"/>
+                            <constraint firstItem="kSD-3h-lbD" firstAttribute="top" secondItem="VNE-uj-Wuv" secondAttribute="bottom" constant="8" id="pbK-Kj-AxV"/>
+                            <constraint firstItem="VNE-uj-Wuv" firstAttribute="top" secondItem="ujs-SO-a8r" secondAttribute="bottom" id="scc-G0-Bbl"/>
+                            <constraint firstItem="kSD-3h-lbD" firstAttribute="centerX" secondItem="OQP-x5-UjS" secondAttribute="centerX" id="szi-rL-eFr"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Weather" image="wind.png" id="Ftd-wb-0nu"/>

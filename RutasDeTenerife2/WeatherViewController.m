@@ -7,12 +7,16 @@
 //
 
 #import "WeatherViewController.h"
+#import "PrevCell.h"
 
 @interface WeatherViewController ()
 
 @end
 
-@implementation WeatherViewController
+@implementation WeatherViewController{
+
+    int days;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,7 +28,7 @@
         [self parseJSONData:data];
         NSLog(@"Cached!");
     }else{
-        int days = 1;
+        days = 1;
         NSString *key = @"4dd5f7defe860cc6cb67909a84684a3f50bc160d";
         NSString *lang =  [[NSLocale preferredLanguages] objectAtIndex:0];
         NSDictionary *languageDic = [NSLocale componentsFromLocaleIdentifier:lang];
@@ -81,6 +85,51 @@
 }
 */
 
+
+#pragma mark - Tableview
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return days +1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 8.0;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+   /*static NSString *simpleTableIdentifier = @"PrevCell";
+    
+    PrevCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[PrevCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    */
+    PrevCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PrevCell"];
+    if (!cell){
+        [tableView registerNib:[UINib nibWithNibName:@"PrevCell" bundle:nil] forCellReuseIdentifier:@"PrevCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"PrevCell"];
+    }
+
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 350.0;
+}
 /*****************/
 
 -(void)parseJSONData :(NSMutableData *)data{

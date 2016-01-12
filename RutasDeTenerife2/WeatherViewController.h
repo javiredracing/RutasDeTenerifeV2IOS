@@ -9,7 +9,7 @@
 //#import "ViewController.h"
 #import "Route.h"
 
-@interface WeatherViewController : UIViewController<NSURLConnectionDataDelegate>
+@interface WeatherViewController : UIViewController<NSURLConnectionDataDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     NSMutableData *_responseData;
     

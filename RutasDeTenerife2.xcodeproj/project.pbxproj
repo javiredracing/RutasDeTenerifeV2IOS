@@ -15,6 +15,10 @@
 		9D01091C1C3AA37200D2E389 /* ExtInfoNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D01091B1C3AA37200D2E389 /* ExtInfoNavViewController.m */; };
 		9D6A565B1C0D9CB8009FDC7E /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6A565A1C0D9CB8009FDC7E /* MenuCell.xib */; };
 		9D6A565E1C0D9F1D009FDC7E /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6A565D1C0D9F1D009FDC7E /* MenuCell.m */; };
+		9D6DC9571C4515B400BCB623 /* PrevCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DC9561C4515B400BCB623 /* PrevCell.xib */; };
+		9D6DC95A1C4528A300BCB623 /* PrevCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6DC9591C4528A300BCB623 /* PrevCell.m */; };
+		9D6DC95C1C455D2300BCB623 /* ForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DC95B1C455D2300BCB623 /* ForecastCell.xib */; };
+		9D6DC95F1C45619300BCB623 /* ForecastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6DC95E1C45619300BCB623 /* ForecastCell.m */; };
 		9D741E7C1BF4F2D5008AB780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E7B1BF4F2D5008AB780 /* main.m */; };
 		9D741E7F1BF4F2D5008AB780 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E7E1BF4F2D5008AB780 /* AppDelegate.m */; };
 		9D741E821BF4F2D5008AB780 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E811BF4F2D5008AB780 /* ViewController.m */; };
@@ -381,6 +385,12 @@
 		9D6A565A1C0D9CB8009FDC7E /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		9D6A565C1C0D9F1D009FDC7E /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
 		9D6A565D1C0D9F1D009FDC7E /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		9D6DC9561C4515B400BCB623 /* PrevCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrevCell.xib; sourceTree = "<group>"; };
+		9D6DC9581C4528A300BCB623 /* PrevCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrevCell.h; sourceTree = "<group>"; };
+		9D6DC9591C4528A300BCB623 /* PrevCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrevCell.m; sourceTree = "<group>"; };
+		9D6DC95B1C455D2300BCB623 /* ForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastCell.xib; sourceTree = "<group>"; };
+		9D6DC95D1C45619300BCB623 /* ForecastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastCell.h; sourceTree = "<group>"; };
+		9D6DC95E1C45619300BCB623 /* ForecastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastCell.m; sourceTree = "<group>"; };
 		9D741E771BF4F2D5008AB780 /* RutasDeTenerife2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RutasDeTenerife2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D741E7B1BF4F2D5008AB780 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D741E7D1BF4F2D5008AB780 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -898,6 +908,12 @@
 				9D79F78B1C3C113A005C8FBF /* WeatherViewController.m */,
 				9D85D3CA1C4409BF00CD2535 /* AltitudeViewController.h */,
 				9D85D3CB1C4409BF00CD2535 /* AltitudeViewController.m */,
+				9D6DC9561C4515B400BCB623 /* PrevCell.xib */,
+				9D6DC9581C4528A300BCB623 /* PrevCell.h */,
+				9D6DC9591C4528A300BCB623 /* PrevCell.m */,
+				9D6DC95B1C455D2300BCB623 /* ForecastCell.xib */,
+				9D6DC95D1C45619300BCB623 /* ForecastCell.h */,
+				9D6DC95E1C45619300BCB623 /* ForecastCell.m */,
 			);
 			name = ExtendedInfo;
 			sourceTree = "<group>";
@@ -1357,6 +1373,7 @@
 				9D7AD7251BF5FA4A00E87809 /* PR-TF 52.gpx in Resources */,
 				9D741E8A1BF4F2D5008AB780 /* LaunchScreen.storyboard in Resources */,
 				9D7AD5CA1BF5FA3700E87809 /* i395.png in Resources */,
+				9D6DC95C1C455D2300BCB623 /* ForecastCell.xib in Resources */,
 				9D7AD5C51BF5FA3700E87809 /* i374.png in Resources */,
 				9D7AD5B61BF5FA3700E87809 /* i305.png in Resources */,
 				9D7AD74C1BF5FA4A00E87809 /* PR-TF 86.2.kml in Resources */,
@@ -1445,6 +1462,7 @@
 				9D7AD7511BF5FA4A00E87809 /* pr-tf-11-cruz-del-carmen-batan-de-arriba-punta-del-hidalgo.gpx in Resources */,
 				9D7AD6E21BF5FA4A00E87809 /* corral-del-nino-mal-abrigo-sendero-no21.kml in Resources */,
 				9D7AD6F11BF5FA4A00E87809 /* GR 131.1.gpx in Resources */,
+				9D6DC9571C4515B400BCB623 /* PrevCell.xib in Resources */,
 				9D7AD5AF1BF5FA3700E87809 /* i266.png in Resources */,
 				9D7AD7481BF5FA4A00E87809 /* PR-TF 83.kml in Resources */,
 				9D7AD5C31BF5FA3700E87809 /* i359.png in Resources */,
@@ -1664,6 +1682,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6DC95F1C45619300BCB623 /* ForecastCell.m in Sources */,
+				9D6DC95A1C4528A300BCB623 /* PrevCell.m in Sources */,
 				9D7AD5971BF5FA3700E87809 /* CustomKMLParser.m in Sources */,
 				5955C8F91BF7BD15003843B2 /* FBAnnotationCluster.m in Sources */,
 				9D74B0571BFDFB4300A06E93 /* PathCellTableViewCell.m in Sources */,
