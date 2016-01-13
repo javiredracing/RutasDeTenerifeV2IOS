@@ -8,11 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCell" rowHeight="235" id="9ii-Be-gUS" customClass="ForecastCell">
-            <rect key="frame" x="0.0" y="0.0" width="352" height="235"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCell" rowHeight="340" id="9ii-Be-gUS" customClass="ForecastCell">
+            <rect key="frame" x="0.0" y="0.0" width="352" height="340"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9ii-Be-gUS" id="dEm-8A-n9c">
-                <rect key="frame" x="0.0" y="0.0" width="352" height="234"/>
+                <rect key="frame" x="0.0" y="0.0" width="352" height="339"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6W-UZ-VyF">
@@ -34,23 +34,108 @@
                             <constraint firstAttribute="height" constant="70" id="EJQ-85-wQ9"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPe-Bq-1DI" customClass="FieldView">
+                        <rect key="frame" x="8" y="140" width="336" height="70"/>
+                        <color key="backgroundColor" red="0.56330095540000003" green="0.87200662360000003" blue="0.37134174739999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scH-Bh-vYq" customClass="IconInfoView">
+                        <rect key="frame" x="111" y="218" width="130" height="32"/>
+                        <color key="backgroundColor" red="1" green="0.39510761030000002" blue="0.81600041130000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="RWI-d8-m0l"/>
+                            <constraint firstAttribute="width" priority="250" constant="130" id="Rxd-ua-fQC"/>
+                        </constraints>
+                    </view>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIp-If-kPv">
+                        <rect key="frame" x="171" y="258" width="10" height="81"/>
+                        <color key="backgroundColor" red="0.43921568630000002" green="0.43529411759999997" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="QEP-VM-JgW"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igz-Qc-mck" customClass="IconInfoView">
+                        <rect key="frame" x="8" y="258" width="155" height="32"/>
+                        <color key="backgroundColor" red="0.46440941829999999" green="0.64670352509999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="IbS-en-rAt"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l31-WQ-dJE" customClass="IconInfoView">
+                        <rect key="frame" x="8" y="298" width="155" height="32"/>
+                        <color key="backgroundColor" red="0.46440941829999999" green="0.64670352509999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="Q9z-8t-gbm"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaS-VW-9eL" customClass="IconInfoView">
+                        <rect key="frame" x="187" y="258" width="157" height="32"/>
+                        <color key="backgroundColor" red="0.46440941829999999" green="0.64670352509999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="Cte-pI-vUs"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asm-fg-ZmD" customClass="IconInfoView">
+                        <rect key="frame" x="189" y="299" width="157" height="32"/>
+                        <color key="backgroundColor" red="0.46440941829999999" green="0.64670352509999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="FRg-YJ-CvA"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="asm-fg-ZmD" firstAttribute="leading" secondItem="wIp-If-kPv" secondAttribute="trailing" constant="8" id="1Fr-3x-0lQ"/>
+                    <constraint firstItem="wIp-If-kPv" firstAttribute="centerX" secondItem="dEm-8A-n9c" secondAttribute="centerX" id="3a0-Ru-Gfu"/>
                     <constraint firstItem="1T5-rL-gag" firstAttribute="top" secondItem="j6W-UZ-VyF" secondAttribute="bottom" constant="8" id="3iW-FW-vYR"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="asm-fg-ZmD" secondAttribute="trailing" constant="-2" id="5Vb-hF-czE"/>
+                    <constraint firstItem="scH-Bh-vYq" firstAttribute="top" secondItem="JPe-Bq-1DI" secondAttribute="bottom" constant="8" id="6QG-tm-9e1"/>
                     <constraint firstAttribute="trailingMargin" secondItem="j6W-UZ-VyF" secondAttribute="trailing" id="6mK-xa-QTf"/>
+                    <constraint firstItem="JPe-Bq-1DI" firstAttribute="height" secondItem="vYp-YO-H5i" secondAttribute="height" id="6rD-6e-AkB"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="igz-Qc-mck" secondAttribute="leading" id="EfC-dA-TJu"/>
+                    <constraint firstItem="JPe-Bq-1DI" firstAttribute="centerX" secondItem="dEm-8A-n9c" secondAttribute="centerX" id="Gls-Cl-G8l"/>
+                    <constraint firstItem="JPe-Bq-1DI" firstAttribute="top" secondItem="vYp-YO-H5i" secondAttribute="bottom" constant="8" id="Mwo-fC-5ti"/>
                     <constraint firstItem="vYp-YO-H5i" firstAttribute="top" secondItem="1T5-rL-gag" secondAttribute="bottom" constant="8" id="P3o-Iv-g0X"/>
                     <constraint firstItem="1T5-rL-gag" firstAttribute="leading" secondItem="j6W-UZ-VyF" secondAttribute="leading" id="SAM-jC-FUy"/>
                     <constraint firstAttribute="leadingMargin" secondItem="j6W-UZ-VyF" secondAttribute="leading" id="VjT-o7-Fld"/>
+                    <constraint firstItem="asm-fg-ZmD" firstAttribute="top" secondItem="iaS-VW-9eL" secondAttribute="bottom" constant="9" id="WyU-QV-2aF"/>
                     <constraint firstItem="1T5-rL-gag" firstAttribute="centerX" secondItem="dEm-8A-n9c" secondAttribute="centerX" id="Zbv-na-h30"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="iaS-VW-9eL" secondAttribute="trailing" id="ZzH-Jf-gTc"/>
+                    <constraint firstItem="wIp-If-kPv" firstAttribute="leading" secondItem="igz-Qc-mck" secondAttribute="trailing" constant="8" id="c9o-VC-Tnt"/>
                     <constraint firstItem="vYp-YO-H5i" firstAttribute="centerX" secondItem="dEm-8A-n9c" secondAttribute="centerX" id="cT0-i5-luq"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="l31-WQ-dJE" secondAttribute="leading" id="dX3-8K-s5m"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="l31-WQ-dJE" secondAttribute="bottom" constant="1" id="fBj-xj-WoZ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="asm-fg-ZmD" secondAttribute="bottom" id="gHd-7Z-g3D"/>
+                    <constraint firstItem="wIp-If-kPv" firstAttribute="leading" secondItem="l31-WQ-dJE" secondAttribute="trailing" constant="8" id="iT9-oX-wbw"/>
                     <constraint firstItem="j6W-UZ-VyF" firstAttribute="top" secondItem="dEm-8A-n9c" secondAttribute="topMargin" id="krH-N9-PUC"/>
+                    <constraint firstItem="iaS-VW-9eL" firstAttribute="leading" secondItem="wIp-If-kPv" secondAttribute="trailing" constant="6" id="mG8-eP-mbe"/>
+                    <constraint firstItem="iaS-VW-9eL" firstAttribute="top" secondItem="scH-Bh-vYq" secondAttribute="bottom" constant="8" id="mQj-3I-Ebc"/>
+                    <constraint firstItem="igz-Qc-mck" firstAttribute="top" secondItem="scH-Bh-vYq" secondAttribute="bottom" constant="8" id="nok-i2-LWH"/>
+                    <constraint firstItem="JPe-Bq-1DI" firstAttribute="trailing" secondItem="vYp-YO-H5i" secondAttribute="trailing" id="pWq-tU-0P6"/>
+                    <constraint firstItem="wIp-If-kPv" firstAttribute="top" secondItem="scH-Bh-vYq" secondAttribute="bottom" constant="8" id="rlQ-Gh-qae"/>
                     <constraint firstItem="1T5-rL-gag" firstAttribute="trailing" secondItem="j6W-UZ-VyF" secondAttribute="trailing" id="sZR-WH-Fle"/>
+                    <constraint firstItem="JPe-Bq-1DI" firstAttribute="leading" secondItem="vYp-YO-H5i" secondAttribute="leading" id="t82-EF-JT6"/>
                     <constraint firstAttribute="trailingMargin" secondItem="vYp-YO-H5i" secondAttribute="trailing" id="tlA-ZM-hwg"/>
                     <constraint firstItem="j6W-UZ-VyF" firstAttribute="centerX" secondItem="dEm-8A-n9c" secondAttribute="centerX" id="tsy-88-iaJ"/>
+                    <constraint firstItem="l31-WQ-dJE" firstAttribute="top" secondItem="igz-Qc-mck" secondAttribute="bottom" constant="8" id="vKz-gx-EoP"/>
                     <constraint firstAttribute="leadingMargin" secondItem="vYp-YO-H5i" secondAttribute="leading" id="vXl-BK-gKy"/>
+                    <constraint firstItem="scH-Bh-vYq" firstAttribute="centerX" secondItem="dEm-8A-n9c" secondAttribute="centerX" id="wgL-zL-yM0"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="296" y="418.5"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="wIp-If-kPv" secondAttribute="bottom" constant="1" id="s7i-DI-Wi1"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="mainDate" destination="1T5-rL-gag" id="54T-Bl-KTI"/>
+                <outlet property="mainTitle" destination="j6W-UZ-VyF" id="w7U-o1-VSw"/>
+                <outlet property="prevision" destination="vYp-YO-H5i" id="yjm-aK-xFR"/>
+                <outlet property="rainPrev" destination="scH-Bh-vYq" id="lPP-zC-daW"/>
+                <outlet property="windPrevision" destination="JPe-Bq-1DI" id="59i-rx-mjx"/>
+            </connections>
+            <point key="canvasLocation" x="296" y="471"/>
         </tableViewCell>
     </objects>
 </document>

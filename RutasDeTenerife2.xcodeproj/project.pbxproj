@@ -27,6 +27,8 @@
 		9D741E8A1BF4F2D5008AB780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D741E881BF4F2D5008AB780 /* LaunchScreen.storyboard */; };
 		9D741E951BF4F2D5008AB780 /* RutasDeTenerife2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E941BF4F2D5008AB780 /* RutasDeTenerife2Tests.m */; };
 		9D741EA01BF4F2D5008AB780 /* RutasDeTenerife2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E9F1BF4F2D5008AB780 /* RutasDeTenerife2UITests.m */; };
+		9D7469A81C46500C008C70E0 /* IconInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D7469A71C46500C008C70E0 /* IconInfoView.xib */; };
+		9D7469AB1C46516E008C70E0 /* IconInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7469AA1C46516E008C70E0 /* IconInfoView.m */; };
 		9D74B0541BFDF0FB00A06E93 /* PathCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D74B0531BFDF0FB00A06E93 /* PathCell.xib */; };
 		9D74B0571BFDFB4300A06E93 /* PathCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D74B0561BFDFB4300A06E93 /* PathCellTableViewCell.m */; };
 		9D77D3DD1C05BCD600821854 /* QuickInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D77D3DC1C05BCD600821854 /* QuickInfo.xib */; };
@@ -407,6 +409,9 @@
 		9D741E9B1BF4F2D5008AB780 /* RutasDeTenerife2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RutasDeTenerife2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D741E9F1BF4F2D5008AB780 /* RutasDeTenerife2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RutasDeTenerife2UITests.m; sourceTree = "<group>"; };
 		9D741EA11BF4F2D5008AB780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D7469A71C46500C008C70E0 /* IconInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IconInfoView.xib; sourceTree = "<group>"; };
+		9D7469A91C46516E008C70E0 /* IconInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconInfoView.h; sourceTree = "<group>"; };
+		9D7469AA1C46516E008C70E0 /* IconInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconInfoView.m; sourceTree = "<group>"; };
 		9D74B0531BFDF0FB00A06E93 /* PathCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PathCell.xib; sourceTree = "<group>"; };
 		9D74B0551BFDFB4300A06E93 /* PathCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathCellTableViewCell.h; sourceTree = "<group>"; };
 		9D74B0561BFDFB4300A06E93 /* PathCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathCellTableViewCell.m; sourceTree = "<group>"; };
@@ -889,6 +894,9 @@
 				9D79CF611C3E809F00A4AD8A /* FieldView.h */,
 				9D79CF621C3E809F00A4AD8A /* FieldView.m */,
 				9D79CF641C3E852300A4AD8A /* FieldView.xib */,
+				9D7469A71C46500C008C70E0 /* IconInfoView.xib */,
+				9D7469A91C46516E008C70E0 /* IconInfoView.h */,
+				9D7469AA1C46516E008C70E0 /* IconInfoView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1520,6 +1528,7 @@
 				9D7AD6EB1BF5FA4A00E87809 /* GR 131 Etapa 3.gpx in Resources */,
 				9D7AD6D71BF5FA4A00E87809 /* afur-playa-tamadite.kml in Resources */,
 				9D7AD78F1BF5FA4A00E87809 /* ventanas-de-Guimar.gpx in Resources */,
+				9D7469A81C46500C008C70E0 /* IconInfoView.xib in Resources */,
 				9D7AD70E1BF5FA4A00E87809 /* PR-TF 35.kml in Resources */,
 				9D7AD7011BF5FA4A00E87809 /* Playa-del-Socorro---Pico-Teide-0.4---Las-Canadas.gpx in Resources */,
 				9D7AD7101BF5FA4A00E87809 /* PR-TF 40.1.kml in Resources */,
@@ -1691,6 +1700,7 @@
 				9D01091C1C3AA37200D2E389 /* ExtInfoNavViewController.m in Sources */,
 				9D79CF631C3E809F00A4AD8A /* FieldView.m in Sources */,
 				9D7AD5981BF5FA3700E87809 /* Database.m in Sources */,
+				9D7469AB1C46516E008C70E0 /* IconInfoView.m in Sources */,
 				5955C8FC1BF7BD15003843B2 /* FBQuadTreeNode.m in Sources */,
 				9D85D3CC1C4409BF00CD2535 /* AltitudeViewController.m in Sources */,
 				9D77D3E01C05D20F00821854 /* QuickInfoView.m in Sources */,

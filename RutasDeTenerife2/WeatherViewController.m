@@ -8,6 +8,7 @@
 
 #import "WeatherViewController.h"
 #import "PrevCell.h"
+#import "ForecastCell.h"
 
 @interface WeatherViewController ()
 
@@ -117,13 +118,23 @@
         cell = [[PrevCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     */
-    PrevCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PrevCell"];
-    if (!cell){
-        [tableView registerNib:[UINib nibWithNibName:@"PrevCell" bundle:nil] forCellReuseIdentifier:@"PrevCell"];
-        cell = [tableView dequeueReusableCellWithIdentifier:@"PrevCell"];
-    }
+    if (indexPath.section == 0){
+        PrevCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PrevCell"];
+        if (!cell){
+            [tableView registerNib:[UINib nibWithNibName:@"PrevCell" bundle:nil] forCellReuseIdentifier:@"PrevCell"];
+            cell = [tableView dequeueReusableCellWithIdentifier:@"PrevCell"];
+        }
+        
+        return cell;
+    }else{
+        ForecastCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ForecastCell"];
+        if (!cell){
+            [tableView registerNib:[UINib nibWithNibName:@"ForecastCell" bundle:nil] forCellReuseIdentifier:@"ForecastCell"];
+            cell = [tableView dequeueReusableCellWithIdentifier:@"ForecastCell"];
+        }
 
-    return cell;
+        return cell;
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
