@@ -11,6 +11,11 @@
 #import "IconInfoView.h"
 
 @interface ForecastCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet IconInfoView *moonset;
+@property (weak, nonatomic) IBOutlet IconInfoView *moonrise;
+@property (weak, nonatomic) IBOutlet IconInfoView *sunset;
+@property (weak, nonatomic) IBOutlet IconInfoView *sunrise;
 @property (weak, nonatomic) IBOutlet IconInfoView *rainPrev;
 @property (weak, nonatomic) IBOutlet FieldView *windPrevision;
 @property (weak, nonatomic) IBOutlet FieldView *prevision;

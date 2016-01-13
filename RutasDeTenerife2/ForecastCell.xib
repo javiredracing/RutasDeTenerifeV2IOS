@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -131,8 +131,12 @@
             <connections>
                 <outlet property="mainDate" destination="1T5-rL-gag" id="54T-Bl-KTI"/>
                 <outlet property="mainTitle" destination="j6W-UZ-VyF" id="w7U-o1-VSw"/>
+                <outlet property="moonrise" destination="iaS-VW-9eL" id="moY-au-iYJ"/>
+                <outlet property="moonset" destination="asm-fg-ZmD" id="zyE-Pd-b6O"/>
                 <outlet property="prevision" destination="vYp-YO-H5i" id="yjm-aK-xFR"/>
                 <outlet property="rainPrev" destination="scH-Bh-vYq" id="lPP-zC-daW"/>
+                <outlet property="sunrise" destination="igz-Qc-mck" id="noa-X1-79L"/>
+                <outlet property="sunset" destination="l31-WQ-dJE" id="fzv-XS-ckH"/>
                 <outlet property="windPrevision" destination="JPe-Bq-1DI" id="59i-rx-mjx"/>
             </connections>
             <point key="canvasLocation" x="296" y="471"/>
