@@ -21,15 +21,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    days = 1;
     // Do any additional setup after loading the view.
     NSLog(@"Wheater view loaded");
-    
+    //_responseData = nil;
+      NSLog(@"Did load -");
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSLog(@"view appear");
     NSMutableData *data = [self.route getWeatherJson];
     if (data != nil){
         [self parseJSONData:data];
         NSLog(@"Cached!");
     }else{
-        days = 1;
+        
         NSString *key = @"4dd5f7defe860cc6cb67909a84684a3f50bc160d";
         NSString *lang =  [[NSLocale preferredLanguages] objectAtIndex:0];
         NSDictionary *languageDic = [NSLocale componentsFromLocaleIdentifier:lang];
@@ -38,13 +44,14 @@
         
         NSString *weatherOnline = [NSString stringWithFormat:@"http://api.worldweatheronline.com/free/v2/weather.ashx?q=%f,%f&format=json&num_of_days=%d&tp=24&key=%@&showlocaltime=yes&lang=%@", location.latitude, location.longitude, days, key, languageCode];
         NSLog(weatherOnline);
-       /* http://api.worldweatheronline.com/free/v2/weather.ashx?q="+ myLatLng[0] +","+ myLatLng[1] +"&format=json&num_of_days="+nDays+"&tp=24&key="+getString(R.string.KEY_WEATHER)+"&showlocaltime=yes&lang="+languaje;*/
+        /* http://api.worldweatheronline.com/free/v2/weather.ashx?q="+ myLatLng[0] +","+ myLatLng[1] +"&format=json&num_of_days="+nDays+"&tp=24&key="+getString(R.string.KEY_WEATHER)+"&showlocaltime=yes&lang="+languaje;*/
         
         NSURL *url = [NSURL URLWithString:weatherOnline];
         NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:2.0];
         //http://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http
         NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,6 +79,7 @@
         [self parseJSONData:_responseData];
         [self.route setWeatherJson:_responseData];
     }
+    NSLog(@"finishing connection");
 }
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
     NSLog(@"Fail connection");
@@ -90,7 +98,11 @@
 #pragma mark - Tableview
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return days +1;
+    NSInteger i = days + 1;
+    /*if (_responseData != nil) {
+        i = days + 1;
+    }*/
+    return i;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -110,21 +122,13 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-   /*static NSString *simpleTableIdentifier = @"PrevCell";
-    
-    PrevCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[PrevCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    */
     if (indexPath.section == 0){
         PrevCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PrevCell"];
         if (!cell){
             [tableView registerNib:[UINib nibWithNibName:@"PrevCell" bundle:nil] forCellReuseIdentifier:@"PrevCell"];
             cell = [tableView dequeueReusableCellWithIdentifier:@"PrevCell"];
         }
-        
+        NSLog(@"finish cell 0");
         return cell;
     }else{
         ForecastCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ForecastCell"];
@@ -132,14 +136,17 @@
             [tableView registerNib:[UINib nibWithNibName:@"ForecastCell" bundle:nil] forCellReuseIdentifier:@"ForecastCell"];
             cell = [tableView dequeueReusableCellWithIdentifier:@"ForecastCell"];
         }
-
+        NSLog(@"finish cell i");
         return cell;
     }
+    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 350.0;
+    CGFloat value = 340.0;
+    if (indexPath.section == 0)
+        value = 350.0;
+    return value;
 }
 /*****************/
 
