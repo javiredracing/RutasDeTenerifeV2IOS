@@ -17,6 +17,7 @@
 @implementation WeatherViewController{
 
     int days;
+    NSDictionary *weatherData;
 }
 
 - (void)viewDidLoad {
@@ -24,9 +25,8 @@
     days = 1;
     // Do any additional setup after loading the view.
     NSLog(@"Wheater view loaded");
-    //_responseData = nil;
-      NSLog(@"Did load -");
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     NSLog(@"view appear");
@@ -152,9 +152,26 @@
 
 -(void)parseJSONData :(NSMutableData *)data{
     NSError *e;
-    NSArray *object = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&e];
-    NSLog(@"Object: %@", object);
-
+    NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&e];
+    
+    /*  for (NSMutableDictionary *dictionary in object)
+     {
+     NSString *arrayString = dictionary[@"data"];
+     if (arrayString)
+     {
+     NSData *data = [arrayString dataUsingEncoding:NSUTF8StringEncoding];
+     NSError *error = nil;
+     dictionary[@"array"] = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+     if (error)
+     NSLog(@"JSONObjectWithData for array error: %@", error);
+     }
+     }*/
+    //NSLog(@"Object: %@", object);
+    weatherData = [parsedJSON objectForKey:@"data"];
+    NSArray *currentConditions = [weatherData objectForKey:@"current_condition"];
+    NSDictionary *condition = [currentConditions objectAtIndex:0];
+    NSString *tempC = [condition objectForKey:@"temp_C"];
+    NSLog([NSString stringWithFormat:@"Current temp: %@", tempC]);
 }
 
 @end

@@ -41,12 +41,6 @@
                             <constraint firstAttribute="height" constant="70" id="WKO-5v-0gX"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqo-5o-rND">
-                        <rect key="frame" x="179" y="222" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sz-DE-H8J">
                         <rect key="frame" x="8" y="242" width="384" height="99"/>
                         <subviews>
@@ -57,12 +51,6 @@
                                     <constraint firstAttribute="width" constant="9" id="a7T-R6-skg"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5R0-uB-Lkn">
-                                <rect key="frame" x="8" y="8" width="172" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKQ-Q8-A03">
                                 <rect key="frame" x="8" y="39" width="172" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -77,6 +65,12 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcq-Cc-i7K">
                                 <rect key="frame" x="205" y="39" width="171" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5R0-uB-Lkn">
+                                <rect key="frame" x="8" y="8" width="172" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -100,6 +94,12 @@
                             <constraint firstAttribute="bottom" secondItem="Xck-v6-yrd" secondAttribute="bottom" id="ykz-Uv-KSp"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqo-5o-rND">
+                        <rect key="frame" x="179" y="222" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Zie-hw-h3m" firstAttribute="trailing" secondItem="vYw-x7-jIc" secondAttribute="trailingMargin" id="52m-4O-WCb"/>
@@ -133,6 +133,17 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="condAtmosf" destination="kqo-5o-rND" id="chH-hP-pyo"/>
+                <outlet property="currentCondTitle" destination="Zie-hw-h3m" id="OgN-g2-eQm"/>
+                <outlet property="currentDate" destination="h0J-jT-v2v" id="poc-5B-wIA"/>
+                <outlet property="currentTemp" destination="pOQ-xD-55b" id="Nr9-Ls-5wa"/>
+                <outlet property="currentWind" destination="jeS-y8-cwn" id="bsz-mu-my8"/>
+                <outlet property="humidity" destination="HKQ-Q8-A03" id="pmN-SS-T6R"/>
+                <outlet property="nubosity" destination="5R0-uB-Lkn" id="ZEE-94-0SL"/>
+                <outlet property="pressure" destination="jdF-zY-cOw" id="Cdf-te-SS6"/>
+                <outlet property="rainfall" destination="lcq-Cc-i7K" id="JZX-9G-vQR"/>
+            </connections>
             <point key="canvasLocation" x="213" y="509"/>
         </tableViewCell>
     </objects>
