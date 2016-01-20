@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface IconInfoView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
 @property (strong, nonatomic) IBOutlet UIView *currentView;
 
 -(void)setItems: (NSString *)title :(UIImage *)icon;

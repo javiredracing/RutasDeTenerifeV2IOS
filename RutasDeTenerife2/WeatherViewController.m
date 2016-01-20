@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    days = 1;
+    days = 3;
     // Do any additional setup after loading the view.
     NSLog(@"Wheater view loaded");
 }
@@ -128,7 +128,22 @@
             [tableView registerNib:[UINib nibWithNibName:@"PrevCell" bundle:nil] forCellReuseIdentifier:@"PrevCell"];
             cell = [tableView dequeueReusableCellWithIdentifier:@"PrevCell"];
         }
-        NSLog(@"finish cell 0");
+        if (weatherData != nil) {
+            //NSLog(@"WeatherData NOT NIL");
+            NSArray *time_zone = [weatherData objectForKey:@"time_zone"];
+            NSDictionary *time = [time_zone objectAtIndex:0];
+            NSString *localtime = [time objectForKey:@"localtime"];
+           // NSLog(localtime);
+            NSArray *currentConditions = [weatherData objectForKey:@"current_condition"];
+            NSDictionary *condition = [currentConditions objectAtIndex:0];
+            //NSString *tempC = [condition objectForKey:@"temp_C"];
+            NSArray *weatherDesc = [condition objectForKey:@"weatherDesc"];
+            NSDictionary *desc = [weatherDesc objectAtIndex:0];
+            NSString *currentDesc = [desc objectForKey:@"value"];
+            //(NSString*)hour :(NSString *)iconCode :(NSString*)temperature :(NSString *)description :(NSString *)wind :(NSString *)cloudly :(NSString *)humidity :(NSString *)pressure :(NSString *)rainfall;
+            [cell setCurrentCond:localtime :[condition objectForKey:@"weatherCode"] :[condition objectForKey:@"temp_C"] :currentDesc :[condition objectForKey:@"windspeedKmph"] :[condition objectForKey:@"cloudcover"] :[condition objectForKey:@"humidity"] :[condition objectForKey:@"pressure"] :[condition objectForKey:@"precipMM"]];
+        }
+        //NSLog([NSString stringWithFormat:@"loaded cell %ld",(long)indexPath.section]);
         return cell;
     }else{
         ForecastCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ForecastCell"];
@@ -136,11 +151,33 @@
             [tableView registerNib:[UINib nibWithNibName:@"ForecastCell" bundle:nil] forCellReuseIdentifier:@"ForecastCell"];
             cell = [tableView dequeueReusableCellWithIdentifier:@"ForecastCell"];
         }
-        NSLog(@"finish cell i");
+        if (weatherData != nil) {
+            
+            NSArray *weather = [weatherData objectForKey:@"weather"];
+            NSDictionary *forecast = [weather objectAtIndex:(indexPath.section - 1)];
+            
+            NSArray *hourly = [forecast objectForKey:@"hourly"];
+            NSDictionary *hourly_weather = [hourly objectAtIndex:0];
+            
+            NSArray *weatherDesc = [hourly_weather objectForKey:@"weatherDesc"];
+            NSDictionary *valueDesc = [weatherDesc objectAtIndex:0];
+            NSString *desc = [valueDesc objectForKey:@"value"];
+            
+            NSArray *astronomy = [forecast objectForKey:@"astronomy"];
+            NSDictionary *moonSun = [astronomy objectAtIndex:0];
+            
+           // (NSString *)date :(NSString *)maxTemp :(NSString *)minTemp :(NSString *)description :(NSString*) iconCode :(NSString *)windSpeed :(NSString *)windDirec :(NSString *)rainfall :(NSString *)sunset :(NSString *)sunrise :(NSString * )moonset :(NSString *)moonrise;
+            [cell setForecast:[forecast objectForKey:@"date"]:[forecast objectForKey:@"maxtempC"] :[forecast objectForKey:@"mintempC"]:desc :[hourly_weather objectForKey:@"weatherCode"] :[hourly_weather objectForKey:@"windspeedKmph"] :[hourly_weather objectForKey:@"winddir16Point"] :[hourly_weather objectForKey:@"precipMM"] :[moonSun objectForKey:@"sunset"] :[moonSun objectForKey:@"sunrise"] :[moonSun objectForKey:@"moonset"] :[moonSun objectForKey:@"moonrise"] ];
+        }
+        //NSLog([NSString stringWithFormat:@"loaded cell %ld",(long)indexPath.section]);
         return cell;
     }
-    
 }
+
+/*-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    NSLog([NSString stringWithFormat:@"Display cell %ld",(long)indexPath.row]);
+}*/
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     CGFloat value = 340.0;
@@ -153,25 +190,8 @@
 -(void)parseJSONData :(NSMutableData *)data{
     NSError *e;
     NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&e];
-    
-    /*  for (NSMutableDictionary *dictionary in object)
-     {
-     NSString *arrayString = dictionary[@"data"];
-     if (arrayString)
-     {
-     NSData *data = [arrayString dataUsingEncoding:NSUTF8StringEncoding];
-     NSError *error = nil;
-     dictionary[@"array"] = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-     if (error)
-     NSLog(@"JSONObjectWithData for array error: %@", error);
-     }
-     }*/
-    //NSLog(@"Object: %@", object);
     weatherData = [parsedJSON objectForKey:@"data"];
-    NSArray *currentConditions = [weatherData objectForKey:@"current_condition"];
-    NSDictionary *condition = [currentConditions objectAtIndex:0];
-    NSString *tempC = [condition objectForKey:@"temp_C"];
-    NSLog([NSString stringWithFormat:@"Current temp: %@", tempC]);
+    [self.weatherTableView reloadData];
 }
 
 @end

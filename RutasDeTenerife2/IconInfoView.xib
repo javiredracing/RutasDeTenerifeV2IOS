@@ -8,6 +8,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IconInfoView">
             <connections>
                 <outlet property="currentView" destination="iN0-l3-epB" id="Q6c-D3-vh8"/>
+                <outlet property="icon" destination="Oge-l4-0H4" id="3fD-Wz-1aW"/>
+                <outlet property="title" destination="J8z-PY-rfb" id="isY-Cr-H0g"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

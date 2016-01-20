@@ -14,6 +14,7 @@
     NSMutableData *_responseData;
     
 }
+@property (weak, nonatomic) IBOutlet UITableView *weatherTableView;
 
 @property Route *route;
 

@@ -44,8 +44,8 @@
 }
 
 -(void)setItems:(NSString *)title :(UIImage *)icon{
-    /*self.icon.image = icon;
-    self.title.text = title;*/
+    self.icon.image = icon;
+    self.title.text = title;
 }
 
 @end
