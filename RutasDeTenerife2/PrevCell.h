@@ -22,5 +22,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentCondTitle;
 @property (weak, nonatomic) IBOutlet FieldView *currentWind;
 
--(void)setCurrentCond: (NSString*)hour :(NSString *)iconCode :(NSString*)temperature :(NSString *)description :(NSString *)wind :(NSString *)cloudly :(NSString *)humidity :(NSString *)pressure :(NSString *)rainfall;
+-(void)setCurrentCond: (NSString*)hour :(NSString *)iconCode :(NSString*)temperature :(NSString *)description :(NSString *)wind :(NSString *)windDirec :(NSString *)cloudly :(NSString *)humidity :(NSString *)pressure :(NSString *)rainfall :(NSString *)countryCode;
 @end

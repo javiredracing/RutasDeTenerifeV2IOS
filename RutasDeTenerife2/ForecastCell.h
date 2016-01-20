@@ -22,6 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *mainDate;
 @property (weak, nonatomic) IBOutlet UILabel *mainTitle;
 
--(void)setForecast:(NSString *)date :(NSString *)maxTemp :(NSString *)minTemp :(NSString *)description :(NSString*) iconCode :(NSString *)windSpeed :(NSString *)windDirec :(NSString *)rainfall :(NSString *)sunset :(NSString *)sunrise :(NSString * )moonset :(NSString *)moonrise;
+-(void)setForecast:(NSString *)date :(NSString *)maxTemp :(NSString *)minTemp :(NSString *)description :(NSString*) iconCode :(NSString *)windSpeed :(NSString *)windDirec :(NSString *)rainfall :(NSString *)sunset :(NSString *)sunrise :(NSString * )moonset :(NSString *)moonrise :(NSString *)countryCode;
 
 @end

@@ -18,34 +18,36 @@
 
     int days;
     NSDictionary *weatherData;
+    NSString *languageCode;
+    NSString *countryCode;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    days = 3;
+    days = 1;
+    NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
+    countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
+    
     // Do any additional setup after loading the view.
-    NSLog(@"Wheater view loaded");
+    NSLog([NSString stringWithFormat:@"Country code: %@",countryCode ]);
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     NSLog(@"view appear");
     NSMutableData *data = [self.route getWeatherJson];
+    NSString *lang =  [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSDictionary *languageDic = [NSLocale componentsFromLocaleIdentifier:lang];
+    languageCode = [languageDic objectForKey:@"kCFLocaleLanguageCodeKey"];
     if (data != nil){
         [self parseJSONData:data];
         NSLog(@"Cached!");
     }else{
-        
         NSString *key = @"4dd5f7defe860cc6cb67909a84684a3f50bc160d";
-        NSString *lang =  [[NSLocale preferredLanguages] objectAtIndex:0];
-        NSDictionary *languageDic = [NSLocale componentsFromLocaleIdentifier:lang];
-        NSString *languageCode = [languageDic objectForKey:@"kCFLocaleLanguageCodeKey"];
         CLLocationCoordinate2D location = [self.route getFirstPoint];
         
         NSString *weatherOnline = [NSString stringWithFormat:@"http://api.worldweatheronline.com/free/v2/weather.ashx?q=%f,%f&format=json&num_of_days=%d&tp=24&key=%@&showlocaltime=yes&lang=%@", location.latitude, location.longitude, days, key, languageCode];
         NSLog(weatherOnline);
-        /* http://api.worldweatheronline.com/free/v2/weather.ashx?q="+ myLatLng[0] +","+ myLatLng[1] +"&format=json&num_of_days="+nDays+"&tp=24&key="+getString(R.string.KEY_WEATHER)+"&showlocaltime=yes&lang="+languaje;*/
-        
         NSURL *url = [NSURL URLWithString:weatherOnline];
         NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:2.0];
         //http://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http
@@ -127,21 +129,42 @@
         if (!cell){
             [tableView registerNib:[UINib nibWithNibName:@"PrevCell" bundle:nil] forCellReuseIdentifier:@"PrevCell"];
             cell = [tableView dequeueReusableCellWithIdentifier:@"PrevCell"];
+            //NSLog([NSString stringWithFormat:@"loaded cell %ld",(long)indexPath.section]);
         }
         if (weatherData != nil) {
-            //NSLog(@"WeatherData NOT NIL");
+
             NSArray *time_zone = [weatherData objectForKey:@"time_zone"];
             NSDictionary *time = [time_zone objectAtIndex:0];
             NSString *localtime = [time objectForKey:@"localtime"];
-           // NSLog(localtime);
+
             NSArray *currentConditions = [weatherData objectForKey:@"current_condition"];
             NSDictionary *condition = [currentConditions objectAtIndex:0];
             //NSString *tempC = [condition objectForKey:@"temp_C"];
-            NSArray *weatherDesc = [condition objectForKey:@"weatherDesc"];
-            NSDictionary *desc = [weatherDesc objectAtIndex:0];
-            NSString *currentDesc = [desc objectForKey:@"value"];
+            NSString *currentDesc = @"";
+            NSArray *lang_XX = [condition objectForKey:[NSString stringWithFormat:@"lang_%@",languageCode]];
+            if (lang_XX != nil){
+                NSDictionary *desc = [lang_XX objectAtIndex:0];
+                currentDesc = [desc objectForKey:@"value"];
+            }else{
+                NSArray *weatherDesc = [condition objectForKey:@"weatherDesc"];
+                NSDictionary *desc = [weatherDesc objectAtIndex:0];
+                currentDesc = [desc objectForKey:@"value"];
+            }
+            
+            NSString *windSpeed =@"";
+            if ([countryCode isEqualToString:@"UK"] || [countryCode isEqualToString:@"US"]){
+                windSpeed = [condition objectForKey:@"windspeedMiles"];
+            }else
+                windSpeed = [condition objectForKey:@"windspeedKmph"];
+            
+            NSString *temperature = @"";
+            if ([countryCode isEqualToString:@"US"]) {
+                temperature =[condition objectForKey:@"temp_F"];
+            }else
+                temperature =[condition objectForKey:@"temp_C"];
+            
             //(NSString*)hour :(NSString *)iconCode :(NSString*)temperature :(NSString *)description :(NSString *)wind :(NSString *)cloudly :(NSString *)humidity :(NSString *)pressure :(NSString *)rainfall;
-            [cell setCurrentCond:localtime :[condition objectForKey:@"weatherCode"] :[condition objectForKey:@"temp_C"] :currentDesc :[condition objectForKey:@"windspeedKmph"] :[condition objectForKey:@"cloudcover"] :[condition objectForKey:@"humidity"] :[condition objectForKey:@"pressure"] :[condition objectForKey:@"precipMM"]];
+            [cell setCurrentCond:localtime :[condition objectForKey:@"weatherCode"] : temperature:currentDesc :windSpeed :[condition objectForKey:@"winddir16Point"] :[condition objectForKey:@"cloudcover"] :[condition objectForKey:@"humidity"] :[condition objectForKey:@"pressure"] :[condition objectForKey:@"precipMM"] :countryCode];
         }
         //NSLog([NSString stringWithFormat:@"loaded cell %ld",(long)indexPath.section]);
         return cell;
@@ -159,15 +182,39 @@
             NSArray *hourly = [forecast objectForKey:@"hourly"];
             NSDictionary *hourly_weather = [hourly objectAtIndex:0];
             
-            NSArray *weatherDesc = [hourly_weather objectForKey:@"weatherDesc"];
-            NSDictionary *valueDesc = [weatherDesc objectAtIndex:0];
-            NSString *desc = [valueDesc objectForKey:@"value"];
+            /**Description**/
+            NSString *currentDesc = @"";
+            NSArray *lang_XX = [hourly_weather objectForKey:[NSString stringWithFormat:@"lang_%@",languageCode]];
+            if (lang_XX != nil){
+                NSDictionary *desc = [lang_XX objectAtIndex:0];
+                currentDesc = [desc objectForKey:@"value"];
+            }else{
+                NSArray *weatherDesc = [hourly_weather objectForKey:@"weatherDesc"];
+                NSDictionary *valueDesc = [weatherDesc objectAtIndex:0];
+                currentDesc = [valueDesc objectForKey:@"value"];
+            }
             
             NSArray *astronomy = [forecast objectForKey:@"astronomy"];
             NSDictionary *moonSun = [astronomy objectAtIndex:0];
             
+            NSString *windSpeed =@"";
+            if ([countryCode isEqualToString:@"UK"] || [countryCode isEqualToString:@"US"]){
+                windSpeed = [hourly_weather objectForKey:@"windspeedMiles"];
+            }else
+                windSpeed = [hourly_weather objectForKey:@"windspeedKmph"];
+            
+            NSString *temperatureMax = @"";
+            NSString *temperatureMin = @"";
+            if ([countryCode isEqualToString:@"US"]) {
+                temperatureMax =[forecast objectForKey:@"maxtempF"];
+                temperatureMin =[forecast objectForKey:@"mintempF"];
+            }else{
+                temperatureMax =[forecast objectForKey:@"maxtempC"];
+                temperatureMin = [forecast objectForKey:@"mintempC"];
+            }
+
            // (NSString *)date :(NSString *)maxTemp :(NSString *)minTemp :(NSString *)description :(NSString*) iconCode :(NSString *)windSpeed :(NSString *)windDirec :(NSString *)rainfall :(NSString *)sunset :(NSString *)sunrise :(NSString * )moonset :(NSString *)moonrise;
-            [cell setForecast:[forecast objectForKey:@"date"]:[forecast objectForKey:@"maxtempC"] :[forecast objectForKey:@"mintempC"]:desc :[hourly_weather objectForKey:@"weatherCode"] :[hourly_weather objectForKey:@"windspeedKmph"] :[hourly_weather objectForKey:@"winddir16Point"] :[hourly_weather objectForKey:@"precipMM"] :[moonSun objectForKey:@"sunset"] :[moonSun objectForKey:@"sunrise"] :[moonSun objectForKey:@"moonset"] :[moonSun objectForKey:@"moonrise"] ];
+            [cell setForecast:[forecast objectForKey:@"date"]:temperatureMax :temperatureMin:currentDesc :[hourly_weather objectForKey:@"weatherCode"] :windSpeed :[hourly_weather objectForKey:@"winddir16Point"] :[hourly_weather objectForKey:@"precipMM"] :[moonSun objectForKey:@"sunset"] :[moonSun objectForKey:@"sunrise"] :[moonSun objectForKey:@"moonset"] :[moonSun objectForKey:@"moonrise"] :countryCode];
         }
         //NSLog([NSString stringWithFormat:@"loaded cell %ld",(long)indexPath.section]);
         return cell;
@@ -190,8 +237,10 @@
 -(void)parseJSONData :(NSMutableData *)data{
     NSError *e;
     NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&e];
-    weatherData = [parsedJSON objectForKey:@"data"];
-    [self.weatherTableView reloadData];
+    if (parsedJSON != nil){
+        weatherData = [parsedJSON objectForKey:@"data"];
+        [self.weatherTableView reloadData]; //Reload tableview when all data have been parsed correctly
+    }
 }
 
 @end
