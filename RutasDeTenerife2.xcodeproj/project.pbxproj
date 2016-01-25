@@ -350,6 +350,11 @@
 		9D82A30B1C0F181400F8DDFE /* ExtendedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82A30A1C0F181400F8DDFE /* ExtendedInfoViewController.m */; };
 		9D82A30E1C0F2DB100F8DDFE /* RoundRectPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */; };
 		9D85D3CC1C4409BF00CD2535 /* AltitudeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D85D3CB1C4409BF00CD2535 /* AltitudeViewController.m */; };
+		9D8E9CBA1C5676AF003ACD1C /* BEMAverageLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E9CB11C5676AF003ACD1C /* BEMAverageLine.m */; };
+		9D8E9CBB1C5676AF003ACD1C /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E9CB31C5676AF003ACD1C /* BEMCircle.m */; };
+		9D8E9CBC1C5676AF003ACD1C /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E9CB51C5676AF003ACD1C /* BEMLine.m */; };
+		9D8E9CBD1C5676AF003ACD1C /* BEMPermanentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E9CB71C5676AF003ACD1C /* BEMPermanentPopupView.m */; };
+		9D8E9CBE1C5676AF003ACD1C /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E9CB91C5676AF003ACD1C /* BEMSimpleLineGraphView.m */; };
 		9D96DB881BF9E0C8008FEA35 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D96DB871BF9E0C8008FEA35 /* CoreText.framework */; };
 /* End PBXBuildFile section */
 
@@ -749,6 +754,16 @@
 		9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundRectPresentationController.m; sourceTree = "<group>"; };
 		9D85D3CA1C4409BF00CD2535 /* AltitudeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AltitudeViewController.h; sourceTree = "<group>"; };
 		9D85D3CB1C4409BF00CD2535 /* AltitudeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AltitudeViewController.m; sourceTree = "<group>"; };
+		9D8E9CB01C5676AF003ACD1C /* BEMAverageLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAverageLine.h; sourceTree = "<group>"; };
+		9D8E9CB11C5676AF003ACD1C /* BEMAverageLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMAverageLine.m; sourceTree = "<group>"; };
+		9D8E9CB21C5676AF003ACD1C /* BEMCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMCircle.h; sourceTree = "<group>"; };
+		9D8E9CB31C5676AF003ACD1C /* BEMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMCircle.m; sourceTree = "<group>"; };
+		9D8E9CB41C5676AF003ACD1C /* BEMLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMLine.h; sourceTree = "<group>"; };
+		9D8E9CB51C5676AF003ACD1C /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
+		9D8E9CB61C5676AF003ACD1C /* BEMPermanentPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMPermanentPopupView.h; sourceTree = "<group>"; };
+		9D8E9CB71C5676AF003ACD1C /* BEMPermanentPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMPermanentPopupView.m; sourceTree = "<group>"; };
+		9D8E9CB81C5676AF003ACD1C /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
+		9D8E9CB91C5676AF003ACD1C /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
 		9D96DB871BF9E0C8008FEA35 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -828,6 +843,7 @@
 		9D741E791BF4F2D5008AB780 /* RutasDeTenerife2 */ = {
 			isa = PBXGroup;
 			children = (
+				9D8E9CAF1C5676AF003ACD1C /* Classes */,
 				9D79CF601C3E7AF800A4AD8A /* Views */,
 				5955C8ED1BF7BD15003843B2 /* FBAnnotationClustering */,
 				9D7AD6021BF5FA4900E87809 /* assets */,
@@ -1254,6 +1270,23 @@
 				9D7AD6C91BF5FA4900E87809 /* ventanas-de-Guimar.kml */,
 			);
 			path = assets;
+			sourceTree = "<group>";
+		};
+		9D8E9CAF1C5676AF003ACD1C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9D8E9CB01C5676AF003ACD1C /* BEMAverageLine.h */,
+				9D8E9CB11C5676AF003ACD1C /* BEMAverageLine.m */,
+				9D8E9CB21C5676AF003ACD1C /* BEMCircle.h */,
+				9D8E9CB31C5676AF003ACD1C /* BEMCircle.m */,
+				9D8E9CB41C5676AF003ACD1C /* BEMLine.h */,
+				9D8E9CB51C5676AF003ACD1C /* BEMLine.m */,
+				9D8E9CB61C5676AF003ACD1C /* BEMPermanentPopupView.h */,
+				9D8E9CB71C5676AF003ACD1C /* BEMPermanentPopupView.m */,
+				9D8E9CB81C5676AF003ACD1C /* BEMSimpleLineGraphView.h */,
+				9D8E9CB91C5676AF003ACD1C /* BEMSimpleLineGraphView.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1696,10 +1729,13 @@
 				9D7AD5971BF5FA3700E87809 /* CustomKMLParser.m in Sources */,
 				5955C8F91BF7BD15003843B2 /* FBAnnotationCluster.m in Sources */,
 				9D74B0571BFDFB4300A06E93 /* PathCellTableViewCell.m in Sources */,
+				9D8E9CBC1C5676AF003ACD1C /* BEMLine.m in Sources */,
 				5955C8FB1BF7BD15003843B2 /* FBQuadTree.m in Sources */,
 				9D01091C1C3AA37200D2E389 /* ExtInfoNavViewController.m in Sources */,
 				9D79CF631C3E809F00A4AD8A /* FieldView.m in Sources */,
 				9D7AD5981BF5FA3700E87809 /* Database.m in Sources */,
+				9D8E9CBA1C5676AF003ACD1C /* BEMAverageLine.m in Sources */,
+				9D8E9CBE1C5676AF003ACD1C /* BEMSimpleLineGraphView.m in Sources */,
 				9D7469AB1C46516E008C70E0 /* IconInfoView.m in Sources */,
 				5955C8FC1BF7BD15003843B2 /* FBQuadTreeNode.m in Sources */,
 				9D85D3CC1C4409BF00CD2535 /* AltitudeViewController.m in Sources */,
@@ -1710,6 +1746,7 @@
 				9D7AD5FC1BF5FA3700E87809 /* FMDatabase.m in Sources */,
 				9D82A30E1C0F2DB100F8DDFE /* RoundRectPresentationController.m in Sources */,
 				9D7AD6011BF5FA3700E87809 /* Route.m in Sources */,
+				9D8E9CBB1C5676AF003ACD1C /* BEMCircle.m in Sources */,
 				9D7AD6001BF5FA3700E87809 /* FMResultSet.m in Sources */,
 				9D741E7F1BF4F2D5008AB780 /* AppDelegate.m in Sources */,
 				9D7AD5FE1BF5FA3700E87809 /* FMDatabasePool.m in Sources */,
@@ -1719,6 +1756,7 @@
 				9D741E7C1BF4F2D5008AB780 /* main.m in Sources */,
 				9D7AD5FF1BF5FA3700E87809 /* FMDatabaseQueue.m in Sources */,
 				5953540A1C39E32100B83FD2 /* ExtendedInfoTabViewController.m in Sources */,
+				9D8E9CBD1C5676AF003ACD1C /* BEMPermanentPopupView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BEMSimpleLineGraphView.h"
 
-@interface AltitudeViewController : UIViewController
+@interface AltitudeViewController : UIViewController<BEMSimpleLineGraphDelegate, BEMSimpleLineGraphDataSource>
+
+@property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *graphView;
 
 @property NSMutableArray *altitude;
+@property double distance;
 
 @end

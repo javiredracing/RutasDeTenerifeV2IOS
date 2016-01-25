@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.graphView.autoScaleYAxis = YES;
+    self.graphView.alwaysDisplayDots = NO;
+    self.graphView.enableReferenceXAxisLines = YES;
+    self.graphView.enableReferenceYAxisLines = YES;
+    self.graphView.enableReferenceAxisFrame = YES;
+    
+    double interval = (self.distance / (double)[self.altitude count]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +40,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - SimpleLineGraph Data Source
+
+-(NSInteger)numberOfPointsInLineGraph:(BEMSimpleLineGraphView *)graph{
+    return 1;
+}
+
+-(CGFloat)lineGraph:(BEMSimpleLineGraphView *)graph valueForPointAtIndex:(NSInteger)index{
+    return 1.0;
+}
 
 @end

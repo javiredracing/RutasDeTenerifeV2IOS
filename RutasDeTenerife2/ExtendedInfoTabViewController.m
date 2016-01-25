@@ -29,6 +29,7 @@
     
     AltitudeViewController *altitudeVievController = (AltitudeViewController *)[viewControllers objectAtIndex:1];
     altitudeVievController.altitude = self.altitude;
+    altitudeVievController.distance = [self.route getDist];
     
     WeatherViewController *weatherViewController = (WeatherViewController *)[viewControllers objectAtIndex:2];
     weatherViewController.route = self.route;
