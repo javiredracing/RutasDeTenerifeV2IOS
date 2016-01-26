@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BEMSimpleLineGraphView.h"
 
+//https://github.com/Boris-Em/BEMSimpleLineGraph/wiki/Getting-Started
 @interface AltitudeViewController : UIViewController<BEMSimpleLineGraphDelegate, BEMSimpleLineGraphDataSource>
 
 @property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *graphView;

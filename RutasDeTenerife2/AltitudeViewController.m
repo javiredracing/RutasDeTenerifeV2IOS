@@ -19,10 +19,14 @@
     // Do any additional setup after loading the view.
     self.graphView.autoScaleYAxis = YES;
     self.graphView.alwaysDisplayDots = NO;
+    self.graphView.enableXAxisLabel = YES;
     self.graphView.enableReferenceXAxisLines = YES;
     self.graphView.enableReferenceYAxisLines = YES;
     self.graphView.enableReferenceAxisFrame = YES;
-    
+    self.graphView.delegate = self;
+    self.graphView.dataSource = self;
+    self.graphView.animationGraphStyle = BEMLineAnimationNone;
+    //self.graphView.enableBezierCurve = YES;
     double interval = (self.distance / (double)[self.altitude count]);
 }
 
@@ -42,13 +46,34 @@
 */
 
 #pragma mark - SimpleLineGraph Data Source
-
+ // Number of points in the graph
 -(NSInteger)numberOfPointsInLineGraph:(BEMSimpleLineGraphView *)graph{
-    return 1;
+    return [self.altitude count];
 }
 
+// The value of the point on the Y-Axis for the index.
 -(CGFloat)lineGraph:(BEMSimpleLineGraphView *)graph valueForPointAtIndex:(NSInteger)index{
-    return 1.0;
+    CGFloat value =[[self.altitude objectAtIndex:index] doubleValue];
+    return value;
 }
 
+#pragma mark - SimpleLineGraph Delegate
+
+- (NSInteger)numberOfGapsBetweenLabelsOnLineGraph:(BEMSimpleLineGraphView *)graph {
+    float value = ([self.altitude count] / 5);
+    NSNumber *myNumber = [NSNumber numberWithFloat:value];
+    NSInteger myInt = [myNumber intValue];
+    return myInt;
+}
+
+-(NSString *)lineGraph:(BEMSimpleLineGraphView *)graph labelOnXAxisForIndex:(NSInteger)index{
+    NSLog([NSString stringWithFormat:@"Log %d",(int)index]);
+    float value = (self.distance * index)/[self.altitude count];
+    return [NSString stringWithFormat:@"%.1f",value];
+}
+
+-(void)lineGraphDidFinishLoading:(BEMSimpleLineGraphView *)graph{
+    NSLog(@"finishing loading");
+    //TODO calculate elevation MAX and MIN
+}
 @end
