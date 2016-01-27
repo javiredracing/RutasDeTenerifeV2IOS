@@ -20,6 +20,7 @@
     NSDictionary *weatherData;
     NSString *languageCode;
     NSString *countryCode;
+    BOOL firstTime;
 }
 
 - (void)viewDidLoad {
@@ -27,33 +28,36 @@
     days = 1;
     NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
     countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
-    
+    firstTime = true;
     // Do any additional setup after loading the view.
-    NSLog([NSString stringWithFormat:@"Country code: %@",countryCode ]);
+    //NSLog([NSString stringWithFormat:@"Country code: %@",countryCode ]);
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    NSLog(@"view appear");
     NSMutableData *data = [self.route getWeatherJson];
-    NSString *lang =  [[NSLocale preferredLanguages] objectAtIndex:0];
-    NSDictionary *languageDic = [NSLocale componentsFromLocaleIdentifier:lang];
-    languageCode = [languageDic objectForKey:@"kCFLocaleLanguageCodeKey"];
-    if (data != nil){
-        [self parseJSONData:data];
-        NSLog(@"Cached!");
-    }else{
-        NSString *key = @"4dd5f7defe860cc6cb67909a84684a3f50bc160d";
-        CLLocationCoordinate2D location = [self.route getFirstPoint];
-        
-        NSString *weatherOnline = [NSString stringWithFormat:@"http://api.worldweatheronline.com/free/v2/weather.ashx?q=%f,%f&format=json&num_of_days=%d&tp=24&key=%@&showlocaltime=yes&lang=%@", location.latitude, location.longitude, days, key, languageCode];
-        NSLog(weatherOnline);
-        NSURL *url = [NSURL URLWithString:weatherOnline];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:2.0];
-        //http://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http
-        NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if ((firstTime) || (data == nil)){
+        NSLog(@"view appear");
+        firstTime = false;
+        NSString *lang =  [[NSLocale preferredLanguages] objectAtIndex:0];
+        NSDictionary *languageDic = [NSLocale componentsFromLocaleIdentifier:lang];
+        languageCode = [languageDic objectForKey:@"kCFLocaleLanguageCodeKey"];
+        if (data != nil){
+            [self parseJSONData:data];
+            NSLog(@"Cached!");
+        }else{
+            NSString *key = @"4dd5f7defe860cc6cb67909a84684a3f50bc160d";
+            CLLocationCoordinate2D location = [self.route getFirstPoint];
+            
+            NSString *weatherOnline = [NSString stringWithFormat:@"http://api.worldweatheronline.com/free/v2/weather.ashx?q=%f,%f&format=json&num_of_days=%d&tp=24&key=%@&showlocaltime=yes&lang=%@", location.latitude, location.longitude, days, key, languageCode];
+            NSLog(weatherOnline);
+            NSURL *url = [NSURL URLWithString:weatherOnline];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible=YES;
+            NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:2.0];
+            //http://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http
+            NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        }
     }
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,10 +85,12 @@
         [self parseJSONData:_responseData];
         [self.route setWeatherJson:_responseData];
     }
+    [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
     NSLog(@"finishing connection");
 }
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
     NSLog(@"Fail connection");
+    [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
 }
 /*
 #pragma mark - Navigation

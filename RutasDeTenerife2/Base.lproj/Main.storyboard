@@ -351,7 +351,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av0-9l-DbJ">
                                         <rect key="frame" x="259" y="8" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAl-YY-RcK">
@@ -372,7 +372,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4W-OM-m91">
                                         <rect key="frame" x="80" y="45" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m2Z-tC-WjT">
@@ -385,7 +385,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g65-Sp-up6">
                                         <rect key="frame" x="363" y="45" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -406,54 +406,16 @@
                                     <constraint firstAttribute="bottom" secondItem="Q4W-OM-m91" secondAttribute="bottom" constant="14" id="ugq-sY-5kc"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8b-g0-IUW" customClass="BEMSimpleLineGraphView">
-                                <rect key="frame" x="20" y="96" width="560" height="383"/>
-                                <color key="backgroundColor" red="1" green="0.68654527430000001" blue="0.38348885529999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.56330095540000003" green="0.87200662360000003" blue="0.37134174739999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableBezierCurve" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableYAxisLabel" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableXAxisLabel" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="colorXaxisLabel">
-                                        <color key="value" red="1" green="0.98058520260000004" blue="0.33119641820000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="colorLine">
-                                        <color key="value" red="1" green="0.39510761030000002" blue="0.81600041130000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="colorBottom">
-                                        <color key="value" red="0.25098039220000001" green="0.65098039220000004" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="alphaBottom">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="colorTop">
-                                        <color key="value" red="0.43921568630000002" green="0.43529411759999997" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="colorPoint">
-                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="colorYaxisLabel">
-                                        <color key="value" red="0.46636345140000002" green="1" blue="0.98125269790000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96454016789999997" blue="0.051228342869999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cMF-V0-IkQ" firstAttribute="trailing" secondItem="jfv-6k-Lz0" secondAttribute="trailingMargin" id="4zp-OA-ER7"/>
                             <constraint firstItem="cMF-V0-IkQ" firstAttribute="leading" secondItem="jfv-6k-Lz0" secondAttribute="leadingMargin" id="Dim-Sm-3yD"/>
                             <constraint firstItem="cMF-V0-IkQ" firstAttribute="top" secondItem="kNt-Zg-cVa" secondAttribute="bottom" constant="8" id="GAO-uU-s9b"/>
-                            <constraint firstItem="X8b-g0-IUW" firstAttribute="trailing" secondItem="jfv-6k-Lz0" secondAttribute="trailingMargin" id="RMK-HC-2uv"/>
-                            <constraint firstItem="X8b-g0-IUW" firstAttribute="top" secondItem="cMF-V0-IkQ" secondAttribute="bottom" constant="8" id="d9x-tQ-PhX"/>
-                            <constraint firstItem="Jcd-JM-kFq" firstAttribute="top" secondItem="X8b-g0-IUW" secondAttribute="bottom" constant="8" id="s0o-hI-9xl"/>
-                            <constraint firstItem="X8b-g0-IUW" firstAttribute="leading" secondItem="jfv-6k-Lz0" secondAttribute="leadingMargin" id="wVE-Yo-8eo"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Altitud" image="close.png" id="0Gt-pJ-vje"/>
-                    <connections>
-                        <outlet property="graphView" destination="X8b-g0-IUW" id="fcD-4i-nC3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZyK-Ff-VL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
