@@ -31,6 +31,10 @@
 		9D7469AB1C46516E008C70E0 /* IconInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7469AA1C46516E008C70E0 /* IconInfoView.m */; };
 		9D74B0541BFDF0FB00A06E93 /* PathCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D74B0531BFDF0FB00A06E93 /* PathCell.xib */; };
 		9D74B0571BFDFB4300A06E93 /* PathCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D74B0561BFDFB4300A06E93 /* PathCellTableViewCell.m */; };
+		9D756C091C5A775E00CDB388 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D756C041C5A76AC00CDB388 /* Charts.framework */; };
+		9D756C0A1C5A775E00CDB388 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D756C041C5A76AC00CDB388 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9D756C0E1C5A777C00CDB388 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D756C0D1C5A777C00CDB388 /* Realm.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9D756C0F1C5A777C00CDB388 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D756C0D1C5A777C00CDB388 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D77D3DD1C05BCD600821854 /* QuickInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D77D3DC1C05BCD600821854 /* QuickInfo.xib */; };
 		9D77D3E01C05D20F00821854 /* QuickInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D77D3DF1C05D20F00821854 /* QuickInfoView.m */; };
 		9D79CF631C3E809F00A4AD8A /* FieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79CF621C3E809F00A4AD8A /* FieldView.m */; };
@@ -368,7 +372,50 @@
 			remoteGlobalIDString = 9D741E761BF4F2D5008AB780;
 			remoteInfo = RutasDeTenerife2;
 		};
+		9D756C031C5A76AC00CDB388 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D756BFD1C5A76AC00CDB388 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+		9D756C051C5A76AC00CDB388 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D756BFD1C5A76AC00CDB388 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
+			remoteInfo = "Charts-TV";
+		};
+		9D756C071C5A76AC00CDB388 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D756BFD1C5A76AC00CDB388 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteInfo = ChartsTests;
+		};
+		9D756C0B1C5A775E00CDB388 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D756BFD1C5A76AC00CDB388 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9D756BDD1C5A388E00CDB388 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9D756C0F1C5A777C00CDB388 /* Realm.framework in Embed Frameworks */,
+				9D756C0A1C5A775E00CDB388 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		595354081C39E32100B83FD2 /* ExtendedInfoTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedInfoTabViewController.h; sourceTree = "<group>"; };
@@ -415,6 +462,8 @@
 		9D74B0531BFDF0FB00A06E93 /* PathCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PathCell.xib; sourceTree = "<group>"; };
 		9D74B0551BFDFB4300A06E93 /* PathCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathCellTableViewCell.h; sourceTree = "<group>"; };
 		9D74B0561BFDFB4300A06E93 /* PathCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathCellTableViewCell.m; sourceTree = "<group>"; };
+		9D756BFD1C5A76AC00CDB388 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		9D756C0D1C5A777C00CDB388 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Charts/ThirdParty/Realm/ios/Realm.framework; sourceTree = "<group>"; };
 		9D77D3DC1C05BCD600821854 /* QuickInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuickInfo.xib; sourceTree = "<group>"; };
 		9D77D3DE1C05D20F00821854 /* QuickInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickInfoView.h; sourceTree = "<group>"; };
 		9D77D3DF1C05D20F00821854 /* QuickInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickInfoView.m; sourceTree = "<group>"; };
@@ -760,6 +809,8 @@
 				9D96DB881BF9E0C8008FEA35 /* CoreText.framework in Frameworks */,
 				9D7AD7961BF6119E00E87809 /* UIKit.framework in Frameworks */,
 				9D7AD7941BF6119500E87809 /* CoreGraphics.framework in Frameworks */,
+				9D756C091C5A775E00CDB388 /* Charts.framework in Frameworks */,
+				9D756C0E1C5A777C00CDB388 /* Realm.framework in Frameworks */,
 				9D7AD7921BF600F500E87809 /* libsqlite3.tbd in Frameworks */,
 				9D7AD5201BF5EAE600E87809 /* CoreLocation.framework in Frameworks */,
 				9D7AD51E1BF5DC0000E87809 /* MapKit.framework in Frameworks */,
@@ -802,6 +853,8 @@
 		9D741E6E1BF4F2D5008AB780 = {
 			isa = PBXGroup;
 			children = (
+				9D756C0D1C5A777C00CDB388 /* Realm.framework */,
+				9D756BFD1C5A76AC00CDB388 /* Charts.xcodeproj */,
 				9D96DB871BF9E0C8008FEA35 /* CoreText.framework */,
 				9D7AD7951BF6119E00E87809 /* UIKit.framework */,
 				9D7AD7931BF6119500E87809 /* CoreGraphics.framework */,
@@ -886,6 +939,16 @@
 				9D741EA11BF4F2D5008AB780 /* Info.plist */,
 			);
 			path = RutasDeTenerife2UITests;
+			sourceTree = "<group>";
+		};
+		9D756BFE1C5A76AC00CDB388 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D756C041C5A76AC00CDB388 /* Charts.framework */,
+				9D756C061C5A76AC00CDB388 /* Charts.framework */,
+				9D756C081C5A76AC00CDB388 /* ChartsTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		9D79CF601C3E7AF800A4AD8A /* Views */ = {
@@ -1265,11 +1328,13 @@
 			buildPhases = (
 				9D741E731BF4F2D5008AB780 /* Sources */,
 				9D741E741BF4F2D5008AB780 /* Frameworks */,
+				9D756BDD1C5A388E00CDB388 /* Embed Frameworks */,
 				9D741E751BF4F2D5008AB780 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9D756C0C1C5A775E00CDB388 /* PBXTargetDependency */,
 			);
 			name = RutasDeTenerife2;
 			productName = RutasDeTenerife2;
@@ -1345,6 +1410,12 @@
 			mainGroup = 9D741E6E1BF4F2D5008AB780;
 			productRefGroup = 9D741E781BF4F2D5008AB780 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9D756BFE1C5A76AC00CDB388 /* Products */;
+					ProjectRef = 9D756BFD1C5A76AC00CDB388 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9D741E761BF4F2D5008AB780 /* RutasDeTenerife2 */,
@@ -1353,6 +1424,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9D756C041C5A76AC00CDB388 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 9D756C031C5A76AC00CDB388 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9D756C061C5A76AC00CDB388 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 9D756C051C5A76AC00CDB388 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9D756C081C5A76AC00CDB388 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 9D756C071C5A76AC00CDB388 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9D741E751BF4F2D5008AB780 /* Resources */ = {
@@ -1751,6 +1846,11 @@
 			target = 9D741E761BF4F2D5008AB780 /* RutasDeTenerife2 */;
 			targetProxy = 9D741E9C1BF4F2D5008AB780 /* PBXContainerItemProxy */;
 		};
+		9D756C0C1C5A775E00CDB388 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Charts-iOS";
+			targetProxy = 9D756C0B1C5A775E00CDB388 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1809,7 +1909,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1847,7 +1947,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1859,8 +1959,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Charts/ThirdParty/Realm/ios",
+				);
 				INFOPLIST_FILE = RutasDeTenerife2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RT.RutasDeTenerife2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1871,8 +1976,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Charts/ThirdParty/Realm/ios",
+				);
 				INFOPLIST_FILE = RutasDeTenerife2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RT.RutasDeTenerife2;
 				PRODUCT_NAME = "$(TARGET_NAME)";

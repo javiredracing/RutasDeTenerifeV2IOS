@@ -406,16 +406,27 @@
                                     <constraint firstAttribute="bottom" secondItem="Q4W-OM-m91" secondAttribute="bottom" constant="14" id="ugq-sY-5kc"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ym-XF-aG2" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="96" width="560" height="383"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96454016789999997" blue="0.051228342869999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cMF-V0-IkQ" firstAttribute="trailing" secondItem="jfv-6k-Lz0" secondAttribute="trailingMargin" id="4zp-OA-ER7"/>
+                            <constraint firstItem="Jcd-JM-kFq" firstAttribute="top" secondItem="5ym-XF-aG2" secondAttribute="bottom" constant="8" id="7Zb-zq-5n6"/>
                             <constraint firstItem="cMF-V0-IkQ" firstAttribute="leading" secondItem="jfv-6k-Lz0" secondAttribute="leadingMargin" id="Dim-Sm-3yD"/>
+                            <constraint firstItem="5ym-XF-aG2" firstAttribute="top" secondItem="cMF-V0-IkQ" secondAttribute="bottom" constant="8" id="Epp-vO-PHD"/>
                             <constraint firstItem="cMF-V0-IkQ" firstAttribute="top" secondItem="kNt-Zg-cVa" secondAttribute="bottom" constant="8" id="GAO-uU-s9b"/>
+                            <constraint firstItem="5ym-XF-aG2" firstAttribute="trailing" secondItem="jfv-6k-Lz0" secondAttribute="trailingMargin" id="OmN-Zx-hNq"/>
+                            <constraint firstItem="5ym-XF-aG2" firstAttribute="leading" secondItem="jfv-6k-Lz0" secondAttribute="leadingMargin" id="lKm-zX-YYa"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Altitud" image="close.png" id="0Gt-pJ-vje"/>
+                    <connections>
+                        <outlet property="lineChartView" destination="5ym-XF-aG2" id="zdf-uL-DrO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZyK-Ff-VL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

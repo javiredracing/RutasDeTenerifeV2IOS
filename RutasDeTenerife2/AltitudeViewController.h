@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Charts;
 
-@interface AltitudeViewController : UIViewController
+@interface AltitudeViewController : UIViewController<ChartViewDelegate>
+
+//https://github.com/danielgindi/ios-charts
+@property (weak, nonatomic) IBOutlet LineChartView *lineChartView;
 
 @property NSMutableArray *altitude;
 @property double distance;
