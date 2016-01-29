@@ -29,8 +29,16 @@
     //[leftAxis removeAllLimitLines];
     //[leftAxis addLimitLine:ll1];
     //[leftAxis addLimitLine:ll2];
-    leftAxis.customAxisMax = 3700.0;
-    leftAxis.customAxisMin = 0;
+    double maxValue = [self maxValue:self.altitude] + 400;
+    if (maxValue < 500)
+        maxValue = 500;
+    leftAxis.customAxisMax = maxValue;
+    double minValue = [self minValue:self.altitude];
+    if (minValue > 500)
+        minValue = 500;
+    else
+        minValue= 0;
+    leftAxis.customAxisMin = minValue;
     leftAxis.startAtZeroEnabled = NO;
     leftAxis.gridLineDashLengths = @[@5.f, @5.f];
     
@@ -53,24 +61,31 @@
 }
 
 -(void)loadData{
-    NSMutableArray *xVals = [[NSMutableArray alloc] init];
+
     NSUInteger count = [self.altitude count];
     double interval = (self.distance / (double)count);
     double currentDistance = 0.0;
     
-    for (int i = 0; i < count; i++)
-    {
+    NSMutableArray *xVals = [[NSMutableArray alloc] init];
+    NSMutableArray *yVals = [[NSMutableArray alloc] init];
+    
+    double netAlt = 0.0;
+    double netDown = 0.0;
+
+    for (NSUInteger i = 0; i < count; i++){
         [xVals addObject:[NSString stringWithFormat:@"%.1f",currentDistance]];
         currentDistance = currentDistance + interval;
-    }
-    //[xVals addObject:[NSString stringWithFormat:@"%.1f",self.distance]];
-    
-    NSMutableArray *yVals = [[NSMutableArray alloc] init];
-
-    for (int i = 0; i < count; i++)
-    {
+        
         double val = [[self.altitude objectAtIndex:i] doubleValue];
         [yVals addObject:[[ChartDataEntry alloc] initWithValue:val xIndex:i]];
+        
+        if (i > 0){
+            double oldAlt = [[self.altitude objectAtIndex:(i - 1)] doubleValue];
+            double newAlt = val;
+            double diff = newAlt - oldAlt;
+            netAlt = netAlt + fmax(0.0, diff);
+            netDown = netDown - fmin(0.0, diff);
+        }
     }
     
     LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals label:@"metros / Km"];
@@ -78,7 +93,7 @@
     set1.lineDashLengths = @[@5.f, @2.5f];
     set1.highlightLineDashLengths = @[@5.f, @2.5f];
     [set1 setColor:UIColor.blackColor];
-    [set1 setCircleColor:UIColor.blackColor];
+    //[set1 setCircleColor:UIColor.blackColor];
     set1.lineWidth = 1.0;
     set1.circleRadius = 0.0;
     set1.drawCircleHoleEnabled = NO;
@@ -100,6 +115,31 @@
     LineChartData *data = [[LineChartData alloc] initWithXVals:xVals dataSets:dataSets];
     
     self.lineChartView.data = data;
+    /*Update elevation labels*/
+    self.cumulateElevationUp.text = [NSString stringWithFormat:@"%.1f m",netAlt];
+    self.cumulateElevationDown.text = [NSString stringWithFormat:@"%.1f m",fabs(netDown)];
+}
+
+-(double)maxValue :(NSMutableArray *)items{
+    double value = 0.0;
+    NSUInteger size = [items count];
+    for (NSUInteger i = 0; i < size ; i++) {
+        if ([[items objectAtIndex:i] doubleValue] > value){
+            value = [[items objectAtIndex:i] doubleValue];
+        }
+    }
+    return value;
+}
+
+-(double)minValue :(NSMutableArray *)items{
+    double value = 99999.0;
+    NSUInteger size = [items count];
+    for (NSUInteger i = 0; i < size ; i++) {
+        if ([[items objectAtIndex:i] doubleValue] < value){
+            value = [[items objectAtIndex:i] doubleValue];
+        }
+    }
+    return value;
 }
 
 /*

@@ -345,11 +345,11 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMF-V0-IkQ">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMF-V0-IkQ">
                                 <rect key="frame" x="20" y="8" width="560" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av0-9l-DbJ">
-                                        <rect key="frame" x="259" y="8" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elevación acumulada" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av0-9l-DbJ">
+                                        <rect key="frame" x="200" y="8" width="161" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -362,7 +362,7 @@
                                             <constraint firstAttribute="width" constant="9" id="Ncq-5W-S2b"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IYK-A8-5aY">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="statistics.png" translatesAutoresizingMaskIntoConstraints="NO" id="IYK-A8-5aY">
                                         <rect key="frame" x="40" y="40" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="0FU-DD-asd"/>
@@ -375,7 +375,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m2Z-tC-WjT">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down.png" translatesAutoresizingMaskIntoConstraints="NO" id="m2Z-tC-WjT">
                                         <rect key="frame" x="323" y="40" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="ay1-al-qxE"/>
@@ -405,10 +405,18 @@
                                     <constraint firstItem="Q4W-OM-m91" firstAttribute="leading" secondItem="IYK-A8-5aY" secondAttribute="trailing" constant="8" id="ran-3h-lw9"/>
                                     <constraint firstAttribute="bottom" secondItem="Q4W-OM-m91" secondAttribute="bottom" constant="14" id="ugq-sY-5kc"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ym-XF-aG2" customClass="LineChartView" customModule="Charts">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ym-XF-aG2" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="20" y="96" width="560" height="383"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96454016789999997" blue="0.051228342869999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -425,6 +433,8 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Altitud" image="close.png" id="0Gt-pJ-vje"/>
                     <connections>
+                        <outlet property="cumulateElevationDown" destination="g65-Sp-up6" id="mfl-nf-7rq"/>
+                        <outlet property="cumulateElevationUp" destination="Q4W-OM-m91" id="xNS-OS-UDI"/>
                         <outlet property="lineChartView" destination="5ym-XF-aG2" id="zdf-uL-DrO"/>
                     </connections>
                 </viewController>
@@ -482,7 +492,9 @@
     </scenes>
     <resources>
         <image name="close.png" width="32" height="32"/>
+        <image name="down.png" width="50" height="50"/>
         <image name="plus16.png" width="16" height="16"/>
+        <image name="statistics.png" width="50" height="50"/>
         <image name="wind.png" width="64" height="64"/>
     </resources>
 </document>

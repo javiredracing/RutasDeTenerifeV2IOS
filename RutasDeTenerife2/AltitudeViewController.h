@@ -11,6 +11,9 @@
 
 @interface AltitudeViewController : UIViewController<ChartViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *cumulateElevationDown;
+@property (weak, nonatomic) IBOutlet UILabel *cumulateElevationUp;
+
 //https://github.com/danielgindi/ios-charts
 @property (weak, nonatomic) IBOutlet LineChartView *lineChartView;
 
