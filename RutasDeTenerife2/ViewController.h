@@ -20,6 +20,9 @@
 
 @interface ViewController : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *quickControl;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *menuWidth;
 @property (weak, nonatomic) IBOutlet UITableView *menuList;
 

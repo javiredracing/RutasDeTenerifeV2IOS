@@ -734,6 +734,7 @@ NSMutableArray *filteredData;
         [UIView animateWithDuration:0.5 animations:^{
             self.quickInfoView.alpha = 1.0;
         }];
+        self.quickControl.hidden = NO;
     }
 }
 
@@ -744,6 +745,7 @@ NSMutableArray *filteredData;
         }completion:^(BOOL finished) {
             self.quickInfoView.hidden= YES;
         }];
+        self.quickControl.hidden = YES;
     }
 }
 

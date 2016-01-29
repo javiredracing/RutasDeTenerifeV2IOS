@@ -35,6 +35,14 @@
                                     <action selector="deselect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9PA-fr-liK"/>
                                 </connections>
                             </button>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iR7-Wu-VIc">
+                                <rect key="frame" x="230" y="552" width="140" height="29"/>
+                                <segments>
+                                    <segment title="" image="pin_24.png"/>
+                                    <segment title="" image="center.png"/>
+                                    <segment title="" image="close.png"/>
+                                </segments>
+                            </segmentedControl>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4c-D9-90A" customClass="QuickInfoView">
                                 <rect key="frame" x="235" y="15" width="129" height="63"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,6 +108,8 @@
                             <constraint firstItem="fS7-wl-xBF" firstAttribute="baseline" secondItem="4e2-8E-6TT" secondAttribute="baseline" id="PDb-vR-nOx"/>
                             <constraint firstItem="g4c-D9-90A" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="15" id="bG9-UN-ffc"/>
                             <constraint firstItem="VC4-fD-Qoo" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="cHk-lR-ND9"/>
+                            <constraint firstItem="iR7-Wu-VIc" firstAttribute="top" secondItem="VC4-fD-Qoo" secondAttribute="bottom" constant="-48" id="hf8-Lt-Vl2"/>
+                            <constraint firstItem="iR7-Wu-VIc" firstAttribute="centerX" secondItem="VC4-fD-Qoo" secondAttribute="centerX" id="hmW-Ow-jIG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WcF-f3-Mr9" secondAttribute="bottom" id="hyO-2g-SGa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WcF-f3-Mr9" secondAttribute="trailing" constant="-20" id="lA2-pv-sDF"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qg7-lg-hbD" secondAttribute="bottom" id="uKl-9f-LzV"/>
@@ -114,6 +124,7 @@
                         <outlet property="menuWidth" destination="oKz-Sd-Dmm" id="cJA-on-7lP"/>
                         <outlet property="panelWidth" destination="72P-Nn-Bpd" id="xVC-cx-uJe"/>
                         <outlet property="pathList" destination="WcF-f3-Mr9" id="9tl-OG-JjN"/>
+                        <outlet property="quickControl" destination="iR7-Wu-VIc" id="m34-bD-YZA"/>
                         <outlet property="quickInfoView" destination="g4c-D9-90A" id="yWM-qE-UoI"/>
                         <outlet property="searchBar" destination="ynh-H8-e0t" id="91e-HF-4se"/>
                     </connections>
@@ -491,8 +502,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="center.png" width="32" height="32"/>
         <image name="close.png" width="32" height="32"/>
         <image name="down.png" width="50" height="50"/>
+        <image name="pin_24.png" width="24" height="24"/>
         <image name="plus16.png" width="16" height="16"/>
         <image name="statistics.png" width="50" height="50"/>
         <image name="wind.png" width="64" height="64"/>
