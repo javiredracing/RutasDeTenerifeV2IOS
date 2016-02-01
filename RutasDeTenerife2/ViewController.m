@@ -10,7 +10,6 @@
 #import "CoreText/CoreText.h"
 #import "PathCellTableViewCell.h"
 #import "MenuCell.h"
-//#import "ExtendedInfoViewController.h"
 #import "ExtInfoNavViewController.h"
 
 @interface ViewController ()
@@ -18,7 +17,7 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
 
 MKPolyline *polyLine;
 UIImage *imageRed;
@@ -27,14 +26,17 @@ UIImage *imageGreen;
 UIImage *imageBrown;
 Route *lastRouteShowed;
 CGRect panelRect;
+BOOL onRouteMode;
 
 NSMutableArray *filteredData;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
+    [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     self.locationManager = [[CLLocationManager alloc]init];
     self.mapView.showsUserLocation = YES;
+    onRouteMode = NO;
     
     self.locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -72,6 +74,7 @@ NSMutableArray *filteredData;
     self.panelWidth.constant = 0;
     self.menuWidth.constant = 0;
     self.quickInfoView.alpha = 0.0;
+    self.quickControl.alpha = 0.0;
     /*self.quickInfoView.layer.shadowColor = [[UIColor blackColor]CGColor];
     self.quickInfoView.layer.shadowOffset = CGSizeMake(0, 10);
     self.quickInfoView.layer.shadowRadius = 10;
@@ -731,10 +734,12 @@ NSMutableArray *filteredData;
         [self.quickInfoView changeContent:[myroute getName] :[myroute getDist] :[myroute getDifficulty] :[myroute approved]];
     if (self.quickInfoView.hidden == YES){
         self.quickInfoView.hidden= NO;
+        self.quickControl.hidden = NO;
         [UIView animateWithDuration:0.5 animations:^{
             self.quickInfoView.alpha = 1.0;
+            self.quickControl.alpha = 1.0;
         }];
-        self.quickControl.hidden = NO;
+        
     }
 }
 
@@ -742,10 +747,15 @@ NSMutableArray *filteredData;
     if (self.quickInfoView.hidden == NO){
         [UIView animateWithDuration:0.5 animations:^{
             self.quickInfoView.alpha = 0.0;
+            self.quickControl.alpha = 0.0;
         }completion:^(BOOL finished) {
+            [self disableOnRouteMode:self.quickControl];
+            self.quickControl.tag = 2;
             self.quickInfoView.hidden= YES;
+            self.quickControl.hidden = YES;
+            
         }];
-        self.quickControl.hidden = YES;
+        
     }
 }
 
@@ -886,4 +896,46 @@ NSMutableArray *filteredData;
    // [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
+- (IBAction)quickControlTap:(UISegmentedControl *)sender {
+    NSLog(@"tap control %ld",(long)sender.selectedSegmentIndex);
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+             if (!onRouteMode) {
+                 [self enableOnRouteMode:sender];
+            } else {
+                [self disableOnRouteMode:sender];
+            }
+            break;
+        case 1:
+            if (polyLine != nil)
+                [self.mapView setVisibleMapRect:[polyLine boundingMapRect] edgePadding:UIEdgeInsetsMake(20.0, 10.0, 20.0, 10.0) animated:YES];
+            break;
+        case 2:
+            if (lastRouteShowed != nil)
+                [self clickAction:lastRouteShowed :[lastRouteShowed getFirstPoint]];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)enableOnRouteMode :(UISegmentedControl *)control{
+        onRouteMode = YES;
+        //UIColor *tintcolor = [UIColor greenColor];
+        UIImage *imagePinned = [UIImage imageNamed:@"pinned_24"];
+        //[[sender.subviews objectAtIndex:item] setTintColor:tintcolor];
+        [control setImage:imagePinned forSegmentAtIndex:0];
+        [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
+}
+
+-(void)disableOnRouteMode :(UISegmentedControl *)control{
+    if (onRouteMode){
+        onRouteMode = NO;
+        UIImage *imagePinned = [UIImage imageNamed:@"pin_24"];
+        //[[control.subviews objectAtIndex:item] setTintColor:control.tintColor];
+        [control setImage:imagePinned forSegmentAtIndex:0];
+        [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
+    }
+}
 @end

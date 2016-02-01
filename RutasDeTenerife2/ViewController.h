@@ -20,6 +20,8 @@
 
 @interface ViewController : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
+- (IBAction)quickControlTap:(UISegmentedControl *)sender;
+
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *quickControl;
 
