@@ -94,20 +94,10 @@ NSMutableArray *filteredData;
     [super viewDidAppear:animated];
     //[self.quickInfoView sizeToFit];
     if (self.locationManager != nil){
-    #ifdef __IPHONE_8_0
-        if(IS_OS_8_OR_LATER) {
-            // Use one or the other, not both. Depending on what you put in info.plist
-            [self.locationManager requestWhenInUseAuthorization];
-            //[self.locationManager requestAlwaysAuthorization];
-        }
-    #endif
-        NSLog(@"start updating");
-         [self.locationManager startUpdatingLocation];
-        
-        if ([CLLocationManager headingAvailable]) {
-            NSLog(@"Heading available");
-            self.locationManager.headingFilter = 5;
-            [self.locationManager startUpdatingHeading];
+        if ([CLLocationManager locationServicesEnabled]){
+            [self startTracking];
+        }else{
+            [self.quickControl setEnabled:NO forSegmentAtIndex:0];
         }
     }
 }
@@ -182,6 +172,13 @@ NSMutableArray *filteredData;
     //heading.magneticHeading
 }
 
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+    if ([CLLocationManager locationServicesEnabled])
+        [self.quickControl setEnabled:YES forSegmentAtIndex:0];
+    else{
+        [self.quickControl setEnabled:NO forSegmentAtIndex:0];
+    }
+}
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
@@ -900,6 +897,7 @@ NSMutableArray *filteredData;
 
 - (IBAction)quickControlTap:(UISegmentedControl *)sender {
    // NSLog(@"tap control %ld",(long)sender.selectedSegmentIndex);
+
     switch (sender.selectedSegmentIndex) {
         case 0:
              if (!onRouteMode) {
@@ -938,6 +936,24 @@ NSMutableArray *filteredData;
         //[[control.subviews objectAtIndex:item] setTintColor:control.tintColor];
         [control setImage:imagePinned forSegmentAtIndex:0];
         [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
+    }
+}
+
+-(void)startTracking{
+#ifdef __IPHONE_8_0
+    if(IS_OS_8_OR_LATER) {
+        // Use one or the other, not both. Depending on what you put in info.plist
+        [self.locationManager requestWhenInUseAuthorization];
+        //[self.locationManager requestAlwaysAuthorization];
+    }
+#endif
+    NSLog(@"start updating");
+    [self.locationManager startUpdatingLocation];
+    
+    if ([CLLocationManager headingAvailable]) {
+        NSLog(@"Heading available");
+        self.locationManager.headingFilter = 5;
+        [self.locationManager startUpdatingHeading];
     }
 }
 @end
