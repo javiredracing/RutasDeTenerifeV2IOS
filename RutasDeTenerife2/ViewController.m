@@ -33,9 +33,11 @@ NSMutableArray *filteredData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
+   
     self.locationManager = [[CLLocationManager alloc]init];
     self.mapView.showsUserLocation = YES;
+    self.mapView.showsBuildings = NO;
+     [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     onRouteMode = NO;
     
     self.locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
@@ -897,7 +899,7 @@ NSMutableArray *filteredData;
 }
 
 - (IBAction)quickControlTap:(UISegmentedControl *)sender {
-    NSLog(@"tap control %ld",(long)sender.selectedSegmentIndex);
+   // NSLog(@"tap control %ld",(long)sender.selectedSegmentIndex);
     switch (sender.selectedSegmentIndex) {
         case 0:
              if (!onRouteMode) {

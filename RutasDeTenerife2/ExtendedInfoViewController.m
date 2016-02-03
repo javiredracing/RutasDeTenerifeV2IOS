@@ -9,22 +9,14 @@
 #import "ExtendedInfoViewController.h"
 //#import "RoundRectPresentationController.h"
 
-@interface ExtendedInfoViewController ()/*<UIViewControllerTransitioningDelegate>*/
+@interface ExtendedInfoViewController ()
 
 @end
 
-@implementation ExtendedInfoViewController
-
-/*-(instancetype) initWithCoder:(NSCoder *)aDecoder{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        if ([self respondsToSelector:@selector(setTransitioningDelegate:)]){
-            self.modalPresentationStyle = UIModalPresentationCustom;
-            self.transitioningDelegate = self;
-        }
-    }
-    return self;
-}*/
+@implementation ExtendedInfoViewController{
+    
+    UIDocumentInteractionController *docController;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -67,7 +59,38 @@
 }*/
 
 - (IBAction)howToGet:(UIButton *)sender {
+    CLLocationCoordinate2D endingCoord = [self.route getFirstPoint];
+    MKPlacemark *endLocation = [[MKPlacemark alloc]initWithCoordinate:endingCoord addressDictionary:nil];
+    MKMapItem *endingItem = [[MKMapItem alloc]initWithPlacemark:endLocation];
+    
+    NSMutableDictionary *launchOptions = [[NSMutableDictionary alloc] init];
+    [launchOptions setObject:MKLaunchOptionsDirectionsModeDriving forKey:MKLaunchOptionsDirectionsModeKey];
+    [endingItem openInMapsWithLaunchOptions:launchOptions];
 }
 - (IBAction)downloadTrack:(UIButton *)sender {
+    //TODO revise
+    NSString *kmlName = [self.route getXmlRoute];
+    kmlName =[kmlName substringToIndex:[kmlName length] - 4];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:kmlName ofType:@"gpx"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    //NSLog(path);
+    if (!docController) {
+        docController = [UIDocumentInteractionController interactionControllerWithURL:url];
+        //http://stackoverflow.com/questions/31163785/trying-to-define-gpx-document-type-in-xcode-6-4
+        //http://aplus.rs/2014/how-to-properly-share-slash-export-gpx-files-on-ios/
+        docController.UTI = @"com.topografix.gpx";
+        docController.delegate = self;
+    }
+    BOOL isCapable = [docController presentOpenInMenuFromRect:CGRectZero inView:self.view animated:YES];
+    if (!isCapable){
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Rutas de Tenerife" message:@"You don't have an app installed that can handle GPX files." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+    //[docController presentPreviewAnimated:YES];
+}
+
+-(UIViewController *) documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller{
+    return self;
 }
 @end

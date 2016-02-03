@@ -11,7 +11,7 @@
 #import "FieldView.h"
 #import "Database.h"
 
-@interface ExtendedInfoViewController : UIViewController
+@interface ExtendedInfoViewController : UIViewController<UIDocumentInteractionControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *tvDecription;
 @property (weak, nonatomic) IBOutlet UIButton *btDownload;
