@@ -358,6 +358,7 @@
 		9D82A30E1C0F2DB100F8DDFE /* RoundRectPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */; };
 		9D85D3CC1C4409BF00CD2535 /* AltitudeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D85D3CB1C4409BF00CD2535 /* AltitudeViewController.m */; };
 		9D96DB881BF9E0C8008FEA35 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D96DB871BF9E0C8008FEA35 /* CoreText.framework */; };
+		9DF6643E1C63A5A500B96144 /* AppInfoTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF6643D1C63A5A500B96144 /* AppInfoTabViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -808,6 +809,8 @@
 		9D85D3CA1C4409BF00CD2535 /* AltitudeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AltitudeViewController.h; sourceTree = "<group>"; };
 		9D85D3CB1C4409BF00CD2535 /* AltitudeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AltitudeViewController.m; sourceTree = "<group>"; };
 		9D96DB871BF9E0C8008FEA35 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		9DF6643C1C63A5A500B96144 /* AppInfoTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoTabViewController.h; sourceTree = "<group>"; };
+		9DF6643D1C63A5A500B96144 /* AppInfoTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoTabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1346,6 +1349,8 @@
 				9D7B74551C6389FA001C348F /* InfoCreditsViewController.m */,
 				9D7B74571C638DC9001C348F /* AppInfoNavViewController.h */,
 				9D7B74581C638DC9001C348F /* AppInfoNavViewController.m */,
+				9DF6643C1C63A5A500B96144 /* AppInfoTabViewController.h */,
+				9DF6643D1C63A5A500B96144 /* AppInfoTabViewController.m */,
 			);
 			name = MainInfo;
 			sourceTree = "<group>";
@@ -1841,6 +1846,7 @@
 				9D7AD6001BF5FA3700E87809 /* FMResultSet.m in Sources */,
 				9D741E7F1BF4F2D5008AB780 /* AppDelegate.m in Sources */,
 				9D7AD5FE1BF5FA3700E87809 /* FMDatabasePool.m in Sources */,
+				9DF6643E1C63A5A500B96144 /* AppInfoTabViewController.m in Sources */,
 				9D82A30B1C0F181400F8DDFE /* ExtendedInfoViewController.m in Sources */,
 				9D6A565E1C0D9F1D009FDC7E /* MenuCell.m in Sources */,
 				9D7B74501C6351EB001C348F /* UIView+Toast.m in Sources */,

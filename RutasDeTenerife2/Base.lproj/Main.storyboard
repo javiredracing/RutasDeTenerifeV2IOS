@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -648,7 +648,8 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Oe1-a0-Emz">
-                        <barButtonItem key="leftBarButtonItem" image="plus16.png" id="rot-SP-Ayk">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="rot-SP-Ayk">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="closeInfo:" destination="m2e-Ul-Fo4" id="XO7-95-0G9"/>
                             </connections>
@@ -687,12 +688,19 @@
             </objects>
             <point key="canvasLocation" x="1133" y="1210"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--App Info Tab View Controller-->
         <scene sceneID="g9x-bl-WhH">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zsy-XQ-n2u" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zsy-XQ-n2u" customClass="AppInfoTabViewController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="jwU-04-QfZ"/>
+                    <navigationItem key="navigationItem" id="jwU-04-QfZ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="scN-sr-ERJ">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="closeAppInfo:" destination="zsy-XQ-n2u" id="FNG-Ci-5w0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="2UT-cU-HbF">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -705,7 +713,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfS-lr-cd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1813" y="1210"/>
+            <point key="canvasLocation" x="1824" y="1210"/>
         </scene>
     </scenes>
     <resources>
