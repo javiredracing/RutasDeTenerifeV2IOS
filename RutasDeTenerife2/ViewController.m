@@ -11,6 +11,8 @@
 #import "PathCellTableViewCell.h"
 #import "MenuCell.h"
 #import "ExtInfoNavViewController.h"
+#import "AppInfoNavViewController.h"
+#import "Toast/UIView+Toast.h"
 
 @interface ViewController ()
 
@@ -25,7 +27,7 @@ UIImage *imageYellow;
 UIImage *imageGreen;
 UIImage *imageBrown;
 Route *lastRouteShowed;
-CGRect panelRect;
+//CGRect panelRect;
 BOOL onRouteMode;
 
 NSMutableArray *filteredData;
@@ -87,6 +89,7 @@ NSMutableArray *filteredData;
     self.quickInfoView.layer.shadowOpacity = 0.8;
     self.quickInfoView.layer.shadowRadius = 0.0;
     [self hideQuickInfo];
+    [self configureToast];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -749,12 +752,10 @@ NSMutableArray *filteredData;
             self.quickControl.alpha = 0.0;
         }completion:^(BOOL finished) {
             [self disableOnRouteMode:self.quickControl];
-            self.quickControl.tag = 2;
             self.quickInfoView.hidden= YES;
             self.quickControl.hidden = YES;
             
         }];
-        
     }
 }
 
@@ -828,20 +829,37 @@ NSMutableArray *filteredData;
             [self toggleList:nil];
             break;
         case 1: //My pos
+            
             if (self.locationManager.location != nil){
                 CLLocationCoordinate2D loc = [self.locationManager.location coordinate];
                 [self moveTo:loc];
-            }else
+                CLGeocoder *geocoder = [[CLGeocoder alloc]init];
+                [geocoder reverseGeocodeLocation:self.locationManager.location completionHandler:^(NSArray *placemarks, NSError *error){
+                    NSString *address;
+                    if (error) {
+                        address = [NSString stringWithFormat:@"(%f, %f)",loc.latitude, loc.longitude];
+                    }else{
+                        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                        address = [NSString stringWithFormat:@"%@, %@, %@, %@, %@", placemark.thoroughfare, placemark.subLocality ,placemark.locality, placemark.subAdministrativeArea, placemark.administrativeArea];
+                    }
+                    [self.view makeToast:address];
+                }];
+            }else{
                 NSLog(@"Location no available");
+                [self.view makeToast:@"Location no available"];
+            }
             break;
         case 2: //Change map type
             if ([self.mapView mapType] == MKMapTypeSatellite) {
-                  [self.mapView setMapType: MKMapTypeHybrid];
+                [self.mapView setMapType: MKMapTypeHybrid];
+                [self.view makeToast:@"Modo híbrido"];
             } else {
                 if ([self.mapView mapType] == MKMapTypeHybrid) {
                     [self.mapView setMapType: MKMapTypeStandard];
+                    [self.view makeToast:@"Modo standard"];
                 } else {
                     [self.mapView setMapType: MKMapTypeSatellite];
+                    [self.view makeToast:@"Modo satelite"];
                 }
             }
             break;
@@ -849,7 +867,7 @@ NSMutableArray *filteredData;
             
             break;
         case 4: //Info
-            
+            [self openAppInfo];
             break;
         case 5: //share
             [self shareAction];
@@ -921,12 +939,13 @@ NSMutableArray *filteredData;
 }
 
 -(void)enableOnRouteMode :(UISegmentedControl *)control{
-        onRouteMode = YES;
-        //UIColor *tintcolor = [UIColor greenColor];
-        UIImage *imagePinned = [UIImage imageNamed:@"pinned_24"];
-        //[[sender.subviews objectAtIndex:item] setTintColor:tintcolor];
-        [control setImage:imagePinned forSegmentAtIndex:0];
-        [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
+    onRouteMode = YES;
+    //UIColor *tintcolor = [UIColor greenColor];
+    [self.view makeToast:@"Modo en ruta"];
+    UIImage *imagePinned = [UIImage imageNamed:@"pinned_24"];
+    //[[sender.subviews objectAtIndex:item] setTintColor:tintcolor];
+    [control setImage:imagePinned forSegmentAtIndex:0];
+    [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
 }
 
 -(void)disableOnRouteMode :(UISegmentedControl *)control{
@@ -955,5 +974,24 @@ NSMutableArray *filteredData;
         self.locationManager.headingFilter = 5;
         [self.locationManager startUpdatingHeading];
     }
+}
+
+-(void)configureToast{
+    //https://github.com/scalessec/Toast
+    CSToastStyle *style = [[CSToastStyle alloc]initWithDefaultStyle];
+    style.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8];
+    style.messageAlignment = NSTextAlignmentCenter;
+    style.messageColor = [UIColor grayColor];
+    style.cornerRadius = 5.0;
+    style.borderWidth = 2.0;
+    style.borderColor =[[UIColor greenColor] colorWithAlphaComponent:0.8];
+    [CSToastManager setSharedStyle:style];
+    [CSToastManager setQueueEnabled:NO];
+}
+
+-(void)openAppInfo{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    AppInfoNavViewController *navViewController = [storyboard instantiateViewControllerWithIdentifier:@"AppInfoNav"];
+    [self presentViewController:navViewController animated:YES completion:nil];
 }
 @end

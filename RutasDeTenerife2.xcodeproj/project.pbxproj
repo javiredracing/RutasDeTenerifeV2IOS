@@ -351,6 +351,9 @@
 		9D7AD7921BF600F500E87809 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD7911BF600F500E87809 /* libsqlite3.tbd */; };
 		9D7AD7941BF6119500E87809 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD7931BF6119500E87809 /* CoreGraphics.framework */; };
 		9D7AD7961BF6119E00E87809 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7AD7951BF6119E00E87809 /* UIKit.framework */; };
+		9D7B74501C6351EB001C348F /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B744F1C6351EB001C348F /* UIView+Toast.m */; };
+		9D7B74561C6389FA001C348F /* InfoCreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B74551C6389FA001C348F /* InfoCreditsViewController.m */; };
+		9D7B74591C638DC9001C348F /* AppInfoNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B74581C638DC9001C348F /* AppInfoNavViewController.m */; };
 		9D82A30B1C0F181400F8DDFE /* ExtendedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82A30A1C0F181400F8DDFE /* ExtendedInfoViewController.m */; };
 		9D82A30E1C0F2DB100F8DDFE /* RoundRectPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */; };
 		9D85D3CC1C4409BF00CD2535 /* AltitudeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D85D3CB1C4409BF00CD2535 /* AltitudeViewController.m */; };
@@ -792,6 +795,12 @@
 		9D7AD7911BF600F500E87809 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9D7AD7931BF6119500E87809 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9D7AD7951BF6119E00E87809 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9D7B744E1C6351EB001C348F /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		9D7B744F1C6351EB001C348F /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		9D7B74541C6389FA001C348F /* InfoCreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCreditsViewController.h; sourceTree = "<group>"; };
+		9D7B74551C6389FA001C348F /* InfoCreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCreditsViewController.m; sourceTree = "<group>"; };
+		9D7B74571C638DC9001C348F /* AppInfoNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoNavViewController.h; sourceTree = "<group>"; };
+		9D7B74581C638DC9001C348F /* AppInfoNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoNavViewController.m; sourceTree = "<group>"; };
 		9D82A3091C0F181400F8DDFE /* ExtendedInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedInfoViewController.h; sourceTree = "<group>"; };
 		9D82A30A1C0F181400F8DDFE /* ExtendedInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedInfoViewController.m; sourceTree = "<group>"; };
 		9D82A30C1C0F2DB100F8DDFE /* RoundRectPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundRectPresentationController.h; sourceTree = "<group>"; };
@@ -881,6 +890,8 @@
 		9D741E791BF4F2D5008AB780 /* RutasDeTenerife2 */ = {
 			isa = PBXGroup;
 			children = (
+				9D7B74531C638990001C348F /* MainInfo */,
+				9D7B744D1C6351EB001C348F /* Toast */,
 				9D79CF601C3E7AF800A4AD8A /* Views */,
 				5955C8ED1BF7BD15003843B2 /* FBAnnotationClustering */,
 				9D7AD6021BF5FA4900E87809 /* assets */,
@@ -1317,6 +1328,26 @@
 				9D7AD6C91BF5FA4900E87809 /* ventanas-de-Guimar.kml */,
 			);
 			path = assets;
+			sourceTree = "<group>";
+		};
+		9D7B744D1C6351EB001C348F /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				9D7B744E1C6351EB001C348F /* UIView+Toast.h */,
+				9D7B744F1C6351EB001C348F /* UIView+Toast.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		9D7B74531C638990001C348F /* MainInfo */ = {
+			isa = PBXGroup;
+			children = (
+				9D7B74541C6389FA001C348F /* InfoCreditsViewController.h */,
+				9D7B74551C6389FA001C348F /* InfoCreditsViewController.m */,
+				9D7B74571C638DC9001C348F /* AppInfoNavViewController.h */,
+				9D7B74581C638DC9001C348F /* AppInfoNavViewController.m */,
+			);
+			name = MainInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1789,6 +1820,7 @@
 				9D6DC95F1C45619300BCB623 /* ForecastCell.m in Sources */,
 				9D6DC95A1C4528A300BCB623 /* PrevCell.m in Sources */,
 				9D7AD5971BF5FA3700E87809 /* CustomKMLParser.m in Sources */,
+				9D7B74591C638DC9001C348F /* AppInfoNavViewController.m in Sources */,
 				5955C8F91BF7BD15003843B2 /* FBAnnotationCluster.m in Sources */,
 				9D74B0571BFDFB4300A06E93 /* PathCellTableViewCell.m in Sources */,
 				5955C8FB1BF7BD15003843B2 /* FBQuadTree.m in Sources */,
@@ -1799,6 +1831,7 @@
 				5955C8FC1BF7BD15003843B2 /* FBQuadTreeNode.m in Sources */,
 				9D85D3CC1C4409BF00CD2535 /* AltitudeViewController.m in Sources */,
 				9D77D3E01C05D20F00821854 /* QuickInfoView.m in Sources */,
+				9D7B74561C6389FA001C348F /* InfoCreditsViewController.m in Sources */,
 				9D741E821BF4F2D5008AB780 /* ViewController.m in Sources */,
 				5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */,
 				9D79F78C1C3C113A005C8FBF /* WeatherViewController.m in Sources */,
@@ -1810,6 +1843,7 @@
 				9D7AD5FE1BF5FA3700E87809 /* FMDatabasePool.m in Sources */,
 				9D82A30B1C0F181400F8DDFE /* ExtendedInfoViewController.m in Sources */,
 				9D6A565E1C0D9F1D009FDC7E /* MenuCell.m in Sources */,
+				9D7B74501C6351EB001C348F /* UIView+Toast.m in Sources */,
 				9D7AD5FD1BF5FA3700E87809 /* FMDatabaseAdditions.m in Sources */,
 				9D741E7C1BF4F2D5008AB780 /* main.m in Sources */,
 				9D7AD5FF1BF5FA3700E87809 /* FMDatabaseQueue.m in Sources */,
