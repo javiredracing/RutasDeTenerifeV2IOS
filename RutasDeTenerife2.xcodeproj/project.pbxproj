@@ -358,6 +358,9 @@
 		9D82A30E1C0F2DB100F8DDFE /* RoundRectPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */; };
 		9D85D3CC1C4409BF00CD2535 /* AltitudeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D85D3CB1C4409BF00CD2535 /* AltitudeViewController.m */; };
 		9D96DB881BF9E0C8008FEA35 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D96DB871BF9E0C8008FEA35 /* CoreText.framework */; };
+		9D9D75E01C6B90A100B3A502 /* MainInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D75DF1C6B90A100B3A502 /* MainInfoViewController.m */; };
+		9D9D75E51C6B910800B3A502 /* AdvicesInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D75E41C6B910800B3A502 /* AdvicesInfoViewController.m */; };
+		9D9D75E71C6B94CF00B3A502 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9D75E61C6B94CF00B3A502 /* MessageUI.framework */; };
 		9DF6643E1C63A5A500B96144 /* AppInfoTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF6643D1C63A5A500B96144 /* AppInfoTabViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -809,6 +812,11 @@
 		9D85D3CA1C4409BF00CD2535 /* AltitudeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AltitudeViewController.h; sourceTree = "<group>"; };
 		9D85D3CB1C4409BF00CD2535 /* AltitudeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AltitudeViewController.m; sourceTree = "<group>"; };
 		9D96DB871BF9E0C8008FEA35 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		9D9D75DE1C6B90A100B3A502 /* MainInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainInfoViewController.h; sourceTree = "<group>"; };
+		9D9D75DF1C6B90A100B3A502 /* MainInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainInfoViewController.m; sourceTree = "<group>"; };
+		9D9D75E31C6B910800B3A502 /* AdvicesInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvicesInfoViewController.h; sourceTree = "<group>"; };
+		9D9D75E41C6B910800B3A502 /* AdvicesInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvicesInfoViewController.m; sourceTree = "<group>"; };
+		9D9D75E61C6B94CF00B3A502 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9DF6643C1C63A5A500B96144 /* AppInfoTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoTabViewController.h; sourceTree = "<group>"; };
 		9DF6643D1C63A5A500B96144 /* AppInfoTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoTabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -818,6 +826,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D9D75E71C6B94CF00B3A502 /* MessageUI.framework in Frameworks */,
 				9D96DB881BF9E0C8008FEA35 /* CoreText.framework in Frameworks */,
 				9D7AD7961BF6119E00E87809 /* UIKit.framework in Frameworks */,
 				9D7AD7941BF6119500E87809 /* CoreGraphics.framework in Frameworks */,
@@ -865,14 +874,7 @@
 		9D741E6E1BF4F2D5008AB780 = {
 			isa = PBXGroup;
 			children = (
-				9D756C0D1C5A777C00CDB388 /* Realm.framework */,
-				9D756BFD1C5A76AC00CDB388 /* Charts.xcodeproj */,
-				9D96DB871BF9E0C8008FEA35 /* CoreText.framework */,
-				9D7AD7951BF6119E00E87809 /* UIKit.framework */,
-				9D7AD7931BF6119500E87809 /* CoreGraphics.framework */,
-				9D7AD7911BF600F500E87809 /* libsqlite3.tbd */,
-				9D7AD51F1BF5EAE600E87809 /* CoreLocation.framework */,
-				9D7AD51D1BF5DC0000E87809 /* MapKit.framework */,
+				9D9D75E81C6B94D700B3A502 /* frameworks */,
 				9D741E791BF4F2D5008AB780 /* RutasDeTenerife2 */,
 				9D741E931BF4F2D5008AB780 /* RutasDeTenerife2Tests */,
 				9D741E9E1BF4F2D5008AB780 /* RutasDeTenerife2UITests */,
@@ -1351,8 +1353,28 @@
 				9D7B74581C638DC9001C348F /* AppInfoNavViewController.m */,
 				9DF6643C1C63A5A500B96144 /* AppInfoTabViewController.h */,
 				9DF6643D1C63A5A500B96144 /* AppInfoTabViewController.m */,
+				9D9D75DE1C6B90A100B3A502 /* MainInfoViewController.h */,
+				9D9D75DF1C6B90A100B3A502 /* MainInfoViewController.m */,
+				9D9D75E31C6B910800B3A502 /* AdvicesInfoViewController.h */,
+				9D9D75E41C6B910800B3A502 /* AdvicesInfoViewController.m */,
 			);
 			name = MainInfo;
+			sourceTree = "<group>";
+		};
+		9D9D75E81C6B94D700B3A502 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D9D75E61C6B94CF00B3A502 /* MessageUI.framework */,
+				9D756C0D1C5A777C00CDB388 /* Realm.framework */,
+				9D756BFD1C5A76AC00CDB388 /* Charts.xcodeproj */,
+				9D96DB871BF9E0C8008FEA35 /* CoreText.framework */,
+				9D7AD7951BF6119E00E87809 /* UIKit.framework */,
+				9D7AD7931BF6119500E87809 /* CoreGraphics.framework */,
+				9D7AD7911BF600F500E87809 /* libsqlite3.tbd */,
+				9D7AD51F1BF5EAE600E87809 /* CoreLocation.framework */,
+				9D7AD51D1BF5DC0000E87809 /* MapKit.framework */,
+			);
+			name = frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1822,10 +1844,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D9D75E51C6B910800B3A502 /* AdvicesInfoViewController.m in Sources */,
 				9D6DC95F1C45619300BCB623 /* ForecastCell.m in Sources */,
 				9D6DC95A1C4528A300BCB623 /* PrevCell.m in Sources */,
 				9D7AD5971BF5FA3700E87809 /* CustomKMLParser.m in Sources */,
 				9D7B74591C638DC9001C348F /* AppInfoNavViewController.m in Sources */,
+				9D9D75E01C6B90A100B3A502 /* MainInfoViewController.m in Sources */,
 				5955C8F91BF7BD15003843B2 /* FBAnnotationCluster.m in Sources */,
 				9D74B0571BFDFB4300A06E93 /* PathCellTableViewCell.m in Sources */,
 				5955C8FB1BF7BD15003843B2 /* FBQuadTree.m in Sources */,

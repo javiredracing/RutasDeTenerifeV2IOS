@@ -35,7 +35,7 @@
                                     <action selector="deselect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9PA-fr-liK"/>
                                 </connections>
                             </button>
-                            <segmentedControl hidden="YES" opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bordered" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iR7-Wu-VIc">
+                            <segmentedControl hidden="YES" opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iR7-Wu-VIc">
                                 <rect key="frame" x="230" y="552" width="140" height="29"/>
                                 <segments>
                                     <segment title="" image="pin_24.png"/>
@@ -479,7 +479,7 @@
         <!--Information-->
         <scene sceneID="Avk-pa-NKz">
             <objects>
-                <viewController id="FLy-qD-CWL" sceneMemberID="viewController">
+                <viewController id="FLy-qD-CWL" customClass="MainInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="78Q-tF-agJ"/>
                         <viewControllerLayoutGuide type="bottom" id="7Ta-fO-9DB"/>
@@ -512,6 +512,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Information" id="bHx-pT-Ekb"/>
                     <navigationItem key="navigationItem" id="72f-sy-ZUG"/>
+                    <connections>
+                        <outlet property="infoTV" destination="1lc-NX-GQe" id="XC3-bM-pqW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmn-OB-bgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -609,7 +612,7 @@
         <!--Advices-->
         <scene sceneID="TV7-CS-5VI">
             <objects>
-                <viewController id="MPo-Qr-kBa" sceneMemberID="viewController">
+                <viewController id="MPo-Qr-kBa" customClass="AdvicesInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C2S-od-FRN"/>
                         <viewControllerLayoutGuide type="bottom" id="0Po-mH-wMC"/>
@@ -636,6 +639,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Advices" id="G4c-Eb-hQ6"/>
+                    <connections>
+                        <outlet property="advicesTV" destination="N08-KG-pzS" id="0ct-ws-LNS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jb7-lN-uB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

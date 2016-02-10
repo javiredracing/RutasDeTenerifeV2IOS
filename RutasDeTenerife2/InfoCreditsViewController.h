@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "IconInfoView.h"
+#import <MessageUI/MessageUI.h>
+#import "Toast/UIView+Toast.h"
 
-@interface InfoCreditsViewController : UIViewController
+@interface InfoCreditsViewController : UIViewController<MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *btnSend;
 @property (weak, nonatomic) IBOutlet UITextView *textLegal;
