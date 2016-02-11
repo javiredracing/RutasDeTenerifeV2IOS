@@ -23,8 +23,8 @@
     self.btnSend.layer.shadowRadius = 5.0;
     if (![MFMailComposeViewController canSendMail]) {
         self.btnSend.enabled = NO;
-    }
-    
+    }else
+        [self configureToast];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,13 +76,13 @@
             message = @"Mail saved";
             break;
         case MFMailComposeResultSent:
-            message =@"Mail sent";
+            message = @"Mail sent";
             break;
         case MFMailComposeResultFailed:
-           /* NSString *str = [NSString stringWithFormat:@"%@", [error localizedDescription]];
-            message =  str;*/
+            message = [NSString stringWithFormat:@"Mail sent failure: %@", [error localizedDescription]];
             break;
         default:
+            message = @"";
             break;
     }
     
