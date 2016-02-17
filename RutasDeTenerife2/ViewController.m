@@ -13,6 +13,7 @@
 #import "ExtInfoNavViewController.h"
 #import "AppInfoNavViewController.h"
 #import "Toast/UIView+Toast.h"
+#import "FilterView.h"
 
 @interface ViewController ()
 
@@ -864,7 +865,7 @@ NSMutableArray *filteredData;
             }
             break;
         case 3: //Filter
-            
+            [self launchFilter];
             break;
         case 4: //Info
             [self openAppInfo];
@@ -994,4 +995,56 @@ NSMutableArray *filteredData;
     AppInfoNavViewController *navViewController = [storyboard instantiateViewControllerWithIdentifier:@"AppInfoNav"];
     [self presentViewController:navViewController animated:YES completion:nil];
 }
+
+-(void)launchFilter{
+    //https://github.com/wimagguc/ios-custom-alertview
+    CustomIOSAlertView *alertView = [[CustomIOSAlertView alloc] init];
+    
+    // Add some custom content to the alert view
+    [alertView setContainerView:[self createDemoView]];
+    
+    // Modify the parameters
+    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"Cancelar", @"Limpiar", @"Filtrar", nil]];
+    //[alertView setDelegate:self];
+    
+    // You may use a Block, rather than a delegate.
+    [alertView setOnButtonTouchUpInside:^(CustomIOSAlertView *alertView, int buttonIndex) {
+        NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)[alertView tag]);
+        [self listSubviewsOfView:[alertView containerView]];
+        [alertView close];
+    }];
+    
+    [alertView setUseMotionEffects:true];
+    
+    // And launch the dialog
+    [alertView show];
+}
+
+- (UIView *)createDemoView
+{
+   // UIView *demoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 290, 200)];
+    FilterView *filter = [[FilterView alloc] initWithFrame:CGRectMake(0, 0, 290, 250)];
+    
+    return filter;
+}
+
+- (void)listSubviewsOfView:(UIView *)view {
+    
+    // Get the subviews of the view
+    NSArray *subviews = [view subviews];
+    
+    // Return if there are no subviews
+    if ([subviews count] == 0) return; // COUNT CHECK LINE
+    
+    for (UIView *subview in subviews) {
+        
+        // Do what you want to do with the subview
+        NSLog(@"%@", subview);
+        
+        // List the subviews of subview
+        [self listSubviewsOfView:subview];
+    }
+}
+
+
 @end

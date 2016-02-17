@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FilterView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="cdy-jN-XM4">
+                    <rect key="frame" x="6" y="206" width="588" height="31"/>
+                    <connections>
+                        <action selector="distanceSlider:" destination="iN0-l3-epB" eventType="valueChanged" id="3rE-vi-yfG"/>
+                    </connections>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RM-H2-OJY">
+                    <rect key="frame" x="279" y="177" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="yLm-kv-per">
+                    <rect key="frame" x="6" y="285" width="588" height="31"/>
+                    <connections>
+                        <action selector="difficultySlider:" destination="iN0-l3-epB" eventType="valueChanged" id="b5Q-Wg-1zo"/>
+                    </connections>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dificulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jg-gV-Q8H">
+                    <rect key="frame" x="279" y="256" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Duracion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8b-bI-2FK">
+                    <rect key="frame" x="279" y="323" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="gGH-4X-NiV">
+                    <rect key="frame" x="6" y="352" width="588" height="31"/>
+                    <connections>
+                        <action selector="duracSlider:" destination="iN0-l3-epB" eventType="valueChanged" id="tGD-70-5YR"/>
+                    </connections>
+                </slider>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="yLm-kv-per" firstAttribute="top" secondItem="1Jg-gV-Q8H" secondAttribute="bottom" constant="8" id="2IX-Jd-WaM"/>
+                <constraint firstItem="yLm-kv-per" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5QW-gr-Tza"/>
+                <constraint firstItem="gGH-4X-NiV" firstAttribute="trailing" secondItem="yLm-kv-per" secondAttribute="trailing" id="7yf-gt-vVj"/>
+                <constraint firstItem="gGH-4X-NiV" firstAttribute="top" secondItem="c8b-bI-2FK" secondAttribute="bottom" constant="8" id="8B4-2A-7dU"/>
+                <constraint firstItem="c8b-bI-2FK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8Bg-vi-JtN"/>
+                <constraint firstItem="yLm-kv-per" firstAttribute="leading" secondItem="cdy-jN-XM4" secondAttribute="leading" id="9cI-1C-hwk"/>
+                <constraint firstItem="yLm-kv-per" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="F0e-Df-dnV"/>
+                <constraint firstAttribute="trailing" secondItem="yLm-kv-per" secondAttribute="trailing" constant="8" id="LRo-9h-oBV"/>
+                <constraint firstItem="yLm-kv-per" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Mvd-gf-lDe"/>
+                <constraint firstItem="yLm-kv-per" firstAttribute="top" secondItem="cdy-jN-XM4" secondAttribute="bottom" constant="49" id="Xks-UD-3BU"/>
+                <constraint firstItem="yLm-kv-per" firstAttribute="trailing" secondItem="cdy-jN-XM4" secondAttribute="trailing" id="ZAR-D8-uvp"/>
+                <constraint firstItem="cdy-jN-XM4" firstAttribute="top" secondItem="9RM-H2-OJY" secondAttribute="bottom" constant="8" id="c9p-lS-1oN"/>
+                <constraint firstItem="9RM-H2-OJY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gIW-Ef-ZU9"/>
+                <constraint firstItem="gGH-4X-NiV" firstAttribute="leading" secondItem="yLm-kv-per" secondAttribute="leading" id="hna-QO-8mV"/>
+                <constraint firstItem="1Jg-gV-Q8H" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pxW-vA-AUA"/>
+                <constraint firstItem="gGH-4X-NiV" firstAttribute="top" secondItem="yLm-kv-per" secondAttribute="bottom" constant="37" id="tXl-pR-Zjt"/>
+            </constraints>
+            <connections>
+                <outlet property="difficultLabel" destination="1Jg-gV-Q8H" id="FCc-g6-BMg"/>
+                <outlet property="distanceLabel" destination="9RM-H2-OJY" id="LUM-ES-Mws"/>
+                <outlet property="duracLabel" destination="c8b-bI-2FK" id="448-Tq-vR3"/>
+            </connections>
+        </view>
+    </objects>
+</document>

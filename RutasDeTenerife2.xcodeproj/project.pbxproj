@@ -357,6 +357,9 @@
 		9D82A30B1C0F181400F8DDFE /* ExtendedInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82A30A1C0F181400F8DDFE /* ExtendedInfoViewController.m */; };
 		9D82A30E1C0F2DB100F8DDFE /* RoundRectPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */; };
 		9D85D3CC1C4409BF00CD2535 /* AltitudeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D85D3CB1C4409BF00CD2535 /* AltitudeViewController.m */; };
+		9D86C3CD1C7342B70040F547 /* CustomIOSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D86C3CC1C7342B70040F547 /* CustomIOSAlertView.m */; };
+		9D86C3D11C7346880040F547 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D86C3D01C7346880040F547 /* FilterView.xib */; };
+		9D86C3D41C7349E60040F547 /* FilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D86C3D31C7349E60040F547 /* FilterView.m */; };
 		9D96DB881BF9E0C8008FEA35 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D96DB871BF9E0C8008FEA35 /* CoreText.framework */; };
 		9D9D75E01C6B90A100B3A502 /* MainInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D75DF1C6B90A100B3A502 /* MainInfoViewController.m */; };
 		9D9D75E51C6B910800B3A502 /* AdvicesInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D75E41C6B910800B3A502 /* AdvicesInfoViewController.m */; };
@@ -811,6 +814,11 @@
 		9D82A30D1C0F2DB100F8DDFE /* RoundRectPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundRectPresentationController.m; sourceTree = "<group>"; };
 		9D85D3CA1C4409BF00CD2535 /* AltitudeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AltitudeViewController.h; sourceTree = "<group>"; };
 		9D85D3CB1C4409BF00CD2535 /* AltitudeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AltitudeViewController.m; sourceTree = "<group>"; };
+		9D86C3CB1C7342B70040F547 /* CustomIOSAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOSAlertView.h; sourceTree = "<group>"; };
+		9D86C3CC1C7342B70040F547 /* CustomIOSAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOSAlertView.m; sourceTree = "<group>"; };
+		9D86C3D01C7346880040F547 /* FilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
+		9D86C3D21C7349E60040F547 /* FilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterView.h; sourceTree = "<group>"; };
+		9D86C3D31C7349E60040F547 /* FilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterView.m; sourceTree = "<group>"; };
 		9D96DB871BF9E0C8008FEA35 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		9D9D75DE1C6B90A100B3A502 /* MainInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainInfoViewController.h; sourceTree = "<group>"; };
 		9D9D75DF1C6B90A100B3A502 /* MainInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainInfoViewController.m; sourceTree = "<group>"; };
@@ -895,6 +903,7 @@
 		9D741E791BF4F2D5008AB780 /* RutasDeTenerife2 */ = {
 			isa = PBXGroup;
 			children = (
+				9D86C3C81C7342870040F547 /* CustomDialog */,
 				9D7B74531C638990001C348F /* MainInfo */,
 				9D7B744D1C6351EB001C348F /* Toast */,
 				9D79CF601C3E7AF800A4AD8A /* Views */,
@@ -927,6 +936,9 @@
 				9D6A565C1C0D9F1D009FDC7E /* MenuCell.h */,
 				9D6A565D1C0D9F1D009FDC7E /* MenuCell.m */,
 				9D79F7891C3C0349005C8FBF /* ExtendedInfo */,
+				9D86C3D01C7346880040F547 /* FilterView.xib */,
+				9D86C3D21C7349E60040F547 /* FilterView.h */,
+				9D86C3D31C7349E60040F547 /* FilterView.m */,
 			);
 			path = RutasDeTenerife2;
 			sourceTree = "<group>";
@@ -1361,6 +1373,15 @@
 			name = MainInfo;
 			sourceTree = "<group>";
 		};
+		9D86C3C81C7342870040F547 /* CustomDialog */ = {
+			isa = PBXGroup;
+			children = (
+				9D86C3CB1C7342B70040F547 /* CustomIOSAlertView.h */,
+				9D86C3CC1C7342B70040F547 /* CustomIOSAlertView.m */,
+			);
+			name = CustomDialog;
+			sourceTree = "<group>";
+		};
 		9D9D75E81C6B94D700B3A502 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1523,6 +1544,7 @@
 				9D7AD5F21BF5FA3700E87809 /* sol_icon.png in Resources */,
 				9D7AD7731BF5FA4A00E87809 /* samarinescandelaria-sl-tf-292.gpx in Resources */,
 				9D7AD7791BF5FA4A00E87809 /* sl-tf-218-roque-del-conde.gpx in Resources */,
+				9D86C3D11C7346880040F547 /* FilterView.xib in Resources */,
 				9D7AD70B1BF5FA4A00E87809 /* PR-TF 35.3.gpx in Resources */,
 				9D7AD7631BF5FA4A00E87809 /* pr-tf-62.gpx in Resources */,
 				9D7AD5CE1BF5FA3700E87809 /* invitation2.png in Resources */,
@@ -1860,6 +1882,7 @@
 				5955C8FC1BF7BD15003843B2 /* FBQuadTreeNode.m in Sources */,
 				9D85D3CC1C4409BF00CD2535 /* AltitudeViewController.m in Sources */,
 				9D77D3E01C05D20F00821854 /* QuickInfoView.m in Sources */,
+				9D86C3D41C7349E60040F547 /* FilterView.m in Sources */,
 				9D7B74561C6389FA001C348F /* InfoCreditsViewController.m in Sources */,
 				9D741E821BF4F2D5008AB780 /* ViewController.m in Sources */,
 				5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */,
@@ -1868,6 +1891,7 @@
 				9D82A30E1C0F2DB100F8DDFE /* RoundRectPresentationController.m in Sources */,
 				9D7AD6011BF5FA3700E87809 /* Route.m in Sources */,
 				9D7AD6001BF5FA3700E87809 /* FMResultSet.m in Sources */,
+				9D86C3CD1C7342B70040F547 /* CustomIOSAlertView.m in Sources */,
 				9D741E7F1BF4F2D5008AB780 /* AppDelegate.m in Sources */,
 				9D7AD5FE1BF5FA3700E87809 /* FMDatabasePool.m in Sources */,
 				9DF6643E1C63A5A500B96144 /* AppInfoTabViewController.m in Sources */,
