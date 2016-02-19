@@ -47,18 +47,21 @@
         value = (int)[preferences integerForKey:@"durac"];
     }
     self.duracLabel.text = [NSString stringWithFormat:@"Duración %@",[self filterDistance:value]];
+    self.sliderDurac.value = value;
     value = 0;
     if ([preferences objectForKey:@"distance"] != nil){
         //  Get current level
         value = (int)[preferences integerForKey:@"distance"];
     }
     self.distanceLabel.text = [NSString stringWithFormat:@"Distancia %@",[self filterDistance:value]];
+    self.sliderDist.value = value;
     value = 0;
     if ([preferences objectForKey:@"dific"] != nil){
         //  Get current level
         value = (int)[preferences integerForKey:@"dific"];
     }
     self.difficultLabel.text = [NSString stringWithFormat:@"Dificultad %@",[self filterDific:value]];
+    self.sliderDific.value = value;
     [super awakeFromNib];
 }
 

@@ -28,6 +28,7 @@
         weatherJson = nil;
         region = reg;
         approved = _approved;
+        isVisible = YES;
     }
     return self;
 }
@@ -63,6 +64,10 @@
     return identifier;
 }
 
+-(BOOL)isVisible{
+    return isVisible;
+}
+
 -(CLLocationCoordinate2D)getFirstPoint{
     MKPointAnnotation *marker = [markerList objectAtIndex:0];
     CLLocationCoordinate2D pos = [marker coordinate];
@@ -78,6 +83,7 @@
         else
             marker.opacity = 0;
     }*/
+    isVisible = visibility;
 }
 
 -(void)setWeatherJson:(NSMutableData *)json{

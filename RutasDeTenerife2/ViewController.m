@@ -1011,12 +1011,20 @@ NSMutableArray *filteredData;
     [alertView setOnButtonTouchUpInside:^(CustomIOSAlertView *alertView, int buttonIndex) {
         NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)[alertView tag]);
         FilterView *filter = (FilterView *)[alertView containerView];
+        NSInteger dist = 0;
+        NSInteger dif = 0;
+        NSInteger durac = 0;
         switch (buttonIndex) {
             
             case 1:
                 //Clear filter
+                [self saveFilterDefaults:dist :dif :durac];
                 break;
             case 2:
+                dist = (int)filter.sliderDist.value;
+                dif = (int)filter.sliderDific.value;
+                durac = (int)filter.sliderDurac.value;
+                [self saveFilterDefaults:dist :dif :durac];
                 //apply filter
                 break;
                 
@@ -1025,11 +1033,7 @@ NSMutableArray *filteredData;
                 break;
         }
         NSLog([NSString stringWithFormat:@"%@ value: %f",filter.distanceLabel.text, filter.sliderDist.value]);
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSInteger i = (int)filter.sliderDist.value;
-        [defaults setInteger:i forKey:@"distance"];
-        //TODO
-        [alertView close];
+                [alertView close];
     }];
     
     [alertView setUseMotionEffects:true];
@@ -1045,6 +1049,13 @@ NSMutableArray *filteredData;
     return filter;
 }
 
+-(void)saveFilterDefaults: (NSInteger)dist : (NSInteger)dif :(NSInteger)durac{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:dist forKey:@"distance"];
+    [defaults setInteger:dif forKey:@"dific"];
+    [defaults setInteger:durac forKey:@"durac"];
+    [defaults synchronize];
+}
 /*- (void)listSubviewsOfView:(UIView *)view {
     
     // Get the subviews of the view

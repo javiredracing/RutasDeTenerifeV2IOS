@@ -23,11 +23,11 @@
     NSTimeInterval timeStamp;
     int region;
     int approved;
+    BOOL isVisible;
 }
 
 @property BOOL isActive;
 
-//-(void)setMarker: (GMSMarker *)marker;
 -(void)setMarker: (MKPointAnnotation *) marker;
 -(NSString *)getName;
 -(NSString *)getXmlRoute;
@@ -44,5 +44,6 @@
 -(int)approved;
 -(NSMutableArray *)getMarkersList;
 -(id)init:(int)_id :(NSString *) name1 :(NSString*)_xml :(double)_dist :(int) _difficulty : (double)_durac :(int)_approved :(int)reg;
+-(BOOL)isVisible;
 
 @end
