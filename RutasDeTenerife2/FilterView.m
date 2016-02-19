@@ -8,9 +8,7 @@
 
 #import "FilterView.h"
 
-@implementation FilterView{
-    NSUserDefaults *preferences;
-}
+@implementation FilterView
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -21,12 +19,13 @@
 */
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
+    FilterView *xibView;
     if (self){
-        UIView *xibView = [[[NSBundle mainBundle]loadNibNamed:@"FilterView" owner:self options:nil]objectAtIndex:0];
+         xibView = [[[NSBundle mainBundle]loadNibNamed:@"FilterView" owner:self options:nil]objectAtIndex:0];
         [xibView setFrame:frame];
-        [self addSubview:xibView];
+        //[self addSubview:xibView];
     }
-    return self;
+    return xibView;
 }
 
 /*-(id)init{
@@ -42,7 +41,7 @@
 -(void)awakeFromNib{
     NSLog(@"Loaded");
     int value = 0;
-    preferences = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     if ([preferences objectForKey:@"durac"] != nil){
         //  Get current level
         value = (int)[preferences integerForKey:@"durac"];
@@ -60,7 +59,7 @@
         value = (int)[preferences integerForKey:@"dific"];
     }
     self.difficultLabel.text = [NSString stringWithFormat:@"Dificultad %@",[self filterDific:value]];
-
+    [super awakeFromNib];
 }
 
 - (IBAction)duracSlider:(UISlider *)sender {

@@ -71,7 +71,11 @@
                 <outlet property="difficultLabel" destination="1Jg-gV-Q8H" id="FCc-g6-BMg"/>
                 <outlet property="distanceLabel" destination="9RM-H2-OJY" id="LUM-ES-Mws"/>
                 <outlet property="duracLabel" destination="c8b-bI-2FK" id="448-Tq-vR3"/>
+                <outlet property="sliderDific" destination="yLm-kv-per" id="aHx-X5-ztq"/>
+                <outlet property="sliderDist" destination="cdy-jN-XM4" id="4fd-iv-Fda"/>
+                <outlet property="sliderDurac" destination="gGH-4X-NiV" id="4UL-5y-cDK"/>
             </connections>
+            <point key="canvasLocation" x="355" y="323"/>
         </view>
     </objects>
 </document>

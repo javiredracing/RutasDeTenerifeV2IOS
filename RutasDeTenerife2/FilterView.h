@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface FilterView : UIView
+@property (weak, nonatomic) IBOutlet UISlider *sliderDurac;
+@property (weak, nonatomic) IBOutlet UISlider *sliderDific;
+@property (weak, nonatomic) IBOutlet UISlider *sliderDist;
 
 @property (weak, nonatomic) IBOutlet UILabel *duracLabel;
 @property (weak, nonatomic) IBOutlet UILabel *difficultLabel;

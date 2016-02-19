@@ -1010,7 +1010,25 @@ NSMutableArray *filteredData;
     // You may use a Block, rather than a delegate.
     [alertView setOnButtonTouchUpInside:^(CustomIOSAlertView *alertView, int buttonIndex) {
         NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)[alertView tag]);
-        [self listSubviewsOfView:[alertView containerView]];
+        FilterView *filter = (FilterView *)[alertView containerView];
+        switch (buttonIndex) {
+            
+            case 1:
+                //Clear filter
+                break;
+            case 2:
+                //apply filter
+                break;
+                
+            default:
+                //do nothing
+                break;
+        }
+        NSLog([NSString stringWithFormat:@"%@ value: %f",filter.distanceLabel.text, filter.sliderDist.value]);
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSInteger i = (int)filter.sliderDist.value;
+        [defaults setInteger:i forKey:@"distance"];
+        //TODO
         [alertView close];
     }];
     
@@ -1024,11 +1042,10 @@ NSMutableArray *filteredData;
 {
    // UIView *demoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 290, 200)];
     FilterView *filter = [[FilterView alloc] initWithFrame:CGRectMake(0, 0, 290, 250)];
-    
     return filter;
 }
 
-- (void)listSubviewsOfView:(UIView *)view {
+/*- (void)listSubviewsOfView:(UIView *)view {
     
     // Get the subviews of the view
     NSArray *subviews = [view subviews];
@@ -1044,7 +1061,7 @@ NSMutableArray *filteredData;
         // List the subviews of subview
         [self listSubviewsOfView:subview];
     }
-}
+}*/
 
 
 @end
