@@ -21,29 +21,24 @@
 
 @interface ViewController : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
-- (IBAction)quickControlTap:(UISegmentedControl *)sender;
-
-
 @property (weak, nonatomic) IBOutlet UISegmentedControl *quickControl;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *menuWidth;
 @property (weak, nonatomic) IBOutlet UITableView *menuList;
-
 @property (weak, nonatomic) IBOutlet QuickInfoView *quickInfoView;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *panelWidth;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-- (IBAction)toggleList:(id)sender;
-
 @property (weak, nonatomic) IBOutlet UITableView *pathList;
-- (IBAction)deselect:(id)sender;
-
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 @property Database *db;
 @property NSMutableArray *routes;
 @property (nonatomic, strong) CustomKMLParser *kmlParser;
 @property (nonatomic, strong) FBClusteringManager *clusteringManager;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+
+- (IBAction)quickControlTap:(UISegmentedControl *)sender;
+- (IBAction)toggleList:(id)sender;
+- (IBAction)deselect:(id)sender;
 
 @end
 

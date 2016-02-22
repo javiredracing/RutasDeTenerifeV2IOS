@@ -189,7 +189,6 @@ NSMutableArray *filteredData;
     [[NSOperationQueue new] addOperationWithBlock:^{
         double scale = self.mapView.bounds.size.width / self.mapView.visibleMapRect.size.width;
         NSArray *annotations = [self.clusteringManager clusteredAnnotationsWithinMapRect:mapView.visibleMapRect withZoomScale:scale];
-    
         [self.clusteringManager displayAnnotations:annotations onMapView:mapView];
     }];
 }
@@ -254,7 +253,7 @@ NSMutableArray *filteredData;
     return renderer;
 }
 
--(Route *)findRouteById:(NSUInteger)identifier{
+/*-(Route *)findRouteById:(NSUInteger)identifier{
     Route *r = nil;
     NSUInteger size = [self.routes count];
     for (NSUInteger i = 0; i < size; i++){
@@ -263,6 +262,37 @@ NSMutableArray *filteredData;
             return r;
     }
     return r;
+}*/
+
+-(Route *)findRouteById: (NSUInteger)identifier{
+    //Route *r = nil;
+    int min = 0, max = ((int)[self.routes count] - 1), mid=0;
+    
+    //int value = 8;
+    
+    //if we find our value, result = 1
+    //bool foundValue = false;
+    
+   // NSLog(@"we are checking our array for value %i",value);
+    
+    while (min <= max ) {
+        mid = (min + max)/2;
+        int currentVal = [[self.routes objectAtIndex:mid] getId];
+        //NSLog(@"min = %i , max = %i, mid = %i",min,max,mid);
+        if (currentVal == identifier){
+            //foundValue = true;
+            break;
+        }
+        else
+            if (identifier > currentVal){
+                min = mid+1;
+            }else{
+                max = mid-1;
+            }
+    }
+    
+    //NSLog(@"foundValue = %i",foundValue);
+    return [self.routes objectAtIndex:mid];
 }
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
@@ -1032,8 +1062,8 @@ NSMutableArray *filteredData;
                 //do nothing
                 break;
         }
-        NSLog([NSString stringWithFormat:@"%@ value: %f",filter.distanceLabel.text, filter.sliderDist.value]);
-                [alertView close];
+        //NSLog([NSString stringWithFormat:@"%@ value: %f",filter.distanceLabel.text, filter.sliderDist.value]);
+        [alertView close];
     }];
     
     [alertView setUseMotionEffects:true];
