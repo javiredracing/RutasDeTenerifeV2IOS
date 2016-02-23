@@ -41,6 +41,11 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:0 forKey:@"distance"];
+    [defaults setInteger:0 forKey:@"dific"];
+    [defaults setInteger:0 forKey:@"durac"];
+    [defaults synchronize];
 }
 
 -(void)createCopyOfDatabaseIfNeeded{

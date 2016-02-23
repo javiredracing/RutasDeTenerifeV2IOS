@@ -74,16 +74,90 @@
     return pos;
 }
 
--(void)setMarkersVisibility:(BOOL)visibility{
-    /*NSUInteger size = [markerList count];
-    for (NSUInteger i = 0; i < size; i++){
-        GMSMarker *marker = [markerList objectAtIndex:i];
-        if (visibility)
-            marker.opacity = 1;
-        else
-            marker.opacity = 0;
-    }*/
-    isVisible = visibility;
+-(void)setMarkersVisibility:(NSInteger)distValue :(NSInteger)difValue :(NSInteger)duracValue{
+
+    BOOL lonCond = NO;
+    BOOL difCond = NO;
+    BOOL duracCond = NO;
+    
+    switch (distValue) {
+        case 0:
+            lonCond = YES;
+            break;
+        case 1:
+            if (dist < 11){
+                lonCond = YES;
+            }
+            break;
+        case 2:
+            if ((dist >= 11) && (dist < 50)){
+                lonCond = YES;
+            }
+            break;
+            
+        default:
+            if (dist >= 50){
+                lonCond = YES;
+            }
+            break;
+    }
+    
+    switch (difValue) {
+        case 0:
+            difCond = YES;
+            break;
+        case 1:
+            if (difficulty == 1){
+                difCond = YES;
+            }
+            break;
+        case 2:
+            if (difficulty == 2){
+                difCond = YES;
+            }
+            break;
+        case 3:
+            if (difficulty == 3) {
+                difCond = YES;
+            }
+            break;
+            
+        default:
+            if (difficulty > 3){
+                difCond = YES;
+            }
+            break;
+    }
+    
+    switch (duracValue) {
+        case 0:
+            duracCond = YES;
+            break;
+        case 1:
+            if (durac < 2) {
+                duracCond = YES;
+            }
+            break;
+        case 2:
+            if ((durac >= 2) && (durac < 6)){
+                duracCond = YES;
+            }
+            break;
+        case 3:
+            if (durac >= 6) {
+                duracCond = YES;
+            }
+            break;
+        default:
+            duracCond = YES;
+            break;
+    }
+    
+    isVisible = (lonCond && difCond && duracValue);
+}
+
+-(void)setMarkerVisibilityTrue{
+    isVisible = YES;
 }
 
 -(void)setWeatherJson:(NSMutableData *)json{

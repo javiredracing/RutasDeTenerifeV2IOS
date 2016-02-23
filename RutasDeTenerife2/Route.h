@@ -36,7 +36,8 @@
 -(int)getDifficulty;
 -(int)getId;
 -(CLLocationCoordinate2D)getFirstPoint;
--(void)setMarkersVisibility: (BOOL)visibility;
+-(void)setMarkersVisibility: (NSInteger)dist : (NSInteger)dif :(NSInteger)durac;
+-(void)setMarkerVisibilityTrue;
 -(void)setWeatherJson:(NSMutableData *)json;
 -(NSMutableData *)getWeatherJson;
 -(void)clearWeather;

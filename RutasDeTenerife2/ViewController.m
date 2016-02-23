@@ -30,6 +30,7 @@ UIImage *imageBrown;
 Route *lastRouteShowed;
 //CGRect panelRect;
 BOOL onRouteMode;
+BOOL filterEnabled;
 
 NSMutableArray *filteredData;
 }
@@ -42,6 +43,7 @@ NSMutableArray *filteredData;
     self.mapView.showsBuildings = NO;
      [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     onRouteMode = NO;
+    filterEnabled = NO;
     
     self.locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -214,30 +216,55 @@ NSMutableArray *filteredData;
             NSInteger i = 1;
             pinView.tag = i;
         }
+        pinView.alpha = 1;
         return pinView;
-    }else
+    }else{
     
-    if ([annotation isKindOfClass:[MKPointAnnotation class]]){
-        
-        NSString *subtitle = [annotation subtitle];
-        int type = [subtitle intValue];
-        if (!pinView) {
-            // If an existing pin view was not available, create one.
+        if ([annotation isKindOfClass:[MKPointAnnotation class]]){
+           
+            BOOL isPointVisible = YES;
+            //TODO if filterEnabled
+            if (filterEnabled) {
+                NSUInteger identifier = [[annotation title] integerValue];
+                Route *route = [self findRouteById:identifier];
+                isPointVisible = [route isVisible];
+            }
             
-            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
-            pinView.canShowCallout = NO;
-            pinView.centerOffset = CGPointMake(0, -pinView.image.size.height / 2);
-            pinView.image = [self setIcon:type];
-            NSInteger i = 0;
-            pinView.tag = i;
-            
-        } else {
-            pinView.annotation = annotation;
-            pinView.image = [self setIcon:type];
-            NSInteger i = 0;
-            pinView.tag = i;
+            NSString *subtitle = [annotation subtitle];
+            int type = [subtitle intValue];
+            if (!pinView) {
+                // If an existing pin view was not available, create one.
+                
+                pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
+                pinView.canShowCallout = NO;
+                pinView.centerOffset = CGPointMake(0, -pinView.image.size.height / 2);
+                pinView.image = [self setIcon:type];
+                NSInteger i = 0;
+                pinView.tag = i;
+                if (isPointVisible) {
+                    
+                    pinView.alpha = 1;
+                }else{
+                    pinView.alpha = 0.4;
+                }
+                NSLog(@"create pin");
+            } else {
+                pinView.annotation = annotation;
+                pinView.image = [self setIcon:type];
+                NSInteger i = 0;
+                pinView.tag = i;
+                if (isPointVisible) {
+                    
+                    pinView.alpha = 1;
+                }else{
+                    pinView.alpha = 0.4;
+                }
+                NSLog(@"return pin");
+            }
+           /*
+            }*/
+            return pinView;
         }
-        return pinView;
     }
     return nil;
 }
@@ -253,34 +280,16 @@ NSMutableArray *filteredData;
     return renderer;
 }
 
-/*-(Route *)findRouteById:(NSUInteger)identifier{
-    Route *r = nil;
-    NSUInteger size = [self.routes count];
-    for (NSUInteger i = 0; i < size; i++){
-        r = [self.routes objectAtIndex:i];
-        if ([r getId] == identifier)
-            return r;
-    }
-    return r;
-}*/
-
+/**
+ Binary search by Identifier
+ */
 -(Route *)findRouteById: (NSUInteger)identifier{
-    //Route *r = nil;
+
     int min = 0, max = ((int)[self.routes count] - 1), mid=0;
-    
-    //int value = 8;
-    
-    //if we find our value, result = 1
-    //bool foundValue = false;
-    
-   // NSLog(@"we are checking our array for value %i",value);
-    
     while (min <= max ) {
         mid = (min + max)/2;
         int currentVal = [[self.routes objectAtIndex:mid] getId];
-        //NSLog(@"min = %i , max = %i, mid = %i",min,max,mid);
         if (currentVal == identifier){
-            //foundValue = true;
             break;
         }
         else
@@ -290,8 +299,6 @@ NSMutableArray *filteredData;
                 max = mid-1;
             }
     }
-    
-    //NSLog(@"foundValue = %i",foundValue);
     return [self.routes objectAtIndex:mid];
 }
 
@@ -1044,17 +1051,32 @@ NSMutableArray *filteredData;
         NSInteger dist = 0;
         NSInteger dif = 0;
         NSInteger durac = 0;
+        NSUInteger size = [self.routes count];
         switch (buttonIndex) {
             
             case 1:
-                //Clear filter
+                //Clear filter, all markers Visible
+                filterEnabled = NO;
                 [self saveFilterDefaults:dist :dif :durac];
+               
+                for (NSUInteger i = 0; i < size; i++) {
+                    [[self.routes objectAtIndex:i] setMarkerVisibilityTrue];
+                }
+   
                 break;
             case 2:
                 dist = (int)filter.sliderDist.value;
                 dif = (int)filter.sliderDific.value;
                 durac = (int)filter.sliderDurac.value;
+                if ((dist == 0) && (dif == 0) && (durac == 0)) {
+                    filterEnabled = NO;
+                }else
+                    filterEnabled = YES;
+                
                 [self saveFilterDefaults:dist :dif :durac];
+                for (NSUInteger i = 0; i < size; i++) {
+                    [[self.routes objectAtIndex:i] setMarkersVisibility:dist :dif :durac];
+                }
                 //apply filter
                 break;
                 
@@ -1085,6 +1107,32 @@ NSMutableArray *filteredData;
     [defaults setInteger:dif forKey:@"dific"];
     [defaults setInteger:durac forKey:@"durac"];
     [defaults synchronize];
+}
+
+//TODO revise
+-(void)redrawMarkersAndCusters :(MKMapView *)mapView{
+    for (id<MKAnnotation> annotation in mapView.annotations){
+        if ([annotation isKindOfClass:[MKPointAnnotation class]]){
+            
+            BOOL isPointVisible = YES;
+            //TODO if filterEnabled
+            if (filterEnabled) {
+                NSUInteger identifier = [[annotation title] integerValue];
+                Route *route = [self findRouteById:identifier];
+                isPointVisible = [route isVisible];
+            }
+            MKAnnotationView* anView = [mapView viewForAnnotation: annotation];
+            if (anView){
+                if (isPointVisible) {
+                    
+                    anView.alpha = 1;
+                }else{
+                    anView.alpha = 0.4;
+                }
+
+            }
+        }
+    }
 }
 /*- (void)listSubviewsOfView:(UIView *)view {
     
