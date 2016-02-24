@@ -450,6 +450,9 @@
 		9D6DC95B1C455D2300BCB623 /* ForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastCell.xib; sourceTree = "<group>"; };
 		9D6DC95D1C45619300BCB623 /* ForecastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastCell.h; sourceTree = "<group>"; };
 		9D6DC95E1C45619300BCB623 /* ForecastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastCell.m; sourceTree = "<group>"; };
+		9D72BCFA1C7DAC79008E28E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		9D72BCFD1C7DAC79008E28E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9D72BD011C7DB497008E28E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		9D741E771BF4F2D5008AB780 /* RutasDeTenerife2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RutasDeTenerife2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D741E7B1BF4F2D5008AB780 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D741E7D1BF4F2D5008AB780 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1946,6 +1949,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				9D741E841BF4F2D5008AB780 /* Base */,
+				9D72BCFA1C7DAC79008E28E4 /* es */,
+				9D72BD011C7DB497008E28E4 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1954,6 +1959,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9D741E891BF4F2D5008AB780 /* Base */,
+				9D72BCFD1C7DAC79008E28E4 /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

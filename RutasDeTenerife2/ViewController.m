@@ -254,15 +254,13 @@ NSMutableArray *filteredData;
                 NSInteger i = 0;
                 pinView.tag = i;
                 if (isPointVisible) {
-                    
                     pinView.alpha = 1;
                 }else{
                     pinView.alpha = 0.4;
                 }
                 NSLog(@"return pin");
             }
-           /*
-            }*/
+
             return pinView;
         }
     }
@@ -1062,7 +1060,7 @@ NSMutableArray *filteredData;
                 for (NSUInteger i = 0; i < size; i++) {
                     [[self.routes objectAtIndex:i] setMarkerVisibilityTrue];
                 }
-   
+                [self redrawMarkersAndCusters:self.mapView];
                 break;
             case 2:
                 dist = (int)filter.sliderDist.value;
@@ -1078,6 +1076,7 @@ NSMutableArray *filteredData;
                     [[self.routes objectAtIndex:i] setMarkersVisibility:dist :dif :durac];
                 }
                 //apply filter
+                [self redrawMarkersAndCusters:self.mapView];
                 break;
                 
             default:
@@ -1120,6 +1119,7 @@ NSMutableArray *filteredData;
                 NSUInteger identifier = [[annotation title] integerValue];
                 Route *route = [self findRouteById:identifier];
                 isPointVisible = [route isVisible];
+                NSLog([NSString stringWithFormat:@"Name: %@, dist:%.1f, dif:%d, durac:%.1f visible:%@",route.getName, route.getDist, route.getDifficulty, route.getDurac, route.isVisible ? @"YES" : @"NO"]);
             }
             MKAnnotationView* anView = [mapView viewForAnnotation: annotation];
             if (anView){

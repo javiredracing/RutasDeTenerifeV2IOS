@@ -153,7 +153,7 @@
             break;
     }
     
-    isVisible = (lonCond && difCond && duracValue);
+    isVisible = (lonCond && difCond && duracCond);
 }
 
 -(void)setMarkerVisibilityTrue{
