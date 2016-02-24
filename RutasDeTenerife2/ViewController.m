@@ -55,6 +55,18 @@ NSMutableArray *filteredData;
     imageYellow = [UIImage imageNamed:@"marker_sign_16_yellow"];
     imageGreen = [UIImage imageNamed:@"marker_sign_16_green"];
     imageRed = [UIImage imageNamed:@"marker_sign_16_red"];
+    
+    self.menuButton.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.menuButton.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+    self.menuButton.layer.shadowOpacity = 0.8;
+    self.menuButton.layer.shadowRadius = 2.0;
+    self.listButton.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.listButton.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+    self.listButton.layer.shadowOpacity = 0.8;
+    self.listButton.layer.shadowRadius = 2.0;
+    
+    
+    
     [self gotoLocation];
     [self loadRoutes];
     
@@ -234,33 +246,23 @@ NSMutableArray *filteredData;
             int type = [subtitle intValue];
             if (!pinView) {
                 // If an existing pin view was not available, create one.
-                
                 pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
                 pinView.canShowCallout = NO;
                 pinView.centerOffset = CGPointMake(0, -pinView.image.size.height / 2);
                 pinView.image = [self setIcon:type];
                 NSInteger i = 0;
                 pinView.tag = i;
-                if (isPointVisible) {
-                    
-                    pinView.alpha = 1;
-                }else{
-                    pinView.alpha = 0.4;
-                }
-                NSLog(@"create pin");
             } else {
                 pinView.annotation = annotation;
                 pinView.image = [self setIcon:type];
                 NSInteger i = 0;
                 pinView.tag = i;
-                if (isPointVisible) {
-                    pinView.alpha = 1;
-                }else{
-                    pinView.alpha = 0.4;
-                }
-                NSLog(@"return pin");
             }
-
+            if (isPointVisible) {
+                pinView.alpha = 1;
+            }else{
+                pinView.alpha = 0.4;
+            }
             return pinView;
         }
     }
@@ -390,25 +392,25 @@ NSMutableArray *filteredData;
     }
 }*/
 
--(void)clickAction: (Route *)myroute: (CLLocationCoordinate2D)pos{
+-(void)clickAction: (Route *)myCurrentRoute :(CLLocationCoordinate2D)pos{
  
     if (lastRouteShowed != nil){
-        if ([lastRouteShowed getId] == [myroute getId]){
+        if ([lastRouteShowed getId] == [myCurrentRoute getId]){
             lastRouteShowed = nil;
         }
     }
     
-    myroute.isActive = !myroute.isActive;
+    myCurrentRoute.isActive = !myCurrentRoute.isActive;
     if (lastRouteShowed != nil) {
         lastRouteShowed.isActive = NO;
     }
-    lastRouteShowed = myroute;
+    lastRouteShowed = myCurrentRoute;
     //if (polyLine != nil){
         [self.mapView removeOverlays:self.mapView.overlays];
     //}
 
-    if (myroute.isActive){
-        NSString *kmlName = [myroute getXmlRoute];
+    if (myCurrentRoute.isActive){
+        NSString *kmlName = [myCurrentRoute getXmlRoute];
         kmlName =[kmlName substringToIndex:[kmlName length] - 4];
         NSLog(kmlName);
         
@@ -435,7 +437,7 @@ NSMutableArray *filteredData;
                 [self.mapView addOverlay:polyLine];
                 });
             });
-        [self showQuickInfo:myroute];
+        [self showQuickInfo:myCurrentRoute];
         [self moveTo:pos];  //Center pos
     }else{
         [self hideQuickInfo];
@@ -621,6 +623,10 @@ NSMutableArray *filteredData;
             newCell.distanceLabel.text = [NSString stringWithFormat:@"(%.1f km)",[myRoute getDist]];
             //NSUInteger dificult =
             newCell.dificultImage.image = [self setDifficultIcon: [myRoute getDifficulty]];
+           /* if (myRoute.isVisible) {
+                newCell.alpha = 1;
+            }else
+                newCell.alpha = 0.4;*/
             NSUInteger i = [myRoute getId];
             cell.tag = i;
         }
@@ -677,7 +683,7 @@ NSMutableArray *filteredData;
         NSUInteger identifier = cell.tag;
         Route *r = [self findRouteById:identifier];
         CLLocationCoordinate2D pos = [r getFirstPoint];
-        [self clickAction:r :pos ];
+        [self clickAction:r :pos];
     }else{
         [self actionMenu:indexPath.row];
     }
@@ -909,7 +915,7 @@ NSMutableArray *filteredData;
             [self shareAction];
             break;
         case 6: //premium
-            
+            [self showPremiumDialog];
             break;
         default:
             break;
@@ -1119,7 +1125,7 @@ NSMutableArray *filteredData;
                 NSUInteger identifier = [[annotation title] integerValue];
                 Route *route = [self findRouteById:identifier];
                 isPointVisible = [route isVisible];
-                NSLog([NSString stringWithFormat:@"Name: %@, dist:%.1f, dif:%d, durac:%.1f visible:%@",route.getName, route.getDist, route.getDifficulty, route.getDurac, route.isVisible ? @"YES" : @"NO"]);
+                //NSLog([NSString stringWithFormat:@"Name: %@, dist:%.1f, dif:%d, durac:%.1f visible:%@",route.getName, route.getDist, route.getDifficulty, route.getDurac, route.isVisible ? @"YES" : @"NO"]);
             }
             MKAnnotationView* anView = [mapView viewForAnnotation: annotation];
             if (anView){
@@ -1133,6 +1139,35 @@ NSMutableArray *filteredData;
             }
         }
     }
+}
+
+-(void)showPremiumDialog{
+    UIAlertController * alert = [UIAlertController
+                                  alertControllerWithTitle:@"Unlock Rutas de Tenerife"
+                                  message:@"You are using UIAlertController"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    UIAlertAction* cancel = [UIAlertAction
+                             actionWithTitle:@"Cancel"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+    
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 /*- (void)listSubviewsOfView:(UIView *)view {
     

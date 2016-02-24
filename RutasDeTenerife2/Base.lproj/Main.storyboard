@@ -21,16 +21,30 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VC4-fD-Qoo">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4e2-8E-6TT">
-                                <rect key="frame" x="20" y="28" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4e2-8E-6TT">
+                                <rect key="frame" x="20" y="28" width="32" height="32"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Okz-1h-MA8"/>
+                                    <constraint firstAttribute="width" constant="32" id="vps-gS-HhG"/>
+                                </constraints>
+                                <state key="normal" image="logo.png"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="toggleList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pwx-Mr-HQr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fS7-wl-xBF">
-                                <rect key="frame" x="534" y="28" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fS7-wl-xBF">
+                                <rect key="frame" x="548" y="28" width="32" height="32"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="list_32.png"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="deselect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9PA-fr-liK"/>
                                 </connections>
@@ -122,7 +136,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="listButton" destination="fS7-wl-xBF" id="ylP-8e-tfD"/>
                         <outlet property="mapView" destination="VC4-fD-Qoo" id="mEl-Hi-pmO"/>
+                        <outlet property="menuButton" destination="4e2-8E-6TT" id="pAz-9I-rfd"/>
                         <outlet property="menuList" destination="Qg7-lg-hbD" id="fbu-Yj-xCq"/>
                         <outlet property="menuWidth" destination="oKz-Sd-Dmm" id="cJA-on-7lP"/>
                         <outlet property="panelWidth" destination="72P-Nn-Bpd" id="xVC-cx-uJe"/>
@@ -726,6 +742,8 @@
         <image name="center.png" width="32" height="32"/>
         <image name="close.png" width="32" height="32"/>
         <image name="down.png" width="50" height="50"/>
+        <image name="list_32.png" width="32" height="32"/>
+        <image name="logo.png" width="64" height="64"/>
         <image name="pin_24.png" width="24" height="24"/>
         <image name="plus16.png" width="16" height="16"/>
         <image name="senalizacion.jpeg" width="278" height="182"/>
