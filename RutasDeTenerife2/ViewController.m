@@ -721,7 +721,7 @@ NSMutableArray *filteredData;
 #pragma mark - animations -
 
 -(void)showRightList{
-    self.panelWidth.constant = 254;
+    self.panelWidth.constant = 255;
     [UIView animateWithDuration:0.25 animations:^{
         [self.pathList layoutIfNeeded];
     }];
@@ -809,7 +809,7 @@ NSMutableArray *filteredData;
     }
 }
 - (IBAction)deselect:(id)sender {
-    if (self.panelWidth.constant == 254){
+    if (self.panelWidth.constant == 255){
         [self hideRightList];
     }else{
         [self showRightList];
