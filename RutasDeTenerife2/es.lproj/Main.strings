@@ -2,41 +2,38 @@
 /* Class = "UITabBarItem"; title = "Altitud"; ObjectID = "0Gt-pJ-vje"; */
 "0Gt-pJ-vje.title" = "Altitud";
 
-/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "1lc-NX-GQe"; */
-"1lc-NX-GQe.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+/* Class = "UITextView"; text = "La Red de Senderos de Tenerife cuenta con tres tipos de rutas:\n\n►<b> Sendero de Gran Recorrido.</b> Se identifica con los colores blanco y rojo, y con las siglas <i>GR</i>. Estos grandes trayectos se realizan en varias jornadas, dado que su longitud es superior a los 50 kilómetros.\n\n►<b> Sendero de Pequeño Recorrido.</b> Se identifica con los colores blanco y amarillo, y con las siglas <i>PR</i>. Su longitud oscila entre los 10 y los 50 kilómetros; alguno de estos senderos poseen menos de 10 kilómetros, pero se han clasificado como PR debido a la pendiente del terreno, que añade mayor dificultad para la realización de la ruta.\n\n►<b> Sendero Local.</b> Se identifica con los colores blanco y verde, y con las siglas <i>SL</i>. Su longitud es de menos de 10 kilómetros."; ObjectID = "1lc-NX-GQe"; */
+"1lc-NX-GQe.text" = "La Red de Senderos de Tenerife cuenta con tres tipos de rutas:\n\n►<b> Sendero de Gran Recorrido.</b> Se identifica con los colores blanco y rojo, y con las siglas <i>GR</i>. Estos grandes trayectos se realizan en varias jornadas, dado que su longitud es superior a los 50 kilómetros.\n\n►<b> Sendero de Pequeño Recorrido.</b> Se identifica con los colores blanco y amarillo, y con las siglas <i>PR</i>. Su longitud oscila entre los 10 y los 50 kilómetros; alguno de estos senderos poseen menos de 10 kilómetros, pero se han clasificado como PR debido a la pendiente del terreno, que añade mayor dificultad para la realización de la ruta.\n\n►<b> Sendero Local.</b> Se identifica con los colores blanco y verde, y con las siglas <i>SL</i>. Su longitud es de menos de 10 kilómetros.";
 
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4e2-8E-6TT"; */
-"4e2-8E-6TT.normalTitle" = "Button";
+/* Class = "UITextView"; text = "Description Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "ATm-lS-kmC"; */
+"ATm-lS-kmC.text" = "Description Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
 
-/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "ATm-lS-kmC"; */
-"ATm-lS-kmC.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+/* Class = "UIButton"; normalTitle = "Cómo llegar"; ObjectID = "BXj-I1-n0N"; */
+"BXj-I1-n0N.normalTitle" = "Cómo llegar";
 
-/* Class = "UIButton"; normalTitle = "Como llegar"; ObjectID = "BXj-I1-n0N"; */
-"BXj-I1-n0N.normalTitle" = "Como llegar";
+/* Class = "UIButton"; normalTitle = "Enviar email"; ObjectID = "BdG-Iq-rVG"; */
+"BdG-Iq-rVG.normalTitle" = "Enviar email";
 
-/* Class = "UIButton"; normalTitle = "Send email"; ObjectID = "BdG-Iq-rVG"; */
-"BdG-Iq-rVG.normalTitle" = "Send email";
+/* Class = "UITabBarItem"; title = "Tiempo"; ObjectID = "Ftd-wb-0nu"; */
+"Ftd-wb-0nu.title" = "Tiempo";
 
-/* Class = "UITabBarItem"; title = "Weather"; ObjectID = "Ftd-wb-0nu"; */
-"Ftd-wb-0nu.title" = "Weather";
+/* Class = "UITabBarItem"; title = "Consejos"; ObjectID = "G4c-Eb-hQ6"; */
+"G4c-Eb-hQ6.title" = "Consejos";
 
-/* Class = "UITabBarItem"; title = "Advices"; ObjectID = "G4c-Eb-hQ6"; */
-"G4c-Eb-hQ6.title" = "Advices";
-
-/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "N08-KG-pzS"; */
-"N08-KG-pzS.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+/* Class = "UITextView"; text = "► Transita siempre acompañado y por los caminos señalizados y respeta el modo de vida, la intimidad y las propiedades de los habitantes del lugar. \n\n► Si evitas los ruidos, podrás descubrir mucha más vida a tu alrededor. \n\n► Llévate toda la basura, incluso la orgánica. Así contribuirás a mantener la belleza del paisaje y evitarás la proliferación de roedores. Ten especial cuidado con las colillas. \n\n► La recolección de plantas, animales u otros objetos del medio puede acarrear la pérdida de recursos insustituibles. \n\n► Los responsables de estos Espacios Naturales Protegidos te agradecerán que les adviertas de las incidencias que hayas podido observar. Para ello puedes dirigirte a: Área de Medio Ambiente del Cabildo Insular de Tenerife <u>Tfno: 922239090</u> <u>Email: cordinacionmam@com.es</u>\n\n► Te recordamos que la naturaleza de la isla es tan peculiar como imprevisible. El disfrute de la misma se debe hacer de una manera responsable y prudente; ten especial cuidado en cualquier zona natural y no olvides que el riesgo de accidente siempre podría estar presente.\n\n► Respeta las señales.\n\n► Consulta la previsión metereológica ​ para asegurarte que es la adecuada. \n\n► Lleva ropa y calzado adecuado para senderismo y en la mochila no te olvides de poner teléfono móvil, protector solar, sombrero, abrigo, chubasquero, suficiente agua y comida.\n\n► Informa a tus familiares o amigos de la ruta que vas a realizar y ten en cuenta las horas de luz que necesitarás para completar tu recorrido."; ObjectID = "N08-KG-pzS"; */
+"N08-KG-pzS.text" = "► Transita siempre acompañado y por los caminos señalizados y respeta el modo de vida, la intimidad y las propiedades de los habitantes del lugar. \n\n► Si evitas los ruidos, podrás descubrir mucha más vida a tu alrededor. \n\n► Llévate toda la basura, incluso la orgánica. Así contribuirás a mantener la belleza del paisaje y evitarás la proliferación de roedores. Ten especial cuidado con las colillas. \n\n► La recolección de plantas, animales u otros objetos del medio puede acarrear la pérdida de recursos insustituibles. \n\n► Los responsables de estos Espacios Naturales Protegidos te agradecerán que les adviertas de las incidencias que hayas podido observar. Para ello puedes dirigirte a: Área de Medio Ambiente del Cabildo Insular de Tenerife <u>Tfno: 922239090</u> <u>Email: cordinacionmam@com.es</u>\n\n► Te recordamos que la naturaleza de la isla es tan peculiar como imprevisible. El disfrute de la misma se debe hacer de una manera responsable y prudente; ten especial cuidado en cualquier zona natural y no olvides que el riesgo de accidente siempre podría estar presente.\n\n► Respeta las señales.\n\n► Consulta la previsión metereológica ​ para asegurarte que es la adecuada. \n\n► Lleva ropa y calzado adecuado para senderismo y en la mochila no te olvides de poner teléfono móvil, protector solar, sombrero, abrigo, chubasquero, suficiente agua y comida.\n\n► Informa a tus familiares o amigos de la ruta que vas a realizar y ten en cuenta las horas de luz que necesitarás para completar tu recorrido.";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Q4W-OM-m91"; */
 "Q4W-OM-m91.text" = "Label";
 
-/* Class = "UIButton"; normalTitle = "Descarga track"; ObjectID = "RLX-ZY-boE"; */
-"RLX-ZY-boE.normalTitle" = "Descarga track";
+/* Class = "UIButton"; normalTitle = "Descarga ruta"; ObjectID = "RLX-ZY-boE"; */
+"RLX-ZY-boE.normalTitle" = "Descarga ruta";
 
-/* Class = "UITabBarItem"; title = "Credits"; ObjectID = "Rlo-s3-8jE"; */
-"Rlo-s3-8jE.title" = "Credits";
+/* Class = "UITabBarItem"; title = "Créditos"; ObjectID = "Rlo-s3-8jE"; */
+"Rlo-s3-8jE.title" = "Créditos";
 
-/* Class = "UITabBarItem"; title = "Description"; ObjectID = "TCL-Gl-nRY"; */
-"TCL-Gl-nRY.title" = "Description";
+/* Class = "UITabBarItem"; title = "Descripción"; ObjectID = "TCL-Gl-nRY"; */
+"TCL-Gl-nRY.title" = "Descripción";
 
 /* Class = "UILabel"; text = "Desarrollado por Javier Fernández"; ObjectID = "XfD-eF-uO8"; */
 "XfD-eF-uO8.text" = "Desarrollado por Javier Fernández";
@@ -44,26 +41,23 @@
 /* Class = "UILabel"; text = "Elevación acumulada"; ObjectID = "av0-9l-DbJ"; */
 "av0-9l-DbJ.text" = "Elevación acumulada";
 
-/* Class = "UITabBarItem"; title = "Information"; ObjectID = "bHx-pT-Ekb"; */
-"bHx-pT-Ekb.title" = "Information";
+/* Class = "UITabBarItem"; title = "Información"; ObjectID = "bHx-pT-Ekb"; */
+"bHx-pT-Ekb.title" = "Información";
 
 /* Class = "UILabel"; text = "Legal"; ObjectID = "buX-gS-GZC"; */
 "buX-gS-GZC.text" = "Legal";
 
-/* Class = "UITabBarItem"; title = "Item"; ObjectID = "e5U-E9-G0T"; */
-"e5U-E9-G0T.title" = "Item";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fS7-wl-xBF"; */
-"fS7-wl-xBF.normalTitle" = "Button";
+/* Class = "UITabBarItem"; title = "Atrás"; ObjectID = "e5U-E9-G0T"; */
+"e5U-E9-G0T.title" = "Atrás";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "g65-Sp-up6"; */
 "g65-Sp-up6.text" = "Label";
 
-/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "hfa-Sv-sPs"; */
-"hfa-Sv-sPs.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+/* Class = "UITextView"; text = "La información contenida en esta App es orientativa, suministrada para la comodidad del usuario, sin interpretar de ningún modo, el estado actual de las rutas/senderos, la oferta, la calidad, la titularidad de las zonas por donde se pasa, etc. Así mismo, no se hace responsable de los errores, omisiones o, en su caso, una mala orientacion que pudiera ocasionar un percance entre los usuarios de esta aplicación. \n Esta app usa identificadores de dispositivo para personalizar el contenido y los anuncios, con el fin de ofrecer funciones de medios sociales y para analizar el tráfico. Además, compartimos estos identificadores y otra información sobre su dispositivo con nuestros partners de medios sociales, de publicidad y de análisis web."; ObjectID = "hfa-Sv-sPs"; */
+"hfa-Sv-sPs.text" = "La información contenida en esta App es orientativa, suministrada para la comodidad del usuario, sin interpretar de ningún modo, el estado actual de las rutas/senderos, la oferta, la calidad, la titularidad de las zonas por donde se pasa, etc. Así mismo, no se hace responsable de los errores, omisiones o, en su caso, una mala orientacion que pudiera ocasionar un percance entre los usuarios de esta aplicación. \n Esta app usa identificadores de dispositivo para personalizar el contenido y los anuncios, con el fin de ofrecer funciones de medios sociales y para analizar el tráfico. Además, compartimos estos identificadores y otra información sobre su dispositivo con nuestros partners de medios sociales, de publicidad y de análisis web.";
 
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "kSD-3h-lbD"; */
-"kSD-3h-lbD.normalTitle" = "Button";
+/* Class = "UIButton"; normalTitle = "Próximos días"; ObjectID = "kSD-3h-lbD"; */
+"kSD-3h-lbD.normalTitle" = "Próximos días";
 
-/* Class = "UITabBarItem"; title = "Description"; ObjectID = "myb-Xm-VSc"; */
-"myb-Xm-VSc.title" = "Description";
+/* Class = "UITabBarItem"; title = "Descripción"; ObjectID = "myb-Xm-VSc"; */
+"myb-Xm-VSc.title" = "Descripción";

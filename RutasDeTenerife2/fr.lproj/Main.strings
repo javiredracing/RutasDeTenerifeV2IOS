@@ -1,0 +1,63 @@
+
+/* Class = "UITabBarItem"; title = "Altitude"; ObjectID = "0Gt-pJ-vje"; */
+"0Gt-pJ-vje.title" = "Altitude";
+
+/* Class = "UITextView"; text = "The Tenerife Network of Footpaths boasts three types of route:\r    ► Long-distance Footpaths. Identified in red and white and bearing the acronym GR. These long-distance routes take several days to complete, given a length of over 50 kilometres.\r    ► Short-distance Footpaths. Identified in white and yellow and bearing the acronym PR The length of these footpaths varies between 10 and 50 kilometres. A number of these routes are actually shorter that 10 kilometres; however, that have been classified as PR footpaths due to their steep gradient, which increases difficulty.\r    ►Local Footpaths. Identified in white and green and bearing the acronym SL. These footpaths are less than 10 kilometres long."; ObjectID = "1lc-NX-GQe"; */
+"1lc-NX-GQe.text" = "Réseau Senderos de Tenerife dispose de trois types de routes:\n\n         ►<b> Longue Distance Chemin.</b> Il identifie avec les couleurs blanches et rouges, et l'acronyme de <i>GR</i>. Ces grands trajets sont effectués en quelques jours, puisque sa longueur est supérieure à 50 kilomètres.\n\n         ►<b> Court sentier Route.</b> Il identifie avec le blanc et le jaune, et l'acronyme de <i>PR</i>. Sa longueur est comprise entre 10 et 50 km; l'une de ces pistes ont moins de 10 kilomètres, mais sont classés comme PR en raison de la pente, ce qui ajoute plus de difficulté à effectuer la route.\n\n         ►<b> Chemin d'accès local.</b> Il identifie avec le blanc et le vert, et avec les initiales <i>SL</i>. Sa longueur est inférieure à 10 kilomètres.";
+
+/* Class = "UITextView"; text = "Description Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "ATm-lS-kmC"; */
+"ATm-lS-kmC.text" = "Description Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIButton"; normalTitle = "How to get"; ObjectID = "BXj-I1-n0N"; */
+"BXj-I1-n0N.normalTitle" = "Comment obtenir";
+
+/* Class = "UIButton"; normalTitle = "Send email"; ObjectID = "BdG-Iq-rVG"; */
+"BdG-Iq-rVG.normalTitle" = "envoyez un courriel";
+
+/* Class = "UITabBarItem"; title = "Weather"; ObjectID = "Ftd-wb-0nu"; */
+"Ftd-wb-0nu.title" = "Météorologie";
+
+/* Class = "UITabBarItem"; title = "Advices"; ObjectID = "G4c-Eb-hQ6"; */
+"G4c-Eb-hQ6.title" = "Conseils";
+
+/* Class = "UITextView"; text = "Advices Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "N08-KG-pzS"; */
+"N08-KG-pzS.text" = "► Et se déplace toujours accompagné par des sentiers balisés et respecter le mode de vie, la vie privée et de la propriété des résidents locaux.\n\n         ► Si vous évitez le bruit, vous trouverez beaucoup plus de vie autour de vous. \n\n         ► Prenez toutes les ordures, même organique. Donc vous aider à maintenir la beauté du paysage et éviter la prolifération de rongeurs. Faites attention avec des mégots de cigarettes. \n\n         ► La collection de plantes, d'animaux ou d'autres objets dans l'environnement peut conduire à la perte de ressources irremplaçables. \n\n         ► Les responsables de ces zones naturelles protégées seront merci les avertir des incidents qui ont été observés. Pour ce faire, vous pouvez aller à: Área de Medio Ambiente del Cabildo Insular de Tenerife <u>Phone: 922239090</u> <u>Email: cordinacionmam@com.es</u>\n\n         ► Nous vous rappelons que la nature de l'île est aussi unique que imprévisibles. La jouissance de celui-ci devrait être fait d'une manière responsable et prudente; prendre un soin particulier dans une zone naturelle et ne pas oublier que le risque d'accident pourrait toujours être présent.\n\n         ► Signes de respect.\n\n         ► Vérifiez les prévisions météorologiques pour vous assurer qu'il est approprié. \n\n         ► Portez des vêtements et des chaussures appropriés pour la randonnée et sac à dos ne pas oublier de mettre téléphone mobile, crème solaire, chapeau, manteau, imperméable, assez d'eau et de nourriture.\n\n         ► Informez votre famille ou entre amis l'itinéraire que vous allez faire et envisager jour hours'll besoin pour compléter votre voyage.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Q4W-OM-m91"; */
+"Q4W-OM-m91.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Download track"; ObjectID = "RLX-ZY-boE"; */
+"RLX-ZY-boE.normalTitle" = "Télécharger le titre";
+
+/* Class = "UITabBarItem"; title = "Credits"; ObjectID = "Rlo-s3-8jE"; */
+"Rlo-s3-8jE.title" = "Crédits";
+
+/* Class = "UITabBarItem"; title = "Description"; ObjectID = "TCL-Gl-nRY"; */
+"TCL-Gl-nRY.title" = "Description";
+
+/* Class = "UILabel"; text = "Developed by Javier Fernández"; ObjectID = "XfD-eF-uO8"; */
+"XfD-eF-uO8.text" = "Développé par Javier Fernández";
+
+/* Class = "UILabel"; text = "Cumulate elevation"; ObjectID = "av0-9l-DbJ"; */
+"av0-9l-DbJ.text" = "Ascenseur cumulative";
+
+/* Class = "UITabBarItem"; title = "Information"; ObjectID = "bHx-pT-Ekb"; */
+"bHx-pT-Ekb.title" = "Information";
+
+/* Class = "UILabel"; text = "Legal"; ObjectID = "buX-gS-GZC"; */
+"buX-gS-GZC.text" = "Information juridique";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "e5U-E9-G0T"; */
+"e5U-E9-G0T.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "g65-Sp-up6"; */
+"g65-Sp-up6.text" = "Label";
+
+/* Class = "UITextView"; text = "Legal info Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "hfa-Sv-sPs"; */
+"hfa-Sv-sPs.text" = "Les informations contenues dans cette application est à titre indicatif seulement, prévu pour la commodité de l'utilisateur, sans l'interprétation de toute façon, l'état actuel des routes / sentiers, l'approvisionnement, la qualité, la propriété des domaines à travers laquelle passe, etc. De même, il est pas responsable des erreurs, omissions ou, le cas échéant, une mauvaise orientation qui pourrait provoquer un accident entre les utilisateurs de cette application.\n\n Les identifiants nous permettent de personnaliser le contenu et les annonces, d'offrir des fonctionnalités relatives aux médias sociaux et d'analyser notre trafic. Nous partageons également ces identifiants, ainsi que d'autres informations sur votre appareil avec nos partenaires de médias sociaux, de publicité et d'analyse.";
+
+/* Class = "UIButton"; normalTitle = "Next days"; ObjectID = "kSD-3h-lbD"; */
+"kSD-3h-lbD.normalTitle" = "Prochains jours";
+
+/* Class = "UITabBarItem"; title = "Description"; ObjectID = "myb-Xm-VSc"; */
+"myb-Xm-VSc.title" = "Description";

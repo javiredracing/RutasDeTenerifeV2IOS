@@ -41,7 +41,7 @@ NSMutableArray *filteredData;
     self.locationManager = [[CLLocationManager alloc]init];
     self.mapView.showsUserLocation = YES;
     self.mapView.showsBuildings = NO;
-     [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
+    [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     onRouteMode = NO;
     filterEnabled = NO;
     
@@ -734,7 +734,7 @@ NSMutableArray *filteredData;
     }];
 }
 -(void)showLeftMenu{
-    self.menuWidth.constant = 74;
+    self.menuWidth.constant = 75;
     [UIView animateWithDuration:0.25 animations:^{
         [self.pathList layoutIfNeeded];
     }];
@@ -802,7 +802,7 @@ NSMutableArray *filteredData;
 }
 
 - (IBAction)toggleList:(id)sender {
-    if (self.menuWidth.constant == 74){
+    if (self.menuWidth.constant == 75){
         [self hideLeftMenu];
     }else{
         [self showLeftMenu];
@@ -1121,21 +1121,17 @@ NSMutableArray *filteredData;
             
             BOOL isPointVisible = YES;
             //TODO if filterEnabled
-            if (filterEnabled) {
-                NSUInteger identifier = [[annotation title] integerValue];
-                Route *route = [self findRouteById:identifier];
-                isPointVisible = [route isVisible];
-                //NSLog([NSString stringWithFormat:@"Name: %@, dist:%.1f, dif:%d, durac:%.1f visible:%@",route.getName, route.getDist, route.getDifficulty, route.getDurac, route.isVisible ? @"YES" : @"NO"]);
-            }
+            NSUInteger identifier = [[annotation title] integerValue];
+            Route *route = [self findRouteById:identifier];
+            isPointVisible = [route isVisible];
+            //NSLog([NSString stringWithFormat:@"Name: %@, dist:%.1f, dif:%d, durac:%.1f visible:%@",route.getName, route.getDist, route.getDifficulty, route.getDurac, route.isVisible ? @"YES" : @"NO"]);
             MKAnnotationView* anView = [mapView viewForAnnotation: annotation];
             if (anView){
                 if (isPointVisible) {
-                    
                     anView.alpha = 1;
                 }else{
                     anView.alpha = 0.4;
                 }
-
             }
         }
     }

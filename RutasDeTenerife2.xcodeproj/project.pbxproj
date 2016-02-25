@@ -450,9 +450,6 @@
 		9D6DC95B1C455D2300BCB623 /* ForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastCell.xib; sourceTree = "<group>"; };
 		9D6DC95D1C45619300BCB623 /* ForecastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastCell.h; sourceTree = "<group>"; };
 		9D6DC95E1C45619300BCB623 /* ForecastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastCell.m; sourceTree = "<group>"; };
-		9D72BCFA1C7DAC79008E28E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
-		9D72BCFD1C7DAC79008E28E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		9D72BD011C7DB497008E28E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		9D741E771BF4F2D5008AB780 /* RutasDeTenerife2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RutasDeTenerife2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D741E7B1BF4F2D5008AB780 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D741E7D1BF4F2D5008AB780 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -480,6 +477,14 @@
 		9D77D3DC1C05BCD600821854 /* QuickInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuickInfo.xib; sourceTree = "<group>"; };
 		9D77D3DE1C05D20F00821854 /* QuickInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickInfoView.h; sourceTree = "<group>"; };
 		9D77D3DF1C05D20F00821854 /* QuickInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickInfoView.m; sourceTree = "<group>"; };
+		9D77DAC71C7F2B5500BDABE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		9D77DACA1C7F30B500BDABE9 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D77DACB1C7F32E100BDABE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D77DACF1C7F3A5900BDABE9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		9D77DAD01C7F3C2F00BDABE9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		9D77DAD11C7F3C2F00BDABE9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9D77DAD21C7F3C3300BDABE9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		9D77DAD31C7F3C3400BDABE9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9D79CF611C3E809F00A4AD8A /* FieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldView.h; sourceTree = "<group>"; };
 		9D79CF621C3E809F00A4AD8A /* FieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldView.m; sourceTree = "<group>"; };
 		9D79CF641C3E852300A4AD8A /* FieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FieldView.xib; sourceTree = "<group>"; };
@@ -1488,6 +1493,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 9D741E6E1BF4F2D5008AB780;
 			productRefGroup = 9D741E781BF4F2D5008AB780 /* Products */;
@@ -1949,8 +1955,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				9D741E841BF4F2D5008AB780 /* Base */,
-				9D72BCFA1C7DAC79008E28E4 /* es */,
-				9D72BD011C7DB497008E28E4 /* en */,
+				9D77DAC71C7F2B5500BDABE9 /* en */,
+				9D77DACF1C7F3A5900BDABE9 /* es */,
+				9D77DAD01C7F3C2F00BDABE9 /* de */,
+				9D77DAD21C7F3C3300BDABE9 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1959,7 +1967,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				9D741E891BF4F2D5008AB780 /* Base */,
-				9D72BCFD1C7DAC79008E28E4 /* es */,
+				9D77DACA1C7F30B500BDABE9 /* es */,
+				9D77DACB1C7F32E100BDABE9 /* en */,
+				9D77DAD11C7F3C2F00BDABE9 /* de */,
+				9D77DAD31C7F3C3400BDABE9 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
