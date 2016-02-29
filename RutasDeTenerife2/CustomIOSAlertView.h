@@ -10,7 +10,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FilterView.h"
 
 @protocol CustomIOSAlertViewDelegate
 

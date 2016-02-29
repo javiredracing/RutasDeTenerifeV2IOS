@@ -23,6 +23,7 @@
     if (self) {
         if ([self respondsToSelector:@selector(setTransitioningDelegate:)]){
             self.modalPresentationStyle = UIModalPresentationCustom;
+            self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
             self.transitioningDelegate = self;
         }
     }

@@ -20,7 +20,7 @@
     static UIView *instance = nil;
     if (instance == nil){
         instance = [[UIView alloc] initWithFrame:self.containerView.bounds];
-        instance.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+        instance.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     }
     return instance;
 }

@@ -1034,6 +1034,7 @@ NSMutableArray *filteredData;
 -(void)openAppInfo{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     AppInfoNavViewController *navViewController = [storyboard instantiateViewControllerWithIdentifier:@"AppInfoNav"];
+
     [self presentViewController:navViewController animated:YES completion:nil];
 }
 
@@ -1138,10 +1139,11 @@ NSMutableArray *filteredData;
 }
 
 -(void)showPremiumDialog{
-    UIAlertController * alert = [UIAlertController
+   /* UIAlertController * alert = [UIAlertController
                                   alertControllerWithTitle:@"Unlock Rutas de Tenerife"
                                   message:@"You are using UIAlertController"
                                   preferredStyle:UIAlertControllerStyleAlert];
+    alert.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
     UIAlertAction* ok = [UIAlertAction
                          actionWithTitle:@"OK"
@@ -1161,9 +1163,32 @@ NSMutableArray *filteredData;
                              }];
     
     [alert addAction:ok];
-    [alert addAction:cancel];
+    [alert addAction:cancel];*/
+    CustomIOSAlertView *alertView = [[CustomIOSAlertView alloc] init];
     
-    [self presentViewController:alert animated:YES completion:nil];
+    //TODO add internal margins to uilabel
+    UILabel *lbl1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 290, 250)];
+    lbl1.textColor = [UIColor blackColor];
+    lbl1.backgroundColor=[UIColor clearColor];
+    lbl1.userInteractionEnabled = NO;
+    lbl1.numberOfLines = 0;
+    lbl1.clipsToBounds = YES;
+    lbl1.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
+    lbl1.text= @"¡Ayúdame a que el proyecto siga adelante por tan solo <u><b>1.21 €</b></u>! \n \n <u>Beneficios de la colaboración:</u> \n ► Elimina la publicidad. \n ► Descarga los tracks en formato <i>.GPX</i>, para poder usarlos en otras aplicaciones. \n ► Previsión meteorológica para los próximos <i>3 días</i>";
+    //[lbl1 sizeToFit];
+    
+    [alertView setContainerView:lbl1];
+    // Modify the parameters
+    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"Cancelar", @"Colaborar", nil, nil]];
+
+    [alertView setOnButtonTouchUpInside:^(CustomIOSAlertView *alertView, int buttonIndex) {
+        [alertView close];
+    }];
+    [alertView setUseMotionEffects:true];
+    
+    // And launch the dialog
+    [alertView show];
+
 }
 /*- (void)listSubviewsOfView:(UIView *)view {
     
