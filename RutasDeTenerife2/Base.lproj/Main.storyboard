@@ -60,14 +60,14 @@
                                     <action selector="quickControlTap:" destination="BYZ-38-t0r" eventType="valueChanged" id="hLY-gA-QhK"/>
                                 </connections>
                             </segmentedControl>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4c-D9-90A" customClass="QuickInfoView">
-                                <rect key="frame" x="235" y="15" width="129" height="63"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4c-D9-90A" customClass="QuickInfoView">
+                                <rect key="frame" x="235" y="15" width="129" height="65"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="RqB-rL-09R"/>
+                                    <constraint firstAttribute="height" priority="250" constant="65" id="RqB-rL-09R"/>
                                     <constraint firstAttribute="width" priority="250" constant="129" id="edt-Ns-9WE"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -79,29 +79,33 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qg7-lg-hbD">
+                            <tableView opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qg7-lg-hbD">
                                 <rect key="frame" x="0.0" y="0.0" width="75" height="600"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="250" constant="75" id="oKz-Sd-Dmm"/>
                                 </constraints>
+                                <color key="separatorColor" red="0.73333333333333328" green="0.91764705882352937" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="V9r-yZ-o4q"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="0Tk-pw-I9A"/>
                                 </connections>
                             </tableView>
-                            <tableView clipsSubviews="YES" alpha="0.90000000000000002" tag="1" contentMode="scaleAspectFit" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WcF-f3-Mr9">
+                            <tableView clipsSubviews="YES" alpha="0.90000000000000002" tag="1" contentMode="scaleAspectFit" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WcF-f3-Mr9">
                                 <rect key="frame" x="345" y="0.0" width="255" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="72P-Nn-Bpd"/>
                                 </constraints>
-                                <color key="separatorColor" red="0.56330095540000003" green="0.87200662360000003" blue="0.37134174739999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.73333333333333328" green="0.91764705882352937" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" id="ynh-H8-e0t">
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" translucent="NO" id="ynh-H8-e0t">
                                     <rect key="frame" x="0.0" y="0.0" width="255" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     <connections>
                                         <outlet property="delegate" destination="BYZ-38-t0r" id="DOT-cx-2mt"/>

@@ -15,46 +15,65 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleAspectFit" horizontalCompressionResistancePriority="1000" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="322" height="99"/>
+        <view opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="1000" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="322" height="88"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" text="70.1 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUk-5X-aDX">
-                    <rect key="frame" x="137" y="48" width="49" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Palique largoooo daspoapod addaspodasdas dadas" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="306" translatesAutoresizingMaskIntoConstraints="NO" id="C5W-bR-4ZP">
+                    <rect key="frame" x="4" y="4" width="314" height="41"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker_sign_24_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="vaz-jj-ulc">
-                    <rect key="frame" x="83" y="37" width="24" height="24"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Palique largoooo daspoapod addaspodasdas dadas" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="C5W-bR-4ZP">
-                    <rect key="frame" x="8" y="4" width="306" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nivel_dificil.png" translatesAutoresizingMaskIntoConstraints="NO" id="21A-Mw-1Ir">
-                    <rect key="frame" x="203" y="38" width="35" height="23"/>
-                </imageView>
+                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wma-p3-JEN">
+                    <rect key="frame" x="86" y="49" width="150" height="36"/>
+                    <subviews>
+                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker_sign_24_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="vaz-jj-ulc">
+                            <rect key="frame" x="2" y="0.0" width="24" height="36"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" fixedFrame="YES" text="70.1 km" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUk-5X-aDX">
+                            <rect key="frame" x="53" y="11" width="43" height="15"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nivel_dificil.png" translatesAutoresizingMaskIntoConstraints="NO" id="21A-Mw-1Ir">
+                            <rect key="frame" x="113" y="0.0" width="35" height="36"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="9ia-ej-ODV"/>
+                        <constraint firstItem="vaz-jj-ulc" firstAttribute="leading" secondItem="wma-p3-JEN" secondAttribute="leading" constant="2" id="Cqf-eL-sSu"/>
+                        <constraint firstAttribute="trailing" secondItem="21A-Mw-1Ir" secondAttribute="trailing" constant="2" id="DgF-mE-Mnj"/>
+                        <constraint firstItem="vaz-jj-ulc" firstAttribute="top" secondItem="wma-p3-JEN" secondAttribute="top" id="JFV-ga-cv2"/>
+                        <constraint firstAttribute="bottom" secondItem="21A-Mw-1Ir" secondAttribute="bottom" id="UDW-aD-Zuh"/>
+                        <constraint firstItem="21A-Mw-1Ir" firstAttribute="top" secondItem="wma-p3-JEN" secondAttribute="top" id="VSN-jA-RBb"/>
+                        <constraint firstAttribute="bottom" secondItem="vaz-jj-ulc" secondAttribute="bottom" id="cb0-Mt-36H"/>
+                        <constraint firstAttribute="width" constant="150" id="mcs-5d-m1V"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="0.54357826750000005" green="0.90771500719999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="DUk-5X-aDX" firstAttribute="leading" secondItem="vaz-jj-ulc" secondAttribute="trailing" constant="30" id="8yY-aq-jwH"/>
-                <constraint firstItem="DUk-5X-aDX" firstAttribute="top" secondItem="C5W-bR-4ZP" secondAttribute="bottom" constant="8" id="JU9-vO-50t"/>
-                <constraint firstItem="DUk-5X-aDX" firstAttribute="centerX" secondItem="C5W-bR-4ZP" secondAttribute="centerX" id="L44-fg-rGu"/>
-                <constraint firstItem="C5W-bR-4ZP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="NPt-t9-I4w"/>
-                <constraint firstItem="vaz-jj-ulc" firstAttribute="baseline" secondItem="DUk-5X-aDX" secondAttribute="baseline" id="Of6-Q3-dhL"/>
-                <constraint firstItem="21A-Mw-1Ir" firstAttribute="leading" secondItem="DUk-5X-aDX" secondAttribute="trailing" constant="17" id="WBK-em-IqB"/>
-                <constraint firstAttribute="trailing" secondItem="C5W-bR-4ZP" secondAttribute="trailing" constant="8" id="ZFM-x9-Bge"/>
-                <constraint firstItem="C5W-bR-4ZP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="gt0-t7-TgO"/>
-                <constraint firstItem="21A-Mw-1Ir" firstAttribute="baseline" secondItem="DUk-5X-aDX" secondAttribute="baseline" id="ie1-VY-p3I"/>
+                <constraint firstItem="wma-p3-JEN" firstAttribute="centerX" secondItem="C5W-bR-4ZP" secondAttribute="centerX" id="0jC-x7-tV4"/>
+                <constraint firstAttribute="trailing" secondItem="C5W-bR-4ZP" secondAttribute="trailing" constant="4" id="1sr-Wk-smG"/>
+                <constraint firstItem="wma-p3-JEN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ICV-hK-I2f"/>
+                <constraint firstItem="C5W-bR-4ZP" firstAttribute="width" relation="greaterThanOrEqual" secondItem="wma-p3-JEN" secondAttribute="width" id="IfL-NF-iCZ"/>
+                <constraint firstAttribute="bottom" secondItem="wma-p3-JEN" secondAttribute="bottom" constant="3" id="LpY-ef-r9g"/>
+                <constraint firstItem="wma-p3-JEN" firstAttribute="top" secondItem="C5W-bR-4ZP" secondAttribute="bottom" constant="4" id="XcE-dy-PrP"/>
+                <constraint firstItem="C5W-bR-4ZP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="s3T-38-oCw"/>
+                <constraint firstItem="C5W-bR-4ZP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="uXW-Le-zVb"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="243" y="-94.5"/>
+            <point key="canvasLocation" x="260" y="-88"/>
         </view>
     </objects>
     <resources>

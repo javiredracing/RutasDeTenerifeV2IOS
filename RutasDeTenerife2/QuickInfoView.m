@@ -32,6 +32,15 @@
         [[NSBundle mainBundle] loadNibNamed:@"QuickInfo" owner:self options:nil];
         // 2. add as subview
         //[self.infoView sizeToFit];
+        //R: 204 G: 202 B: 202
+        UIColor *startGray = Rgb2UIColor(204, 202, 202);
+        
+        CAGradientLayer *gradient = [CAGradientLayer layer];
+        gradient.frame = [self.infoView bounds];
+        gradient.colors = [NSArray arrayWithObjects:(id)[startGray CGColor], (id)[[UIColor grayColor] CGColor], nil];
+        gradient.startPoint = CGPointZero;
+        gradient.endPoint = CGPointMake(1, 1);
+        [self.infoView.layer insertSublayer:gradient atIndex:0];
         [self addSubview:self.infoView];
         // 3. allow for autolayout
         [self.infoView setTranslatesAutoresizingMaskIntoConstraints:NO];
