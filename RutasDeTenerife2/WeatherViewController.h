@@ -8,12 +8,15 @@
 
 //#import "ViewController.h"
 #import "Route.h"
+#import "CustomIOSAlertView.h"
 
 @interface WeatherViewController : UIViewController<NSURLConnectionDataDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     NSMutableData *_responseData;
     
 }
+- (IBAction)nextDaysTap:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *nextDaysBtn;
 @property (weak, nonatomic) IBOutlet UITableView *weatherTableView;
 
 @property Route *route;

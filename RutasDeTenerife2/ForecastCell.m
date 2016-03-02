@@ -12,6 +12,9 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.mainDate.textColor = [UIColor whiteColor];
+    self.mainTitle.textColor = [UIColor whiteColor];
+    self.mainTitle.text = @"Previsión";
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -22,7 +25,7 @@
 
 -(void)setForecast:(NSString *)date :(NSString *)maxTemp :(NSString *)minTemp :(NSString *)description :(NSString*) iconCode :(NSString *)windSpeed :(NSString *)windDirec :(NSString *)rainfall :(NSString *)sunset :(NSString *)sunrise :(NSString *)moonset :(NSString *)moonrise :(NSString *)countryCode{
 
-    self.mainTitle.text = @"Previsión";
+    
     self.mainDate.text = date;
     
     NSString *maxMinC = @"";

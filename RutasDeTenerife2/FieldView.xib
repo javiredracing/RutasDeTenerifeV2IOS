@@ -21,20 +21,22 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ma-4X-P0c">
                     <rect key="frame" x="38" y="0.0" width="122" height="80"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8p-MD-0ur">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8p-MD-0ur">
                             <rect key="frame" x="0.0" y="0.0" width="122" height="40"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="No data" lineBreakMode="wordWrap" numberOfLines="0" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd3-bi-7kf">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="No data" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd3-bi-7kf">
                             <rect key="frame" x="0.0" y="40" width="122" height="40"/>
-                            <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.54357826750000005" green="0.90771500719999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="s8p-MD-0ur" secondAttribute="trailing" id="6jF-Xb-u8u"/>
                         <constraint firstItem="Nd3-bi-7kf" firstAttribute="leading" secondItem="7Ma-4X-P0c" secondAttribute="leading" id="960-51-lV9"/>
@@ -52,7 +54,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jH0-rN-oUN">
                     <rect key="frame" x="0.0" y="0.0" width="38" height="80"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close2.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Jo-hp-Rdn">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close2.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Jo-hp-Rdn">
                             <rect key="frame" x="3" y="24" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="OZ5-FM-Hff"/>
@@ -60,14 +62,14 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="0.89873245209999997" blue="0.50684594240000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="7Jo-hp-Rdn" firstAttribute="centerX" secondItem="jH0-rN-oUN" secondAttribute="centerX" id="VPz-4Q-Vnv"/>
                         <constraint firstItem="7Jo-hp-Rdn" firstAttribute="centerY" secondItem="jH0-rN-oUN" secondAttribute="centerY" id="lc2-VQ-vUr"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="jH0-rN-oUN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5Ha-bY-E6f"/>
                 <constraint firstItem="jH0-rN-oUN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="979-T1-SuD"/>

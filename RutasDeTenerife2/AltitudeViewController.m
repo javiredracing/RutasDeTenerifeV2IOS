@@ -12,20 +12,28 @@
 
 @end
 
-@implementation AltitudeViewController
+@implementation AltitudeViewController{
+
+    UIColor *lightGreenColor;
+    UIColor *darkGreenColor;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    lightGreenColor = [UIColor colorWithRed:(187.0 / 255.0) green:(234.0 / 255.0) blue:(176.0 / 255.0) alpha:1.0];
+    darkGreenColor = [UIColor colorWithRed:(188.0/255.0) green:(231.0/255.0) blue:(94.0/255.0) alpha:1.0];
+    self.cumulateElevationView.layer.borderColor = lightGreenColor.CGColor;
+    self.lineChartView.layer.borderColor = lightGreenColor.CGColor;
         //
     self.lineChartView.delegate = self;
     
     self.lineChartView.descriptionText = @"";
     self.lineChartView.noDataTextDescription = @"You need to provide data for the chart.";
     [self.lineChartView setScaleEnabled:YES];
-    self.lineChartView.backgroundColor = [UIColor colorWithWhite:204/255.f alpha:1.f];
+    self.lineChartView.backgroundColor = [UIColor clearColor];
     ChartYAxis *leftAxis = self.lineChartView.leftAxis;
-    
+    leftAxis.labelTextColor = [UIColor whiteColor];
     //[leftAxis removeAllLimitLines];
     //[leftAxis addLimitLine:ll1];
     //[leftAxis addLimitLine:ll2];
@@ -49,9 +57,10 @@
 
     self.lineChartView.legend.form = ChartLegendFormLine;
     self.lineChartView.legend.position = ChartLegendPositionBelowChartLeft;
+    
     ChartXAxis *xAxis = self.lineChartView.xAxis;
     xAxis.labelPosition = XAxisLabelPositionBottom;
-    xAxis.labelTextColor = UIColor.redColor;
+    xAxis.labelTextColor = [UIColor whiteColor];
     [self loadData];
 }
 
@@ -89,10 +98,9 @@
     }
     
     LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals label:@"metros / Km"];
-    
     set1.lineDashLengths = @[@5.f, @2.5f];
     set1.highlightLineDashLengths = @[@5.f, @2.5f];
-    [set1 setColor:UIColor.blackColor];
+    [set1 setColor:darkGreenColor];
     //[set1 setCircleColor:UIColor.blackColor];
     set1.lineWidth = 1.0;
     set1.circleRadius = 0.0;
@@ -100,12 +108,12 @@
     set1.valueFont = [UIFont systemFontOfSize:9.f];
     
     NSArray *gradientColors = @[
-                                (id)[ChartColorTemplates colorFromString:@"#00ff0000"].CGColor,
-                                (id)[ChartColorTemplates colorFromString:@"#ffff0000"].CGColor
+                                (id)[ChartColorTemplates colorFromString:@"#BBEAB0"].CGColor,
+                                (id)[ChartColorTemplates colorFromString:@"#bce75e"].CGColor
                                 ];
     CGGradientRef gradient = CGGradientCreateWithColors(nil, (CFArrayRef)gradientColors, nil);
     
-    set1.fillAlpha = 1.f;
+    set1.fillAlpha = .7f;
     set1.fill = [ChartFill fillWithLinearGradient:gradient angle:90.f];
     set1.drawFilledEnabled = YES;
     

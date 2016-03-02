@@ -10,6 +10,7 @@
 @import Charts;
 
 @interface AltitudeViewController : UIViewController<ChartViewDelegate>
+@property (weak, nonatomic) IBOutlet UIView *cumulateElevationView;
 
 @property (weak, nonatomic) IBOutlet UILabel *cumulateElevationDown;
 @property (weak, nonatomic) IBOutlet UILabel *cumulateElevationUp;

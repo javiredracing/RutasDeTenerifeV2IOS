@@ -434,7 +434,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
         self.imageSize = CGSizeMake(80.0, 80.0);
         self.activitySize = CGSizeMake(100.0, 100.0);
         self.fadeDuration = 0.2;
-        self.backgroundColor = [UIColor blackColor];
+        //self.backgroundColor = [UIColor blackColor];
         self.borderWidth = 2.0;
     }
     return self;

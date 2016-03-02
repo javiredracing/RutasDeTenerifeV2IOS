@@ -9,6 +9,7 @@
 #import "WeatherViewController.h"
 #import "PrevCell.h"
 #import "ForecastCell.h"
+#import "Toast/UIView+Toast.h"
 
 @interface WeatherViewController ()
 
@@ -21,11 +22,23 @@
     NSString *languageCode;
     NSString *countryCode;
     BOOL firstTime;
+    UIColor *lightGreenColor;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     days = 1;
+    lightGreenColor = [UIColor colorWithRed:(187.0 / 255.0) green:(234.0 / 255.0) blue:(176.0 / 255.0) alpha:1.0];
+    self.nextDaysBtn.layer.borderColor = lightGreenColor.CGColor;
+    self.nextDaysBtn.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.nextDaysBtn.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+    self.nextDaysBtn.layer.shadowOpacity = 0.8;
+    self.nextDaysBtn.layer.shadowRadius = 5.0;
+    if (days != 1){
+        self.nextDaysBtn.hidden = YES;
+    }
+    
     NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
     countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
     firstTime = true;
@@ -91,6 +104,7 @@
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
     NSLog(@"Fail connection");
     [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
+    [self.view makeToast:@"Fail connection"];
 }
 /*
 #pragma mark - Navigation
@@ -135,6 +149,7 @@
         if (!cell){
             [tableView registerNib:[UINib nibWithNibName:@"PrevCell" bundle:nil] forCellReuseIdentifier:@"PrevCell"];
             cell = [tableView dequeueReusableCellWithIdentifier:@"PrevCell"];
+            cell.layer.borderColor = lightGreenColor.CGColor;
             //NSLog([NSString stringWithFormat:@"loaded cell %ld",(long)indexPath.section]);
         }
         if (weatherData != nil) {
@@ -179,6 +194,7 @@
         if (!cell){
             [tableView registerNib:[UINib nibWithNibName:@"ForecastCell" bundle:nil] forCellReuseIdentifier:@"ForecastCell"];
             cell = [tableView dequeueReusableCellWithIdentifier:@"ForecastCell"];
+            cell.layer.borderColor = lightGreenColor.CGColor;
         }
         if (weatherData != nil) {
             
@@ -249,4 +265,37 @@
     }
 }
 
+- (IBAction)nextDaysTap:(UIButton *)sender {
+    //TODO deploy view
+    if (days == 1){
+        [self showPremiumDialog];
+    }
+}
+-(void)showPremiumDialog{
+ 
+    CustomIOSAlertView *alertView = [[CustomIOSAlertView alloc] init];
+    
+    //TODO add internal margins to uilabel
+    UILabel *lbl1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 290, 250)];
+    lbl1.textColor = [UIColor grayColor];
+    lbl1.backgroundColor=[UIColor clearColor];
+    lbl1.userInteractionEnabled = NO;
+    lbl1.numberOfLines = 0;
+    lbl1.clipsToBounds = YES;
+    lbl1.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
+    lbl1.text= @"¡Ayúdame a que el proyecto siga adelante por tan solo <u><b>1.21 €</b></u>! \n \n <u>Beneficios de la colaboración:</u> \n ► Elimina la publicidad. \n ► Descarga los tracks en formato <i>.GPX</i>, para poder usarlos en otras aplicaciones. \n ► Previsión meteorológica para los próximos <i>3 días</i>";
+    
+    [alertView setContainerView:lbl1];
+    // Modify the parameters
+    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"Cancelar", @"Colaborar", nil, nil]];
+    
+    [alertView setOnButtonTouchUpInside:^(CustomIOSAlertView *alertView, int buttonIndex) {
+        [alertView close];
+    }];
+    [alertView setUseMotionEffects:true];
+    
+    // And launch the dialog
+    [alertView show];
+    
+}
 @end

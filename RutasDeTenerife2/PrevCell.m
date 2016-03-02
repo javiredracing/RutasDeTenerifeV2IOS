@@ -12,6 +12,15 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.rainfall.textColor = [UIColor whiteColor];
+    self.humidity.textColor = [UIColor whiteColor];
+    self.pressure.textColor = [UIColor whiteColor];
+    self.nubosity.textColor = [UIColor whiteColor];
+    self.condAtmosf.textColor = [UIColor whiteColor];
+    self.currentDate.textColor = [UIColor whiteColor];
+    self.currentCondTitle.textColor = [UIColor whiteColor];
+    self.currentCondTitle.text = @"Condiciones actuales";
+    self.condAtmosf.text = @"Cond. atmosfericas";
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -22,7 +31,7 @@
 
 -(void)setCurrentCond:(NSString *)hour :(NSString *)iconCode :(NSString *)temperature :(NSString *)description :(NSString *)wind :(NSString *)windDirec :(NSString *)cloudly :(NSString *)humidity :(NSString *)pressure :(NSString *)rainfall :(NSString *)countryCode{
 
-    self.currentCondTitle.text = @"Condiciones actuales";
+    
     self.currentDate.text = hour;
     NSString *temperatureText = [NSString stringWithFormat:@"%@ ºC",temperature];;
     if ([countryCode isEqualToString:@"US"]){
@@ -35,7 +44,7 @@
     }
     [self.currentTemp updateFields:temperatureText :description :[UIImage imageNamed:[NSString stringWithFormat:@"i%@",iconCode]] ];
     [self.currentWind updateFields:@"Viento" :windSpeedText :[UIImage imageNamed:@"wind"]];
-    self.condAtmosf.text = @"Cond. atmosfericas";
+    
     self.nubosity.text = [NSString stringWithFormat:@"Nubosidad: %@",cloudly];
     self.humidity.text = [NSString stringWithFormat:@"Humedad: %@",humidity];
     self.pressure.text = [NSString stringWithFormat:@"Presión: %@", pressure];

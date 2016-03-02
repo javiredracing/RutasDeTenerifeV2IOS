@@ -33,8 +33,8 @@
                             <rect key="frame" x="2" y="0.0" width="24" height="36"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" fixedFrame="YES" text="70.1 km" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUk-5X-aDX">
-                            <rect key="frame" x="53" y="11" width="43" height="15"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" text="70.1 km" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUk-5X-aDX">
+                            <rect key="frame" x="53" y="18" width="43" height="15"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,9 +50,11 @@
                         <constraint firstAttribute="height" constant="36" id="9ia-ej-ODV"/>
                         <constraint firstItem="vaz-jj-ulc" firstAttribute="leading" secondItem="wma-p3-JEN" secondAttribute="leading" constant="2" id="Cqf-eL-sSu"/>
                         <constraint firstAttribute="trailing" secondItem="21A-Mw-1Ir" secondAttribute="trailing" constant="2" id="DgF-mE-Mnj"/>
+                        <constraint firstItem="DUk-5X-aDX" firstAttribute="baseline" secondItem="vaz-jj-ulc" secondAttribute="baseline" constant="-7" id="I6I-CD-vZf"/>
                         <constraint firstItem="vaz-jj-ulc" firstAttribute="top" secondItem="wma-p3-JEN" secondAttribute="top" id="JFV-ga-cv2"/>
                         <constraint firstAttribute="bottom" secondItem="21A-Mw-1Ir" secondAttribute="bottom" id="UDW-aD-Zuh"/>
                         <constraint firstItem="21A-Mw-1Ir" firstAttribute="top" secondItem="wma-p3-JEN" secondAttribute="top" id="VSN-jA-RBb"/>
+                        <constraint firstItem="DUk-5X-aDX" firstAttribute="centerX" secondItem="wma-p3-JEN" secondAttribute="centerX" id="WcN-Db-4Mm"/>
                         <constraint firstAttribute="bottom" secondItem="vaz-jj-ulc" secondAttribute="bottom" id="cb0-Mt-36H"/>
                         <constraint firstAttribute="width" constant="150" id="mcs-5d-m1V"/>
                     </constraints>

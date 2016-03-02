@@ -12,60 +12,65 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="cdy-jN-XM4">
-                    <rect key="frame" x="6" y="206" width="588" height="31"/>
+                    <rect key="frame" x="6" y="200" width="588" height="31"/>
+                    <color key="tintColor" red="0.73725490196078436" green="0.90588235294117647" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <action selector="distanceSlider:" destination="iN0-l3-epB" eventType="valueChanged" id="3rE-vi-yfG"/>
                     </connections>
                 </slider>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RM-H2-OJY">
-                    <rect key="frame" x="267" y="177" width="67" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RM-H2-OJY">
+                    <rect key="frame" x="268" y="172" width="64" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.43921568630000002" green="0.43529411759999997" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="yLm-kv-per">
                     <rect key="frame" x="6" y="285" width="588" height="31"/>
+                    <color key="tintColor" red="0.73725490199999999" green="0.90588235289999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <action selector="difficultySlider:" destination="iN0-l3-epB" eventType="valueChanged" id="b5Q-Wg-1zo"/>
                     </connections>
                 </slider>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dificulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jg-gV-Q8H">
-                    <rect key="frame" x="269" y="256" width="63" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dificulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jg-gV-Q8H">
+                    <rect key="frame" x="270" y="257" width="60" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.43921568630000002" green="0.43529411759999997" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duracion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8b-bI-2FK">
-                    <rect key="frame" x="266" y="323" width="69" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duracion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8b-bI-2FK">
+                    <rect key="frame" x="267" y="342" width="66" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.43921568630000002" green="0.43529411759999997" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="gGH-4X-NiV">
-                    <rect key="frame" x="6" y="352" width="588" height="31"/>
+                    <rect key="frame" x="6" y="370" width="588" height="31"/>
+                    <color key="tintColor" red="0.73725490199999999" green="0.90588235289999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <action selector="duracSlider:" destination="iN0-l3-epB" eventType="valueChanged" id="tGD-70-5YR"/>
                     </connections>
                 </slider>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="yLm-kv-per" firstAttribute="top" secondItem="1Jg-gV-Q8H" secondAttribute="bottom" constant="8" id="2IX-Jd-WaM"/>
-                <constraint firstItem="yLm-kv-per" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5QW-gr-Tza"/>
-                <constraint firstItem="gGH-4X-NiV" firstAttribute="trailing" secondItem="yLm-kv-per" secondAttribute="trailing" id="7yf-gt-vVj"/>
-                <constraint firstItem="gGH-4X-NiV" firstAttribute="top" secondItem="c8b-bI-2FK" secondAttribute="bottom" constant="8" id="8B4-2A-7dU"/>
-                <constraint firstItem="c8b-bI-2FK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8Bg-vi-JtN"/>
-                <constraint firstItem="yLm-kv-per" firstAttribute="leading" secondItem="cdy-jN-XM4" secondAttribute="leading" id="9cI-1C-hwk"/>
-                <constraint firstItem="yLm-kv-per" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="F0e-Df-dnV"/>
-                <constraint firstAttribute="trailing" secondItem="yLm-kv-per" secondAttribute="trailing" constant="8" id="LRo-9h-oBV"/>
-                <constraint firstItem="yLm-kv-per" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Mvd-gf-lDe"/>
-                <constraint firstItem="yLm-kv-per" firstAttribute="top" secondItem="cdy-jN-XM4" secondAttribute="bottom" constant="49" id="Xks-UD-3BU"/>
-                <constraint firstItem="yLm-kv-per" firstAttribute="trailing" secondItem="cdy-jN-XM4" secondAttribute="trailing" id="ZAR-D8-uvp"/>
-                <constraint firstItem="cdy-jN-XM4" firstAttribute="top" secondItem="9RM-H2-OJY" secondAttribute="bottom" constant="8" id="c9p-lS-1oN"/>
-                <constraint firstItem="9RM-H2-OJY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gIW-Ef-ZU9"/>
-                <constraint firstItem="gGH-4X-NiV" firstAttribute="leading" secondItem="yLm-kv-per" secondAttribute="leading" id="hna-QO-8mV"/>
-                <constraint firstItem="1Jg-gV-Q8H" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pxW-vA-AUA"/>
-                <constraint firstItem="gGH-4X-NiV" firstAttribute="top" secondItem="yLm-kv-per" secondAttribute="bottom" constant="37" id="tXl-pR-Zjt"/>
+                <constraint firstItem="yLm-kv-per" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="D4c-hU-tSi"/>
+                <constraint firstItem="gGH-4X-NiV" firstAttribute="top" secondItem="c8b-bI-2FK" secondAttribute="bottom" constant="8" id="Fav-4Q-NwZ"/>
+                <constraint firstItem="cdy-jN-XM4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Jhp-2G-zDe"/>
+                <constraint firstAttribute="trailing" secondItem="cdy-jN-XM4" secondAttribute="trailing" constant="8" id="Qxg-aq-OIl"/>
+                <constraint firstAttribute="trailing" secondItem="gGH-4X-NiV" secondAttribute="trailing" constant="8" id="RHX-ax-TLz"/>
+                <constraint firstItem="yLm-kv-per" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Rt4-EB-Seo"/>
+                <constraint firstAttribute="trailing" secondItem="yLm-kv-per" secondAttribute="trailing" constant="8" id="TJr-ri-dje"/>
+                <constraint firstItem="cdy-jN-XM4" firstAttribute="top" secondItem="9RM-H2-OJY" secondAttribute="bottom" constant="8" id="WYb-Se-6tj"/>
+                <constraint firstItem="cdy-jN-XM4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZJs-0j-h1g"/>
+                <constraint firstItem="9RM-H2-OJY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="h7m-K0-yCH"/>
+                <constraint firstItem="gGH-4X-NiV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="hIU-gT-QWP"/>
+                <constraint firstItem="c8b-bI-2FK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="krc-hh-PWt"/>
+                <constraint firstItem="yLm-kv-per" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="mp7-S4-Kks"/>
+                <constraint firstItem="9RM-H2-OJY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ozG-sH-IGn"/>
+                <constraint firstItem="1Jg-gV-Q8H" firstAttribute="top" secondItem="cdy-jN-XM4" secondAttribute="bottom" constant="27" id="pm7-b1-JLU"/>
+                <constraint firstItem="c8b-bI-2FK" firstAttribute="top" secondItem="yLm-kv-per" secondAttribute="bottom" constant="27" id="qBh-43-LhQ"/>
+                <constraint firstItem="yLm-kv-per" firstAttribute="top" secondItem="1Jg-gV-Q8H" secondAttribute="bottom" constant="8" id="rxE-zy-bia"/>
+                <constraint firstItem="1Jg-gV-Q8H" firstAttribute="centerX" secondItem="yLm-kv-per" secondAttribute="centerX" id="yBF-j5-mcN"/>
             </constraints>
             <connections>
                 <outlet property="difficultLabel" destination="1Jg-gV-Q8H" id="FCc-g6-BMg"/>

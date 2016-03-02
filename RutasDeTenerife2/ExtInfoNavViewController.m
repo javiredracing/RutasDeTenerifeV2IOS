@@ -45,7 +45,7 @@
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0.0, 0.0, 320.0, 44.0)];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setNumberOfLines:0];
-    [label setTextColor:[UIColor whiteColor]];
+    [label setTextColor:[UIColor grayColor]];
     label.textAlignment = NSTextAlignmentCenter;
     //self.navigationItem.titleView = label;
     [label setText:self.route.getName];

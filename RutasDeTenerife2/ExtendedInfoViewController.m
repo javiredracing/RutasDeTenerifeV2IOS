@@ -27,15 +27,25 @@
     [self.difficult updateFields:@"Difficult" :[NSString stringWithFormat:@"%d",[self.route getDifficulty]] :[UIImage imageNamed:@"nivel_facil"]];
     [self.time updateFields:@"Duración" :[NSString stringWithFormat:@"%.02f",[self.route getDurac]] :[UIImage imageNamed:@"timer"]];
     [self.approved updateFields:@"Homologado" :@"Si" :[UIImage imageNamed:@"marker_sign_24"]];
+    UIColor *lightGreenColor = [UIColor colorWithRed:(187.0 / 255.0) green:(234.0 / 255.0) blue:(176.0 / 255.0) alpha:1.0];
+
+    self.time.layer.borderColor = lightGreenColor.CGColor;
+    self.difficult.layer.borderColor = lightGreenColor.CGColor;
+    self.distance.layer.borderColor = lightGreenColor.CGColor;
+    self.approved.layer.borderColor = lightGreenColor.CGColor;
+    self.tvDecription.layer.borderColor = lightGreenColor.CGColor;
+    self.btDownload.layer.borderColor = lightGreenColor.CGColor;
+    self.btHowToGet.layer.borderColor = lightGreenColor.CGColor;
+    self.tvDecription.textColor = [UIColor whiteColor];
     self.btHowToGet.layer.shadowColor = [UIColor grayColor].CGColor;
     self.btHowToGet.layer.shadowOffset = CGSizeMake(2.0, 2.0);
     self.btHowToGet.layer.shadowOpacity = 0.8;
-    self.btHowToGet.layer.shadowRadius = 0.0;
+    self.btHowToGet.layer.shadowRadius = 5.0;
     
     self.btDownload.layer.shadowColor = [UIColor grayColor].CGColor;
     self.btDownload.layer.shadowOffset = CGSizeMake(2.0, 2.0);
     self.btDownload.layer.shadowOpacity = 0.8;
-    self.btDownload.layer.shadowRadius = 0.0;
+    self.btDownload.layer.shadowRadius = 5.0;
     NSString *desc = [self.db getDescriptionById:[self.route getId] :@"es" ];
     [self.tvDecription setText:desc];
 }
@@ -47,6 +57,7 @@
 
 -(void) viewDidLayoutSubviews{
     //textview scroll start on top
+    self.tvDecription.textColor = [UIColor whiteColor];
     [self.tvDecription setContentOffset:CGPointZero animated:NO];
 }
 #pragma mark - Navigation

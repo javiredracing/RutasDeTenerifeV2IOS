@@ -1022,12 +1022,12 @@ NSMutableArray *filteredData;
 -(void)configureToast{
     //https://github.com/scalessec/Toast
     CSToastStyle *style = [[CSToastStyle alloc]initWithDefaultStyle];
-    style.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8];
+    style.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.9];
     style.messageAlignment = NSTextAlignmentCenter;
-    style.messageColor = [UIColor grayColor];
+    style.messageColor = [UIColor lightGrayColor];
     style.cornerRadius = 5.0;
     style.borderWidth = 2.0;
-    style.borderColor =[[UIColor greenColor] colorWithAlphaComponent:0.8];
+    style.borderColor =[Rgb2UIColor(187, 234, 176) colorWithAlphaComponent:0.9];
     [CSToastManager setSharedStyle:style];
     [CSToastManager setQueueEnabled:NO];
 }
@@ -1140,36 +1140,11 @@ NSMutableArray *filteredData;
 }
 
 -(void)showPremiumDialog{
-   /* UIAlertController * alert = [UIAlertController
-                                  alertControllerWithTitle:@"Unlock Rutas de Tenerife"
-                                  message:@"You are using UIAlertController"
-                                  preferredStyle:UIAlertControllerStyleAlert];
-    alert.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    
-    UIAlertAction* ok = [UIAlertAction
-                         actionWithTitle:@"OK"
-                         style:UIAlertActionStyleDefault
-                         handler:^(UIAlertAction * action)
-                         {
-                             [alert dismissViewControllerAnimated:YES completion:nil];
-                             
-                         }];
-    UIAlertAction* cancel = [UIAlertAction
-                             actionWithTitle:@"Cancel"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 [alert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
-    
-    [alert addAction:ok];
-    [alert addAction:cancel];*/
+
     CustomIOSAlertView *alertView = [[CustomIOSAlertView alloc] init];
-    
     //TODO add internal margins to uilabel
     UILabel *lbl1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 290, 250)];
-    lbl1.textColor = [UIColor blackColor];
+    lbl1.textColor = [UIColor grayColor];
     lbl1.backgroundColor=[UIColor clearColor];
     lbl1.userInteractionEnabled = NO;
     lbl1.numberOfLines = 0;

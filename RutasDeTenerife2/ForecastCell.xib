@@ -120,6 +120,7 @@
                     <constraint firstItem="scH-Bh-vYq" firstAttribute="centerX" secondItem="dEm-8A-n9c" secondAttribute="centerX" id="wgL-zL-yM0"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="wIp-If-kPv" secondAttribute="bottom" constant="1" id="s7i-DI-Wi1"/>
             </constraints>
