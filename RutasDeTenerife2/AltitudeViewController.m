@@ -21,6 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIColor *startGray = [UIColor colorWithRed:(204.0 / 255.0) green:(202.0 / 255.0) blue:(202.0 / 255.0) alpha:1.0];
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = [self.view bounds];
+    gradient.colors = [NSArray arrayWithObjects:(id)[startGray CGColor], (id)[[UIColor lightGrayColor] CGColor], nil];
+    gradient.startPoint = CGPointZero;
+    gradient.endPoint = CGPointMake(1, 1);
+    [self.view.layer insertSublayer:gradient atIndex:0];
+    
     lightGreenColor = [UIColor colorWithRed:(187.0 / 255.0) green:(234.0 / 255.0) blue:(176.0 / 255.0) alpha:1.0];
     darkGreenColor = [UIColor colorWithRed:(188.0/255.0) green:(231.0/255.0) blue:(94.0/255.0) alpha:1.0];
     self.cumulateElevationView.layer.borderColor = lightGreenColor.CGColor;

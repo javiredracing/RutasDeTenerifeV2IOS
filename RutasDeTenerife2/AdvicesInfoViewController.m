@@ -16,7 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    UIColor *startGray = [UIColor colorWithRed:(204.0 / 255.0) green:(202.0 / 255.0) blue:(202.0 / 255.0) alpha:1.0];
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = [self.view bounds];
+    gradient.colors = [NSArray arrayWithObjects:(id)[startGray CGColor], (id)[[UIColor lightGrayColor] CGColor], nil];
+    gradient.startPoint = CGPointZero;
+    gradient.endPoint = CGPointMake(1, 1);
+    [self.view.layer insertSublayer:gradient atIndex:0];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +43,7 @@
 
 -(void) viewDidLayoutSubviews{
     //textview scroll start on top
+    self.advicesTV.textColor = [UIColor whiteColor];
     [self.advicesTV setContentOffset:CGPointZero animated:NO];
 }
 

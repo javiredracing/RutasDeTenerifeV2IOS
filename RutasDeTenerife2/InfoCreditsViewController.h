@@ -16,6 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnSend;
 @property (weak, nonatomic) IBOutlet UITextView *textLegal;
 - (IBAction)sendEmail:(UIButton *)sender;
-@property (weak, nonatomic) IBOutlet IconInfoView *appInfo;
+@property (weak, nonatomic) IBOutlet UIView *appInfo;
 
 @end

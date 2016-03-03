@@ -238,6 +238,7 @@ CGFloat buttonSpacerHeight = 0;
 
     // Add the buttons too
     [self addButtonsToView:dialogContainer];
+
     dialogContainer.clipsToBounds = YES;
     return dialogContainer;
 }
@@ -252,7 +253,9 @@ CGFloat buttonSpacerHeight = 0;
     for (int i=0; i<[buttonTitles count]; i++) {
 
         UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [closeButton setBackgroundColor:Rgb2UIColor(189, 190, 194)];
+        //[closeButton setBackgroundColor:Rgb2UIColor(189, 190, 194)];
+        UIColor *startGray = [UIColor colorWithRed:(204.0 / 255.0) green:(202.0 / 255.0) blue:(202.0 / 255.0) alpha:1.0];
+       [closeButton setBackgroundColor:startGray];
         
         [closeButton setFrame:CGRectMake(i * buttonWidth, container.bounds.size.height - buttonHeight, buttonWidth, buttonHeight)];
         

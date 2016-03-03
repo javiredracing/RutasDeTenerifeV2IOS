@@ -56,16 +56,14 @@ NSMutableArray *filteredData;
     imageGreen = [UIImage imageNamed:@"marker_sign_16_green"];
     imageRed = [UIImage imageNamed:@"marker_sign_16_red"];
     
-    self.menuButton.layer.shadowColor = [UIColor grayColor].CGColor;
-    self.menuButton.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+    self.menuButton.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    self.menuButton.layer.shadowOffset = CGSizeMake(5.0, 5.0);
     self.menuButton.layer.shadowOpacity = 0.8;
-    self.menuButton.layer.shadowRadius = 2.0;
-    self.listButton.layer.shadowColor = [UIColor grayColor].CGColor;
-    self.listButton.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+    self.menuButton.layer.shadowRadius = 5.0;
+    self.listButton.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    self.listButton.layer.shadowOffset = CGSizeMake(5.0, 5.0);
     self.listButton.layer.shadowOpacity = 0.8;
-    self.listButton.layer.shadowRadius = 2.0;
-    
-    
+    self.listButton.layer.shadowRadius = 5.0;
     
     [self gotoLocation];
     [self loadRoutes];
@@ -75,14 +73,12 @@ NSMutableArray *filteredData;
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.pathList addGestureRecognizer:swipeRight];
     
-    
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(toggleList:)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [self.menuList addGestureRecognizer:swipeLeft];
     
     //Tap over quickInfo View
-    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(handleQuickInfoTap:)];
+    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleQuickInfoTap:)];
     [self.quickInfoView addGestureRecognizer:singleFingerTap];
     
     //TODO Get user location
@@ -100,10 +96,23 @@ NSMutableArray *filteredData;
     self.quickInfoView.layer.shadowOpacity = 0.5;*/
     UIColor *lightGreenColor = Rgb2UIColor(187, 234, 176);
     self.quickInfoView.layer.borderColor = lightGreenColor.CGColor;
-    self.quickInfoView.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.quickInfoView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
     self.quickInfoView.layer.shadowOffset = CGSizeMake(12.0, 12.0);
     self.quickInfoView.layer.shadowOpacity = 0.8;
-    self.quickInfoView.layer.shadowRadius = 0.0;
+    self.quickInfoView.layer.shadowRadius = 5.0;
+
+    UIImage *imagePinned = [UIImage imageNamed:@"pin_24"];
+    imagePinned = [imagePinned imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self.quickControl setImage:imagePinned forSegmentAtIndex:0];
+    
+    UIImage *image2 = [UIImage imageNamed:@"center"];
+    image2 = [image2 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self.quickControl setImage:image2 forSegmentAtIndex:1];
+    
+    UIImage *image3 = [UIImage imageNamed:@"close"];
+    image3 = [image3 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self.quickControl setImage:image3 forSegmentAtIndex:2];
+    
     [self hideQuickInfo];
     [self configureToast];
 }
@@ -986,6 +995,7 @@ NSMutableArray *filteredData;
     //UIColor *tintcolor = [UIColor greenColor];
     [self.view makeToast:@"Modo en ruta"];
     UIImage *imagePinned = [UIImage imageNamed:@"pinned_24"];
+    imagePinned = [imagePinned imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //[[sender.subviews objectAtIndex:item] setTintColor:tintcolor];
     [control setImage:imagePinned forSegmentAtIndex:0];
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
@@ -995,6 +1005,7 @@ NSMutableArray *filteredData;
     if (onRouteMode){
         onRouteMode = NO;
         UIImage *imagePinned = [UIImage imageNamed:@"pin_24"];
+        imagePinned = [imagePinned imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         //[[control.subviews objectAtIndex:item] setTintColor:control.tintColor];
         [control setImage:imagePinned forSegmentAtIndex:0];
         [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
@@ -1145,7 +1156,7 @@ NSMutableArray *filteredData;
     //TODO add internal margins to uilabel
     UILabel *lbl1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 290, 250)];
     lbl1.textColor = [UIColor grayColor];
-    lbl1.backgroundColor=[UIColor clearColor];
+    lbl1.backgroundColor = [UIColor clearColor];
     lbl1.userInteractionEnabled = NO;
     lbl1.numberOfLines = 0;
     lbl1.clipsToBounds = YES;
