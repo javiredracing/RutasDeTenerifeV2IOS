@@ -19,6 +19,9 @@
 		9D6DC95A1C4528A300BCB623 /* PrevCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6DC9591C4528A300BCB623 /* PrevCell.m */; };
 		9D6DC95C1C455D2300BCB623 /* ForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DC95B1C455D2300BCB623 /* ForecastCell.xib */; };
 		9D6DC95F1C45619300BCB623 /* ForecastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6DC95E1C45619300BCB623 /* ForecastCell.m */; };
+		9D7185C51C89C36000F85725 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D7185C11C89C36000F85725 /* Info.plist */; };
+		9D7185C61C89C36000F85725 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D7185C21C89C36000F85725 /* iRate.bundle */; };
+		9D7185C71C89C36000F85725 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7185C41C89C36000F85725 /* iRate.m */; };
 		9D741E7C1BF4F2D5008AB780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E7B1BF4F2D5008AB780 /* main.m */; };
 		9D741E7F1BF4F2D5008AB780 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E7E1BF4F2D5008AB780 /* AppDelegate.m */; };
 		9D741E821BF4F2D5008AB780 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D741E811BF4F2D5008AB780 /* ViewController.m */; };
@@ -450,6 +453,10 @@
 		9D6DC95B1C455D2300BCB623 /* ForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastCell.xib; sourceTree = "<group>"; };
 		9D6DC95D1C45619300BCB623 /* ForecastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastCell.h; sourceTree = "<group>"; };
 		9D6DC95E1C45619300BCB623 /* ForecastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastCell.m; sourceTree = "<group>"; };
+		9D7185C11C89C36000F85725 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D7185C21C89C36000F85725 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
+		9D7185C31C89C36000F85725 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		9D7185C41C89C36000F85725 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
 		9D741E771BF4F2D5008AB780 /* RutasDeTenerife2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RutasDeTenerife2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D741E7B1BF4F2D5008AB780 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D741E7D1BF4F2D5008AB780 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -887,6 +894,17 @@
 			path = FBAnnotationClustering;
 			sourceTree = "<group>";
 		};
+		9D7185C01C89C36000F85725 /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				9D7185C11C89C36000F85725 /* Info.plist */,
+				9D7185C21C89C36000F85725 /* iRate.bundle */,
+				9D7185C31C89C36000F85725 /* iRate.h */,
+				9D7185C41C89C36000F85725 /* iRate.m */,
+			);
+			path = iRate;
+			sourceTree = "<group>";
+		};
 		9D741E6E1BF4F2D5008AB780 = {
 			isa = PBXGroup;
 			children = (
@@ -911,6 +929,7 @@
 		9D741E791BF4F2D5008AB780 /* RutasDeTenerife2 */ = {
 			isa = PBXGroup;
 			children = (
+				9D7185C01C89C36000F85725 /* iRate */,
 				9D86C3C81C7342870040F547 /* CustomDialog */,
 				9D7B74531C638990001C348F /* MainInfo */,
 				9D7B744D1C6351EB001C348F /* Toast */,
@@ -1543,6 +1562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D7AD5E41BF5FA3700E87809 /* nivel_dificil.png in Resources */,
+				9D7185C61C89C36000F85725 /* iRate.bundle in Resources */,
 				9D7AD78E1BF5FA4A00E87809 /* tfpr25.kml in Resources */,
 				9D6A565B1C0D9CB8009FDC7E /* MenuCell.xib in Resources */,
 				9D7AD7591BF5FA4A00E87809 /* pr-tf-3.gpx in Resources */,
@@ -1820,6 +1840,7 @@
 				9D7AD7321BF5FA4A00E87809 /* PR-TF 57.kml in Resources */,
 				9D7AD5B21BF5FA3700E87809 /* i293.png in Resources */,
 				9D7AD6E11BF5FA4A00E87809 /* corral-del-nino-mal-abrigo-sendero-no21.gpx in Resources */,
+				9D7185C51C89C36000F85725 /* Info.plist in Resources */,
 				9D7AD5EE1BF5FA3700E87809 /* share32.png in Resources */,
 				9D7AD5FA1BF5FA3700E87809 /* wind.png in Resources */,
 				9D7AD5BB1BF5FA3700E87809 /* i320.png in Resources */,
@@ -1906,6 +1927,7 @@
 				9DF6643E1C63A5A500B96144 /* AppInfoTabViewController.m in Sources */,
 				9D82A30B1C0F181400F8DDFE /* ExtendedInfoViewController.m in Sources */,
 				9D6A565E1C0D9F1D009FDC7E /* MenuCell.m in Sources */,
+				9D7185C71C89C36000F85725 /* iRate.m in Sources */,
 				9D7B74501C6351EB001C348F /* UIView+Toast.m in Sources */,
 				9D7AD5FD1BF5FA3700E87809 /* FMDatabaseAdditions.m in Sources */,
 				9D741E7C1BF4F2D5008AB780 /* main.m in Sources */,
