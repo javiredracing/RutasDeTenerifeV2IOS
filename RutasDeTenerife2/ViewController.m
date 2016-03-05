@@ -643,7 +643,7 @@ NSMutableArray *filteredData;
     }
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+/*-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
 
     NSString *regionName = nil;
     if (tableView.tag == 1){
@@ -671,6 +671,34 @@ NSMutableArray *filteredData;
         }
     }
     return regionName;
+}*/
+
+-(NSString *)stringTitleForSection :(NSInteger) section{
+    NSString *regionName = nil;
+    switch (section){
+        case 0:
+            regionName = @"P. R. Anaga";
+            break;
+        case 1:
+            regionName = @"Zona Norte";
+            break;
+        case 2:
+            regionName = @"P. R. Teno";
+            break;
+        case 3:
+            regionName = @"Zona Sur";
+            break;
+        case 4:
+            regionName = @"P. N. Teide";
+            break;
+        case 5:
+            regionName = @"GR-131";
+            break;
+        default:
+            regionName= @"no region";
+    }
+    return regionName;
+
 }
 
 /*- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -683,6 +711,22 @@ NSMutableArray *filteredData;
         height = 102.0f;
     }
     return height;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
+    /* Create custom view to display section header... */
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
+    label.textAlignment = NSTextAlignmentCenter;
+    [label setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:16]];
+
+    label.textColor = [UIColor whiteColor];
+    NSString *string =[self stringTitleForSection:section];
+    /* Section header is in 0th index... */
+    [label setText:string];
+    [view addSubview:label];
+    [view setBackgroundColor:[UIColor grayColor]]; //your background color...
+    return view;
 }
 
 #pragma mark - UITableView Delegate -
