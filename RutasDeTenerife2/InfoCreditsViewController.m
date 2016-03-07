@@ -19,7 +19,6 @@
     // Do any additional setup after loading the view.
     UIColor *lightGreenColor = [UIColor colorWithRed:(187.0 / 255.0) green:(234.0 / 255.0) blue:(176.0 / 255.0) alpha:1.0];
     
-    
     self.appInfo.layer.borderColor = lightGreenColor.CGColor;
     self.btnSend.layer.borderColor = lightGreenColor.CGColor;
     self.btnSend.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -36,7 +35,6 @@
     gradient.startPoint = CGPointZero;
     gradient.endPoint = CGPointMake(1, 1);
     [self.view.layer insertSublayer:gradient atIndex:0];
-
 }
 
 - (void)didReceiveMemoryWarning {

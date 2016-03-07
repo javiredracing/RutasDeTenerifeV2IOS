@@ -34,6 +34,7 @@
     [label setNumberOfLines:0];
     [label setTextColor:[UIColor grayColor]];
     label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     //self.navigationItem.titleView = label;
     [label setText:@"Rutas de tenerife"];
     self.navigationBar.topItem.titleView = label;

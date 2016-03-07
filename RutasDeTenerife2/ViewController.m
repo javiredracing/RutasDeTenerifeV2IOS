@@ -715,13 +715,17 @@ NSMutableArray *filteredData;
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
-    /* Create custom view to display section header... */
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
+        /* Create custom view to display section header... */
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, tableView.frame.size.width, 18)];
     label.textAlignment = NSTextAlignmentCenter;
-    [label setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:16]];
 
+    [label setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:16]];
     label.textColor = [UIColor whiteColor];
-    NSString *string =[self stringTitleForSection:section];
+    NSString *string;
+    if (tableView.tag == 1){
+        string =[self stringTitleForSection:section];
+    }else
+        string = @"Menu";
     /* Section header is in 0th index... */
     [label setText:string];
     [view addSubview:label];
@@ -1207,7 +1211,7 @@ NSMutableArray *filteredData;
     lbl1.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
     lbl1.text= @"¡Ayúdame a que el proyecto siga adelante por tan solo <u><b>1.21 €</b></u>! \n \n <u>Beneficios de la colaboración:</u> \n ► Elimina la publicidad. \n ► Descarga los tracks en formato <i>.GPX</i>, para poder usarlos en otras aplicaciones. \n ► Previsión meteorológica para los próximos <i>3 días</i>";
     //[lbl1 sizeToFit];
-    
+    lbl1.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     [alertView setContainerView:lbl1];
     // Modify the parameters
     [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"Cancelar", @"Colaborar", nil, nil]];
