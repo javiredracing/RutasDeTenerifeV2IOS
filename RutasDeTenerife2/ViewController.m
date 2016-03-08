@@ -942,7 +942,7 @@ NSMutableArray *filteredData;
                         CLPlacemark *placemark = [placemarks objectAtIndex:0];
                         address = [NSString stringWithFormat:@"%@, %@, %@, %@, %@", placemark.thoroughfare, placemark.subLocality ,placemark.locality, placemark.subAdministrativeArea, placemark.administrativeArea];
                     }
-                    [self.view makeToast:address];
+                    [self.view makeToast:address ];
                 }];
             }else{
                 NSLog(@"Location no available");
@@ -1041,7 +1041,7 @@ NSMutableArray *filteredData;
 -(void)enableOnRouteMode :(UISegmentedControl *)control{
     onRouteMode = YES;
     //UIColor *tintcolor = [UIColor greenColor];
-    [self.view makeToast:@"Modo en ruta"];
+    [self.view makeToast:@"Modo en ruta" duration:2.0 position:CSToastPositionCenter];
     UIImage *imagePinned = [UIImage imageNamed:@"pinned_24"];
     imagePinned = [imagePinned imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //[[sender.subviews objectAtIndex:item] setTintColor:tintcolor];

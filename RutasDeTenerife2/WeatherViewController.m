@@ -111,7 +111,7 @@
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
     NSLog(@"Fail connection");
     [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
-    [self.view makeToast:@"Fail connection"];
+    [self.view makeToast:@"Fail connection" duration:2.0 position:CSToastPositionCenter];
 }
 /*
 #pragma mark - Navigation
