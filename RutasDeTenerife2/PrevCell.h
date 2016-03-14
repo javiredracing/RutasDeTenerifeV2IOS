@@ -10,8 +10,13 @@
 #import "FieldView.h"
 
 @interface PrevCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIView *codicView;
+@property (weak, nonatomic) IBOutlet UIView *currentDegreeView;
+@property (weak, nonatomic) IBOutlet UILabel *descWeatherLabel;
+@property (weak, nonatomic) IBOutlet UILabel *degreesLabel;
 
-@property (weak, nonatomic) IBOutlet FieldView *currentTemp;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherImage;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *rainfall;
 @property (weak, nonatomic) IBOutlet UILabel *humidity;

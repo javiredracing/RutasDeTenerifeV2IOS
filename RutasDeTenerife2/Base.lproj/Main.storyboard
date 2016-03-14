@@ -422,7 +422,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMF-V0-IkQ">
-                                <rect key="frame" x="20" y="8" width="560" height="80"/>
+                                <rect key="frame" x="20" y="8" width="560" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cumulate elevation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av0-9l-DbJ">
                                         <rect key="frame" x="220" y="8" width="121" height="17"/>
@@ -431,7 +431,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAl-YY-RcK">
-                                        <rect key="frame" x="276" y="35" width="9" height="45"/>
+                                        <rect key="frame" x="276" y="15" width="9" height="45"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="74u-42-phl"/>
@@ -439,27 +439,27 @@
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="statistics.png" translatesAutoresizingMaskIntoConstraints="NO" id="IYK-A8-5aY">
-                                        <rect key="frame" x="186" y="40" width="32" height="32"/>
+                                        <rect key="frame" x="186" y="20" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="0FU-DD-asd"/>
                                             <constraint firstAttribute="width" constant="32" id="7On-Dg-kPk"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4W-OM-m91">
-                                        <rect key="frame" x="226" y="52" width="30" height="14"/>
+                                        <rect key="frame" x="226" y="32" width="30" height="14"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down.png" translatesAutoresizingMaskIntoConstraints="NO" id="m2Z-tC-WjT">
-                                        <rect key="frame" x="305" y="40" width="32" height="32"/>
+                                        <rect key="frame" x="305" y="20" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="ay1-al-qxE"/>
                                             <constraint firstAttribute="width" constant="32" id="htw-cO-B4x"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g65-Sp-up6">
-                                        <rect key="frame" x="345" y="52" width="30" height="14"/>
+                                        <rect key="frame" x="345" y="32" width="30" height="14"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -469,7 +469,7 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="IYK-A8-5aY" secondAttribute="bottom" constant="8" id="0Z7-W9-fCI"/>
                                     <constraint firstItem="av0-9l-DbJ" firstAttribute="top" secondItem="cMF-V0-IkQ" secondAttribute="top" constant="8" id="0id-vh-K2k"/>
-                                    <constraint firstAttribute="height" constant="80" id="3ja-lQ-a7u"/>
+                                    <constraint firstAttribute="height" constant="60" id="3ja-lQ-a7u"/>
                                     <constraint firstItem="LAl-YY-RcK" firstAttribute="centerX" secondItem="cMF-V0-IkQ" secondAttribute="centerX" id="Fif-V2-t8V"/>
                                     <constraint firstItem="m2Z-tC-WjT" firstAttribute="leading" secondItem="LAl-YY-RcK" secondAttribute="trailing" constant="20" id="MXA-FG-t4U"/>
                                     <constraint firstItem="av0-9l-DbJ" firstAttribute="centerX" secondItem="cMF-V0-IkQ" secondAttribute="centerX" id="PpT-b1-TJn"/>
@@ -487,7 +487,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ym-XF-aG2" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="96" width="560" height="383"/>
+                                <rect key="frame" x="20" y="76" width="560" height="403"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>

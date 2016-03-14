@@ -14,7 +14,14 @@
     // Initialization code
     self.mainDate.textColor = [UIColor whiteColor];
     self.mainTitle.textColor = [UIColor whiteColor];
+    self.forecastView.backgroundColor = [UIColor clearColor];
     self.mainTitle.text = @"Previsión";
+    self.windPrevision.backgroundColor = [UIColor clearColor];
+    self.moonrise.backgroundColor =[UIColor clearColor];
+    self.moonset.backgroundColor = [UIColor clearColor];
+    self.sunrise.backgroundColor = [UIColor clearColor];
+    self.sunset.backgroundColor = [UIColor clearColor];
+    self.rainPrev.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -40,7 +47,10 @@
         windDesc = [NSString stringWithFormat:@"%@ miles/h (%@)",windSpeed, windDirec];
     }
     
-    [self.prevision updateFields:maxMinC :description :[UIImage imageNamed:[NSString stringWithFormat:@"i%@",iconCode]] ];
+    //[self.prevision updateFields:maxMinC :description :[UIImage imageNamed:[NSString stringWithFormat:@"i%@",iconCode]] ];
+    self.condImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"i%@",iconCode]];
+    self.condLabel.text = maxMinC;
+    self.descLabel.text = description;
     
     [self.windPrevision updateFields:@"Viento" :windDesc :[UIImage imageNamed:@"wind"]];
     [self.rainPrev setItems:[NSString stringWithFormat:@"%@ Lm2",rainfall] :[UIImage imageNamed:@"umbrella_drizzle"] ];
