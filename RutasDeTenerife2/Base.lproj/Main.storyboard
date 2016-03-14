@@ -176,7 +176,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <inset key="contentEdgeInsets" minX="3" minY="9" maxX="3" maxY="9"/>
-                                <state key="normal" title="How to get" image="plus16.png">
+                                <state key="normal" title="How to get" image="map_pos_green.png">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -202,7 +202,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <inset key="contentEdgeInsets" minX="3" minY="9" maxX="3" maxY="9"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
-                                <state key="normal" title="Download track" image="plus16.png">
+                                <state key="normal" title="Download track" image="file_download_green.png">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -267,7 +267,7 @@
                                     <constraint firstAttribute="height" constant="27" id="ajg-yp-Qaa"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATm-lS-kmC">
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="white" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATm-lS-kmC">
                                 <rect key="frame" x="20" y="124" width="560" height="314"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Description Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -314,7 +314,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Description" image="plus16.png" id="TCL-Gl-nRY">
+                    <tabBarItem key="tabBarItem" title="Description" image="circle_24px.png" id="TCL-Gl-nRY">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.73725490196078436" green="0.90588235294117647" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
@@ -347,8 +347,8 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VNE-uj-Wuv">
-                                <rect key="frame" x="28" y="0.0" width="544" height="434"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VNE-uj-Wuv">
+                                <rect key="frame" x="28" y="0.0" width="544" height="436"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.46636345140000002" green="1" blue="0.98125269790000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -363,11 +363,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kSD-3h-lbD">
-                                <rect key="frame" x="261" y="442" width="78" height="37"/>
+                                <rect key="frame" x="266" y="444" width="69" height="35"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="contentEdgeInsets" minX="3" minY="9" maxX="3" maxY="9"/>
+                                <inset key="contentEdgeInsets" minX="4" minY="9" maxX="4" maxY="9"/>
                                 <state key="normal" title="Next days">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -393,7 +393,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Weather" image="wind.png" id="Ftd-wb-0nu">
+                    <tabBarItem key="tabBarItem" title="Weather" image="sunny_24px.png" id="Ftd-wb-0nu">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.73725490196078436" green="0.90588235294117647" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
@@ -507,7 +507,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Altitude" image="close.png" id="0Gt-pJ-vje">
+                    <tabBarItem key="tabBarItem" title="Altitude" image="graph_24png.png" id="0Gt-pJ-vje">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.73725490196078436" green="0.90588235294117647" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
@@ -560,7 +560,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="senalizacion.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Gpb-lZ-OGy">
                                 <rect key="frame" x="161" y="8" width="278" height="182"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lc-NX-GQe">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="white" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lc-NX-GQe">
                                 <rect key="frame" x="20" y="198" width="560" height="281"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
@@ -590,7 +590,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Information" id="bHx-pT-Ekb">
+                    <tabBarItem key="tabBarItem" title="Information" image="info_24px.png" id="bHx-pT-Ekb">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.73725490196078436" green="0.90588235294117647" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
@@ -662,8 +662,8 @@
                                 <rect key="frame" x="245" y="130" width="111" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <inset key="contentEdgeInsets" minX="3" minY="9" maxX="3" maxY="9"/>
-                                <state key="normal" title="Send email" image="plus16.png">
+                                <inset key="contentEdgeInsets" minX="4" minY="9" maxX="4" maxY="9"/>
+                                <state key="normal" title="Send email" image="email_green.png">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -682,7 +682,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hfa-Sv-sPs">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsVerticalScrollIndicator="NO" indicatorStyle="white" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfa-Sv-sPs">
                                 <rect key="frame" x="20" y="209" width="560" height="270"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Legal info Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -708,7 +708,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Credits" id="Rlo-s3-8jE">
+                    <tabBarItem key="tabBarItem" title="Credits" image="plus_circle_24px.png" id="Rlo-s3-8jE">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.73725490196078436" green="0.90588235294117647" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
@@ -737,7 +737,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N08-KG-pzS">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="white" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N08-KG-pzS">
                                 <rect key="frame" x="20" y="8" width="560" height="471"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Advices Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -755,7 +755,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Advices" id="G4c-Eb-hQ6">
+                    <tabBarItem key="tabBarItem" title="Advices" image="caution_24.png" id="G4c-Eb-hQ6">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.73725490196078436" green="0.90588235294117647" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
@@ -848,16 +848,24 @@
         </scene>
     </scenes>
     <resources>
+        <image name="caution_24.png" width="26" height="23"/>
         <image name="center.png" width="32" height="32"/>
+        <image name="circle_24px.png" width="24" height="24"/>
         <image name="close.png" width="32" height="32"/>
         <image name="down.png" width="50" height="50"/>
+        <image name="email_green.png" width="23" height="15"/>
+        <image name="file_download_green.png" width="17" height="15"/>
+        <image name="graph_24png.png" width="31" height="23"/>
+        <image name="info_24px.png" width="24" height="24"/>
         <image name="list_32.png" width="32" height="32"/>
         <image name="logo.png" width="64" height="64"/>
+        <image name="map_pos_green.png" width="14" height="15"/>
         <image name="pin_24.png" width="24" height="24"/>
         <image name="plus16.png" width="16" height="16"/>
+        <image name="plus_circle_24px.png" width="24" height="24"/>
         <image name="senalizacion.jpeg" width="278" height="182"/>
         <image name="statistics.png" width="50" height="50"/>
-        <image name="wind.png" width="64" height="64"/>
+        <image name="sunny_24px.png" width="24" height="24"/>
     </resources>
     <color key="tintColor" red="0.73725490199999999" green="0.90588235289999997" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

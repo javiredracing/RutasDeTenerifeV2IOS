@@ -34,6 +34,16 @@
 		9D7469AB1C46516E008C70E0 /* IconInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7469AA1C46516E008C70E0 /* IconInfoView.m */; };
 		9D74B0541BFDF0FB00A06E93 /* PathCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D74B0531BFDF0FB00A06E93 /* PathCell.xib */; };
 		9D74B0571BFDFB4300A06E93 /* PathCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D74B0561BFDFB4300A06E93 /* PathCellTableViewCell.m */; };
+		9D755C891C96F2A200E7E6FF /* info_24px.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D755C881C96F2A200E7E6FF /* info_24px.png */; };
+		9D755C8B1C96F44A00E7E6FF /* caution_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D755C8A1C96F44A00E7E6FF /* caution_24.png */; };
+		9D755C8D1C96F67800E7E6FF /* plus_circle_24px.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D755C8C1C96F67800E7E6FF /* plus_circle_24px.png */; };
+		9D755C8F1C96F79100E7E6FF /* circle_24px.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D755C8E1C96F79100E7E6FF /* circle_24px.png */; };
+		9D755C911C96FA2000E7E6FF /* graph_24png.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D755C901C96FA2000E7E6FF /* graph_24png.png */; };
+		9D755C931C96FB2700E7E6FF /* sunny_24px.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D755C921C96FB2700E7E6FF /* sunny_24px.png */; };
+		9D755C951C97045200E7E6FF /* file_download.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D755C941C97045200E7E6FF /* file_download.png */; };
+		9D755C991C9709EF00E7E6FF /* email_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D755C961C9709EF00E7E6FF /* email_green.png */; };
+		9D755C9A1C9709EF00E7E6FF /* file_download_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D755C971C9709EF00E7E6FF /* file_download_green.png */; };
+		9D755C9B1C9709EF00E7E6FF /* map_pos_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D755C981C9709EF00E7E6FF /* map_pos_green.png */; };
 		9D756C091C5A775E00CDB388 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D756C041C5A76AC00CDB388 /* Charts.framework */; };
 		9D756C0A1C5A775E00CDB388 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D756C041C5A76AC00CDB388 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D756C0E1C5A777C00CDB388 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D756C0D1C5A777C00CDB388 /* Realm.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -479,6 +489,16 @@
 		9D74B0531BFDF0FB00A06E93 /* PathCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PathCell.xib; sourceTree = "<group>"; };
 		9D74B0551BFDFB4300A06E93 /* PathCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathCellTableViewCell.h; sourceTree = "<group>"; };
 		9D74B0561BFDFB4300A06E93 /* PathCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathCellTableViewCell.m; sourceTree = "<group>"; };
+		9D755C881C96F2A200E7E6FF /* info_24px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_24px.png; sourceTree = "<group>"; };
+		9D755C8A1C96F44A00E7E6FF /* caution_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caution_24.png; sourceTree = "<group>"; };
+		9D755C8C1C96F67800E7E6FF /* plus_circle_24px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_circle_24px.png; sourceTree = "<group>"; };
+		9D755C8E1C96F79100E7E6FF /* circle_24px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_24px.png; sourceTree = "<group>"; };
+		9D755C901C96FA2000E7E6FF /* graph_24png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph_24png.png; sourceTree = "<group>"; };
+		9D755C921C96FB2700E7E6FF /* sunny_24px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunny_24px.png; sourceTree = "<group>"; };
+		9D755C941C97045200E7E6FF /* file_download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = file_download.png; sourceTree = "<group>"; };
+		9D755C961C9709EF00E7E6FF /* email_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email_green.png; sourceTree = "<group>"; };
+		9D755C971C9709EF00E7E6FF /* file_download_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = file_download_green.png; sourceTree = "<group>"; };
+		9D755C981C9709EF00E7E6FF /* map_pos_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pos_green.png; sourceTree = "<group>"; };
 		9D756BFD1C5A76AC00CDB388 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		9D756C0D1C5A777C00CDB388 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Charts/ThirdParty/Realm/ios/Realm.framework; sourceTree = "<group>"; };
 		9D77D3DC1C05BCD600821854 /* QuickInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuickInfo.xib; sourceTree = "<group>"; };
@@ -1047,6 +1067,16 @@
 		9D7AD5251BF5FA3600E87809 /* drawable */ = {
 			isa = PBXGroup;
 			children = (
+				9D755C961C9709EF00E7E6FF /* email_green.png */,
+				9D755C971C9709EF00E7E6FF /* file_download_green.png */,
+				9D755C981C9709EF00E7E6FF /* map_pos_green.png */,
+				9D755C941C97045200E7E6FF /* file_download.png */,
+				9D755C921C96FB2700E7E6FF /* sunny_24px.png */,
+				9D755C901C96FA2000E7E6FF /* graph_24png.png */,
+				9D755C8E1C96F79100E7E6FF /* circle_24px.png */,
+				9D755C8C1C96F67800E7E6FF /* plus_circle_24px.png */,
+				9D755C8A1C96F44A00E7E6FF /* caution_24.png */,
+				9D755C881C96F2A200E7E6FF /* info_24px.png */,
 				9D7AD5261BF5FA3600E87809 /* antequera4.jpg */,
 				9D7AD5271BF5FA3600E87809 /* antequeraoptimized.jpg */,
 				9D7AD5281BF5FA3600E87809 /* center.png */,
@@ -1578,6 +1608,7 @@
 				9D7AD7631BF5FA4A00E87809 /* pr-tf-62.gpx in Resources */,
 				9D7AD5CE1BF5FA3700E87809 /* invitation2.png in Resources */,
 				9D7AD70F1BF5FA4A00E87809 /* PR-TF 40.1.gpx in Resources */,
+				9D755C9A1C9709EF00E7E6FF /* file_download_green.png in Resources */,
 				9D7AD5CB1BF5FA3700E87809 /* icon_my_pos64.png in Resources */,
 				9D7AD5F61BF5FA3700E87809 /* timer.png in Resources */,
 				9D7AD7241BF5FA4A00E87809 /* PR-TF 52.2.kml in Resources */,
@@ -1616,6 +1647,7 @@
 				9D7AD7371BF5FA4A00E87809 /* PR-TF 65.gpx in Resources */,
 				9D7AD73C1BF5FA4A00E87809 /* PR-TF 70.2.kml in Resources */,
 				9D7AD59A1BF5FA3700E87809 /* antequeraoptimized.jpg in Resources */,
+				9D755C8F1C96F79100E7E6FF /* circle_24px.png in Resources */,
 				9D7AD5DF1BF5FA3700E87809 /* moonset.png in Resources */,
 				9D7AD5D21BF5FA3700E87809 /* logo_title2.png in Resources */,
 				9D7AD5E81BF5FA3700E87809 /* pinned_24.png in Resources */,
@@ -1639,6 +1671,7 @@
 				9D7AD5AB1BF5FA3700E87809 /* i230.png in Resources */,
 				9D7AD7881BF5FA4A00E87809 /* tenerife-barranco-de-ruiz.kml in Resources */,
 				9D7AD5D51BF5FA3700E87809 /* marker_sign_16_green.png in Resources */,
+				9D755C951C97045200E7E6FF /* file_download.png in Resources */,
 				9D7AD73D1BF5FA4A00E87809 /* PR-TF 70.gpx in Resources */,
 				9D7AD7841BF5FA4A00E87809 /* sombrero_de_chasna_circular.kml in Resources */,
 				9D7AD7801BF5FA4A00E87809 /* sl-tf-60.kml in Resources */,
@@ -1646,6 +1679,7 @@
 				9D7AD6F01BF5FA4A00E87809 /* GR 131 Etapa 5.kml in Resources */,
 				9D7AD7091BF5FA4A00E87809 /* PR-TF 35.2.gpx in Resources */,
 				9D7AD73E1BF5FA4A00E87809 /* PR-TF 70.kml in Resources */,
+				9D755C911C96FA2000E7E6FF /* graph_24png.png in Resources */,
 				9D7AD5C91BF5FA3700E87809 /* i392.png in Resources */,
 				9D7AD70C1BF5FA4A00E87809 /* PR-TF 35.3.kml in Resources */,
 				9D7AD7121BF5FA4A00E87809 /* PR-TF 40.kml in Resources */,
@@ -1663,6 +1697,7 @@
 				9D7AD6F91BF5FA4A00E87809 /* las-lagunetas-barranco-hondo.gpx in Resources */,
 				9D7AD7061BF5FA4A00E87809 /* PR-TF 10.kml in Resources */,
 				9D7AD5A61BF5FA3700E87809 /* i176.png in Resources */,
+				9D755C891C96F2A200E7E6FF /* info_24px.png in Resources */,
 				9D7AD6D31BF5FA4A00E87809 /* 16-el-sanatorio.kml in Resources */,
 				9D7AD6D41BF5FA4A00E87809 /* 19-majua.gpx in Resources */,
 				9D7AD6CE1BF5FA4A00E87809 /* 07-montana-blanca.gpx in Resources */,
@@ -1747,6 +1782,7 @@
 				9D7AD7131BF5FA4A00E87809 /* PR-TF 43.1.gpx in Resources */,
 				9D7AD5BC1BF5FA3700E87809 /* i323.png in Resources */,
 				9D7AD6F21BF5FA4A00E87809 /* GR 131.1.kml in Resources */,
+				9D755C8D1C96F67800E7E6FF /* plus_circle_24px.png in Resources */,
 				9D7AD6E51BF5FA4A00E87809 /* el-filo-sendero-8-p-n-del-teide.gpx in Resources */,
 				9D7AD6FE1BF5FA4A00E87809 /* paque-nacional-del-teide-sendero-no13-samara.kml in Resources */,
 				9D7AD7601BF5FA4A00E87809 /* pr-tf-6.kml in Resources */,
@@ -1817,6 +1853,7 @@
 				9D7AD5F41BF5FA3700E87809 /* sunrise.png in Resources */,
 				9D7AD7401BF5FA4A00E87809 /* PR-TF 72.kml in Resources */,
 				9D7AD77A1BF5FA4A00E87809 /* sl-tf-218-roque-del-conde.kml in Resources */,
+				9D755C8B1C96F44A00E7E6FF /* caution_24.png in Resources */,
 				9D7AD7551BF5FA4A00E87809 /* pr-tf-121.gpx in Resources */,
 				9D7AD5C81BF5FA3700E87809 /* i389.png in Resources */,
 				9D7AD71D1BF5FA4A00E87809 /* PR-TF 5.gpx in Resources */,
@@ -1825,6 +1862,7 @@
 				9D7AD77C1BF5FA4A00E87809 /* sl-tf-242-circular-las-vegas.kml in Resources */,
 				9D7AD6DB1BF5FA4A00E87809 /* bco-de-chacorche-igueste-de-candelaria-sl-tf-296-2.kml in Resources */,
 				9D7AD71E1BF5FA4A00E87809 /* PR-TF 5.kml in Resources */,
+				9D755C931C96FB2700E7E6FF /* sunny_24px.png in Resources */,
 				9D7AD5E61BF5FA3700E87809 /* nivel_intermedio.png in Resources */,
 				9D7AD5B51BF5FA3700E87809 /* i302.png in Resources */,
 				9D7AD5BD1BF5FA3700E87809 /* i326.png in Resources */,
@@ -1845,6 +1883,7 @@
 				9D7AD5FA1BF5FA3700E87809 /* wind.png in Resources */,
 				9D7AD5BB1BF5FA3700E87809 /* i320.png in Resources */,
 				9D7AD5AD1BF5FA3700E87809 /* i260.png in Resources */,
+				9D755C991C9709EF00E7E6FF /* email_green.png in Resources */,
 				9D7AD6F61BF5FA4A00E87809 /* la-mesa-araya-igueste-sl-tf-296.kml in Resources */,
 				9D7AD74B1BF5FA4A00E87809 /* PR-TF 86.2.gpx in Resources */,
 				9D7AD6FB1BF5FA4A00E87809 /* lsl-tf-60.gpx in Resources */,
@@ -1871,6 +1910,7 @@
 				9D7AD5F01BF5FA3700E87809 /* share72.png in Resources */,
 				9D7AD5A21BF5FA3700E87809 /* i116.png in Resources */,
 				9D7AD5E71BF5FA3700E87809 /* pin_24.png in Resources */,
+				9D755C9B1C9709EF00E7E6FF /* map_pos_green.png in Resources */,
 				9D7AD6D81BF5FA4A00E87809 /* antequera.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
