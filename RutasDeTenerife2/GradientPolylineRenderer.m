@@ -13,7 +13,7 @@
 #define V_MAX 2800.0
 #define V_MIN 0.0
 #define H_MAX 0.03
-#define H_MIN 0.3
+#define H_MIN 0.27
 
 @implementation GradientPolylineRenderer{
     float* hues;

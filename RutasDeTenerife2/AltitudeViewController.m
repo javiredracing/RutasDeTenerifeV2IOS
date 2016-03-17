@@ -7,6 +7,10 @@
 //
 
 #import "AltitudeViewController.h"
+#define V_MAX 2800.0
+#define V_MIN 0.0
+#define H_MAX 0.03
+#define H_MIN 0.27
 
 @interface AltitudeViewController ()
 
@@ -16,6 +20,7 @@
 
     UIColor *lightGreenColor;
     UIColor *darkGreenColor;
+    double maxValue, minValue;
 }
 
 - (void)viewDidLoad {
@@ -45,11 +50,11 @@
     //[leftAxis removeAllLimitLines];
     //[leftAxis addLimitLine:ll1];
     //[leftAxis addLimitLine:ll2];
-    double maxValue = [self maxValue:self.altitude] + 400;
+    maxValue = [self maxValue:self.altitude] + 400;
     if (maxValue < 500)
         maxValue = 500;
     leftAxis.customAxisMax = maxValue;
-    double minValue = [self minValue:self.altitude];
+    minValue = [self minValue:self.altitude];
     if (minValue > 500)
         minValue = 500;
     else
@@ -115,10 +120,15 @@
     set1.drawCircleHoleEnabled = NO;
     set1.valueFont = [UIFont systemFontOfSize:9.f];
     
-    NSArray *gradientColors = @[
+    /*NSArray *gradientColors = @[
                                 (id)[ChartColorTemplates colorFromString:@"#BBEAB0"].CGColor,
                                 (id)[ChartColorTemplates colorFromString:@"#bce75e"].CGColor
+                                ];*/
+    NSArray *gradientColors = @[
+                                (id)[self getColor:[self minValue:self.altitude]],
+                                (id)[self getColor:[self maxValue:self.altitude]]
                                 ];
+
     CGGradientRef gradient = CGGradientCreateWithColors(nil, (CFArrayRef)gradientColors, nil);
     
     set1.fillAlpha = .7f;
@@ -158,6 +168,13 @@
     return value;
 }
 
+//Get color interpolating
+-(CGColorRef)getColor :(float)value{
+    float curVelo = value;
+    curVelo = ((curVelo < V_MIN) ? V_MIN : (curVelo  > V_MAX) ? V_MAX : curVelo);
+    float result = H_MIN + ((curVelo-V_MIN)*(H_MAX-H_MIN))/(V_MAX-V_MIN);
+    return [UIColor colorWithHue:result saturation:1.0f brightness:1.0f alpha:1.0f].CGColor;
+}
 /*
 #pragma mark - Navigation
 
