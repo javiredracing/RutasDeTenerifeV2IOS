@@ -377,6 +377,10 @@
 		9D9D75E01C6B90A100B3A502 /* MainInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D75DF1C6B90A100B3A502 /* MainInfoViewController.m */; };
 		9D9D75E51C6B910800B3A502 /* AdvicesInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D75E41C6B910800B3A502 /* AdvicesInfoViewController.m */; };
 		9D9D75E71C6B94CF00B3A502 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9D75E61C6B94CF00B3A502 /* MessageUI.framework */; };
+		9DB96AAD1C9AD0020019EDD0 /* CLOSE_64px_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB96AAC1C9AD0020019EDD0 /* CLOSE_64px_red.png */; };
+		9DB96AAF1C9AD0E60019EDD0 /* CLOSE_24px_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB96AAE1C9AD0E60019EDD0 /* CLOSE_24px_red.png */; };
+		9DB96AB81C9B03550019EDD0 /* GradientPolylineOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB96AB51C9B03550019EDD0 /* GradientPolylineOverlay.m */; };
+		9DB96AB91C9B03550019EDD0 /* GradientPolylineRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB96AB71C9B03550019EDD0 /* GradientPolylineRenderer.m */; };
 		9DF6643E1C63A5A500B96144 /* AppInfoTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF6643D1C63A5A500B96144 /* AppInfoTabViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -860,6 +864,12 @@
 		9D9D75E31C6B910800B3A502 /* AdvicesInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvicesInfoViewController.h; sourceTree = "<group>"; };
 		9D9D75E41C6B910800B3A502 /* AdvicesInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvicesInfoViewController.m; sourceTree = "<group>"; };
 		9D9D75E61C6B94CF00B3A502 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9DB96AAC1C9AD0020019EDD0 /* CLOSE_64px_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CLOSE_64px_red.png; sourceTree = "<group>"; };
+		9DB96AAE1C9AD0E60019EDD0 /* CLOSE_24px_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CLOSE_24px_red.png; sourceTree = "<group>"; };
+		9DB96AB41C9B03550019EDD0 /* GradientPolylineOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientPolylineOverlay.h; sourceTree = "<group>"; };
+		9DB96AB51C9B03550019EDD0 /* GradientPolylineOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientPolylineOverlay.m; sourceTree = "<group>"; };
+		9DB96AB61C9B03550019EDD0 /* GradientPolylineRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientPolylineRenderer.h; sourceTree = "<group>"; };
+		9DB96AB71C9B03550019EDD0 /* GradientPolylineRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientPolylineRenderer.m; sourceTree = "<group>"; };
 		9DF6643C1C63A5A500B96144 /* AppInfoTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoTabViewController.h; sourceTree = "<group>"; };
 		9DF6643D1C63A5A500B96144 /* AppInfoTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoTabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -949,6 +959,7 @@
 		9D741E791BF4F2D5008AB780 /* RutasDeTenerife2 */ = {
 			isa = PBXGroup;
 			children = (
+				9DB96AB11C9B03300019EDD0 /* GradientPolyline */,
 				9D7185C01C89C36000F85725 /* iRate */,
 				9D86C3C81C7342870040F547 /* CustomDialog */,
 				9D7B74531C638990001C348F /* MainInfo */,
@@ -1067,6 +1078,8 @@
 		9D7AD5251BF5FA3600E87809 /* drawable */ = {
 			isa = PBXGroup;
 			children = (
+				9DB96AAE1C9AD0E60019EDD0 /* CLOSE_24px_red.png */,
+				9DB96AAC1C9AD0020019EDD0 /* CLOSE_64px_red.png */,
 				9D755C961C9709EF00E7E6FF /* email_green.png */,
 				9D755C971C9709EF00E7E6FF /* file_download_green.png */,
 				9D755C981C9709EF00E7E6FF /* map_pos_green.png */,
@@ -1453,6 +1466,17 @@
 				9D7AD51D1BF5DC0000E87809 /* MapKit.framework */,
 			);
 			name = frameworks;
+			sourceTree = "<group>";
+		};
+		9DB96AB11C9B03300019EDD0 /* GradientPolyline */ = {
+			isa = PBXGroup;
+			children = (
+				9DB96AB41C9B03550019EDD0 /* GradientPolylineOverlay.h */,
+				9DB96AB51C9B03550019EDD0 /* GradientPolylineOverlay.m */,
+				9DB96AB61C9B03550019EDD0 /* GradientPolylineRenderer.h */,
+				9DB96AB71C9B03550019EDD0 /* GradientPolylineRenderer.m */,
+			);
+			name = GradientPolyline;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1905,6 +1929,8 @@
 				9D7AD6D61BF5FA4A00E87809 /* afur-playa-tamadite.gpx in Resources */,
 				9D7AD5991BF5FA3700E87809 /* antequera4.jpg in Resources */,
 				9D7AD72C1BF5FA4A00E87809 /* PR-TF 54.kml in Resources */,
+				9DB96AAD1C9AD0020019EDD0 /* CLOSE_64px_red.png in Resources */,
+				9DB96AAF1C9AD0E60019EDD0 /* CLOSE_24px_red.png in Resources */,
 				9D7AD75A1BF5FA4A00E87809 /* pr-tf-3.kml in Resources */,
 				9D7AD59F1BF5FA3700E87809 /* distance32.png in Resources */,
 				9D7AD5F01BF5FA3700E87809 /* share72.png in Resources */,
@@ -1954,12 +1980,14 @@
 				9D77D3E01C05D20F00821854 /* QuickInfoView.m in Sources */,
 				9D86C3D41C7349E60040F547 /* FilterView.m in Sources */,
 				9D7B74561C6389FA001C348F /* InfoCreditsViewController.m in Sources */,
+				9DB96AB81C9B03550019EDD0 /* GradientPolylineOverlay.m in Sources */,
 				9D741E821BF4F2D5008AB780 /* ViewController.m in Sources */,
 				5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */,
 				9D79F78C1C3C113A005C8FBF /* WeatherViewController.m in Sources */,
 				9D7AD5FC1BF5FA3700E87809 /* FMDatabase.m in Sources */,
 				9D82A30E1C0F2DB100F8DDFE /* RoundRectPresentationController.m in Sources */,
 				9D7AD6011BF5FA3700E87809 /* Route.m in Sources */,
+				9DB96AB91C9B03550019EDD0 /* GradientPolylineRenderer.m in Sources */,
 				9D7AD6001BF5FA3700E87809 /* FMResultSet.m in Sources */,
 				9D86C3CD1C7342B70040F547 /* CustomIOSAlertView.m in Sources */,
 				9D741E7F1BF4F2D5008AB780 /* AppDelegate.m in Sources */,

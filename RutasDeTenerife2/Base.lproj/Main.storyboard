@@ -348,7 +348,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleAspectFit" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VNE-uj-Wuv">
-                                <rect key="frame" x="28" y="0.0" width="544" height="436"/>
+                                <rect key="frame" x="28" y="0.0" width="544" height="424"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.46636345140000002" green="1" blue="0.98125269790000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -357,13 +357,13 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WorldWeatherOnline" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmD-q7-Jct">
-                                <rect key="frame" x="20" y="468" width="91" height="11"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <rect key="frame" x="20" y="478" width="73" height="9"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kSD-3h-lbD">
-                                <rect key="frame" x="266" y="444" width="69" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kSD-3h-lbD">
+                                <rect key="frame" x="265" y="444" width="71" height="35"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -383,13 +383,13 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="VNE-uj-Wuv" secondAttribute="trailing" constant="8" id="Cal-e2-itK"/>
-                            <constraint firstItem="MSP-9X-KOi" firstAttribute="top" secondItem="kSD-3h-lbD" secondAttribute="bottom" constant="8" id="Ixm-li-C6f"/>
-                            <constraint firstItem="MSP-9X-KOi" firstAttribute="top" secondItem="DmD-q7-Jct" secondAttribute="bottom" constant="8" id="WQh-zB-7DD"/>
+                            <constraint firstItem="kSD-3h-lbD" firstAttribute="centerX" secondItem="OQP-x5-UjS" secondAttribute="centerX" id="EiA-rs-ayo"/>
+                            <constraint firstItem="MSP-9X-KOi" firstAttribute="top" secondItem="DmD-q7-Jct" secondAttribute="bottom" id="N6V-JD-fN3"/>
+                            <constraint firstItem="kSD-3h-lbD" firstAttribute="top" secondItem="VNE-uj-Wuv" secondAttribute="bottom" constant="20" id="cG6-HU-fhR"/>
+                            <constraint firstItem="DmD-q7-Jct" firstAttribute="leading" secondItem="OQP-x5-UjS" secondAttribute="leadingMargin" id="cU9-dP-dI5"/>
                             <constraint firstItem="VNE-uj-Wuv" firstAttribute="leading" secondItem="OQP-x5-UjS" secondAttribute="leadingMargin" constant="8" id="l08-la-E6h"/>
-                            <constraint firstItem="DmD-q7-Jct" firstAttribute="leading" secondItem="OQP-x5-UjS" secondAttribute="leadingMargin" id="p5f-yB-H8f"/>
-                            <constraint firstItem="kSD-3h-lbD" firstAttribute="top" secondItem="VNE-uj-Wuv" secondAttribute="bottom" constant="8" id="pbK-Kj-AxV"/>
+                            <constraint firstItem="MSP-9X-KOi" firstAttribute="top" secondItem="kSD-3h-lbD" secondAttribute="bottom" constant="8" id="qlm-hc-SWv"/>
                             <constraint firstItem="VNE-uj-Wuv" firstAttribute="top" secondItem="ujs-SO-a8r" secondAttribute="bottom" id="scc-G0-Bbl"/>
-                            <constraint firstItem="kSD-3h-lbD" firstAttribute="centerX" secondItem="OQP-x5-UjS" secondAttribute="centerX" id="szi-rL-eFr"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>

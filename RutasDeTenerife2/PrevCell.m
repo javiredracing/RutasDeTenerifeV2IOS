@@ -20,8 +20,8 @@
     self.condAtmosf.textColor = [UIColor whiteColor];
     self.currentDate.textColor = [UIColor whiteColor];
     self.currentCondTitle.textColor = [UIColor whiteColor];
-    self.currentCondTitle.text = @"Condiciones actuales";
-    self.condAtmosf.text = @"Cond. atmosfericas";
+   /* self.currentCondTitle.text = @"Condiciones actuales";
+    self.condAtmosf.text = @"Cond. atmosfericas";*/
     self.currentWind.backgroundColor = [UIColor clearColor];
     self.codicView.backgroundColor = [UIColor clearColor];
 }

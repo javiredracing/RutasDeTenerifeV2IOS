@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="352" height="339"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6W-UZ-VyF">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previsión" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6W-UZ-VyF">
                         <rect key="frame" x="8" y="8" width="336" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -30,7 +30,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYp-YO-H5i">
                         <rect key="frame" x="8" y="62" width="336" height="70"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close.png" translatesAutoresizingMaskIntoConstraints="NO" id="hfa-eS-Ttr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CLOSE_64px_red.png" translatesAutoresizingMaskIntoConstraints="NO" id="hfa-eS-Ttr">
                                 <rect key="frame" x="8" y="3" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="P8W-Et-9Jf"/>
@@ -176,6 +176,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="close.png" width="32" height="32"/>
+        <image name="CLOSE_64px_red.png" width="64" height="64"/>
     </resources>
 </document>

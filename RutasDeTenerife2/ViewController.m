@@ -14,6 +14,8 @@
 #import "AppInfoNavViewController.h"
 #import "Toast/UIView+Toast.h"
 #import "FilterView.h"
+#import "GradientPolylineOverlay.h"
+#import "GradientPolylineRenderer.h"
 
 @interface ViewController ()
 
@@ -22,7 +24,8 @@
 
 @implementation ViewController{
 
-MKPolyline *polyLine;
+//MKPolyline *polyLine;
+    GradientPolylineOverlay *polyLine;
 UIImage *imageRed;
 UIImage *imageYellow;
 UIImage *imageGreen;
@@ -109,7 +112,7 @@ NSMutableArray *filteredData;
     image2 = [image2 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.quickControl setImage:image2 forSegmentAtIndex:1];
     
-    UIImage *image3 = [UIImage imageNamed:@"close"];
+    UIImage *image3 = [UIImage imageNamed:@"CLOSE_24px_red"];
     image3 = [image3 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.quickControl setImage:image3 forSegmentAtIndex:2];
     
@@ -128,6 +131,15 @@ NSMutableArray *filteredData;
             [self.quickControl setEnabled:NO forSegmentAtIndex:0];
         }
     }
+    //Show Info on first launch
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL hasLaunched = [defaults boolForKey:@"hasLaunched"];
+    if (!hasLaunched){
+        [defaults setBool:YES forKey:@"hasLaunched"];
+        [defaults synchronize];
+        [self openAppInfo];
+    }
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -283,11 +295,12 @@ NSMutableArray *filteredData;
 //Draw line with gradient https://github.com/wdanxna/GradientPolyline
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
     
-    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc]initWithOverlay:overlay];
+   /* MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc]initWithOverlay:overlay];
     renderer.strokeColor = [UIColor colorWithRed:204/255. green:45/255. blue:70/255. alpha:1.0];
-    renderer.lineWidth = 3;
-    
-    return renderer;
+    renderer.lineWidth = 3;*/
+    GradientPolylineRenderer *polylineRenderer = [[GradientPolylineRenderer alloc] initWithOverlay:overlay];
+    polylineRenderer.lineWidth = 3.0f;
+    return polylineRenderer;
 }
 
 /**
@@ -432,18 +445,23 @@ NSMutableArray *filteredData;
             self.kmlParser = [[CustomKMLParser alloc] initWithURL:url];
             [self.kmlParser parseKML];
             NSMutableArray *coordinates = self.kmlParser.path;
+            NSMutableArray *altitude = self.kmlParser.altitude;
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 //code to be executed on the main thread when background task is finished
                 NSUInteger size = [coordinates count];
                 CLLocationCoordinate2D stepCoordinates[size];
+                float stepAltitude[size];
                 
                 for (NSUInteger i = 0; i < size; i++){
                     NSValue *value = [coordinates objectAtIndex:i];
                     CLLocationCoordinate2D c = [value MKCoordinateValue];
                     stepCoordinates[i] = c;
+                    
+                    stepAltitude[i] = [[altitude objectAtIndex:i] floatValue];
                 }
-                polyLine = [MKPolyline polylineWithCoordinates:stepCoordinates count:size];
+                //polyLine = [MKPolyline polylineWithCoordinates:stepCoordinates count:size];
+                polyLine = [[GradientPolylineOverlay alloc] initWithPoints:stepCoordinates velocity:stepAltitude  count:size];
                 [self.mapView addOverlay:polyLine];
                 });
             });
@@ -510,7 +528,7 @@ NSMutableArray *filteredData;
     CGContextFillEllipseInRect(ctx, circleRect);
     CGContextStrokeEllipseInRect(ctx, circleRect);
     
-    CTFontRef myFont = CTFontCreateWithName( (CFStringRef)@"Helvetica-Bold", 12.0f, NULL);
+    CTFontRef myFont = CTFontCreateWithName( (CFStringRef)@"HelveticaNeue-Bold", 12.0f, NULL);
     
     UIColor *fontColor;
     if ((count < 100) && count > 10) fontColor = [UIColor blackColor];
@@ -889,7 +907,7 @@ NSMutableArray *filteredData;
 -(void)fillMenuCell :(MenuCell *)cell :(NSInteger)index{
     switch (index) {
         case 0:
-            cell.icon.image = [UIImage imageNamed:@"close"];
+            cell.icon.image = [UIImage imageNamed:@"CLOSE_64px_red"];
             cell.iconTitle.text = @"Close";
             break;
         case 1:
@@ -1026,7 +1044,8 @@ NSMutableArray *filteredData;
             break;
         case 1:
             if (polyLine != nil)
-                [self.mapView setVisibleMapRect:[polyLine boundingMapRect] edgePadding:UIEdgeInsetsMake(20.0, 10.0, 20.0, 10.0) animated:YES];
+                
+                [self.mapView setVisibleMapRect:[polyLine getBoundingMapRect] edgePadding:UIEdgeInsetsMake(20.0, 10.0, 20.0, 10.0) animated:YES];
             break;
         case 2:
             if (lastRouteShowed != nil)
@@ -1202,7 +1221,11 @@ NSMutableArray *filteredData;
 
     CustomIOSAlertView *alertView = [[CustomIOSAlertView alloc] init];
     //TODO add internal margins to uilabel
-    UILabel *lbl1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 290, 250)];
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 290, 200)];
+    
+    UILabel *lbl1 = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 270, 200)];
+    /* UIEdgeInsets myLabelInsets = {0,20,0,20};
+    [lbl1 drawTextInRect:UIEdgeInsetsInsetRect(lbl1.frame, myLabelInsets)];*/
     lbl1.textColor = [UIColor grayColor];
     lbl1.backgroundColor = [UIColor clearColor];
     lbl1.userInteractionEnabled = NO;
@@ -1212,7 +1235,9 @@ NSMutableArray *filteredData;
     lbl1.text= @"¡Ayúdame a que el proyecto siga adelante por tan solo <u><b>1.21 €</b></u>! \n \n <u>Beneficios de la colaboración:</u> \n ► Elimina la publicidad. \n ► Descarga los tracks en formato <i>.GPX</i>, para poder usarlos en otras aplicaciones. \n ► Previsión meteorológica para los próximos <i>3 días</i>";
     //[lbl1 sizeToFit];
     lbl1.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
-    [alertView setContainerView:lbl1];
+   
+    [view addSubview:lbl1];
+    [alertView setContainerView:view];
     // Modify the parameters
     [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"Cancelar", @"Colaborar", nil, nil]];
 

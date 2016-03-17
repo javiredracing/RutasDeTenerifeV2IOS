@@ -54,7 +54,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jH0-rN-oUN">
                     <rect key="frame" x="0.0" y="0.0" width="38" height="80"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close2.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Jo-hp-Rdn">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CLOSE_24px_red.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Jo-hp-Rdn">
                             <rect key="frame" x="3" y="24" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="OZ5-FM-Hff"/>
@@ -88,6 +88,6 @@
         </view>
     </objects>
     <resources>
-        <image name="close2.png" width="32" height="32"/>
+        <image name="CLOSE_24px_red.png" width="24" height="24"/>
     </resources>
 </document>

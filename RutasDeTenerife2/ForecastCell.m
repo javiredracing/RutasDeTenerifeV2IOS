@@ -15,7 +15,7 @@
     self.mainDate.textColor = [UIColor whiteColor];
     self.mainTitle.textColor = [UIColor whiteColor];
     self.forecastView.backgroundColor = [UIColor clearColor];
-    self.mainTitle.text = @"Previsión";
+    //self.mainTitle.text = @"Previsión";
     self.windPrevision.backgroundColor = [UIColor clearColor];
     self.moonrise.backgroundColor =[UIColor clearColor];
     self.moonset.backgroundColor = [UIColor clearColor];
