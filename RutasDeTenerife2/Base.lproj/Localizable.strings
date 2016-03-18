@@ -33,7 +33,7 @@
 "moderate" = "Moderate";
 "difficult" = "Difficult";
 "all" = "All";
-"short" = "Corto";
+"short" = "Short";
 "medium" = "Medium";
 "large" = "Large";
 "aproved" = "Aproved";
@@ -43,3 +43,7 @@
 "no" = "No";
 "fail_connection" = "Connection fails";
 "m_km" = "meters / km";
+"mail_cancelled" = "Mail cancelled";
+"mail_saved" = "Mail saved";
+"mail_sent" = "Mail sent";
+"mail_failure" = "Mail sent failure";

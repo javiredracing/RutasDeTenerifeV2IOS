@@ -5,3 +5,45 @@
   Created by javi on 18/3/16.
   Copyright © 2016 JAVI. All rights reserved.
 */
+"north_zone" = "Zona norte";
+"south_zone" = "Zona sur";
+"menu" = "Menú";
+"close" = "Cerrar";
+"my_pos" = "Posición";
+"map" = "Mapa";
+"filter" = "Filtrar";
+"info" = "Info";
+"share" = "Compartir";
+"premium" = "Premium";
+"no_location" = "Localización no disponible";
+"hibrid" = "Modo híbrido";
+"standard" = "Modo standard";
+"satellite" = "Modo satélite";
+"app_name" = "Rutas de Tenerife";
+"on_route" = "Modo En Ruta";
+"cancel" = "Cancelar";
+"clean" = "Limpiar";
+"help_me" = "¡Ayúdame a que el proyecto siga adelante por tan solo <u><b>1.21 €</b></u>! \n \n <u>Beneficios de la colaboración:</u> \n ► Elimina la publicidad. \n ► Descarga los tracks en formato <i>.GPX</i>, para poder usarlos en otras aplicaciones. \n ► Previsión meteorológica para los próximos 3 días";
+"collaborate" = "Colaborar";
+/*****/
+"time" = "Duración";
+"distance" = "Distancia";
+"difficulty" = "Dificultad";
+"easy" = "Fácil";
+"moderate" = "Moderado";
+"difficult" = "Difícil";
+"all" = "Todo";
+"short" = "Corto";
+"medium" = "Medio";
+"large" = "Largo";
+"aproved" = "Homologado";
+/*******/
+"no_gpx_installed" = "No tienes ninguna App instalada que acepte archivos .gpx";
+"yes" = "Sí";
+"no" = "No";
+"fail_connection" = "Fallo de conexión";
+"m_km" = "Metros / km";
+"mail_cancelled" = "Email cancelado";
+"mail_saved" = "Email guardado";
+"mail_sent" = "Email enviado";
+"mail_failure" = "Envío de email fallido";

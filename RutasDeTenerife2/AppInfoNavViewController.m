@@ -36,7 +36,7 @@
     label.textAlignment = NSTextAlignmentCenter;
     label.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     //self.navigationItem.titleView = label;
-    [label setText:@"Rutas de tenerife"];
+    [label setText:NSLocalizedString(@"app_name", @"")];
     self.navigationBar.topItem.titleView = label;
 }
 

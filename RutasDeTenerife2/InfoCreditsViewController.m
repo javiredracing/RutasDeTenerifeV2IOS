@@ -58,9 +58,9 @@
 }
 - (IBAction)sendEmail:(UIButton *)sender {
 
-        NSString *emailTitle = @"Rutas de Tenerife";
+        NSString *emailTitle = NSLocalizedString(@"app_name", @"");
         // Email Content
-        NSString *messageBody = @"iOS programming is so fun!";
+        NSString *messageBody = @"";
         // To address
         NSArray *toRecipents = [NSArray arrayWithObject:@"rutastenerife@gmail.com"];
         MFMailComposeViewController *mc;
@@ -80,17 +80,16 @@
     switch (result)
     {
         case MFMailComposeResultCancelled:
-            message = @"Mail cancelled";
-           
+            message =  NSLocalizedString(@"mail_cancelled", @"");
             break;
         case MFMailComposeResultSaved:
-            message = @"Mail saved";
+            message = NSLocalizedString(@"mail_saved", @"");
             break;
         case MFMailComposeResultSent:
-            message = @"Mail sent";
+            message = NSLocalizedString(@"mail_sent", @"");
             break;
         case MFMailComposeResultFailed:
-            message = [NSString stringWithFormat:@"Mail sent failure: %@", [error localizedDescription]];
+            message = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"mail_failure", @""), [error localizedDescription]];
             break;
         default:
             message = @"";

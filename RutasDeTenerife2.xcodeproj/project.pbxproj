@@ -457,6 +457,8 @@
 		5955C8F51BF7BD15003843B2 /* FBQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBQuadTree.m; sourceTree = "<group>"; };
 		5955C8F61BF7BD15003843B2 /* FBQuadTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBQuadTreeNode.h; sourceTree = "<group>"; };
 		5955C8F71BF7BD15003843B2 /* FBQuadTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBQuadTreeNode.m; sourceTree = "<group>"; };
+		59C9BA721C9C91A0003C6982 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		59C9BA731C9C91A8003C6982 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9D01091A1C3AA37200D2E389 /* ExtInfoNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtInfoNavViewController.h; sourceTree = "<group>"; };
 		9D01091B1C3AA37200D2E389 /* ExtInfoNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtInfoNavViewController.m; sourceTree = "<group>"; };
 		9D6A565A1C0D9CB8009FDC7E /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
@@ -888,7 +890,6 @@
 		9DB96AB61C9B03550019EDD0 /* GradientPolylineRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientPolylineRenderer.h; sourceTree = "<group>"; };
 		9DB96AB71C9B03550019EDD0 /* GradientPolylineRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientPolylineRenderer.m; sourceTree = "<group>"; };
 		9DF5B8CF1C9C37F200FDF178 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9DF5B8D51C9C3EC600FDF178 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9DF6643C1C63A5A500B96144 /* AppInfoTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoTabViewController.h; sourceTree = "<group>"; };
 		9DF6643D1C63A5A500B96144 /* AppInfoTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoTabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -2140,7 +2141,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				9DF5B8CF1C9C37F200FDF178 /* Base */,
-				9DF5B8D51C9C3EC600FDF178 /* en */,
+				59C9BA721C9C91A0003C6982 /* en */,
+				59C9BA731C9C91A8003C6982 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
