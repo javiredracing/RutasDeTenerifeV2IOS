@@ -20,7 +20,7 @@
 
     UIColor *lightGreenColor;
     UIColor *darkGreenColor;
-    double maxValue, minValue;
+    double minValue;
 }
 
 - (void)viewDidLoad {
@@ -50,7 +50,7 @@
     //[leftAxis removeAllLimitLines];
     //[leftAxis addLimitLine:ll1];
     //[leftAxis addLimitLine:ll2];
-    maxValue = [self maxValue:self.altitude] + 400;
+    double maxValue = [self maxValue:self.altitude] + 400;
     if (maxValue < 500)
         maxValue = 500;
     leftAxis.customAxisMax = maxValue;
@@ -110,7 +110,7 @@
         }
     }
     
-    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals label:@"metros / Km"];
+    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals label:NSLocalizedString(@"m_km", @"")];
     set1.lineDashLengths = @[@5.f, @2.5f];
     set1.highlightLineDashLengths = @[@5.f, @2.5f];
     [set1 setColor:darkGreenColor];
@@ -125,7 +125,7 @@
                                 (id)[ChartColorTemplates colorFromString:@"#bce75e"].CGColor
                                 ];*/
     NSArray *gradientColors = @[
-                                (id)[self getColor:[self minValue:self.altitude]],
+                                (id)[self getColor:minValue],
                                 (id)[self getColor:[self maxValue:self.altitude]]
                                 ];
 

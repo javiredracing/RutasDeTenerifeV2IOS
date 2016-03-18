@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "1T5-rL-gag"; */
+"1T5-rL-gag.text" = "Datum";
+
+/* Class = "UILabel"; text = "No data"; ObjectID = "OSs-yJ-luZ"; */
+"OSs-yJ-luZ.text" = "keine Daten";
+
+/* Class = "UILabel"; text = "Previsión"; ObjectID = "j6W-UZ-VyF"; */
+"j6W-UZ-VyF.text" = "Prognose";
+
+/* Class = "UILabel"; text = "No data"; ObjectID = "t7t-r9-c59"; */
+"t7t-r9-c59.text" = "keine Daten";

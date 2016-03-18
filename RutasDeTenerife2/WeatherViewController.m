@@ -111,7 +111,7 @@
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
     NSLog(@"Fail connection");
     [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
-    [self.view makeToast:@"Fail connection" duration:2.0 position:CSToastPositionCenter];
+    [self.view makeToast:NSLocalizedString(@"fail_connection", @"") duration:2.0 position:CSToastPositionCenter];
 }
 /*
 #pragma mark - Navigation
@@ -290,11 +290,11 @@
     lbl1.numberOfLines = 0;
     lbl1.clipsToBounds = YES;
     lbl1.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
-    lbl1.text= @"¡Ayúdame a que el proyecto siga adelante por tan solo <u><b>1.21 €</b></u>! \n \n <u>Beneficios de la colaboración:</u> \n ► Elimina la publicidad. \n ► Descarga los tracks en formato <i>.GPX</i>, para poder usarlos en otras aplicaciones. \n ► Previsión meteorológica para los próximos <i>3 días</i>";
+    lbl1.text= NSLocalizedString(@"help_me", @"");
     
     [alertView setContainerView:lbl1];
     // Modify the parameters
-    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"Cancelar", @"Colaborar", nil, nil]];
+    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:NSLocalizedString(@"cancel", @""), NSLocalizedString(@"collaborate", @""), nil, nil]];
     
     [alertView setOnButtonTouchUpInside:^(CustomIOSAlertView *alertView, int buttonIndex) {
         [alertView close];

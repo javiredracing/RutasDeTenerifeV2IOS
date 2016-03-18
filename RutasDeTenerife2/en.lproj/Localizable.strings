@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  RutasDeTenerife2
+
+  Created by javi on 18/3/16.
+  Copyright © 2016 JAVI. All rights reserved.
+*/
+"north_zone" = "North zone";
+"south_zone" = "South zone";
+"menu" = "Menu";
+"close" = "Close";
+"my_pos" = "Position";
+"map" = "Map";
+"filter" = "Filter";
+"info" = "Info";
+"share" = "Share";
+"premium" = "Premium";
+/****/
+"no_location" = "Location not available";
+
+"hibrid" = "Hibrid mode";
+"standard" = "Standard mode";
+"satellite" = "Satellite mode";
+
+"app_name" = "Hiking in Tenerife";
+"on_route" = "On route mode";
+"cancel" = "Cancel";
+"clean" = "Clean";
+"help_me" = "¡Ayúdame a que el proyecto siga adelante por tan solo <u><b>1.21 €</b></u>! \n \n <u>Beneficios de la colaboración:</u> \n ► Elimina la publicidad. \n ► Descarga los tracks en formato <i>.GPX</i>, para poder usarlos en otras aplicaciones. \n ► Previsión meteorológica para los próximos <i>3 días</i>";
+"collaborate" = "Collaborate";

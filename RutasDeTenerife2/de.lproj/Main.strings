@@ -2,9 +2,6 @@
 /* Class = "UITabBarItem"; title = "Altitude"; ObjectID = "0Gt-pJ-vje"; */
 "0Gt-pJ-vje.title" = "Höhe";
 
-/* Class = "UITextView"; text = "The Tenerife Network of Footpaths boasts three types of route:\r    ► Long-distance Footpaths. Identified in red and white and bearing the acronym GR. These long-distance routes take several days to complete, given a length of over 50 kilometres.\r    ► Short-distance Footpaths. Identified in white and yellow and bearing the acronym PR The length of these footpaths varies between 10 and 50 kilometres. A number of these routes are actually shorter that 10 kilometres; however, that have been classified as PR footpaths due to their steep gradient, which increases difficulty.\r    ►Local Footpaths. Identified in white and green and bearing the acronym SL. These footpaths are less than 10 kilometres long."; ObjectID = "1lc-NX-GQe"; */
-"1lc-NX-GQe.text" = "Das Wanderwegnetzwerk von Teneriffa verfügt über drei verschiedene Arten von Routen:\n\n       ►<b> Großwanderwege.</b> Werden mit den Farben weiß und rot angezeigt sowie mit der Abkürzung <i>GR</i>. Diese großen Strecken werden in verschiedenen Etappen durchgeführt, da sich ihre Länge auf mehr als 50 Kilometer beläuft./n/n      ►<b> Kurzwanderwege.</b> Werden mit den Farben weiß und gelb angezeigt sowie mit der Abkürzung <i>PR</i>. Ihre Länge schwankt zwischen 10 und 50 Kilometern. Einige dieser Wanderwege sind kürzer als 10 Kilometer, wurden aber aufgrund der Steigung des Terrains als PR eingestuft, da diese den Schwierigkeitsgrad der Route erhöht./n/n      ►<b> Lokale Wanderwege.</b> Werden mit dem Farben weiß und grün angezeigt sowie mit der Abkürzung <i>SL</i>. Ihre Länge liegt unter 10 Kilometern.";
-
 /* Class = "UITextView"; text = "Description Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "ATm-lS-kmC"; */
 "ATm-lS-kmC.text" = "Description Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
 
@@ -12,16 +9,19 @@
 "BXj-I1-n0N.normalTitle" = "Anfahrt";
 
 /* Class = "UIButton"; normalTitle = "Send email"; ObjectID = "BdG-Iq-rVG"; */
-"BdG-Iq-rVG.normalTitle" = "E-Mail senden";
+"BdG-Iq-rVG.normalTitle" = "E-Mail sendenwheat";
+
+/* Class = "UILabel"; text = "WorldWeatherOnline"; ObjectID = "DmD-q7-Jct"; */
+"DmD-q7-Jct.text" = "WorldWeatherOnline";
 
 /* Class = "UITabBarItem"; title = "Weather"; ObjectID = "Ftd-wb-0nu"; */
 "Ftd-wb-0nu.title" = "Wetter";
 
 /* Class = "UITabBarItem"; title = "Advices"; ObjectID = "G4c-Eb-hQ6"; */
-"G4c-Eb-hQ6.title" = "Ratschläge";
+"G4c-Eb-hQ6.title" = "Hinweise";
 
 /* Class = "UITextView"; text = "Advices Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "N08-KG-pzS"; */
-"N08-KG-pzS.text" = "► Gehen Sie stets begleitet und Einzelheiten über Ihre geplante Route zu jemandem, bevor Sie sich.\n\n         ► Tragen Sie ein Handy und nehmen Sie genügend Wasser und Nahrung.\n\n         ► Bekleidung und Schuhe sollte der Grad der Schwierigkeit der Wanderung entsprechen.\n\n         ► Von den ausgeschilderten Wege abkommen nicht.\n\n         ► Nehmen Sie keine Pflanzen, Tiere, Steine oder archäologische Überreste mit Ihnen.\n\n         ► Haben kein Feuer und Lager nur auf den Campingplätzen.\n\n         ► Nicht verlassen oder wegwerfen Müll.\n\n         ► Machen Sie nicht Lärm, um Tiere zu ändern.";
+"N08-KG-pzS.text" = "Advices Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Q4W-OM-m91"; */
 "Q4W-OM-m91.text" = "Label";
@@ -39,7 +39,7 @@
 "XfD-eF-uO8.text" = "Präsentiert von Javier Fernández";
 
 /* Class = "UILabel"; text = "Cumulate elevation"; ObjectID = "av0-9l-DbJ"; */
-"av0-9l-DbJ.text" = "Cumulate elevation";
+"av0-9l-DbJ.text" = "Kumulative Höhen";
 
 /* Class = "UITabBarItem"; title = "Information"; ObjectID = "bHx-pT-Ekb"; */
 "bHx-pT-Ekb.title" = "Informationen";
@@ -54,10 +54,13 @@
 "g65-Sp-up6.text" = "Label";
 
 /* Class = "UITextView"; text = "Legal info Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "hfa-Sv-sPs"; */
-"hfa-Sv-sPs.text" = "Das durch diese App zur Verfügung gestellten Informationen ist bezeichnend. <i>Wandern auf Teneriffa</i> liefert diese Informationen für die Bequemlichkeit der Nutzer, nur mit informativen Zwecken und nicht in der für den aktuellen Zustand der Wege / Wanderwege, das Angebot, die Qualität oder die Privatsphäre der Weitergabe Bereiche usw. <i>Wandern auf Teneriffa</i> verantwortlich nimmt keine Verantwortung für Fehler, Unterlassungen oder eine schlechte Ausrichtung, die eine Gefahr für die Nutzer dieser Anwendung führen könnte. \nWir verwenden Gerätekennungen, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien anbieten zu können und die Zugriffe auf unsere App zu analysieren. Außerdem geben wir diese Kennungen und andere Informationen über Ihr Gerät an unsere Partner für soziale Medien, Werbung und Analysen weiter.";
+"hfa-Sv-sPs.text" = "Legal info Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
 
 /* Class = "UIButton"; normalTitle = "Next days"; ObjectID = "kSD-3h-lbD"; */
 "kSD-3h-lbD.normalTitle" = "nächsten Tagen";
 
 /* Class = "UITabBarItem"; title = "Description"; ObjectID = "myb-Xm-VSc"; */
 "myb-Xm-VSc.title" = "Beschreibung";
+
+/* Class = "UILabel"; text = "Hiking in Tenerife"; ObjectID = "p4H-AQ-ujh"; */
+"p4H-AQ-ujh.text" = "Wandern auf Teneriffa";

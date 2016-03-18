@@ -23,10 +23,10 @@
     // Do any additional setup after loading the view.
     UIImage *image = [UIImage imageNamed:@"distance32"];
     
-    [self.distance updateFields:@"Distance" :[NSString stringWithFormat:@"%.02f",[self.route getDist]] :image];
-    [self.difficult updateFields:@"Difficult" :[NSString stringWithFormat:@"%d",[self.route getDifficulty]] :[UIImage imageNamed:@"nivel_facil"]];
-    [self.time updateFields:@"Duración" :[NSString stringWithFormat:@"%.02f",[self.route getDurac]] :[UIImage imageNamed:@"timer"]];
-    [self.approved updateFields:@"Homologado" :@"Si" :[UIImage imageNamed:@"marker_sign_24"]];
+    [self.distance updateFields:NSLocalizedString(@"distance", @"") :[NSString stringWithFormat:@"%.1f km",[self.route getDist]] :image];
+    [self.difficult updateFields:NSLocalizedString(@"difficulty", @"") :[self setDifficultText:[self.route getDifficulty]] :[self setDifficultIcon:[self.route getDifficulty]]];
+    [self.time updateFields:NSLocalizedString(@"time", @"") :[NSString stringWithFormat:@"%.02f",[self.route getDurac]] :[UIImage imageNamed:@"timer"]];
+    [self.approved updateFields:NSLocalizedString(@"aproved", @"") :[self setIsApproved:[self.route approved]] :[self setIcon:[self.route approved]]];
     UIColor *lightGreenColor = [UIColor colorWithRed:(187.0 / 255.0) green:(234.0 / 255.0) blue:(176.0 / 255.0) alpha:1.0];
 
     self.time.layer.borderColor = lightGreenColor.CGColor;
@@ -103,7 +103,7 @@
     }
     BOOL isCapable = [docController presentOpenInMenuFromRect:CGRectZero inView:self.view animated:YES];
     if (!isCapable){
-        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Rutas de Tenerife" message:@"You don't have an app installed that can handle GPX files." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"app_name", @"") message:NSLocalizedString(@"no_gpx_installed", @"") delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
     }
     //[docController presentPreviewAnimated:YES];
@@ -111,5 +111,75 @@
 
 -(UIViewController *) documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller{
     return self;
+}
+
+-(UIImage *)setDifficultIcon: (int)difficult{
+    
+    UIImage *image = nil;
+    switch (difficult) {
+        case 1:
+            image = [UIImage imageNamed:@"nivel_facil"];
+            break;
+        case 2:
+            image = [UIImage imageNamed:@"nivel_intermedio"];
+            break;
+        case 3:
+            image = [UIImage imageNamed:@"nivel_dificil"];
+            break;
+        default:
+            image = [UIImage imageNamed:@"nivel_intermedio"];
+            break;
+    }
+    return image;
+}
+
+-(UIImage *)setIcon: (int)approved{
+
+    UIImage *icon = nil;
+    switch (approved) {
+        case 0:
+            icon = [UIImage imageNamed:@"marker_sign_24_normal"];
+            break;
+        case 1:
+            icon = [UIImage imageNamed:@"marker_sign_24_green"];
+            break;
+        case 2:
+            icon = [UIImage imageNamed:@"marker_sign_24_yellow"];
+            break;
+        case 3:
+            icon = [UIImage imageNamed:@"marker_sign_24_red"];
+            break;
+        default:
+            icon = [UIImage imageNamed:@"marker_sign_24_normal"];;
+            break;
+    }
+    return icon;
+}
+
+-(NSString *)setIsApproved :(int)value{
+    NSString * isApproved = NSLocalizedString(@"yes", @"");
+    if (value == 0){
+        isApproved = NSLocalizedString(@"no", @"");
+    }
+    return isApproved;
+}
+
+-(NSString *)setDifficultText :(int)value{
+    NSString *text;
+    switch (value) {
+        case 1:
+            text = NSLocalizedString(@"easy", @"");
+            break;
+        case 2:
+            text = NSLocalizedString(@"moderate", @"");
+            break;
+        case 3:
+            text = NSLocalizedString(@"difficult", @"");
+            break;
+        default:
+            text = NSLocalizedString(@"moderate", @"");
+            break;
+    }
+    return text;
 }
 @end

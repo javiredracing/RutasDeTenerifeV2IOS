@@ -46,38 +46,38 @@
         //  Get current level
         value = (int)[preferences integerForKey:@"durac"];
     }
-    self.duracLabel.text = [NSString stringWithFormat:@"Duración %@",[self filterDistance:value]];
+    self.duracLabel.text = [NSString stringWithFormat:@"%@ %@",NSLocalizedString(@"time", @""),[self filterDistance:value]];
     self.sliderDurac.value = value;
     value = 0;
     if ([preferences objectForKey:@"distance"] != nil){
         //  Get current level
         value = (int)[preferences integerForKey:@"distance"];
     }
-    self.distanceLabel.text = [NSString stringWithFormat:@"Distancia %@",[self filterDistance:value]];
+    self.distanceLabel.text = [NSString stringWithFormat:@"%@ %@",NSLocalizedString(@"distance", @""),[self filterDistance:value]];
     self.sliderDist.value = value;
     value = 0;
     if ([preferences objectForKey:@"dific"] != nil){
         //  Get current level
         value = (int)[preferences integerForKey:@"dific"];
     }
-    self.difficultLabel.text = [NSString stringWithFormat:@"Dificultad %@",[self filterDific:value]];
+    self.difficultLabel.text = [NSString stringWithFormat:@"%@ %@",NSLocalizedString(@"difficulty", @""), [self filterDific:value]];
     self.sliderDific.value = value;
     [super awakeFromNib];
 }
 
 - (IBAction)duracSlider:(UISlider *)sender {
     int value = [self setTickSlider:sender];
-    self.duracLabel.text = [NSString stringWithFormat:@"Duración %@",[self filterDistance:value]];
+    self.duracLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"time", @""), [self filterDistance:value]];
 }
 
 - (IBAction)difficultySlider:(UISlider *)sender {
     int value = [self setTickSlider:sender];
-    self.difficultLabel.text = [NSString stringWithFormat:@"Dificultad %@",[self filterDific:value]];
+    self.difficultLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"difficulty", @""), [self filterDific:value]];
 }
 
 - (IBAction)distanceSlider:(UISlider *)sender {
     int value = [self setTickSlider:sender];
-    self.distanceLabel.text = [NSString stringWithFormat:@"Distancia %@",[self filterDistance:value]];
+    self.distanceLabel.text = [NSString stringWithFormat:@"%@ %@",NSLocalizedString(@"distance", @""), [self filterDistance:value]];
 }
 
 -(int)setTickSlider: (UISlider *)slider{
@@ -91,16 +91,16 @@
     NSString *textItem;
     switch (value) {
         case 1:
-            textItem = @"facil";
+            textItem = NSLocalizedString(@"easy", @"");
             break;
         case 2:
-             textItem = @"medio";
+             textItem = NSLocalizedString(@"moderate", @"");
             break;
         case 3:
-             textItem = @"dificil";
+             textItem = NSLocalizedString(@"difficult", @"");
             break;
         default:
-            textItem = @"todos";
+            textItem = NSLocalizedString(@"all", @"");
             break;
     }
     return textItem;
@@ -110,16 +110,16 @@
     NSString *textItem;
     switch (value) {
         case 1:
-            textItem = @"corto";
+            textItem = NSLocalizedString(@"short", @"");
             break;
         case 2:
-            textItem = @"medio";
+            textItem = NSLocalizedString(@"medium", @"");
             break;
         case 3:
-            textItem = @"largo";
+            textItem = NSLocalizedString(@"large", @"");
             break;
         default:
-            textItem = @"todos";
+            textItem = NSLocalizedString(@"all", @"");
             break;
     }
     return textItem;

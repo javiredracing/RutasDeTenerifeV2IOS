@@ -118,6 +118,7 @@ NSMutableArray *filteredData;
     
     [self hideQuickInfo];
     [self configureToast];
+    NSLog([NSString stringWithFormat:NSLocalizedString(@"HOLA_MUNDO", nil)]);
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -698,13 +699,14 @@ NSMutableArray *filteredData;
             regionName = @"P. R. Anaga";
             break;
         case 1:
-            regionName = @"Zona Norte";
+            regionName = [NSString stringWithFormat:NSLocalizedString(@"north_zone", nil)];
             break;
         case 2:
             regionName = @"P. R. Teno";
             break;
         case 3:
-            regionName = @"Zona Sur";
+            regionName = [NSString stringWithFormat:NSLocalizedString(@"south_zone", nil)];
+
             break;
         case 4:
             regionName = @"P. N. Teide";
@@ -743,7 +745,8 @@ NSMutableArray *filteredData;
     if (tableView.tag == 1){
         string =[self stringTitleForSection:section];
     }else
-        string = @"Menu";
+        string = [NSString stringWithFormat:NSLocalizedString(@"menu", @"")];
+;
     /* Section header is in 0th index... */
     [label setText:string];
     [view addSubview:label];
@@ -908,31 +911,31 @@ NSMutableArray *filteredData;
     switch (index) {
         case 0:
             cell.icon.image = [UIImage imageNamed:@"CLOSE_64px_red"];
-            cell.iconTitle.text = @"Close";
+            cell.iconTitle.text =[NSString stringWithFormat:NSLocalizedString(@"close", @"")];
             break;
         case 1:
             cell.icon.image = [UIImage imageNamed:@"icon_my_pos64"];
-            cell.iconTitle.text = @"My pos";
+            cell.iconTitle.text = [NSString stringWithFormat:NSLocalizedString(@"my_pos", @"")];
             break;
         case 2:
             cell.icon.image = [UIImage imageNamed:@"map64"];
-            cell.iconTitle.text = @"Map";
+            cell.iconTitle.text = [NSString stringWithFormat:NSLocalizedString(@"map", @"")];
             break;
         case 3:
             cell.icon.image = [UIImage imageNamed:@"simple_filter_64"];
-            cell.iconTitle.text = @"Filter";
+            cell.iconTitle.text = [NSString stringWithFormat:NSLocalizedString(@"filter", @"")];
             break;
         case 4:
             cell.icon.image = [UIImage imageNamed:@"info64"];
-            cell.iconTitle.text = @"Info";
+            cell.iconTitle.text = [NSString stringWithFormat:NSLocalizedString(@"info", @"")];
             break;
         case 5:
             cell.icon.image = [UIImage imageNamed:@"custom_share_64"];
-            cell.iconTitle.text = @"Share";
+            cell.iconTitle.text = [NSString stringWithFormat:NSLocalizedString(@"share", @"")];
             break;
         case 6:
             cell.icon.image = [UIImage imageNamed:@"unlock"];
-            cell.iconTitle.text = @"Premium";
+            cell.iconTitle.text = [NSString stringWithFormat:NSLocalizedString(@"premium", @"")];
             break;
             
         default:
@@ -964,20 +967,20 @@ NSMutableArray *filteredData;
                 }];
             }else{
                 NSLog(@"Location no available");
-                [self.view makeToast:@"Location no available"];
+                [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"no_location", @"")]];
             }
             break;
         case 2: //Change map type
             if ([self.mapView mapType] == MKMapTypeSatellite) {
                 [self.mapView setMapType: MKMapTypeHybrid];
-                [self.view makeToast:@"Modo híbrido"];
+                [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"hibrid", @"")]];
             } else {
                 if ([self.mapView mapType] == MKMapTypeHybrid) {
                     [self.mapView setMapType: MKMapTypeStandard];
-                    [self.view makeToast:@"Modo standard"];
+                    [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"standard", @"")]];
                 } else {
                     [self.mapView setMapType: MKMapTypeSatellite];
-                    [self.view makeToast:@"Modo satelite"];
+                    [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"satellite", @"")]];
                 }
             }
             break;
@@ -1001,7 +1004,7 @@ NSMutableArray *filteredData;
 -(void)shareAction{
     UIImage *shareImage = [UIImage imageNamed:@"logo"];
     NSURL *shareUrl = [NSURL URLWithString:@"http://proyectoislarenovable.iter.es/el-juego/"];
-    NSArray *activityItems = [NSArray arrayWithObjects:@"Rutas de Tenerife", shareImage, shareUrl, nil];
+    NSArray *activityItems = [NSArray arrayWithObjects:[NSString stringWithFormat:NSLocalizedString(@"app_name", @"")], shareImage, shareUrl, nil];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     activityViewController.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeSaveToCameraRoll, UIActivityTypePostToVimeo, UIActivityTypePostToFlickr, /*UIActivityTypeAssignToContact, */UIActivityTypeAddToReadingList];
@@ -1033,7 +1036,6 @@ NSMutableArray *filteredData;
 
 - (IBAction)quickControlTap:(UISegmentedControl *)sender {
    // NSLog(@"tap control %ld",(long)sender.selectedSegmentIndex);
-
     switch (sender.selectedSegmentIndex) {
         case 0:
              if (!onRouteMode) {
@@ -1043,9 +1045,10 @@ NSMutableArray *filteredData;
             }
             break;
         case 1:
-            if (polyLine != nil)
-                
-                [self.mapView setVisibleMapRect:[polyLine getBoundingMapRect] edgePadding:UIEdgeInsetsMake(20.0, 10.0, 20.0, 10.0) animated:YES];
+            if (polyLine != nil){
+                MKPolygon *polygon = [MKPolygon polygonWithPoints:polyLine.points count:polyLine.pointCount];
+                [self.mapView setVisibleMapRect:[polygon boundingMapRect] edgePadding:UIEdgeInsetsMake(20.0, 10.0, 20.0, 10.0) animated:YES];
+            }
             break;
         case 2:
             if (lastRouteShowed != nil)
@@ -1060,7 +1063,7 @@ NSMutableArray *filteredData;
 -(void)enableOnRouteMode :(UISegmentedControl *)control{
     onRouteMode = YES;
     //UIColor *tintcolor = [UIColor greenColor];
-    [self.view makeToast:@"Modo en ruta" duration:2.0 position:CSToastPositionCenter];
+    [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"on_route", @"")] duration:2.0 position:CSToastPositionCenter];
     UIImage *imagePinned = [UIImage imageNamed:@"pinned_24"];
     imagePinned = [imagePinned imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //[[sender.subviews objectAtIndex:item] setTintColor:tintcolor];
@@ -1125,7 +1128,7 @@ NSMutableArray *filteredData;
     [alertView setContainerView:[self createDemoView]];
     
     // Modify the parameters
-    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"Cancelar", @"Limpiar", @"Filtrar", nil]];
+    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:[NSString stringWithFormat:NSLocalizedString(@"cancel", @"")], [NSString stringWithFormat:NSLocalizedString(@"clean", @"")], [NSString stringWithFormat:NSLocalizedString(@"filter", @"")], nil]];
     //[alertView setDelegate:self];
     
     // You may use a Block, rather than a delegate.
@@ -1232,14 +1235,14 @@ NSMutableArray *filteredData;
     lbl1.numberOfLines = 0;
     lbl1.clipsToBounds = YES;
     lbl1.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
-    lbl1.text= @"¡Ayúdame a que el proyecto siga adelante por tan solo <u><b>1.21 €</b></u>! \n \n <u>Beneficios de la colaboración:</u> \n ► Elimina la publicidad. \n ► Descarga los tracks en formato <i>.GPX</i>, para poder usarlos en otras aplicaciones. \n ► Previsión meteorológica para los próximos <i>3 días</i>";
+    lbl1.text = NSLocalizedString(@"help_me", @"");
     //[lbl1 sizeToFit];
     lbl1.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
    
     [view addSubview:lbl1];
     [alertView setContainerView:view];
     // Modify the parameters
-    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"Cancelar", @"Colaborar", nil, nil]];
+    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:NSLocalizedString(@"cancel", @""), NSLocalizedString(@"collaborate", @""), nil, nil]];
 
     [alertView setOnButtonTouchUpInside:^(CustomIOSAlertView *alertView, int buttonIndex) {
         [alertView close];

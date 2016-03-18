@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  RutasDeTenerife2
+
+  Created by javi on 18/3/16.
+  Copyright © 2016 JAVI. All rights reserved.
+*/
+"north_zone" = "North zone";
+"south_zone" = "South zone";
+"menu" = "Menu";
+"close" = "Close";
+"my_pos" = "Position";
+"map" = "Map";
+"filter" = "Filter";
+"info" = "Info";
+"share" = "Share";
+"premium" = "Premium";
+"no_location" = "Location not available";
+"hibrid" = "Hibrid mode";
+"standard" = "Standard mode";
+"satellite" = "Satellite mode";
+"app_name" = "Hiking in Tenerife";
+"on_route" = "On route mode";
+"cancel" = "Cancel";
+"clean" = "Clean";
+"help_me" = "Help me to continue developing this project donating <b>1.21€</b>! \n \n <u>Benefits of the donation:</u> \n ► Remove ads. \n ► Download tracks in <i>.GPX</i> format, for using in other applications. \n ► Weather prevision for the next <i>3 days</i>.";
+"collaborate" = "Collaborate";
+/*****/
+"time" = "Time";
+"distance" = "Distance";
+"difficulty" = "Difficulty";
+"easy" = "Easy";
+"moderate" = "Moderate";
+"difficult" = "Difficult";
+"all" = "All";
+"short" = "Corto";
+"medium" = "Medium";
+"large" = "Large";
+"aproved" = "Aproved";
+/*******/
+"no_gpx_installed" = "You don't have an app installed that can handle GPX files.";
+"yes" = "Yes";
+"no" = "No";
+"fail_connection" = "Connection fails";
+"m_km" = "meters / km";
