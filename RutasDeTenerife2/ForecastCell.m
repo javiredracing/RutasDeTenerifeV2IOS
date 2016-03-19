@@ -52,7 +52,7 @@
     self.condLabel.text = maxMinC;
     self.descLabel.text = description;
     
-    [self.windPrevision updateFields:@"Viento" :windDesc :[UIImage imageNamed:@"wind"]];
+    [self.windPrevision updateFields:NSLocalizedString(@"wind", @"") :windDesc :[UIImage imageNamed:@"wind"]];
     [self.rainPrev setItems:[NSString stringWithFormat:@"%@ Lm2",rainfall] :[UIImage imageNamed:@"umbrella_drizzle"] ];
     [self.sunrise setItems:sunrise :[UIImage imageNamed:@"sunrise"]];
     [self.sunset setItems:sunset :[UIImage imageNamed:@"sunset"]];

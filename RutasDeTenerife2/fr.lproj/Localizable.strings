@@ -47,3 +47,11 @@
 "mail_saved" = "Email annulé";
 "mail_sent" = "Email envoyé";
 "mail_failure" = "Email envoyé échec";
+
+"nubosity" = "Effacer";
+"humidity" = "Humidité";
+"precip" = "Pluie";
+"pression" = "Pression";
+
+"wind" = "Vent";
+"share_text" = "¡Je faire de la randonnée avec 'Randonnée á Tenerife' pour IOS";

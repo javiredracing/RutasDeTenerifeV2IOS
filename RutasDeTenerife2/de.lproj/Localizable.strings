@@ -47,3 +47,11 @@
 "mail_saved" = "E-Mail gespeichert";
 "mail_sent" = "Mail verschickt";
 "mail_failure" = "Mail senden Ausfall";
+
+"nubosity" = "Bedeckungsgrad";
+"humidity" = "Luftfeuchtigkeit";
+"precip" = "Regen";
+"pression" = "Pression";
+
+"wind" = "Wind";
+"share_text" = "Ich Wandern mit 'Wandern auf Teneriffa' für IOS!";

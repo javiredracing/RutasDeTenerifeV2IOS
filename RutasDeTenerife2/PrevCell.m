@@ -49,12 +49,12 @@
     self.weatherImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"i%@",iconCode]];
     self.degreesLabel.text = temperatureText;
     self.descWeatherLabel.text = description;
-    [self.currentWind updateFields:@"Viento" :windSpeedText :[UIImage imageNamed:@"wind"]];
+    [self.currentWind updateFields:NSLocalizedString(@"wind", @"") :windSpeedText :[UIImage imageNamed:@"wind"]];
     
-    self.nubosity.text = [NSString stringWithFormat:@"Nubosidad: %@%%",cloudly];
-    self.humidity.text = [NSString stringWithFormat:@"Humedad: %@%%",humidity];
-    self.pressure.text = [NSString stringWithFormat:@"Presión: %@ mb", pressure];
-    self.rainfall.text = [NSString stringWithFormat:@"Lluvia: %@ lm2",rainfall];
+    self.nubosity.text = [NSString stringWithFormat:@"%@: %@%%",NSLocalizedString(@"nubosity", @""), cloudly];
+    self.humidity.text = [NSString stringWithFormat:@"%@: %@%%",NSLocalizedString(@"humidity", @""), humidity];
+    self.pressure.text = [NSString stringWithFormat:@"%@: %@ mb",NSLocalizedString(@"pression", @""), pressure];
+    self.rainfall.text = [NSString stringWithFormat:@"%@: %@ lm2", NSLocalizedString(@"precip", @""), rainfall];
 }
 
 @end

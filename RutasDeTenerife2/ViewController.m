@@ -699,14 +699,13 @@ NSMutableArray *filteredData;
             regionName = @"P. R. Anaga";
             break;
         case 1:
-            regionName = [NSString stringWithFormat:NSLocalizedString(@"north_zone", nil)];
+            regionName = NSLocalizedString(@"north_zone", nil);
             break;
         case 2:
             regionName = @"P. R. Teno";
             break;
         case 3:
-            regionName = [NSString stringWithFormat:NSLocalizedString(@"south_zone", nil)];
-
+            regionName = NSLocalizedString(@"south_zone", nil);
             break;
         case 4:
             regionName = @"P. N. Teide";
@@ -946,9 +945,9 @@ NSMutableArray *filteredData;
 -(void)actionMenu:(NSInteger)index{
 
     switch (index) {
-        case 0: //Close
+        /*case 0: //Close
             [self toggleList:nil];
-            break;
+            break;*/
         case 1: //My pos
             
             if (self.locationManager.location != nil){
@@ -973,14 +972,14 @@ NSMutableArray *filteredData;
         case 2: //Change map type
             if ([self.mapView mapType] == MKMapTypeSatellite) {
                 [self.mapView setMapType: MKMapTypeHybrid];
-                [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"hibrid", @"")]];
+                [self.view makeToast:NSLocalizedString(@"hibrid", @"")];
             } else {
                 if ([self.mapView mapType] == MKMapTypeHybrid) {
                     [self.mapView setMapType: MKMapTypeStandard];
-                    [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"standard", @"")]];
+                    [self.view makeToast:NSLocalizedString(@"standard", @"")];
                 } else {
                     [self.mapView setMapType: MKMapTypeSatellite];
-                    [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"satellite", @"")]];
+                    [self.view makeToast:NSLocalizedString(@"satellite", @"")];
                 }
             }
             break;
@@ -999,11 +998,12 @@ NSMutableArray *filteredData;
         default:
             break;
     }
+    [self toggleList:nil];
 }
 
 -(void)shareAction{
     UIImage *shareImage = [UIImage imageNamed:@"logo"];
-    NSURL *shareUrl = [NSURL URLWithString:@"http://proyectoislarenovable.iter.es/el-juego/"];
+    NSURL *shareUrl = [NSURL URLWithString:NSLocalizedString(@"share_text", @"")];
     NSArray *activityItems = [NSArray arrayWithObjects:[NSString stringWithFormat:NSLocalizedString(@"app_name", @"")], shareImage, shareUrl, nil];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;

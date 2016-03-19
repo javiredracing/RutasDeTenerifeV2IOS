@@ -47,3 +47,11 @@
 "mail_saved" = "Mail saved";
 "mail_sent" = "Mail sent";
 "mail_failure" = "Mail sent failure";
+
+"nubosity" = "CloudCover";
+"humidity" = "Humidity";
+"precip" = "Rainfall";
+"pression" = "Pressure";
+
+"wind" = "Wind";
+"share_text" = "I hiking with 'Hiking in Tenerife' for IOS!"

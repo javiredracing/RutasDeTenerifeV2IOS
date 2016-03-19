@@ -47,3 +47,11 @@
 "mail_saved" = "Email guardado";
 "mail_sent" = "Email enviado";
 "mail_failure" = "Envío de email fallido";
+
+"nubosity" = "Nubosidad";
+"humidity" = "Humedad";
+"precip" = "Lluvia";
+"pression" = "Presión";
+
+"wind" = "Viento";
+"share_text" = "¡Me voy de senderismo con Rutas de Tenerife para IOS!"
