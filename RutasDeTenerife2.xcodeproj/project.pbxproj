@@ -457,6 +457,8 @@
 		5955C8F51BF7BD15003843B2 /* FBQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBQuadTree.m; sourceTree = "<group>"; };
 		5955C8F61BF7BD15003843B2 /* FBQuadTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBQuadTreeNode.h; sourceTree = "<group>"; };
 		5955C8F71BF7BD15003843B2 /* FBQuadTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBQuadTreeNode.m; sourceTree = "<group>"; };
+		59C7BA1C1C9DE7D5005096B9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		59C7BA1F1C9DEE44005096B9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		59C9BA721C9C91A0003C6982 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		59C9BA731C9C91A8003C6982 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9D01091A1C3AA37200D2E389 /* ExtInfoNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtInfoNavViewController.h; sourceTree = "<group>"; };
@@ -2143,6 +2145,8 @@
 				9DF5B8CF1C9C37F200FDF178 /* Base */,
 				59C9BA721C9C91A0003C6982 /* en */,
 				59C9BA731C9C91A8003C6982 /* es */,
+				59C7BA1C1C9DE7D5005096B9 /* de */,
+				59C7BA1F1C9DEE44005096B9 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

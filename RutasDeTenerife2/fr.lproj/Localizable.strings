@@ -5,3 +5,45 @@
   Created by javi on 18/3/16.
   Copyright © 2016 JAVI. All rights reserved.
 */
+"north_zone" = "Zone Nord";
+"south_zone" = "Zone Sud";
+"menu" = "Menu";
+"close" = "Fermer";
+"my_pos" = "Position";
+"map" = "Carte";
+"filter" = "Filtre";
+"info" = "Info";
+"share" = "Partager";
+"premium" = "Prime";
+"no_location" = "¡Erreur! GPS non disponible";
+"hibrid" = "Mode hybride";
+"standard" = "Mode carte";
+"satellite" = "Mode satellite";
+"app_name" = "Randonnée á Tenerife";
+"on_route" = "Mode 'en route'";
+"cancel" = "Annuler";
+"clean" = "Nettoyer";
+"help_me" = "HAidez-moi à continuer à développer ce projet en faisant don de <u><b>1.20 €</b></u> \n\n<u>Avantages de don:</u>\n► Retirer annonces. \n► Télécharger des pistes au format <i>.GPX</i> et utiliser dans d\'autres applications. \n► Prévisions pour les 3 prochains jours..";
+"collaborate" = "Collaborate";
+/*****/
+"time" = "Durée";
+"distance" = "Distance";
+"difficulty" = "Difficulté";
+"easy" = "Facile";
+"moderate" = "Modérée";
+"difficult" = "Difficile";
+"all" = "Tous";
+"short" = "Court";
+"medium" = "Moyen";
+"large" = "Long";
+"aproved" = "Homologuée";
+/*******/
+"no_gpx_installed" = "Vous ne disposez pas d'une application installée qui peut gérer les fichiers GPX.";
+"yes" = "Oui";
+"no" = "Non";
+"fail_connection" = "échec de la connexion";
+"m_km" = "mètres / km";
+"mail_cancelled" = "Mail cancelled";
+"mail_saved" = "Email annulé";
+"mail_sent" = "Email envoyé";
+"mail_failure" = "Email envoyé échec";

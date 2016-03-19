@@ -5,3 +5,45 @@
   Created by javi on 18/3/16.
   Copyright © 2016 JAVI. All rights reserved.
 */
+"north_zone" = "Nordregion";
+"south_zone" = "Region Süden";
+"menu" = "Menü";
+"close" = "schließen";
+"my_pos" = "Position";
+"map" = "Karte";
+"filter" = "Filter";
+"info" = "Info";
+"share" = "Teilen";
+"premium" = "Prämie";
+"no_location" = "Die Lage ist nicht verfügbar";
+"hibrid" = "Der Hybrid-Modus";
+"standard" = "Standart Modus";
+"satellite" = "Satelliten-Modus";
+"app_name" = "Wandern auf Teneriffa";
+"on_route" = "Mode 'auf der Strecke'";
+"cancel" = "Stornieren";
+"clean" = "Löschen";
+"help_me" = "Helfen Sie mir bitte damit diesem Projekt für nur <u><b>1.19 €</b></u> weiter fahren ¡ \n\n  <u>Vorteile für teilnehmer:</u> \n ► Keine Werbung.  \n► Laden Sie die Tracks durch <i>.GPX</i> das format runter, damit die mit anderen Anwendung benutzen können. \n ► Kurzfristigen Wettervorhersage. (<i>drei Tage</i>";
+"collaborate" = "Zusammenarbeiten";
+/*****/
+"time" = "Dauer";
+"distance" = "Distanz";
+"difficulty" = "Schwierigkeit";
+"easy" = "Leicht";
+"moderate" = "Mittelstand";
+"difficult" = "Schwer";
+"all" = "Alles";
+"short" = "Kurz";
+"medium" = "Mittel";
+"large" = "Lang";
+"aproved" = "Genehmigt";
+/*******/
+"no_gpx_installed" = "Sie haben noch eine App installiert, die GPX-Dateien verarbeiten kann.";
+"yes" = "Ja";
+"no" = "Nein";
+"fail_connection" = "Die Verbindung schlägt fehl";
+"m_km" = "Meters / km";
+"mail_cancelled" = "Mail abgesagt";
+"mail_saved" = "E-Mail gespeichert";
+"mail_sent" = "Mail verschickt";
+"mail_failure" = "Mail senden Ausfall";
