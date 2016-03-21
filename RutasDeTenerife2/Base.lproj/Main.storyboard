@@ -101,11 +101,12 @@
                                 <color key="separatorColor" red="0.73333333333333328" green="0.91764705882352937" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="2" minY="0.0" maxX="4" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" translucent="NO" id="ynh-H8-e0t">
+                                <searchBar key="tableHeaderView" clipsSubviews="YES" contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" translucent="NO" id="ynh-H8-e0t">
                                     <rect key="frame" x="0.0" y="0.0" width="255" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     <connections>
                                         <outlet property="delegate" destination="BYZ-38-t0r" id="DOT-cx-2mt"/>
@@ -151,6 +152,8 @@
                         <outlet property="panelWidth" destination="72P-Nn-Bpd" id="xVC-cx-uJe"/>
                         <outlet property="pathList" destination="WcF-f3-Mr9" id="9tl-OG-JjN"/>
                         <outlet property="quickControl" destination="iR7-Wu-VIc" id="m34-bD-YZA"/>
+                        <outlet property="quickControlVerticalSpace" destination="60S-bC-hTJ" id="zDx-cY-mGU"/>
+                        <outlet property="quickInfoVerticalSpace" destination="bG9-UN-ffc" id="Vfn-nq-bC9"/>
                         <outlet property="quickInfoView" destination="g4c-D9-90A" id="yWM-qE-UoI"/>
                         <outlet property="searchBar" destination="ynh-H8-e0t" id="91e-HF-4se"/>
                     </connections>

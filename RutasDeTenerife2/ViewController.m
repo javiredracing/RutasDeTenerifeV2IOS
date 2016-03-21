@@ -19,7 +19,6 @@
 
 @interface ViewController ()
 
-
 @end
 
 @implementation ViewController{
@@ -91,7 +90,10 @@ NSMutableArray *filteredData;
     //Hide views
     self.panelWidth.constant = 0;
     self.menuWidth.constant = 0;
-    self.quickInfoView.alpha = 0.0;
+    //self.quickInfoView.alpha = 0.0;
+    self.quickInfoVerticalSpace.constant = outVerticalSpacing;
+    self.quickInfoView.hidden = YES;
+    //[self.quickInfoView layoutIfNeeded];
     self.quickControl.alpha = 0.0;
     /*self.quickInfoView.layer.shadowColor = [[UIColor blackColor]CGColor];
     self.quickInfoView.layer.shadowOffset = CGSizeMake(0, 10);
@@ -116,9 +118,13 @@ NSMutableArray *filteredData;
     image3 = [image3 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self.quickControl setImage:image3 forSegmentAtIndex:2];
     
-    [self hideQuickInfo];
+    //hideQuickControl
+   
+    /*self.quickControlVerticalSpace.constant = -30;
+     self.quickControl.hidden = YES;*/
+    //self.quickControl.enabled = false;
+
     [self configureToast];
-    NSLog([NSString stringWithFormat:NSLocalizedString(@"HOLA_MUNDO", nil)]);
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -342,6 +348,7 @@ NSMutableArray *filteredData;
         //CLLocationCoordinate2D pos = [[view annotation]coordinate];
         [self clickAction:route :pos];
         NSLog([NSString stringWithFormat:@"TAP: %@",route.getName]);
+        //
     }
 }
 
@@ -744,7 +751,7 @@ NSMutableArray *filteredData;
     if (tableView.tag == 1){
         string =[self stringTitleForSection:section];
     }else
-        string = [NSString stringWithFormat:NSLocalizedString(@"menu", @"")];
+        string = NSLocalizedString(@"menu", @"");
 ;
     /* Section header is in 0th index... */
     [label setText:string];
@@ -762,6 +769,7 @@ NSMutableArray *filteredData;
         Route *r = [self findRouteById:identifier];
         CLLocationCoordinate2D pos = [r getFirstPoint];
         [self clickAction:r :pos];
+        [self hideRightList];   //Close panel
     }else{
         [self actionMenu:indexPath.row];
     }
@@ -788,6 +796,14 @@ NSMutableArray *filteredData;
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     //NSLog(@"cancel button");
     [self.searchBar resignFirstResponder];
+    if (![searchBar.text isEqualToString:@""]){
+        searchBar.text = @"";
+        filteredData = [[NSMutableArray alloc]initWithArray:self.routes];
+        [self.pathList reloadData];
+    }else{
+    //TODO clear texview
+        [self hideRightList];
+    }
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
@@ -857,9 +873,13 @@ NSMutableArray *filteredData;
     if (self.quickInfoView.hidden == YES){
         self.quickInfoView.hidden= NO;
         self.quickControl.hidden = NO;
+        self.quickInfoVerticalSpace.constant = inVerticalSpacing;
+       // self.quickControlVerticalSpace.constant = inVerticalSpacing;
         [UIView animateWithDuration:0.5 animations:^{
-            self.quickInfoView.alpha = 1.0;
+           // self.quickInfoView.alpha = 1.0;
+            [self.quickInfoView layoutIfNeeded];
             self.quickControl.alpha = 1.0;
+            //[self.quickControl layoutIfNeeded];
         }];
         
     }
@@ -867,8 +887,12 @@ NSMutableArray *filteredData;
 
 -(void)hideQuickInfo{
     if (self.quickInfoView.hidden == NO){
+        self.quickInfoVerticalSpace.constant = outVerticalSpacing;
+       // self.quickControlVerticalSpace.constant = -30;
         [UIView animateWithDuration:0.5 animations:^{
-            self.quickInfoView.alpha = 0.0;
+            //self.quickInfoView.alpha = 0.0;
+            [self.quickInfoView layoutIfNeeded];
+            //[self.quickControl layoutIfNeeded];
             self.quickControl.alpha = 0.0;
         }completion:^(BOOL finished) {
             [self disableOnRouteMode:self.quickControl];
@@ -1251,6 +1275,10 @@ NSMutableArray *filteredData;
     
     // And launch the dialog
     [alertView show];
+
+}
+
+-(void)redrawRightList{
 
 }
 /*- (void)listSubviewsOfView:(UIView *)view {
