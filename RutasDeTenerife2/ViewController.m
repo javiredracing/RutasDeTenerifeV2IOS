@@ -337,19 +337,23 @@ NSMutableArray *filteredData;
     
     [mapView deselectAnnotation:view.annotation animated:YES];
     //MKAnnotation *annotation = [view annotation];
-    CLLocationCoordinate2D pos = [[view annotation]coordinate];
-    if (view.tag == 1) {
-        //NSLog(@"Hola");
-        [self zoomInGesture:pos];
-            //[self.mapView setCenterCoordinate:pos animated:YES];
-    }else{
-        NSString *title = [[view annotation] title];
-        int identifier = [title intValue];
-        Route *route = [self findRouteById:identifier];
-        //CLLocationCoordinate2D pos = [[view annotation]coordinate];
-        [self clickAction:route :pos];
-        NSLog([NSString stringWithFormat:@"TAP: %@",route.getName]);
-        //
+    
+      if ([view.annotation isKindOfClass:[MKUserLocation class]]){
+          [self showMypPosInformation];
+      }else{
+            CLLocationCoordinate2D pos = [[view annotation]coordinate];
+            if (view.tag == 1) {
+                //NSLog(@"Hola");
+                [self zoomInGesture:pos];
+                    //[self.mapView setCenterCoordinate:pos animated:YES];
+            }else{
+                NSString *title = [[view annotation] title];
+                int identifier = [title intValue];
+                Route *route = [self findRouteById:identifier];
+                //CLLocationCoordinate2D pos = [[view annotation]coordinate];
+                [self clickAction:route :pos];
+                NSLog([NSString stringWithFormat:@"TAP: %@",route.getName]);
+            }
     }
 }
 
@@ -968,25 +972,7 @@ NSMutableArray *filteredData;
             [self toggleList:nil];
             break;*/
         case 1: //My pos
-            
-            if (self.locationManager.location != nil){
-                CLLocationCoordinate2D loc = [self.locationManager.location coordinate];
-                [self moveTo:loc];
-                CLGeocoder *geocoder = [[CLGeocoder alloc]init];
-                [geocoder reverseGeocodeLocation:self.locationManager.location completionHandler:^(NSArray *placemarks, NSError *error){
-                    NSString *address;
-                    if (error) {
-                        address = [NSString stringWithFormat:@"(%f, %f)",loc.latitude, loc.longitude];
-                    }else{
-                        CLPlacemark *placemark = [placemarks objectAtIndex:0];
-                        address = [NSString stringWithFormat:@"%@, %@, %@, %@, %@", placemark.thoroughfare, placemark.subLocality ,placemark.locality, placemark.subAdministrativeArea, placemark.administrativeArea];
-                    }
-                    [self.view makeToast:address ];
-                }];
-            }else{
-                NSLog(@"Location no available");
-                [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"no_location", @"")]];
-            }
+            [self showMypPosInformation];
             break;
         case 2: //Change map type
             if ([self.mapView mapType] == MKMapTypeSatellite) {
@@ -1274,14 +1260,36 @@ NSMutableArray *filteredData;
 
 }
 
--(void)redrawRightList{
+-(void)showMypPosInformation{
+    if (self.locationManager.location != nil){
+        CLLocationCoordinate2D loc = [self.locationManager.location coordinate];
+        [self moveTo:loc];
+        CLGeocoder *geocoder = [[CLGeocoder alloc]init];
+        [geocoder reverseGeocodeLocation:self.locationManager.location completionHandler:^(NSArray *placemarks, NSError *error){
+            NSString *address;
+            if (error) {
+                address = [NSString stringWithFormat:@"(%f, %f)",loc.latitude, loc.longitude];
+            }else{
+                CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                address = [NSString stringWithFormat:@"%@, %@, %@, %@, %@", placemark.thoroughfare, placemark.subLocality ,placemark.locality, placemark.subAdministrativeArea, placemark.administrativeArea];
+            }
+            if (self.locationManager.location.altitude != NAN){
+                address = [NSString stringWithFormat:@"%@ \r%@: %.0f m",address, NSLocalizedString(@"elevation", @""),self.locationManager.location.altitude];
+            }
+            [self.view makeToast:address];
+        }];
+    }else{
+        NSLog(@"Location no available");
+        [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"no_location", @"")]];
+    }
+
 
 }
 /*- (void)listSubviewsOfView:(UIView *)view {
-    
+ 
     // Get the subviews of the view
     NSArray *subviews = [view subviews];
-    
+ 
     // Return if there are no subviews
     if ([subviews count] == 0) return; // COUNT CHECK LINE
     
