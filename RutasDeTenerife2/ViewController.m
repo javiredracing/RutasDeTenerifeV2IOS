@@ -24,7 +24,7 @@
 @implementation ViewController{
 
 //MKPolyline *polyLine;
-    GradientPolylineOverlay *polyLine;
+GradientPolylineOverlay *polyLine;
 UIImage *imageRed;
 UIImage *imageYellow;
 UIImage *imageGreen;
@@ -33,6 +33,7 @@ Route *lastRouteShowed;
 //CGRect panelRect;
 BOOL onRouteMode;
 BOOL filterEnabled;
+UIStoryboard *storyboard;
 
 NSMutableArray *filteredData;
 }
@@ -94,7 +95,7 @@ NSMutableArray *filteredData;
     self.quickInfoVerticalSpace.constant = outVerticalSpacing;
     self.quickInfoView.hidden = YES;
     //[self.quickInfoView layoutIfNeeded];
-    self.quickControl.alpha = 0.0;
+    //self.quickControl.alpha = 0.0;
     /*self.quickInfoView.layer.shadowColor = [[UIColor blackColor]CGColor];
     self.quickInfoView.layer.shadowOffset = CGSizeMake(0, 10);
     self.quickInfoView.layer.shadowRadius = 10;
@@ -120,8 +121,8 @@ NSMutableArray *filteredData;
     
     //hideQuickControl
    
-    /*self.quickControlVerticalSpace.constant = -30;
-     self.quickControl.hidden = YES;*/
+    self.quickControlVerticalSpace.constant = -30;
+     self.quickControl.hidden = YES;
     //self.quickControl.enabled = false;
 
     [self configureToast];
@@ -874,31 +875,24 @@ NSMutableArray *filteredData;
         self.quickInfoView.hidden= NO;
         self.quickControl.hidden = NO;
         self.quickInfoVerticalSpace.constant = inVerticalSpacing;
-       // self.quickControlVerticalSpace.constant = inVerticalSpacing;
-        [UIView animateWithDuration:0.5 animations:^{
-           // self.quickInfoView.alpha = 1.0;
-            [self.quickInfoView layoutIfNeeded];
-            self.quickControl.alpha = 1.0;
-            //[self.quickControl layoutIfNeeded];
+        self.quickControlVerticalSpace.constant = inVerticalSpacing;
+        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            [self.view layoutIfNeeded];
+        }completion:^(BOOL finished){
+           //Do nothing
         }];
-        
     }
 }
 
 -(void)hideQuickInfo{
     if (self.quickInfoView.hidden == NO){
         self.quickInfoVerticalSpace.constant = outVerticalSpacing;
-       // self.quickControlVerticalSpace.constant = -30;
-        [UIView animateWithDuration:0.5 animations:^{
-            //self.quickInfoView.alpha = 0.0;
-            [self.quickInfoView layoutIfNeeded];
-            //[self.quickControl layoutIfNeeded];
-            self.quickControl.alpha = 0.0;
-        }completion:^(BOOL finished) {
-            [self disableOnRouteMode:self.quickControl];
+        self.quickControlVerticalSpace.constant = outVerticalSpacing;
+        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            [self.view layoutIfNeeded];
+        }completion:^(BOOL finished){
             self.quickInfoView.hidden= YES;
             self.quickControl.hidden = YES;
-            
         }];
     }
 }
@@ -920,7 +914,8 @@ NSMutableArray *filteredData;
 
 - (void)handleQuickInfoTap:(UITapGestureRecognizer *)recognizer {
     //NSLog(@"HOLA!");
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    if (storyboard == nil)
+        storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ExtInfoNavViewController *extendedInfoVC = [storyboard instantiateViewControllerWithIdentifier:@"ExtendedInfoNav"];
     //ExtendedInfoViewController *extendedInfoVC =[storyboard instantiateViewControllerWithIdentifier:@"ExtendedInfo"];
     extendedInfoVC.route = lastRouteShowed;
@@ -1138,7 +1133,8 @@ NSMutableArray *filteredData;
 }
 
 -(void)openAppInfo{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    if (storyboard == nil)
+        storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     AppInfoNavViewController *navViewController = [storyboard instantiateViewControllerWithIdentifier:@"AppInfoNav"];
 
     [self presentViewController:navViewController animated:YES completion:nil];
@@ -1157,7 +1153,7 @@ NSMutableArray *filteredData;
     
     // You may use a Block, rather than a delegate.
     [alertView setOnButtonTouchUpInside:^(CustomIOSAlertView *alertView, int buttonIndex) {
-        NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)[alertView tag]);
+        //NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)[alertView tag]);
         FilterView *filter = (FilterView *)[alertView containerView];
         NSInteger dist = 0;
         NSInteger dif = 0;
