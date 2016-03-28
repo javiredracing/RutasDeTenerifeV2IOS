@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -11,7 +11,7 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCell" rowHeight="340" id="9ii-Be-gUS" customClass="ForecastCell">
             <rect key="frame" x="0.0" y="0.0" width="352" height="340"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9ii-Be-gUS" id="dEm-8A-n9c">
+            <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9ii-Be-gUS" id="dEm-8A-n9c">
                 <rect key="frame" x="0.0" y="0.0" width="352" height="339"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -111,6 +111,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="asm-fg-ZmD" firstAttribute="leading" secondItem="wIp-If-kPv" secondAttribute="trailing" constant="8" id="1Fr-3x-0lQ"/>
                     <constraint firstItem="wIp-If-kPv" firstAttribute="centerX" secondItem="dEm-8A-n9c" secondAttribute="centerX" id="3a0-Ru-Gfu"/>

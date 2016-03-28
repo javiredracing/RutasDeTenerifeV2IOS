@@ -472,11 +472,17 @@ NSMutableArray *filteredData;
         
         NSString *path = [[NSBundle mainBundle] pathForResource:kmlName ofType:@"kml"];
         NSURL *url = [NSURL fileURLWithPath:path];
+        int identifier = [myCurrentRoute getId];
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         dispatch_async(queue, ^{
             //code to be executed in the background
-            self.kmlParser = [[CustomKMLParser alloc] initWithURL:url];
-            [self.kmlParser parseKML];
+            if ((self.kmlParser == nil) || (self.kmlParser.identifier != identifier)){  //Check if cached previously
+                self.kmlParser = [[CustomKMLParser alloc] initWithURL:url identifier:identifier];
+                [self.kmlParser parseKML];
+                
+            }/*else
+                NSLog(@"id:%d cached",self.kmlParser.identifier);*/
+            
             NSMutableArray *coordinates = self.kmlParser.path;
             NSMutableArray *altitude = self.kmlParser.altitude;
             
@@ -725,19 +731,19 @@ NSMutableArray *filteredData;
 }*/
 
 -(NSString *)stringTitleForSection :(NSInteger) section{
-    NSString *regionName = nil;
+    NSString *regionName = @"";
     switch (section){
         case 0:
             regionName = @"P. R. Anaga";
             break;
         case 1:
-            regionName = NSLocalizedString(@"north_zone", nil);
+            regionName = NSLocalizedString(@"north_zone", @"");
             break;
         case 2:
             regionName = @"P. R. Teno";
             break;
         case 3:
-            regionName = NSLocalizedString(@"south_zone", nil);
+            regionName = NSLocalizedString(@"south_zone", @"");
             break;
         case 4:
             regionName = @"P. N. Teide";

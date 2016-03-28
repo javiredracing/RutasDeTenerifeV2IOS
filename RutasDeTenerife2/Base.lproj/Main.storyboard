@@ -82,13 +82,14 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <tableView opaque="NO" clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" style="plain" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qg7-lg-hbD">
+                                    <tableView clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" style="plain" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qg7-lg-hbD">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="600"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" priority="250" constant="75" id="oKz-Sd-Dmm"/>
                                         </constraints>
                                         <color key="separatorColor" red="0.73333333333333328" green="0.91764705882352937" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="V9r-yZ-o4q"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="0Tk-pw-I9A"/>
@@ -135,13 +136,13 @@
                                     <constraint firstAttribute="bottom" secondItem="WcF-f3-Mr9" secondAttribute="bottom" id="VDA-Qy-2Nd"/>
                                     <constraint firstItem="WcF-f3-Mr9" firstAttribute="top" secondItem="FBi-7t-Hpj" secondAttribute="top" id="XqX-n7-oBn"/>
                                     <constraint firstItem="VC4-fD-Qoo" firstAttribute="leading" secondItem="FBi-7t-Hpj" secondAttribute="leading" id="Xrb-M1-pkh"/>
-                                    <constraint firstAttribute="bottom" secondItem="Qg7-lg-hbD" secondAttribute="bottom" id="a1l-ac-kqw"/>
                                     <constraint firstItem="4e2-8E-6TT" firstAttribute="top" secondItem="FBi-7t-Hpj" secondAttribute="top" constant="28" id="dH6-6d-4oA"/>
                                     <constraint firstAttribute="bottom" secondItem="VC4-fD-Qoo" secondAttribute="bottom" id="gFf-X2-epV"/>
                                     <constraint firstItem="fS7-wl-xBF" firstAttribute="width" secondItem="4e2-8E-6TT" secondAttribute="width" id="isz-IB-ZMs"/>
                                     <constraint firstItem="fS7-wl-xBF" firstAttribute="height" secondItem="4e2-8E-6TT" secondAttribute="height" id="j3q-Rh-siT"/>
                                     <constraint firstItem="4e2-8E-6TT" firstAttribute="leading" secondItem="FBi-7t-Hpj" secondAttribute="leading" constant="20" id="lgM-yg-9uW"/>
                                     <constraint firstAttribute="trailing" secondItem="VC4-fD-Qoo" secondAttribute="trailing" id="oqu-yn-hdD"/>
+                                    <constraint firstItem="Qg7-lg-hbD" firstAttribute="bottom" secondItem="FBi-7t-Hpj" secondAttribute="bottom" id="vaY-bF-7Nh"/>
                                     <constraint firstItem="g4c-D9-90A" firstAttribute="centerX" secondItem="VC4-fD-Qoo" secondAttribute="centerX" id="zwv-b6-xIK"/>
                                 </constraints>
                             </view>

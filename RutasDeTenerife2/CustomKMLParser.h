@@ -16,9 +16,10 @@
 
 @property (nonatomic, retain) NSMutableArray *path;
 @property (nonatomic,retain) NSMutableArray *altitude;
+@property int identifier;
 
 
-- (instancetype)initWithURL:(NSURL *)url;
+- (instancetype)initWithURL:(NSURL *)url identifier:(int)identifier;
 - (void)parseKML;
 
 @end

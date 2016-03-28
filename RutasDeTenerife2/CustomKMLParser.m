@@ -14,13 +14,14 @@
 BOOL isCoordinates;
 NSMutableString *currentElementValue;
 
-- (instancetype)initWithURL:(NSURL *)url {
+- (instancetype)initWithURL:(NSURL *)url identifier:(int)value{
     if (self = [super init]) {
         self.path = [[NSMutableArray alloc] init];
         self.altitude = [[NSMutableArray alloc]init];
         _xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
         isCoordinates = NO;
         currentElementValue = nil;
+        self.identifier = value;
         [_xmlParser setDelegate:self];
     }
     return self;
