@@ -121,11 +121,17 @@ NSMutableArray *filteredData;
     
     //hideQuickControl
    
-    self.quickControlVerticalSpace.constant = -30;
+    self.quickControlVerticalSpace.constant = outVerticalSpacing;
      self.quickControl.hidden = YES;
     //self.quickControl.enabled = false;
 
     [self configureToast];
+    
+    /*Banner*/
+    self.bannerView = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+    self.bannerView.delegate = self;
+    [self.view addSubview:self.bannerView];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -148,6 +154,8 @@ NSMutableArray *filteredData;
         [self openAppInfo];
     }
     
+    [self layoutAnimated:NO];//banner
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -159,6 +167,18 @@ NSMutableArray *filteredData;
     [super viewWillDisappear:animated];
 }
 
+-(void)viewDidLayoutSubviews{
+    [self layoutAnimated:[UIView areAnimationsEnabled]];    //banner
+}
+
+/****** Iad protocol definitions *******/
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    [self layoutAnimated:[UIView areAnimationsEnabled]];    //banner
+}
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    [self layoutAnimated:[UIView areAnimationsEnabled]];    //banner
+}
+/*******************/
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -821,29 +841,38 @@ NSMutableArray *filteredData;
 
 -(void)showRightList{
     self.panelWidth.constant = 255;
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
         [self.pathList layoutIfNeeded];
+           }completion:^(BOOL finished){
+        //Do nothing
     }];
 }
 
 -(void)hideRightList{
     self.panelWidth.constant = 0;
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         [self.pathList layoutIfNeeded];
+    }completion:^(BOOL finished){
+        //Do nothing
     }];
 }
 -(void)showLeftMenu{
     self.menuWidth.constant = 75;
-    [UIView animateWithDuration:0.25 animations:^{
-        [self.pathList layoutIfNeeded];
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+         [self.menuList layoutIfNeeded];
+    }completion:^(BOOL finished){
+        //Do nothing
     }];
 }
 
 -(void)hideLeftMenu{
     self.menuWidth.constant = 0;
-    [UIView animateWithDuration:0.25 animations:^{
-        [self.pathList layoutIfNeeded];
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [self.menuList layoutIfNeeded];
+    }completion:^(BOOL finished){
+        //Do nothing
     }];
+
 }
 
 /*-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -881,7 +910,7 @@ NSMutableArray *filteredData;
         self.quickInfoVerticalSpace.constant = inVerticalSpacing;
         self.quickControlVerticalSpace.constant = inVerticalSpacing;
         [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-            [self.view layoutIfNeeded];
+            [self.containerView layoutIfNeeded];
         }completion:^(BOOL finished){
            //Do nothing
         }];
@@ -893,7 +922,7 @@ NSMutableArray *filteredData;
         self.quickInfoVerticalSpace.constant = outVerticalSpacing;
         self.quickControlVerticalSpace.constant = outVerticalSpacing;
         [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            [self.view layoutIfNeeded];
+            [self.containerView layoutIfNeeded];
         }completion:^(BOOL finished){
             self.quickInfoView.hidden= YES;
             self.quickControl.hidden = YES;
@@ -977,14 +1006,14 @@ NSMutableArray *filteredData;
         case 2: //Change map type
             if ([self.mapView mapType] == MKMapTypeSatellite) {
                 [self.mapView setMapType: MKMapTypeHybrid];
-                [self.view makeToast:NSLocalizedString(@"hibrid", @"")];
+                [self.containerView makeToast:NSLocalizedString(@"hibrid", @"")];
             } else {
                 if ([self.mapView mapType] == MKMapTypeHybrid) {
                     [self.mapView setMapType: MKMapTypeStandard];
-                    [self.view makeToast:NSLocalizedString(@"standard", @"")];
+                    [self.containerView makeToast:NSLocalizedString(@"standard", @"")];
                 } else {
                     [self.mapView setMapType: MKMapTypeSatellite];
-                    [self.view makeToast:NSLocalizedString(@"satellite", @"")];
+                    [self.containerView makeToast:NSLocalizedString(@"satellite", @"")];
                 }
             }
             break;
@@ -1034,7 +1063,7 @@ NSMutableArray *filteredData;
     else {
         // Change Rect to position Popover
         UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
-        [popup presentPopoverFromRect:CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/4, 0, 0)inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        [popup presentPopoverFromRect:CGRectMake(self.containerView.frame.size.width/2, self.containerView.frame.size.height/4, 0, 0)inView:self.containerView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
    // [self presentViewController:activityViewController animated:YES completion:nil];
 }
@@ -1068,7 +1097,7 @@ NSMutableArray *filteredData;
 -(void)enableOnRouteMode :(UISegmentedControl *)control{
     onRouteMode = YES;
     //UIColor *tintcolor = [UIColor greenColor];
-    [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"on_route", @"")] duration:2.0 position:CSToastPositionCenter];
+    [self.containerView makeToast:[NSString stringWithFormat:NSLocalizedString(@"on_route", @"")] duration:2.0 position:CSToastPositionCenter];
     UIImage *imagePinned = [UIImage imageNamed:@"pinned_24"];
     imagePinned = [imagePinned imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //[[sender.subviews objectAtIndex:item] setTintColor:tintcolor];
@@ -1276,14 +1305,48 @@ NSMutableArray *filteredData;
             if (self.locationManager.location.altitude != NAN){
                 address = [NSString stringWithFormat:@"%@ \r%@: %.0f m",address, NSLocalizedString(@"elevation", @""),self.locationManager.location.altitude];
             }
-            [self.view makeToast:address];
+            [self.containerView makeToast:address];
         }];
     }else{
         NSLog(@"Location no available");
-        [self.view makeToast:[NSString stringWithFormat:NSLocalizedString(@"no_location", @"")]];
+        [self.containerView makeToast:[NSString stringWithFormat:NSLocalizedString(@"no_location", @"")]];
     }
 
 
+}
+
+-(void)layoutAnimated:(BOOL)animated {
+    CGRect contentFrame = self.view.bounds;
+    
+    // all we need to do is ask the banner for a size that fits into the layout area we are using
+    CGSize sizeForBanner = [self.bannerView sizeThatFits:contentFrame.size];
+    
+    // compute the ad banner frame
+    CGRect bannerFrame = self.bannerView.frame;
+    
+    if (self.bannerView.bannerLoaded) {
+        
+        // bring the ad into view
+        contentFrame.size.height -= sizeForBanner.height;   // shrink down content frame to fit the banner below it
+        bannerFrame.origin.y = contentFrame.size.height;
+        bannerFrame.size.height = sizeForBanner.height;
+        bannerFrame.size.width = sizeForBanner.width;
+        
+        NSLayoutConstraint *verticalBottomConstraint = self.bottomMainViewVerticalSpace;
+        verticalBottomConstraint.constant = sizeForBanner.height;
+        [self.view layoutSubviews];
+        
+    }else {
+        // hide the banner off screen further off the bottom
+        bannerFrame.origin.y = contentFrame.size.height;
+    }
+    
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [self.view layoutIfNeeded];
+        self.bannerView.frame = bannerFrame;
+    }completion:^(BOOL finished){
+        //Do nothing
+    }];
 }
 /*- (void)listSubviewsOfView:(UIView *)view {
  

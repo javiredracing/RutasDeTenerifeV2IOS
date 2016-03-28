@@ -15,13 +15,21 @@
 #import "FBAnnotationClustering/FBAnnotationClustering.h"
 #import "CustomIOSAlertView.h"
 
+@import iAd;
+
 #define METERS_PER_MILE 1609.344
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #define Rgb2UIColor(r, g, b)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
 #define outVerticalSpacing -70.0f
 #define inVerticalSpacing 20.0f
 
-@interface ViewController : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface ViewController : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, ADBannerViewDelegate>
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomMainViewVerticalSpace;
+
+
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *quickControlVerticalSpace;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *quickInfoVerticalSpace;
@@ -37,6 +45,8 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *pathList;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+@property (nonatomic, strong) ADBannerView *bannerView; //banner
 
 @property Database *db;
 @property NSMutableArray *routes;

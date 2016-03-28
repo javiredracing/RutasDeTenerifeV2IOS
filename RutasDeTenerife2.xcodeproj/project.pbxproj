@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24FF32881CA9460100A0A4E2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FF32871CA9460100A0A4E2 /* iAd.framework */; };
 		5953540A1C39E32100B83FD2 /* ExtendedInfoTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 595354091C39E32100B83FD2 /* ExtendedInfoTabViewController.m */; };
 		5955C8F91BF7BD15003843B2 /* FBAnnotationCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F01BF7BD15003843B2 /* FBAnnotationCluster.m */; };
 		5955C8FA1BF7BD15003843B2 /* FBClusteringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F31BF7BD15003843B2 /* FBClusteringManager.m */; };
@@ -450,6 +451,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		24D270B21CA2F631006BC410 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		24D270B41CA2F668006BC410 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		24D270B61CA2F970006BC410 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		24D270B81CA2F973006BC410 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		24FF32871CA9460100A0A4E2 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		595354081C39E32100B83FD2 /* ExtendedInfoTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedInfoTabViewController.h; sourceTree = "<group>"; };
 		595354091C39E32100B83FD2 /* ExtendedInfoTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedInfoTabViewController.m; sourceTree = "<group>"; };
 		5955C8EF1BF7BD15003843B2 /* FBAnnotationCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAnnotationCluster.h; sourceTree = "<group>"; };
@@ -531,8 +537,6 @@
 		9D7668421C9C203900AFE51B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FieldView.xib; sourceTree = "<group>"; };
 		9D7668471C9C204A00AFE51B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/FieldView.strings; sourceTree = "<group>"; };
 		9D7668491C9C206300AFE51B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/FieldView.strings; sourceTree = "<group>"; };
-		9D76684C1C9C210A00AFE51B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		9D76684D1C9C211700AFE51B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9D76684F1C9C261000AFE51B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		9D7668511C9C27F400AFE51B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		9D7668521C9C2B2200AFE51B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
@@ -540,8 +544,6 @@
 		9D77D3DE1C05D20F00821854 /* QuickInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickInfoView.h; sourceTree = "<group>"; };
 		9D77D3DF1C05D20F00821854 /* QuickInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickInfoView.m; sourceTree = "<group>"; };
 		9D77DAC71C7F2B5500BDABE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		9D77DAD11C7F3C2F00BDABE9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		9D77DAD31C7F3C3400BDABE9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9D79CF611C3E809F00A4AD8A /* FieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldView.h; sourceTree = "<group>"; };
 		9D79CF621C3E809F00A4AD8A /* FieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldView.m; sourceTree = "<group>"; };
 		9D79F78A1C3C113A005C8FBF /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
@@ -904,6 +906,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24FF32881CA9460100A0A4E2 /* iAd.framework in Frameworks */,
 				9D9D75E71C6B94CF00B3A502 /* MessageUI.framework in Frameworks */,
 				9D96DB881BF9E0C8008FEA35 /* CoreText.framework in Frameworks */,
 				9D7AD7961BF6119E00E87809 /* UIKit.framework in Frameworks */,
@@ -962,6 +965,7 @@
 		9D741E6E1BF4F2D5008AB780 = {
 			isa = PBXGroup;
 			children = (
+				24FF32871CA9460100A0A4E2 /* iAd.framework */,
 				9D9D75E81C6B94D700B3A502 /* frameworks */,
 				9D741E791BF4F2D5008AB780 /* RutasDeTenerife2 */,
 				9D741E931BF4F2D5008AB780 /* RutasDeTenerife2Tests */,
@@ -2092,10 +2096,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				9D741E891BF4F2D5008AB780 /* Base */,
-				9D77DAD11C7F3C2F00BDABE9 /* de */,
-				9D77DAD31C7F3C3400BDABE9 /* fr */,
-				9D76684C1C9C210A00AFE51B /* es */,
-				9D76684D1C9C211700AFE51B /* en */,
+				24D270B21CA2F631006BC410 /* en */,
+				24D270B41CA2F668006BC410 /* es */,
+				24D270B61CA2F970006BC410 /* de */,
+				24D270B81CA2F973006BC410 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
