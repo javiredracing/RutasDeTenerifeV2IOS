@@ -88,24 +88,28 @@
 }
 - (IBAction)downloadTrack:(UIButton *)sender {
     //TODO revise
-    NSString *kmlName = [self.route getXmlRoute];
-    kmlName =[kmlName substringToIndex:[kmlName length] - 4];
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:kmlName ofType:@"gpx"];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    //NSLog(path);
-    if (!docController) {
-        docController = [UIDocumentInteractionController interactionControllerWithURL:url];
-        //http://stackoverflow.com/questions/31163785/trying-to-define-gpx-document-type-in-xcode-6-4
-        //http://aplus.rs/2014/how-to-properly-share-slash-export-gpx-files-on-ios/
-        docController.UTI = @"com.topografix.gpx";
-        docController.delegate = self;
-    }
-    BOOL isCapable = [docController presentOpenInMenuFromRect:CGRectZero inView:self.view animated:YES];
-    if (!isCapable){
-        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"app_name", @"") message:NSLocalizedString(@"no_gpx_installed", @"") delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alertView show];
-    }
+    BOOL isPremium = YES;
+    if (isPremium){
+        NSString *kmlName = [self.route getXmlRoute];
+        kmlName =[kmlName substringToIndex:[kmlName length] - 4];
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:kmlName ofType:@"gpx"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        //NSLog(path);
+        if (!docController) {
+            docController = [UIDocumentInteractionController interactionControllerWithURL:url];
+            //http://stackoverflow.com/questions/31163785/trying-to-define-gpx-document-type-in-xcode-6-4
+            //http://aplus.rs/2014/how-to-properly-share-slash-export-gpx-files-on-ios/
+            docController.UTI = @"com.topografix.gpx";
+            docController.delegate = self;
+        }
+        BOOL isCapable = [docController presentOpenInMenuFromRect:CGRectZero inView:self.view animated:YES];
+        if (!isCapable){
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"app_name", @"") message:NSLocalizedString(@"no_gpx_installed", @"") delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+    }else
+        [self showPremiumDialog];
     //[docController presentPreviewAnimated:YES];
 }
 
@@ -181,5 +185,33 @@
             break;
     }
     return text;
+}
+
+-(void)showPremiumDialog{
+    
+    CustomIOSAlertView *alertView = [[CustomIOSAlertView alloc] init];
+    
+    //TODO add internal margins to uilabel
+    UILabel *lbl1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 290, 250)];
+    lbl1.textColor = [UIColor grayColor];
+    lbl1.backgroundColor=[UIColor clearColor];
+    lbl1.userInteractionEnabled = NO;
+    lbl1.numberOfLines = 0;
+    lbl1.clipsToBounds = YES;
+    lbl1.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
+    lbl1.text= NSLocalizedString(@"help_me", @"");
+    
+    [alertView setContainerView:lbl1];
+    // Modify the parameters
+    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:NSLocalizedString(@"cancel", @""), NSLocalizedString(@"collaborate", @""), nil, nil]];
+    
+    [alertView setOnButtonTouchUpInside:^(CustomIOSAlertView *alertView, int buttonIndex) {
+        [alertView close];
+    }];
+    [alertView setUseMotionEffects:true];
+    
+    // And launch the dialog
+    [alertView show];
+    
 }
 @end

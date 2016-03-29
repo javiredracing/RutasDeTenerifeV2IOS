@@ -10,6 +10,7 @@
 #import "Route.h"
 #import "FieldView.h"
 #import "Database.h"
+#import "CustomIOSAlertView.h"
 
 @interface ExtendedInfoViewController : UIViewController<UIDocumentInteractionControllerDelegate>
 

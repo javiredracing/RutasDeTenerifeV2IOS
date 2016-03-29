@@ -43,7 +43,7 @@
     
     self.lineChartView.descriptionText = @"";
     self.lineChartView.noDataTextDescription = @"You need to provide data for the chart.";
-    [self.lineChartView setScaleEnabled:YES];
+    [self.lineChartView setScaleEnabled:NO];
     self.lineChartView.backgroundColor = [UIColor clearColor];
     ChartYAxis *leftAxis = self.lineChartView.leftAxis;
     leftAxis.labelTextColor = [UIColor whiteColor];
@@ -60,7 +60,7 @@
     else
         minValue= 0;
     leftAxis.customAxisMin = minValue;
-    leftAxis.startAtZeroEnabled = NO;
+    //leftAxis.startAtZeroEnabled = NO;
     leftAxis.gridLineDashLengths = @[@5.f, @5.f];
     
     self.lineChartView.rightAxis.enabled = NO;
@@ -114,6 +114,9 @@
     set1.lineDashLengths = @[@5.f, @2.5f];
     set1.highlightLineDashLengths = @[@5.f, @2.5f];
     [set1 setColor:darkGreenColor];
+    [set1 setDrawValuesEnabled:NO];
+    [set1 setDrawHighlightIndicators:NO];
+    [set1 setDrawCirclesEnabled:NO];
     //[set1 setCircleColor:UIColor.blackColor];
     set1.lineWidth = 1.0;
     set1.circleRadius = 0.0;

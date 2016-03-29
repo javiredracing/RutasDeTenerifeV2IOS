@@ -965,7 +965,6 @@
 		9D741E6E1BF4F2D5008AB780 = {
 			isa = PBXGroup;
 			children = (
-				24FF32871CA9460100A0A4E2 /* iAd.framework */,
 				9D9D75E81C6B94D700B3A502 /* frameworks */,
 				9D741E791BF4F2D5008AB780 /* RutasDeTenerife2 */,
 				9D741E931BF4F2D5008AB780 /* RutasDeTenerife2Tests */,
@@ -1485,6 +1484,7 @@
 		9D9D75E81C6B94D700B3A502 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24FF32871CA9460100A0A4E2 /* iAd.framework */,
 				9D9D75E61C6B94CF00B3A502 /* MessageUI.framework */,
 				9D756BFD1C5A76AC00CDB388 /* Charts.xcodeproj */,
 				9D96DB871BF9E0C8008FEA35 /* CoreText.framework */,

@@ -20,7 +20,7 @@
 #define METERS_PER_MILE 1609.344
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #define Rgb2UIColor(r, g, b)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
-#define outVerticalSpacing -70.0f
+#define outVerticalSpacing -60.0f
 #define inVerticalSpacing 20.0f
 
 @interface ViewController : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, ADBannerViewDelegate>
