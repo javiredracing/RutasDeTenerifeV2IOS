@@ -17,6 +17,7 @@
 #import "GradientPolylineOverlay.h"
 #import "GradientPolylineRenderer.h"
 
+
 @interface ViewController ()
 
 @end
@@ -158,6 +159,14 @@ NSMutableArray *filteredData;
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //Analytics
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"main_map"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+
 -(void)viewWillDisappear:(BOOL)animated{
     if (self.locationManager)
     {
@@ -171,7 +180,7 @@ NSMutableArray *filteredData;
     [self layoutAnimated:[UIView areAnimationsEnabled]];    //banner
 }
 
-/****** Iad protocol definitions *******/
+/****** iAds protocol definitions *******/
 -(void)bannerViewDidLoadAd:(ADBannerView *)banner{
     [self layoutAnimated:[UIView areAnimationsEnabled]];    //banner
 }

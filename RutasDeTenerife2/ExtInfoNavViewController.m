@@ -11,6 +11,7 @@
 #import "ExtendedInfoTabViewController.h"
 
 
+
 //#define FONT_SIZE_DEFAULT  25
 
 @interface ExtInfoNavViewController ()<UIViewControllerTransitioningDelegate>
@@ -63,9 +64,10 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-   // self.navigationBar.topItem.title = self.route.getName;
-    
-}
+    //Analytics
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Extended-Info"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Route.h"
 #import "Database.h"
+#import <Google/Analytics.h>
 
 @interface ExtInfoNavViewController : UINavigationController
 

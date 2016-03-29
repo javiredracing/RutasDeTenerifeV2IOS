@@ -14,6 +14,7 @@
 #import "QuickInfoView.h"
 #import "FBAnnotationClustering/FBAnnotationClustering.h"
 #import "CustomIOSAlertView.h"
+#import <Google/Analytics.h>
 
 @import iAd;
 

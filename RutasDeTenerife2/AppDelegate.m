@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "iRate.h"
+#import <Google/Analytics.h>
 
 @interface AppDelegate ()
 
@@ -21,16 +22,26 @@
     //as it is picked up automatically from your Info.plist file
     //but we want to test with an app that's actually on the store
     [iRate sharedInstance].applicationBundleID = @"com.charcoaldesign.rainbowblocks-free";
-    [iRate sharedInstance].onlyPromptIfLatestVersion = NO; //TODO change to YES
+    [iRate sharedInstance].onlyPromptIfLatestVersion = NO; //***TODO change to YES
     [iRate sharedInstance].daysUntilPrompt = 3;
     [iRate sharedInstance].usesUntilPrompt = 7;
     [iRate sharedInstance].remindPeriod = 7;
     //enable preview mode
-    [iRate sharedInstance].previewMode = YES;   //TODO change to NO
+    [iRate sharedInstance].previewMode = YES;   //***TODO change to NO
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //GOOGLE ANALYTICS
+    NSError *configureError;
+    [[GGLContext sharedInstance] configureWithError:&configureError];
+    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+    
+    GAI *gai = [GAI sharedInstance];
+    gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+    [gai setDryRun:YES];
+    gai.logger.logLevel = kGAILogLevelVerbose;  // ***TODO remove before app release
+    
     [self createCopyOfDatabaseIfNeeded];
     return YES;
 }
