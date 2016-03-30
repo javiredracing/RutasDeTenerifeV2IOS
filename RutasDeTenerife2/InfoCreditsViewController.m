@@ -7,6 +7,7 @@
 //
 
 #import "InfoCreditsViewController.h"
+#import <Google/Analytics.h>
 
 @interface InfoCreditsViewController ()
 
@@ -85,9 +86,17 @@
         case MFMailComposeResultSaved:
             message = NSLocalizedString(@"mail_saved", @"");
             break;
-        case MFMailComposeResultSent:
+        case MFMailComposeResultSent:{
             message = NSLocalizedString(@"mail_sent", @"");
+            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+            
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+                                                                  action:@"button_press"  // Event action (required)
+                                                                   label:@"play"          // Event label
+                                                                   value:nil] build]];
+            }
             break;
+        
         case MFMailComposeResultFailed:
             message = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"mail_failure", @""), [error localizedDescription]];
             break;

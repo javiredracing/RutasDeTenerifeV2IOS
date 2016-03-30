@@ -10,6 +10,7 @@
 #import "PrevCell.h"
 #import "ForecastCell.h"
 #import "Toast/UIView+Toast.h"
+#import <Google/Analytics.h>
 
 @interface WeatherViewController ()
 
@@ -106,10 +107,22 @@
         [self.route setWeatherJson:_responseData];
     }
     [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Weather-Api"     // Event category (required)
+                                                          action:@"Success"  // Event action (required)
+                                                           label:@"connection"          // Event label
+                                                           value:nil] build]];
     NSLog(@"finishing connection");
 }
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
     NSLog(@"Fail connection");
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Weather-Api"     // Event category (required)
+                                                          action:@"Fails"  // Event action (required)
+                                                           label:@"connection"          // Event label
+                                                           value:nil] build]];
+
     [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
     [self.view makeToast:NSLocalizedString(@"fail_connection", @"") duration:2.0 position:CSToastPositionCenter];
 }
@@ -269,11 +282,23 @@
     if (parsedJSON != nil){
         weatherData = [parsedJSON objectForKey:@"data"];
         [self.weatherTableView reloadData]; //Reload tableview when all data have been parsed correctly
+    }else{
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Weather-Api"     // Event category (required)
+                                                              action:@"Fails"  // Event action (required)
+                                                               label:@"Parsing-json"          // Event label
+                                                               value:nil] build]];
+        [self.view makeToast:NSLocalizedString(@"fail_connection", @"") duration:2.0 position:CSToastPositionCenter];
     }
 }
 
 - (IBAction)nextDaysTap:(UIButton *)sender {
     //TODO deploy view
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Extended-Info"     // Event category (required)
+                                                          action:@"next_days_weather"  // Event action (required)
+                                                           label:@"purchase_flow"          // Event label
+                                                           value:nil] build]];
     if (days == 1){
         [self showPremiumDialog];
     }

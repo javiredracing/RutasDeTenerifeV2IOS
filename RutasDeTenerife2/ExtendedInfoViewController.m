@@ -7,6 +7,7 @@
 //
 
 #import "ExtendedInfoViewController.h"
+#import <Google/Analytics.h>
 //#import "RoundRectPresentationController.h"
 
 @interface ExtendedInfoViewController ()
@@ -78,23 +79,40 @@
 }*/
 
 - (IBAction)howToGet:(UIButton *)sender {
+    
+    
     CLLocationCoordinate2D endingCoord = [self.route getFirstPoint];
     MKPlacemark *endLocation = [[MKPlacemark alloc]initWithCoordinate:endingCoord addressDictionary:nil];
     MKMapItem *endingItem = [[MKMapItem alloc]initWithPlacemark:endLocation];
     
     NSMutableDictionary *launchOptions = [[NSMutableDictionary alloc] init];
     [launchOptions setObject:MKLaunchOptionsDirectionsModeDriving forKey:MKLaunchOptionsDirectionsModeKey];
-    [endingItem openInMapsWithLaunchOptions:launchOptions];
+    BOOL isOpen = [endingItem openInMapsWithLaunchOptions:launchOptions];
+    //analytics
+    if (isOpen){
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Extended-Info"     // Event category (required)
+                                                              action:@"how_to_get"  // Event action (required)
+                                                               label:@"MapKit"          // Event label
+                                                               value:nil] build]];
+    }
 }
 - (IBAction)downloadTrack:(UIButton *)sender {
     //TODO revise
     BOOL isPremium = YES;
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     if (isPremium){
+        
         NSString *kmlName = [self.route getXmlRoute];
         kmlName =[kmlName substringToIndex:[kmlName length] - 4];
         
         NSString *path = [[NSBundle mainBundle] pathForResource:kmlName ofType:@"gpx"];
         NSURL *url = [NSURL fileURLWithPath:path];
+        //Analytics
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Extended-Info"     // Event category (required)
+                                                              action:@"get_track"  // Event action (required)
+                                                               label:kmlName          // Event label
+                                                               value:nil] build]];
         //NSLog(path);
         if (!docController) {
             docController = [UIDocumentInteractionController interactionControllerWithURL:url];
@@ -108,8 +126,16 @@
             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"app_name", @"") message:NSLocalizedString(@"no_gpx_installed", @"") delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alertView show];
         }
-    }else
+    }else{
+        //analytics
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Extended-Info"     // Event category (required)
+                                                              action:@"get_track"  // Event action (required)
+                                                               label:@"purchase_flow"          // Event label
+                                                               value:nil] build]];
+
         [self showPremiumDialog];
+        
+    }
     //[docController presentPreviewAnimated:YES];
 }
 

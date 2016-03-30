@@ -970,6 +970,12 @@ NSMutableArray *filteredData;
     if (self.kmlParser != NULL)
         extendedInfoVC.altitude = self.kmlParser.altitude;
     extendedInfoVC.db = self.db;
+    //Analytics
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Extended-Info"     // Event category (required)
+                                                          action:@"Show"  // Event action (required)
+                                                           label:[NSString stringWithFormat:@"%@",lastRouteShowed.getName]          // Event label
+                                                           value:nil] build]];
     [self presentViewController:extendedInfoVC animated:YES completion:nil];
 }
 
@@ -1051,8 +1057,14 @@ NSMutableArray *filteredData;
 }
 
 -(void)shareAction{
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Menu"     // Event category (required)
+                                                          action:@"Share"  // Event action (required)
+                                                           label:@"Share_app"          // Event label
+                                                           value:nil] build]];
     UIImage *shareImage = [UIImage imageNamed:@"logo"];
-    NSURL *shareUrl = [NSURL URLWithString:NSLocalizedString(@"share_text", @"")];
+    NSURL *shareUrl = [NSURL URLWithString:NSLocalizedString(@"share_text", @"")];  //TODO change text to URL
     NSArray *activityItems = [NSArray arrayWithObjects:[NSString stringWithFormat:NSLocalizedString(@"app_name", @"")], shareImage, shareUrl, nil];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
@@ -1171,6 +1183,13 @@ NSMutableArray *filteredData;
 }
 
 -(void)launchFilter{
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Menu"     // Event category (required)
+                                                          action:@"Filter"  // Event action (required)
+                                                           label:@"Filtered"          // Event label
+                                                           value:nil] build]];
     //https://github.com/wimagguc/ios-custom-alertview
     CustomIOSAlertView *alertView = [[CustomIOSAlertView alloc] init];
     
