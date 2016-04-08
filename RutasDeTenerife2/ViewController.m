@@ -90,8 +90,11 @@ NSMutableArray *filteredData;
     // Do any additional setup after loading the view, typically from a nib.
     
     //Hide views
-    self.panelWidth.constant = 0;
-    self.menuWidth.constant = 0;
+    self.listRightPosition.constant = outRightPosition;
+    self.menuLeftPosition.constant = outLeftPosition;
+    self.menuList.hidden = YES;
+    self.pathList.hidden = YES;
+    
     //self.quickInfoView.alpha = 0.0;
     self.quickInfoVerticalSpace.constant = outVerticalSpacing;
     self.quickInfoView.hidden = YES;
@@ -855,7 +858,8 @@ NSMutableArray *filteredData;
 #pragma mark - animations -
 
 -(void)showRightList{
-    self.panelWidth.constant = 255;
+    self.listRightPosition.constant = 0;
+    self.pathList.hidden = NO;
     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
         [self.pathList layoutIfNeeded];
            }completion:^(BOOL finished){
@@ -864,15 +868,16 @@ NSMutableArray *filteredData;
 }
 
 -(void)hideRightList{
-    self.panelWidth.constant = 0;
+    self.listRightPosition.constant = outRightPosition;
     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         [self.pathList layoutIfNeeded];
     }completion:^(BOOL finished){
-        //Do nothing
+        self.pathList.hidden = YES;
     }];
 }
 -(void)showLeftMenu{
-    self.menuWidth.constant = 75;
+    self.menuLeftPosition.constant = 0;
+    self.menuList.hidden = NO;
     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
          [self.menuList layoutIfNeeded];
     }completion:^(BOOL finished){
@@ -881,11 +886,11 @@ NSMutableArray *filteredData;
 }
 
 -(void)hideLeftMenu{
-    self.menuWidth.constant = 0;
+    self.menuLeftPosition.constant = outLeftPosition;
     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         [self.menuList layoutIfNeeded];
     }completion:^(BOOL finished){
-        //Do nothing
+        self.menuList.hidden = YES;
     }];
 
 }
@@ -946,14 +951,14 @@ NSMutableArray *filteredData;
 }
 
 - (IBAction)toggleList:(id)sender {
-    if (self.menuWidth.constant == 75){
+    if (self.menuLeftPosition.constant == 0){
         [self hideLeftMenu];
     }else{
         [self showLeftMenu];
     }
 }
 - (IBAction)deselect:(id)sender {
-    if (self.panelWidth.constant == 255){
+    if (self.listRightPosition.constant == 0){
         [self hideRightList];
     }else{
         [self showRightList];

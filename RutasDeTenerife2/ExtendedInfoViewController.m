@@ -26,7 +26,7 @@
     
     [self.distance updateFields:NSLocalizedString(@"distance", @"") :[NSString stringWithFormat:@"%.1f km",[self.route getDist]] :image];
     [self.difficult updateFields:NSLocalizedString(@"difficulty", @"") :[self setDifficultText:[self.route getDifficulty]] :[self setDifficultIcon:[self.route getDifficulty]]];
-    [self.time updateFields:NSLocalizedString(@"time", @"") :[NSString stringWithFormat:@"%.02f",[self.route getDurac]] :[UIImage imageNamed:@"timer"]];
+    [self.time updateFields:NSLocalizedString(@"time", @"") :[NSString stringWithFormat:@"%.02f h",[self.route getDurac]] :[UIImage imageNamed:@"timer"]];
     [self.approved updateFields:NSLocalizedString(@"aproved", @"") :[self setIsApproved:[self.route approved]] :[self setIcon:[self.route approved]]];
     UIColor *lightGreenColor = [UIColor colorWithRed:(187.0 / 255.0) green:(234.0 / 255.0) blue:(176.0 / 255.0) alpha:1.0];
 

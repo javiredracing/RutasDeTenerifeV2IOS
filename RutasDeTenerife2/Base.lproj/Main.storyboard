@@ -128,7 +128,7 @@
                                     <constraint firstItem="fS7-wl-xBF" firstAttribute="centerY" secondItem="4e2-8E-6TT" secondAttribute="centerY" id="Ejv-Jb-8CN"/>
                                     <constraint firstItem="g4c-D9-90A" firstAttribute="top" secondItem="FBi-7t-Hpj" secondAttribute="top" constant="15" id="GG5-bk-GLg"/>
                                     <constraint firstItem="Qg7-lg-hbD" firstAttribute="top" secondItem="FBi-7t-Hpj" secondAttribute="top" id="GLI-Sk-S6x"/>
-                                    <constraint firstAttribute="trailing" secondItem="WcF-f3-Mr9" secondAttribute="trailing" id="HGB-6l-cWQ"/>
+                                    <constraint firstItem="WcF-f3-Mr9" firstAttribute="trailing" secondItem="FBi-7t-Hpj" secondAttribute="trailing" id="HGB-6l-cWQ"/>
                                     <constraint firstItem="iR7-Wu-VIc" firstAttribute="centerX" secondItem="VC4-fD-Qoo" secondAttribute="centerX" id="Jdn-gc-Nmw"/>
                                     <constraint firstAttribute="bottom" secondItem="iR7-Wu-VIc" secondAttribute="bottom" constant="20" id="JoH-i6-mHw"/>
                                     <constraint firstAttribute="trailing" secondItem="fS7-wl-xBF" secondAttribute="trailing" constant="20" id="Ry0-yk-UQM"/>
@@ -159,11 +159,11 @@
                         <outlet property="bottomMainViewVerticalSpace" destination="tx6-zI-a1p" id="3LD-Td-boM"/>
                         <outlet property="containerView" destination="FBi-7t-Hpj" id="sNk-u8-mvd"/>
                         <outlet property="listButton" destination="fS7-wl-xBF" id="ylP-8e-tfD"/>
+                        <outlet property="listRightPosition" destination="HGB-6l-cWQ" id="Y4w-Rp-3lX"/>
                         <outlet property="mapView" destination="VC4-fD-Qoo" id="mEl-Hi-pmO"/>
                         <outlet property="menuButton" destination="4e2-8E-6TT" id="pAz-9I-rfd"/>
+                        <outlet property="menuLeftPosition" destination="BXC-HS-O4C" id="7Kk-Qm-PE0"/>
                         <outlet property="menuList" destination="Qg7-lg-hbD" id="fbu-Yj-xCq"/>
-                        <outlet property="menuWidth" destination="oKz-Sd-Dmm" id="cJA-on-7lP"/>
-                        <outlet property="panelWidth" destination="72P-Nn-Bpd" id="xVC-cx-uJe"/>
                         <outlet property="pathList" destination="WcF-f3-Mr9" id="9tl-OG-JjN"/>
                         <outlet property="quickControl" destination="iR7-Wu-VIc" id="m34-bD-YZA"/>
                         <outlet property="quickControlVerticalSpace" destination="JoH-i6-mHw" id="0Nk-rv-zOR"/>
