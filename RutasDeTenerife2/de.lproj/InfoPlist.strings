@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  RutasDeTenerife2
+
+  Created by Javier Fernández on 15/4/16.
+  Copyright © 2016 JAVI. All rights reserved.
+*/
+"CFBundleDisplayName" = "Wandern auf Teneriffa";
+"NSLocationWhenInUseUsageDescription" = "Die App benötigt Zugriff auf GPS";

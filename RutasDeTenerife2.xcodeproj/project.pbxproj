@@ -47,6 +47,7 @@
 		2452AA191CBFEC12009F2594 /* upload.png in Resources */ = {isa = PBXBuildFile; fileRef = 2452A9F41CBFEC12009F2594 /* upload.png */; };
 		246A4ADC1CAACCE20032F88B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 246A4ADB1CAACCE20032F88B /* GoogleService-Info.plist */; };
 		24A1C5D41CC0DCD000E1DD6C /* Icon-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A1C5D31CC0DCD000E1DD6C /* Icon-83.5@2x.png */; };
+		24A1C5F61CC11DE100E1DD6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24A1C5F81CC11DE100E1DD6C /* InfoPlist.strings */; };
 		24FF32881CA9460100A0A4E2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FF32871CA9460100A0A4E2 /* iAd.framework */; };
 		5953540A1C39E32100B83FD2 /* ExtendedInfoTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 595354091C39E32100B83FD2 /* ExtendedInfoTabViewController.m */; };
 		5955C8F91BF7BD15003843B2 /* FBAnnotationCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955C8F01BF7BD15003843B2 /* FBAnnotationCluster.m */; };
@@ -530,6 +531,11 @@
 		2452A9F41CBFEC12009F2594 /* upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upload.png; sourceTree = "<group>"; };
 		246A4ADB1CAACCE20032F88B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		24A1C5D31CC0DCD000E1DD6C /* Icon-83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-83.5@2x.png"; sourceTree = "<group>"; };
+		24A1C5F71CC11DE100E1DD6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24A1C5F91CC11DE300E1DD6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24A1C5FA1CC11DE500E1DD6C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24A1C5FB1CC11DE600E1DD6C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24A1C5FC1CC11DE700E1DD6C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24D270B21CA2F631006BC410 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		24D270B41CA2F668006BC410 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		24D270B61CA2F970006BC410 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -1168,6 +1174,7 @@
 		9D741E7A1BF4F2D5008AB780 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				24A1C5F81CC11DE100E1DD6C /* InfoPlist.strings */,
 				2452A9CF1CBFEC12009F2594 /* icons */,
 				246A4ADB1CAACCE20032F88B /* GoogleService-Info.plist */,
 				9D741E8B1BF4F2D5008AB780 /* Info.plist */,
@@ -1834,6 +1841,7 @@
 				9D7668361C9C1CAA00AFE51B /* ForecastCell.xib in Resources */,
 				9D7AD5C51BF5FA3700E87809 /* i374.png in Resources */,
 				9D7AD5B61BF5FA3700E87809 /* i305.png in Resources */,
+				24A1C5F61CC11DE100E1DD6C /* InfoPlist.strings in Resources */,
 				9D7AD74C1BF5FA4A00E87809 /* PR-TF 86.2.kml in Resources */,
 				9D7AD5B01BF5FA3700E87809 /* i281.png in Resources */,
 				9D7AD7221BF5FA4A00E87809 /* PR-TF 52.1.kml in Resources */,
@@ -2319,6 +2327,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		24A1C5F81CC11DE100E1DD6C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24A1C5F71CC11DE100E1DD6C /* Base */,
+				24A1C5F91CC11DE300E1DD6C /* en */,
+				24A1C5FA1CC11DE500E1DD6C /* es */,
+				24A1C5FB1CC11DE600E1DD6C /* de */,
+				24A1C5FC1CC11DE700E1DD6C /* fr */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		9D741E831BF4F2D5008AB780 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
